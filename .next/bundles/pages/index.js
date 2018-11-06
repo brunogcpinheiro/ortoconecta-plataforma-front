@@ -3880,95 +3880,110 @@ var primaryColor = "#ffd32a";
 var Hero = __WEBPACK_IMPORTED_MODULE_1_styled_components__["c" /* default */].div.withConfig({
   displayName: "pages__Hero",
   componentId: "sc-1hta4ma-0"
-})(["width:100vw;height:100vh;background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('/static/dentist.jpg');background-size:cover;background-repeat:no-repeat;background-position:center center;background-attachment:fixed;display:flex;align-items:center;justify-content:center;text-align:center;"]);
+})(["width:100%;height:100vh;background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('/static/dentist.jpg');background-size:cover;background-repeat:no-repeat;background-position:center center;background-attachment:fixed;display:flex;align-items:center;justify-content:center;text-align:center;"]);
 var HeroInner = __WEBPACK_IMPORTED_MODULE_1_styled_components__["c" /* default */].div.withConfig({
   displayName: "pages__HeroInner",
   componentId: "sc-1hta4ma-1"
-})(["background:transparent;color:#d6d6d6;margin-top:-50px;h1{font-size:3.5em;margin-top:0;margin-bottom:0.5em;background:transparent;}h2{background:transparent;font-size:1.7em;}a{display:block;width:150px;padding:1em;margin-top:50px;margin-left:auto;margin-right:auto;color:#000;font-weight:bold;text-decoration:none;font-size:1.1em;background:", ";border:2px solid ", ";transition:background 0.3s ease-in-out;-webkit-box-shadow:0px 3px 5px 0px rgba(94,94,94,1);-moz-box-shadow:0px 3px 5px 0px rgba(94,94,94,1);box-shadow:0px 3px 5px 0px rgba(94,94,94,1);&:hover{background:transparent;color:#fff;transition:background 0.3s ease-in-out;}}"], primaryColor, primaryColor);
+})(["background:transparent;color:#d6d6d6;margin-top:-50px;h1{font-size:3.5em;margin-top:0;margin-bottom:0.5em;background:transparent;}h2{background:transparent;font-size:1.7em;}a{display:block;width:150px;padding:1em;margin-top:50px;margin-left:auto;margin-right:auto;color:#000;font-weight:bold;text-decoration:none;font-size:1.1em;text-transform:uppercase;background:", ";border:2px solid ", ";transition:background 0.3s ease-in-out;-webkit-box-shadow:0px 3px 5px 0px rgba(94,94,94,1);-moz-box-shadow:0px 3px 5px 0px rgba(94,94,94,1);box-shadow:0px 3px 5px 0px rgba(94,94,94,1);&:hover{background:transparent;color:#fff;transition:background 0.3s ease-in-out;}}"], primaryColor, primaryColor);
+var About = __WEBPACK_IMPORTED_MODULE_1_styled_components__["c" /* default */].section.withConfig({
+  displayName: "pages__About",
+  componentId: "sc-1hta4ma-2"
+})(["display:flex;align-items:center;justify-content:center;flex-direction:column;max-width:860px;margin:26px auto;h1{font-size:5rem;color:", ";font-weight:bold;}p{margin-top:16px;text-align:justify;font-size:1.5rem;color:#636e72;strong{font-size:1.5rem;color:#181818;}span{margin-left:24px;font-size:1.5rem;}}h3{font-size:2rem;margin-top:24px;color:#636e72;span{margin-top:16px;font-size:2rem;color:#181818;font-weight:bold;}}"], primaryColor);
 
 var Home = function Home(props) {
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_0_react__["Fragment"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 112
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_next_head___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 113
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68
+      lineNumber: 114
     }
   }, "Ortoconecta")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__layouts_main__["a" /* default */], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 116
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Hero, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71
+      lineNumber: 117
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(HeroInner, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 118
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h1", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73
+      lineNumber: 119
     }
   }, "Conectando a Ortodontia \xE0 toda \xE1rea da sa\xFAde"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h2", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 120
     }
   }, "Navegue pelo nosso site e descubra como!"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-    href: "#",
+    href: "#about",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75
+      lineNumber: 121
     }
-  }, "Saiba mais"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+  }, "Saiba mais"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(About, {
+    id: "about",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79
+      lineNumber: 124
     }
-  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h1", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80
+      lineNumber: 125
     }
-  }, "Lorem Ipsum \xE9 simplesmente uma simula\xE7\xE3o de texto da ind\xFAstria tipogr\xE1fica e de impressos, e vem sendo utilizado desde o s\xE9culo XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu n\xE3o s\xF3 a cinco s\xE9culos, como tamb\xE9m ao salto para a editora\xE7\xE3o eletr\xF4nica, permanecendo essencialmente inalterado. Se popularizou na d\xE9cada de 60, quando a Letraset lan\xE7ou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editora\xE7\xE3o eletr\xF4nica como Aldus PageMaker. Lorem Ipsum \xE9 simplesmente uma simula\xE7\xE3o de texto da ind\xFAstria tipogr\xE1fica e de impressos, e vem sendo utilizado desde o s\xE9culo XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu n\xE3o s\xF3 a cinco s\xE9culos, como tamb\xE9m ao salto para a editora\xE7\xE3o eletr\xF4nica, permanecendo essencialmente inalterado. Se popularizou na d\xE9cada de 60, quando a Letraset lan\xE7ou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editora\xE7\xE3o eletr\xF4nica como Aldus PageMaker. Lorem Ipsum \xE9 simplesmente uma simula\xE7\xE3o de texto da ind\xFAstria tipogr\xE1fica e de impressos, e vem sendo utilizado desde o s\xE9culo XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu n\xE3o s\xF3 a cinco s\xE9culos, como tamb\xE9m ao salto para a editora\xE7\xE3o eletr\xF4nica, permanecendo essencialmente inalterado. Se popularizou na d\xE9cada de 60, quando a Letraset lan\xE7ou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editora\xE7\xE3o eletr\xF4nica como Aldus PageMaker. Lorem Ipsum \xE9 simplesmente uma simula\xE7\xE3o de texto da ind\xFAstria tipogr\xE1fica e de impressos, e vem sendo utilizado desde o s\xE9culo XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu n\xE3o s\xF3 a cinco s\xE9culos, como tamb\xE9m ao salto para a editora\xE7\xE3o eletr\xF4nica, permanecendo essencialmente inalterado. Se popularizou na d\xE9cada de 60, quando a Letraset lan\xE7ou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editora\xE7\xE3o eletr\xF4nica como Aldus PageMaker. Lorem Ipsum \xE9 simplesmente uma simula\xE7\xE3o de texto da ind\xFAstria tipogr\xE1fica e de impressos, e vem sendo utilizado desde o s\xE9culo XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu n\xE3o s\xF3 a cinco s\xE9culos, como tamb\xE9m ao salto para a editora\xE7\xE3o eletr\xF4nica, permanecendo essencialmente inalterado. Se popularizou na d\xE9cada de 60, quando a Letraset lan\xE7ou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editora\xE7\xE3o eletr\xF4nica como Aldus PageMaker."), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
+  }, "Quem Somos"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86
+      lineNumber: 126
     }
-  }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87
+      lineNumber: 127
     }
-  }, "Lorem Ipsum \xE9 simplesmente uma simula\xE7\xE3o de texto da ind\xFAstria tipogr\xE1fica e de impressos, e vem sendo utilizado desde o s\xE9culo XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu n\xE3o s\xF3 a cinco s\xE9culos, como tamb\xE9m ao salto para a editora\xE7\xE3o eletr\xF4nica, permanecendo essencialmente inalterado. Se popularizou na d\xE9cada de 60, quando a Letraset lan\xE7ou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editora\xE7\xE3o eletr\xF4nica como Aldus PageMaker. Lorem Ipsum \xE9 simplesmente uma simula\xE7\xE3o de texto da ind\xFAstria tipogr\xE1fica e de impressos, e vem sendo utilizado desde o s\xE9culo XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu n\xE3o s\xF3 a cinco s\xE9culos, como tamb\xE9m ao salto para a editora\xE7\xE3o eletr\xF4nica, permanecendo essencialmente inalterado. Se popularizou na d\xE9cada de 60, quando a Letraset lan\xE7ou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editora\xE7\xE3o eletr\xF4nica como Aldus PageMaker. Lorem Ipsum \xE9 simplesmente uma simula\xE7\xE3o de texto da ind\xFAstria tipogr\xE1fica e de impressos, e vem sendo utilizado desde o s\xE9culo XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu n\xE3o s\xF3 a cinco s\xE9culos, como tamb\xE9m ao salto para a editora\xE7\xE3o eletr\xF4nica, permanecendo essencialmente inalterado. Se popularizou na d\xE9cada de 60, quando a Letraset lan\xE7ou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editora\xE7\xE3o eletr\xF4nica como Aldus PageMaker. Lorem Ipsum \xE9 simplesmente uma simula\xE7\xE3o de texto da ind\xFAstria tipogr\xE1fica e de impressos, e vem sendo utilizado desde o s\xE9culo XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu n\xE3o s\xF3 a cinco s\xE9culos, como tamb\xE9m ao salto para a editora\xE7\xE3o eletr\xF4nica, permanecendo essencialmente inalterado. Se popularizou na d\xE9cada de 60, quando a Letraset lan\xE7ou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editora\xE7\xE3o eletr\xF4nica como Aldus PageMaker. Lorem Ipsum \xE9 simplesmente uma simula\xE7\xE3o de texto da ind\xFAstria tipogr\xE1fica e de impressos, e vem sendo utilizado desde o s\xE9culo XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu n\xE3o s\xF3 a cinco s\xE9culos, como tamb\xE9m ao salto para a editora\xE7\xE3o eletr\xF4nica, permanecendo essencialmente inalterado. Se popularizou na d\xE9cada de 60, quando a Letraset lan\xE7ou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editora\xE7\xE3o eletr\xF4nica como Aldus PageMaker."), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
+  }, "Em"), " reuni\xF5es espor\xE1dicas sobre temas que frequentemente convergiam para o tempo em que o praticante da ortodontia conseguiria desenvolver sua autonomia, nasce a Orto Conecta. Idealizada por tr\xEAs colegas de profiss\xE3o, ", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("strong", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93
+      lineNumber: 128
     }
-  }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
+  }, "Dr. Renato Tanabe"), ", ", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("strong", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
+      lineNumber: 128
     }
-  }, "Lorem Ipsum \xE9 simplesmente uma simula\xE7\xE3o de texto da ind\xFAstria tipogr\xE1fica e de impressos, e vem sendo utilizado desde o s\xE9culo XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu n\xE3o s\xF3 a cinco s\xE9culos, como tamb\xE9m ao salto para a editora\xE7\xE3o eletr\xF4nica, permanecendo essencialmente inalterado. Se popularizou na d\xE9cada de 60, quando a Letraset lan\xE7ou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editora\xE7\xE3o eletr\xF4nica como Aldus PageMaker. Lorem Ipsum \xE9 simplesmente uma simula\xE7\xE3o de texto da ind\xFAstria tipogr\xE1fica e de impressos, e vem sendo utilizado desde o s\xE9culo XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu n\xE3o s\xF3 a cinco s\xE9culos, como tamb\xE9m ao salto para a editora\xE7\xE3o eletr\xF4nica, permanecendo essencialmente inalterado. Se popularizou na d\xE9cada de 60, quando a Letraset lan\xE7ou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editora\xE7\xE3o eletr\xF4nica como Aldus PageMaker. Lorem Ipsum \xE9 simplesmente uma simula\xE7\xE3o de texto da ind\xFAstria tipogr\xE1fica e de impressos, e vem sendo utilizado desde o s\xE9culo XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu n\xE3o s\xF3 a cinco s\xE9culos, como tamb\xE9m ao salto para a editora\xE7\xE3o eletr\xF4nica, permanecendo essencialmente inalterado. Se popularizou na d\xE9cada de 60, quando a Letraset lan\xE7ou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editora\xE7\xE3o eletr\xF4nica como Aldus PageMaker. Lorem Ipsum \xE9 simplesmente uma simula\xE7\xE3o de texto da ind\xFAstria tipogr\xE1fica e de impressos, e vem sendo utilizado desde o s\xE9culo XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu n\xE3o s\xF3 a cinco s\xE9culos, como tamb\xE9m ao salto para a editora\xE7\xE3o eletr\xF4nica, permanecendo essencialmente inalterado. Se popularizou na d\xE9cada de 60, quando a Letraset lan\xE7ou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editora\xE7\xE3o eletr\xF4nica como Aldus PageMaker. Lorem Ipsum \xE9 simplesmente uma simula\xE7\xE3o de texto da ind\xFAstria tipogr\xE1fica e de impressos, e vem sendo utilizado desde o s\xE9culo XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu n\xE3o s\xF3 a cinco s\xE9culos, como tamb\xE9m ao salto para a editora\xE7\xE3o eletr\xF4nica, permanecendo essencialmente inalterado. Se popularizou na d\xE9cada de 60, quando a Letraset lan\xE7ou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editora\xE7\xE3o eletr\xF4nica como Aldus PageMaker.", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
+  }, "Dr. Gustavo Furlan"), " e ", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("strong", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99
+      lineNumber: 128
     }
-  })))));
+  }, "Dr. Alexandre Mendon\xE7a"), ", esta ferramenta tem como objetivo trazer informa\xE7\xF5es sobre a ortodontia executada de forma eficiente, pr\xE1tica e segura, al\xE9m de integrar \xE1reas intimamente ligadas a esta especialidade. Know-how, sensibilidade e entusiasmo d\xE3o direcionamento para a constru\xE7\xE3o desta plataforma digital cuidadosamente planejada para produzir e compartilhar conhecimentos.  Um novo canal que ir\xE1 fazer parte da lista de manuais de consulta sobre os assuntos mais atuais das \xE1reas de sa\xFAde que se conectam diretamente \xE0 ortodontia. Esperamos que aproveitem este espa\xE7o e sua diversidade de materiais dispon\xEDveis no site, nos cursos online e presenciais que contribuir\xE3o para o aprimoramento de compet\xEAncias e habilidades fundamentais para o profissional que busca a excel\xEAncia."), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h3", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 132
+    }
+  }, "Bem-vindos \xE0 plataforma ", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 132
+    }
+  }, "Orto Conecta!")))));
 };
 
 var _default = Home;
@@ -3987,6 +4002,7 @@ var _default = Home;
   reactHotLoader.register(primaryColor, "primaryColor", "/home/ubuntu/workspace/pages/index.js");
   reactHotLoader.register(Hero, "Hero", "/home/ubuntu/workspace/pages/index.js");
   reactHotLoader.register(HeroInner, "HeroInner", "/home/ubuntu/workspace/pages/index.js");
+  reactHotLoader.register(About, "About", "/home/ubuntu/workspace/pages/index.js");
   reactHotLoader.register(Home, "Home", "/home/ubuntu/workspace/pages/index.js");
   reactHotLoader.register(_default, "default", "/home/ubuntu/workspace/pages/index.js");
   leaveModule(module);
@@ -4087,7 +4103,7 @@ var Header = function Header(props) {
       fileName: _jsxFileName,
       lineNumber: 90
     }
-  }, "OrtoConecta")))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Menu, {
+  }, "Orto Conecta")))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Menu, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 94

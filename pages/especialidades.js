@@ -96,6 +96,7 @@ const Especialidades = props => {
       <Main>
         <SpecialitiesWrapper>
           <h2>Especialidades</h2>
+          <h4>(Fisioterapia, Nutrição e Psicologia)</h4>
             {props.specialities
               .sort((a, b) => a.publishedAt < b.publishedAt).map(speciality => (
               <Speciality key={speciality.id}>

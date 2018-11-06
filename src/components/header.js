@@ -87,7 +87,7 @@ const Header = props => (
         <Link href="/">
           <a>
             <img src="/static/dental.png" />
-            <h2>OrtoConecta</h2>
+            <h2>Orto Conecta</h2>
           </a>
         </Link>
       </Logo>

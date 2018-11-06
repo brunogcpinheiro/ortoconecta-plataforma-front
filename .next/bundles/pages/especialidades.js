@@ -22294,56 +22294,61 @@ var Especialidades = function Especialidades(props) {
       fileName: _jsxFileName,
       lineNumber: 98
     }
-  }, "Especialidades"), props.specialities.sort(function (a, b) {
+  }, "Especialidades"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("h4", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 99
+    }
+  }, "(Fisioterapia, Nutri\xE7\xE3o e Psicologia)"), props.specialities.sort(function (a, b) {
     return a.publishedAt < b.publishedAt;
   }).map(function (speciality) {
     return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Speciality, {
       key: speciality.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 101
+        lineNumber: 102
       }
     }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("li", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 102
+        lineNumber: 103
       }
     }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5_next_link___default.a, {
       href: "/especialidades/".concat(speciality.id),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 103
+        lineNumber: 104
       }
     }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Title, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 104
+        lineNumber: 105
       }
     }, speciality.title)), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("h4", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 106
+        lineNumber: 107
       }
     }, speciality.author, " (", speciality.speciality, ")"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Date, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 107
+        lineNumber: 108
       }
     }, "Publicado em.: ", (__WEBPACK_IMPORTED_MODULE_7_moment___default.a.locale('pt-br'), __WEBPACK_IMPORTED_MODULE_7_moment___default()(speciality.publishedAt).format("LL"))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Article, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 111
+        lineNumber: 112
       }
     }, "".concat(speciality.article.substr(0, 500), "...")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5_next_link___default.a, {
       href: "/especialidades/".concat(speciality.id),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 112
+        lineNumber: 113
       }
     }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(ReadMore, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 113
+        lineNumber: 114
       }
     }, "Leia mais"))));
   }))));
@@ -22495,7 +22500,7 @@ var Header = function Header(props) {
       fileName: _jsxFileName,
       lineNumber: 90
     }
-  }, "OrtoConecta")))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Menu, {
+  }, "Orto Conecta")))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Menu, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 94

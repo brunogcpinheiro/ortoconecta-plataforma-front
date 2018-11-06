@@ -17,6 +17,7 @@ export default class MyDocument extends Document {
       <html>
         <Head>
           {this.props.styleTags}
+          <link rel="shortcut icon" href="/static/tooth.jpg" type="image/x-icon" />
         </Head>
         <body>
           <Main />
