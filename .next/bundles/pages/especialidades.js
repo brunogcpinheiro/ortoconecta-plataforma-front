@@ -22241,7 +22241,7 @@ var primaryColor = "#ffd32a";
 var SpecialitiesWrapper = __WEBPACK_IMPORTED_MODULE_2_styled_components__["c" /* default */].div.withConfig({
   displayName: "especialidades__SpecialitiesWrapper",
   componentId: "cj4jpc-0"
-})(["display:flex;flex-direction:column;align-items:center;justify-content:center;max-width:980px;margin:0 auto;h2{text-transform:uppercase;font-size:2rem;color:#636e72;}"]);
+})(["display:flex;flex-direction:column;align-items:center;justify-content:center;max-width:860px;margin:0 auto;h2{text-transform:uppercase;font-size:2rem;color:#636e72;}"]);
 var Speciality = __WEBPACK_IMPORTED_MODULE_2_styled_components__["c" /* default */].div.withConfig({
   displayName: "especialidades__Speciality",
   componentId: "cj4jpc-1"
@@ -22334,7 +22334,7 @@ var Especialidades = function Especialidades(props) {
         fileName: _jsxFileName,
         lineNumber: 105
       }
-    }, speciality.article), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5_next_link___default.a, {
+    }, "".concat(speciality.article.substr(0, 500), "...")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5_next_link___default.a, {
       href: "/especialidades/".concat(speciality.id),
       __source: {
         fileName: _jsxFileName,

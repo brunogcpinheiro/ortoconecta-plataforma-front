@@ -13,7 +13,7 @@ const SpecialitiesWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 980px;
+  max-width: 860px;
   margin: 0 auto;
 
   h2 {
@@ -102,7 +102,7 @@ const Especialidades = props => {
                     moment.locale('pt-br'),
                     moment(speciality.publishedAt).format("LL")
                   }</Date>
-                  <Article>{speciality.article}</Article>
+                  <Article>{`${speciality.article.substr(0, 500)}...`}</Article>
                   <Link href={`/especialidades/${speciality.id}`}>
                     <ReadMore>Leia mais</ReadMore>
                   </Link>
