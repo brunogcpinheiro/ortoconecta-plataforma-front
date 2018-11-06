@@ -4,6 +4,7 @@ import Main from '../layouts/main'
 import Head from 'next/head'
 import Link from 'next/link'
 import axios from 'axios'
+import moment from 'moment'
 
 const primaryColor = "#ffd32a";
 
@@ -44,6 +45,13 @@ const Title = styled.a`
   color: inherit;
   font-size: 2.2rem;
   text-decoration: underline;
+  font-weight: bold;
+  transition: color 0.2s;
+  
+  &:hover {
+    color: ${primaryColor};
+    transition: color 0.2s;
+  }
 `
 
 const Date = styled.p`
@@ -57,31 +65,43 @@ const Article = styled.p`
 
 const ReadMore = styled.a`
   border: none;
+  border: 2px solid ${primaryColor};
   padding: 16px 26px;
   background: ${primaryColor};
-  color: #fff;
+  color: #000;
+  font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
   margin-top: 24px;
+  transition: background 0.3s;
+  
+  &:hover {
+    background: #fff;
+    transition: background 0.3s;
+  }
 `
 
 const Especialidades = props => {
   return (
     <Fragment>
       <Head>
-        <title>Especialidades</title>
+        <title>Especialidades | OrtoConecta</title>
       </Head>
       <Main>
         <SpecialitiesWrapper>
           <h2>Especialidades</h2>
-            {props.specialities.map(speciality => (
-              <Speciality>
-                <li key={speciality.id}>
+            {props.specialities
+              .sort((a, b) => a.publishedAt < b.publishedAt).map(speciality => (
+              <Speciality key={speciality.id}>
+                <li>
                   <Link href={`/especialidades/${speciality.id}`}>
                     <Title>{speciality.title}</Title>
                   </Link>
                   <h4>{speciality.author} ({speciality.speciality})</h4>
-                  <Date>Publicado em.: {speciality.publishedAt}</Date>
+                  <Date>Publicado em.: {
+                    moment.locale('pt-br'),
+                    moment(speciality.publishedAt).format("LL")
+                  }</Date>
                   <Article>{speciality.article}</Article>
                   <Link href={`/especialidades/${speciality.id}`}>
                     <ReadMore>Leia mais</ReadMore>

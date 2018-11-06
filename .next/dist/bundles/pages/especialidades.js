@@ -161,10 +161,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_next_link__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_axios__ = __webpack_require__("axios");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_moment__ = __webpack_require__("moment");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_moment__);
 
 var _jsxFileName = "/home/ubuntu/workspace/pages/especialidades.js";
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } } function _next(value) { step("next", value); } function _throw(err) { step("throw", err); } _next(); }); }; }
+
 
 
 
@@ -184,7 +187,7 @@ var Speciality = __WEBPACK_IMPORTED_MODULE_2_styled_components___default.a.div.w
 var Title = __WEBPACK_IMPORTED_MODULE_2_styled_components___default.a.a.withConfig({
   displayName: "especialidades__Title",
   componentId: "cj4jpc-2"
-})(["color:inherit;font-size:2.2rem;text-decoration:underline;"]);
+})(["color:inherit;font-size:2.2rem;text-decoration:underline;font-weight:bold;transition:color 0.2s;&:hover{color:", ";transition:color 0.2s;}"], primaryColor);
 var Date = __WEBPACK_IMPORTED_MODULE_2_styled_components___default.a.p.withConfig({
   displayName: "especialidades__Date",
   componentId: "cj4jpc-3"
@@ -196,87 +199,89 @@ var Article = __WEBPACK_IMPORTED_MODULE_2_styled_components___default.a.p.withCo
 var ReadMore = __WEBPACK_IMPORTED_MODULE_2_styled_components___default.a.a.withConfig({
   displayName: "especialidades__ReadMore",
   componentId: "cj4jpc-5"
-})(["border:none;padding:16px 26px;background:", ";color:#fff;text-transform:uppercase;text-decoration:none;margin-top:24px;"], primaryColor);
+})(["border:none;border:2px solid ", ";padding:16px 26px;background:", ";color:#000;font-weight:bold;text-transform:uppercase;text-decoration:none;margin-top:24px;transition:background 0.3s;&:hover{background:#fff;transition:background 0.3s;}"], primaryColor, primaryColor);
 
 var Especialidades = function Especialidades(props) {
   return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react__["Fragment"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 86
     }
   }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_next_head___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71
+      lineNumber: 87
     }
   }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 88
     }
-  }, "Especialidades")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__layouts_main__["a" /* default */], {
+  }, "Especialidades | OrtoConecta")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__layouts_main__["a" /* default */], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 90
     }
   }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(SpecialitiesWrapper, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75
+      lineNumber: 91
     }
   }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("h2", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 92
     }
-  }, "Especialidades"), props.specialities.map(function (speciality) {
+  }, "Especialidades"), props.specialities.sort(function (a, b) {
+    return a.publishedAt < b.publishedAt;
+  }).map(function (speciality) {
     return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Speciality, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 78
-      }
-    }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("li", {
       key: speciality.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 79
+        lineNumber: 95
+      }
+    }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("li", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 96
       }
     }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5_next_link___default.a, {
       href: "/especialidades/".concat(speciality.id),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 80
+        lineNumber: 97
       }
     }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Title, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 81
+        lineNumber: 98
       }
     }, speciality.title)), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("h4", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 83
+        lineNumber: 100
       }
     }, speciality.author, " (", speciality.speciality, ")"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Date, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 84
+        lineNumber: 101
       }
-    }, "Publicado em.: ", speciality.publishedAt), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Article, {
+    }, "Publicado em.: ", (__WEBPACK_IMPORTED_MODULE_7_moment___default.a.locale('pt-br'), __WEBPACK_IMPORTED_MODULE_7_moment___default()(speciality.publishedAt).format("LL"))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Article, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 85
+        lineNumber: 105
       }
     }, speciality.article), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5_next_link___default.a, {
       href: "/especialidades/".concat(speciality.id),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 86
+        lineNumber: 106
       }
     }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(ReadMore, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 87
+        lineNumber: 107
       }
     }, "Leia mais"))));
   }))));
@@ -490,6 +495,13 @@ module.exports = require("@babel/runtime/regenerator");
 /***/ (function(module, exports) {
 
 module.exports = require("axios");
+
+/***/ }),
+
+/***/ "moment":
+/***/ (function(module, exports) {
+
+module.exports = require("moment");
 
 /***/ }),
 

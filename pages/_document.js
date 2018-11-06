@@ -17,7 +17,6 @@ export default class MyDocument extends Document {
       <html>
         <Head>
           {this.props.styleTags}
-          <title>Ortoconecta</title>
         </Head>
         <body>
           <Main />

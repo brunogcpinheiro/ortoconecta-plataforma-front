@@ -60,6 +60,9 @@ const HeroInner = styled.div`
 
 const Home = props => (
   <Fragment>
+    <Head>
+      <title>Ortoconecta</title>
+    </Head>
     <Main>
       <Hero>
         <HeroInner>
