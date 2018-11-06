@@ -14,7 +14,7 @@ const SpecialitiesWrapper = styled.div`
   align-items: center;
   justify-content: center;
   max-width: 860px;
-  margin: 0 auto;
+  margin: 20px auto;
 
   h2 {
     text-transform: uppercase;
@@ -32,6 +32,9 @@ const Speciality = styled.div`
   border-radius: 10px;
   padding: 36px;
   margin-top: 36px;
+  -webkit-box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
+  -moz-box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
+  box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
 
   h4 {
     font-size: 1.3rem;
@@ -74,6 +77,9 @@ const ReadMore = styled.a`
   text-decoration: none;
   margin-top: 24px;
   transition: background 0.3s;
+  -webkit-box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
+  -moz-box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
+  box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
   
   &:hover {
     background: #fff;

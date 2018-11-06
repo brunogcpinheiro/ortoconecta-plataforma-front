@@ -12,6 +12,9 @@ const Navbar = styled.div`
   list-style: none;
   background: transparent;
   width: 100%;
+  -webkit-box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
+  -moz-box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
+  box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
 `
 
 const Logo = styled.div`
@@ -53,7 +56,7 @@ const Menu = styled.ul`
     
     a {
       text-decoration: none;
-      color: inherit;
+      color: #7f8c8d;
       text-transform: uppercase;
       transition: color 0.4s;
       background: transparent;
@@ -64,7 +67,6 @@ const Menu = styled.ul`
         border-bottom: solid 3px ${primaryColor};  
         transform: scaleX(0);  
         transition: transform 250ms ease-in-out;
-
       }
 
       &:hover {
@@ -90,7 +92,7 @@ const Header = props => (
         </Link>
       </Logo>
       <Menu>
-        <li><Link href="/"><a>Home</a></Link></li>
+        <li><Link href="/"><a>Início</a></Link></li>
         <li><a href="#">Quem Somos</a></li>
         <li><a href="#">Material gratuito</a></li>
         <li><Link href="/especialidades"><a>Especialidades</a></Link></li>

@@ -8,7 +8,6 @@ const primaryColor = "#ffd32a"
 const Hero = styled.div`
   width: 100vw;
   height: 100vh;
-  margin-top: -80px;
   background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/static/dentist.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -23,9 +22,10 @@ const Hero = styled.div`
 const HeroInner = styled.div`
   background: transparent;
   color: #d6d6d6;
+  margin-top: -50px;
 
   h1 {
-    font-size: 4em;
+    font-size: 3.5em;
     margin-top: 0;
     margin-bottom: 0.5em;
     background: transparent;
@@ -33,26 +33,30 @@ const HeroInner = styled.div`
 
   h2 {
     background: transparent;
-    font-size: 2em;
+    font-size: 1.7em;
   }
 
   a {
     display: block;
     width: 150px;
-    border: 3px solid ${primaryColor};
     padding: 1em;
     margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
-    color: #fff;
+    color: #000;
+    font-weight: bold;
     text-decoration: none;
-    font-size: 1.5em;
-    background: transparent;
+    font-size: 1.1em;
+    background: ${primaryColor};
+    border: 2px solid ${primaryColor};
     transition: background 0.3s ease-in-out;
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(94,94,94,1);
+    -moz-box-shadow: 0px 3px 5px 0px rgba(94,94,94,1);
+    box-shadow: 0px 3px 5px 0px rgba(94,94,94,1);
 
     &:hover {
-      background: ${primaryColor};
-      color: #363636;
+      background: transparent;
+      color: #fff;
       transition: background 0.3s ease-in-out;
     }
   }

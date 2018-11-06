@@ -22241,11 +22241,11 @@ var primaryColor = "#ffd32a";
 var SpecialitiesWrapper = __WEBPACK_IMPORTED_MODULE_2_styled_components__["c" /* default */].div.withConfig({
   displayName: "especialidades__SpecialitiesWrapper",
   componentId: "cj4jpc-0"
-})(["display:flex;flex-direction:column;align-items:center;justify-content:center;max-width:860px;margin:0 auto;h2{text-transform:uppercase;font-size:2rem;color:#636e72;}"]);
+})(["display:flex;flex-direction:column;align-items:center;justify-content:center;max-width:860px;margin:20px auto;h2{text-transform:uppercase;font-size:2rem;color:#636e72;}"]);
 var Speciality = __WEBPACK_IMPORTED_MODULE_2_styled_components__["c" /* default */].div.withConfig({
   displayName: "especialidades__Speciality",
   componentId: "cj4jpc-1"
-})(["list-style:none;display:flex;flex-direction:column;justify-content:center;border:1px solid #ccc;border-radius:10px;padding:36px;margin-top:36px;h4{font-size:1.3rem;padding:16px 0;color:#636e72;text-weight:bold;}"]);
+})(["list-style:none;display:flex;flex-direction:column;justify-content:center;border:1px solid #ccc;border-radius:10px;padding:36px;margin-top:36px;-webkit-box-shadow:0px 3px 5px 0px rgba(184,184,184,1);-moz-box-shadow:0px 3px 5px 0px rgba(184,184,184,1);box-shadow:0px 3px 5px 0px rgba(184,184,184,1);h4{font-size:1.3rem;padding:16px 0;color:#636e72;text-weight:bold;}"]);
 var Title = __WEBPACK_IMPORTED_MODULE_2_styled_components__["c" /* default */].a.withConfig({
   displayName: "especialidades__Title",
   componentId: "cj4jpc-2"
@@ -22261,38 +22261,38 @@ var Article = __WEBPACK_IMPORTED_MODULE_2_styled_components__["c" /* default */]
 var ReadMore = __WEBPACK_IMPORTED_MODULE_2_styled_components__["c" /* default */].a.withConfig({
   displayName: "especialidades__ReadMore",
   componentId: "cj4jpc-5"
-})(["border:none;border:2px solid ", ";padding:16px 26px;background:", ";color:#000;font-weight:bold;text-transform:uppercase;text-decoration:none;margin-top:24px;transition:background 0.3s;&:hover{background:#fff;transition:background 0.3s;}"], primaryColor, primaryColor);
+})(["border:none;border:2px solid ", ";padding:16px 26px;background:", ";color:#000;font-weight:bold;text-transform:uppercase;text-decoration:none;margin-top:24px;transition:background 0.3s;-webkit-box-shadow:0px 3px 5px 0px rgba(184,184,184,1);-moz-box-shadow:0px 3px 5px 0px rgba(184,184,184,1);box-shadow:0px 3px 5px 0px rgba(184,184,184,1);&:hover{background:#fff;transition:background 0.3s;}"], primaryColor, primaryColor);
 
 var Especialidades = function Especialidades(props) {
   return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react__["Fragment"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86
+      lineNumber: 92
     }
   }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_next_head___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87
+      lineNumber: 93
     }
   }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88
+      lineNumber: 94
     }
   }, "Especialidades | OrtoConecta")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__layouts_main__["a" /* default */], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90
+      lineNumber: 96
     }
   }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(SpecialitiesWrapper, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91
+      lineNumber: 97
     }
   }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("h2", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92
+      lineNumber: 98
     }
   }, "Especialidades"), props.specialities.sort(function (a, b) {
     return a.publishedAt < b.publishedAt;
@@ -22301,49 +22301,49 @@ var Especialidades = function Especialidades(props) {
       key: speciality.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 95
+        lineNumber: 101
       }
     }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("li", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 96
+        lineNumber: 102
       }
     }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5_next_link___default.a, {
       href: "/especialidades/".concat(speciality.id),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 97
+        lineNumber: 103
       }
     }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Title, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 98
+        lineNumber: 104
       }
     }, speciality.title)), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("h4", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 100
+        lineNumber: 106
       }
     }, speciality.author, " (", speciality.speciality, ")"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Date, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 101
+        lineNumber: 107
       }
     }, "Publicado em.: ", (__WEBPACK_IMPORTED_MODULE_7_moment___default.a.locale('pt-br'), __WEBPACK_IMPORTED_MODULE_7_moment___default()(speciality.publishedAt).format("LL"))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Article, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 105
+        lineNumber: 111
       }
     }, "".concat(speciality.article.substr(0, 500), "...")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5_next_link___default.a, {
       href: "/especialidades/".concat(speciality.id),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 106
+        lineNumber: 112
       }
     }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(ReadMore, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 107
+        lineNumber: 113
       }
     }, "Leia mais"))));
   }))));
@@ -22447,7 +22447,7 @@ var primaryColor = "#ffd32a";
 var Navbar = __WEBPACK_IMPORTED_MODULE_1_styled_components__["c" /* default */].div.withConfig({
   displayName: "header__Navbar",
   componentId: "sc-1srxfqa-0"
-})(["height:80px;display:flex;align-items:center;justify-content:space-around;list-style:none;background:transparent;width:100%;"]);
+})(["height:80px;display:flex;align-items:center;justify-content:space-around;list-style:none;background:transparent;width:100%;-webkit-box-shadow:0px 3px 5px 0px rgba(184,184,184,1);-moz-box-shadow:0px 3px 5px 0px rgba(184,184,184,1);box-shadow:0px 3px 5px 0px rgba(184,184,184,1);"]);
 var Logo = __WEBPACK_IMPORTED_MODULE_1_styled_components__["c" /* default */].div.withConfig({
   displayName: "header__Logo",
   componentId: "sc-1srxfqa-1"
@@ -22455,115 +22455,115 @@ var Logo = __WEBPACK_IMPORTED_MODULE_1_styled_components__["c" /* default */].di
 var Menu = __WEBPACK_IMPORTED_MODULE_1_styled_components__["c" /* default */].ul.withConfig({
   displayName: "header__Menu",
   componentId: "sc-1srxfqa-2"
-})(["display:flex;background:transparent;list-style:none;color:#303030;li{padding:16px;font-weight:bold;font-size:1.3rem;background:transparent;a{text-decoration:none;color:inherit;text-transform:uppercase;transition:color 0.4s;background:transparent;&:after{display:block;content:'';border-bottom:solid 3px ", ";transform:scaleX(0);transition:transform 250ms ease-in-out;}&:hover{color:", ";transition:color 0.4s;}&:hover:after{transform:scaleX(1);}}"], primaryColor, primaryColor);
+})(["display:flex;background:transparent;list-style:none;color:#303030;li{padding:16px;font-weight:bold;font-size:1.3rem;background:transparent;a{text-decoration:none;color:#7f8c8d;text-transform:uppercase;transition:color 0.4s;background:transparent;&:after{display:block;content:'';border-bottom:solid 3px ", ";transform:scaleX(0);transition:transform 250ms ease-in-out;}&:hover{color:", ";transition:color 0.4s;}&:hover:after{transform:scaleX(1);}}"], primaryColor, primaryColor);
 
 var Header = function Header(props) {
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_0_react__["Fragment"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82
+      lineNumber: 84
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Navbar, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83
+      lineNumber: 85
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Logo, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84
+      lineNumber: 86
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85
+      lineNumber: 87
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86
+      lineNumber: 88
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
     src: "/static/dental.png",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87
+      lineNumber: 89
     }
   }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h2", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88
+      lineNumber: 90
     }
   }, "OrtoConecta")))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Menu, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92
+      lineNumber: 94
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93
+      lineNumber: 95
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93
+      lineNumber: 95
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93
+      lineNumber: 95
     }
-  }, "Home"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
+  }, "In\xEDcio"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
+      lineNumber: 96
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
     href: "#",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
+      lineNumber: 96
     }
   }, "Quem Somos")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95
+      lineNumber: 97
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
     href: "#",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95
+      lineNumber: 97
     }
   }, "Material gratuito")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
+      lineNumber: 98
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
     href: "/especialidades",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
+      lineNumber: 98
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
+      lineNumber: 98
     }
   }, "Especialidades"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97
+      lineNumber: 99
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
     href: "#",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97
+      lineNumber: 99
     }
   }, "Contato")))));
 };
