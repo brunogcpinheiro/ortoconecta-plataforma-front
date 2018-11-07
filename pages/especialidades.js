@@ -5,6 +5,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import axios from 'axios'
 import moment from 'moment'
+import _ from 'lodash'
 
 const primaryColor = "#ffd32a";
 
@@ -88,6 +89,8 @@ const ReadMore = styled.a`
 `
 
 const Especialidades = props => {
+  const sorted = props.specialities.sort((a,b) => (a.publishedAt > b.publishedAt) ? 1 : ((b.publishedAt > a.publishedAt) ? -1 : 0)).reverse();
+  
   return (
     <Fragment>
       <Head>
@@ -97,8 +100,8 @@ const Especialidades = props => {
         <SpecialitiesWrapper>
           <h2>Especialidades</h2>
           <h4>(Fisioterapia, Nutrição e Psicologia)</h4>
-            {props.specialities
-              .sort((a, b) => a.publishedAt < b.publishedAt).map(speciality => (
+            {sorted
+              .map(speciality => (
               <Speciality key={speciality.id}>
                 <li>
                   <Link href={`/especialidades/${speciality.id}`}>
