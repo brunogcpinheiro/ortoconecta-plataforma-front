@@ -5,6 +5,8 @@ import Head from 'next/head'
 import moment from 'moment'
 import Main from '../layouts/main'
 import { FaDownload } from 'react-icons/fa'
+import _ from 'lodash'
+import Textarea from 'react-textarea-autosize';
 
 const primaryColor = "#ffd32a";
 
@@ -48,6 +50,7 @@ const Title = styled.h1`
   background: #fff;
   text-align: center;
   margin-top: 16px;
+  padding: 16px;
   
   &:hover {
     color: #000;
@@ -63,13 +66,6 @@ const Img = styled.img`
     border-radius: 50%;
     border: 2px solid ${primaryColor};
     margin-top: 16px;
-`
-
-const Article = styled.p`
-  padding: 26px;
-  background: #fff;
-  text-align: justify;
-  font-size: 1.3rem;
 `
 
 const Download = styled.a`
@@ -90,8 +86,20 @@ const Download = styled.a`
     }
 `
 
+const articleStyles = {
+    padding: '26px',
+    background: 'transparent',
+    textAlign: 'justify',
+    fontSize: '1.3rem',
+    border: 'none',
+    width: '95%',
+    height: '100%',
+    overflow: 'hidden',
+    resize: 'none',
+    boxSizing: 'content-box'
+}
+
 const Especialidade = props => {
-    console.log(props);
     const { title, author, speciality, publishedAt, author_avatar, material, article } = props.speciality
     return (
         <Fragment>
@@ -108,7 +116,7 @@ const Especialidade = props => {
                         moment(publishedAt).format("LL")
                     }</h3>
                     <Download href={`http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${material.url}`} target="blank"><FaDownload style={{ background: 'transparent', fontSize: '1.2rem', marginRight: '10px' }} /> Baixar Material</Download>
-                    <Article>{article}</Article>
+                    <Textarea disabled style={articleStyles} value={article} />
                 </SpecialityWrapper>
             </Main>
         </Fragment>

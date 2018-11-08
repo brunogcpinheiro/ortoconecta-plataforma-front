@@ -2,7 +2,7 @@ module.exports =
 
         __NEXT_REGISTER_PAGE('/home', function() {
           var comp = 
-      webpackJsonp([7],{
+      webpackJsonp([5],{
 
 /***/ "./layouts/main.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -4243,7 +4243,7 @@ var _default = GlobalStyle;
 
 /***/ }),
 
-/***/ 5:
+/***/ 4:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("./pages/home.js");
@@ -4251,7 +4251,7 @@ module.exports = __webpack_require__("./pages/home.js");
 
 /***/ })
 
-},[5])
+},[4])
           return { page: comp.default }
         })
       ;

@@ -2,7 +2,7 @@ module.exports =
 
         __NEXT_REGISTER_PAGE('/especialidades', function() {
           var comp = 
-      webpackJsonp([5],{
+      webpackJsonp([6],{
 
 /***/ "./layouts/main.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -22641,7 +22641,7 @@ var _default = GlobalStyle;
 
 /***/ }),
 
-/***/ 4:
+/***/ 5:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("./pages/especialidades.js");
@@ -22649,7 +22649,7 @@ module.exports = __webpack_require__("./pages/especialidades.js");
 
 /***/ })
 
-},[4])
+},[5])
           return { page: comp.default }
         })
       ;

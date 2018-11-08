@@ -163,10 +163,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__layouts_main__ = __webpack_require__("./layouts/main.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react_icons_fa__ = __webpack_require__("react-icons/fa");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react_icons_fa___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_react_icons_fa__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_lodash__ = __webpack_require__("lodash");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_lodash__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_react_textarea_autosize__ = __webpack_require__("react-textarea-autosize");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_react_textarea_autosize___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_react_textarea_autosize__);
 
 var _jsxFileName = "/home/ubuntu/workspace/pages/especialidade.js";
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } } function _next(value) { step("next", value); } function _throw(err) { step("throw", err); } _next(); }); }; }
+
+
 
 
 
@@ -183,22 +189,29 @@ var SpecialityWrapper = __WEBPACK_IMPORTED_MODULE_2_styled_components___default.
 var Title = __WEBPACK_IMPORTED_MODULE_2_styled_components___default.a.h1.withConfig({
   displayName: "especialidade__Title",
   componentId: "sc-1oavti5-1"
-})(["color:inherit;font-size:2.2rem;font-weight:bold;transition:color 0.2s;background:#fff;text-align:center;margin-top:16px;&:hover{color:#000;transition:color 0.2s;}"]);
+})(["color:inherit;font-size:2.2rem;font-weight:bold;transition:color 0.2s;background:#fff;text-align:center;margin-top:16px;padding:16px;&:hover{color:#000;transition:color 0.2s;}"]);
 var Img = __WEBPACK_IMPORTED_MODULE_2_styled_components___default.a.img.withConfig({
   displayName: "especialidade__Img",
   componentId: "sc-1oavti5-2"
 })(["width:150px;height:150px;object-fit:cover;object-position:top;border-radius:50%;border:2px solid ", ";margin-top:16px;"], primaryColor);
-var Article = __WEBPACK_IMPORTED_MODULE_2_styled_components___default.a.p.withConfig({
-  displayName: "especialidade__Article",
-  componentId: "sc-1oavti5-3"
-})(["padding:26px;background:#fff;text-align:justify;font-size:1.3rem;"]);
 var Download = __WEBPACK_IMPORTED_MODULE_2_styled_components___default.a.a.withConfig({
   displayName: "especialidade__Download",
-  componentId: "sc-1oavti5-4"
+  componentId: "sc-1oavti5-3"
 })(["display:flex;justify-content:center;align-items:center;padding:1em;margin-top:16px;font-weight:bold;text-decoration:none;font-size:1.1em;text-transform:uppercase;background:", ";border:2px solid ", ";&:visited,&:active,&:link{color:inherit;}"], primaryColor, primaryColor);
+var articleStyles = {
+  padding: '26px',
+  background: 'transparent',
+  textAlign: 'justify',
+  fontSize: '1.3rem',
+  border: 'none',
+  width: '95%',
+  height: '100%',
+  overflow: 'hidden',
+  resize: 'none',
+  boxSizing: 'content-box'
+};
 
 var Especialidade = function Especialidade(props) {
-  console.log(props);
   var _props$speciality = props.speciality,
       title = _props$speciality.title,
       author = _props$speciality.author,
@@ -210,56 +223,56 @@ var Especialidade = function Especialidade(props) {
   return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react__["Fragment"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97
+      lineNumber: 105
     }
   }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_next_head___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98
+      lineNumber: 106
     }
   }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99
+      lineNumber: 107
     }
   }, "Orto Conecta | ", props.speciality.title)), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__layouts_main__["a" /* default */], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101
+      lineNumber: 109
     }
   }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(SpecialityWrapper, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102
+      lineNumber: 110
     }
   }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Title, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103
+      lineNumber: 111
     }
   }, title), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Img, {
     src: "http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080".concat(author_avatar.url),
     alt: author,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104
+      lineNumber: 112
     }
   }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("h2", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105
+      lineNumber: 113
     }
   }, author, " (", speciality, ")"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("h3", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106
+      lineNumber: 114
     }
   }, "Publicado em ", (__WEBPACK_IMPORTED_MODULE_5_moment___default.a.locale('pt-br'), __WEBPACK_IMPORTED_MODULE_5_moment___default()(publishedAt).format("LL"))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Download, {
     href: "http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080".concat(material.url),
     target: "blank",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110
+      lineNumber: 118
     }
   }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7_react_icons_fa__["FaDownload"], {
     style: {
@@ -269,14 +282,17 @@ var Especialidade = function Especialidade(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110
+      lineNumber: 118
     }
-  }), " Baixar Material"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Article, {
+  }), " Baixar Material"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_9_react_textarea_autosize___default.a, {
+    disabled: true,
+    style: articleStyles,
+    value: article,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 111
+      lineNumber: 119
     }
-  }, article))));
+  }))));
 };
 
 Especialidade.getInitialProps =
@@ -498,6 +514,13 @@ module.exports = require("axios");
 
 /***/ }),
 
+/***/ "lodash":
+/***/ (function(module, exports) {
+
+module.exports = require("lodash");
+
+/***/ }),
+
 /***/ "moment":
 /***/ (function(module, exports) {
 
@@ -530,6 +553,13 @@ module.exports = require("react");
 /***/ (function(module, exports) {
 
 module.exports = require("react-icons/fa");
+
+/***/ }),
+
+/***/ "react-textarea-autosize":
+/***/ (function(module, exports) {
+
+module.exports = require("react-textarea-autosize");
 
 /***/ }),
 
