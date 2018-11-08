@@ -10,7 +10,7 @@ const Navbar = styled.div`
   align-items: center;
   justify-content: space-around;
   list-style: none;
-  background: transparent;
+  background: #fff;
   width: 100%;
   -webkit-box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
   -moz-box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);

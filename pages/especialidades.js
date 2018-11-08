@@ -5,7 +5,6 @@ import Head from 'next/head'
 import Link from 'next/link'
 import axios from 'axios'
 import moment from 'moment'
-import _ from 'lodash'
 
 const primaryColor = "#ffd32a";
 
@@ -14,7 +13,7 @@ const SpecialitiesWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 860px;
+  max-width: 80%;
   margin: 20px auto;
 
   h2 {
@@ -25,6 +24,7 @@ const SpecialitiesWrapper = styled.div`
 `
 
 const Speciality = styled.div`
+  max-width: 650px;
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -33,15 +33,21 @@ const Speciality = styled.div`
   border-radius: 10px;
   padding: 36px;
   margin-top: 36px;
+  background: #fff;
   -webkit-box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
   -moz-box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
   box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
+  
+  li {
+    background: #fff;
+  }
 
   h4 {
     font-size: 1.3rem;
     padding: 16px 0;
     color: #636e72;
     text-weight: bold;
+    background: #fff;
   }
 `
 
@@ -51,6 +57,7 @@ const Title = styled.a`
   text-decoration: underline;
   font-weight: bold;
   transition: color 0.2s;
+  background: #fff;
   
   &:hover {
     color: ${primaryColor};
@@ -61,10 +68,12 @@ const Title = styled.a`
 const Date = styled.p`
   color: #7f8c8d;
   font-style: italic;
+  background: #fff;
 `
 
 const Article = styled.p`
   padding: 16px 0 26px 0;
+  background: #fff;
 `
 
 const ReadMore = styled.a`
@@ -90,7 +99,6 @@ const ReadMore = styled.a`
 
 const Especialidades = props => {
   const sorted = props.specialities.sort((a,b) => (a.publishedAt > b.publishedAt) ? 1 : ((b.publishedAt > a.publishedAt) ? -1 : 0)).reverse();
-  
   return (
     <Fragment>
       <Head>

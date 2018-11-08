@@ -9,16 +9,18 @@
     "lodash": "^4.17.11",
     "moment": "^2.22.2",
     "next": "6.0.3",
+    "next-routes": "^1.4.2",
     "react": "16.6.0",
     "react-dom": "16.6",
+    "react-icons": "^3.2.2",
     "styled-components": "4.0.2"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "1.8.0"
   },
   "scripts": {
-    "dev": "next -H $IP -p $PORT",
+    "dev": "node server.js -H $IP -p $PORT",
     "build": "next build",
-    "start": "next start"
+    "start": "NODE_ENV=production node server.js"
   }
 }
