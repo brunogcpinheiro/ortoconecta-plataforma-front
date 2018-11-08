@@ -85,7 +85,7 @@ const Download = styled.a`
     background: ${primaryColor};
     border: 2px solid ${primaryColor};
     
-    &:visited, &:active {
+    &:visited, &:active, &:link {
         color: inherit;
     }
 `

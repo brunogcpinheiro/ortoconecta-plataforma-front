@@ -29405,7 +29405,7 @@ var Article = __WEBPACK_IMPORTED_MODULE_2_styled_components__["c" /* default */]
 var Download = __WEBPACK_IMPORTED_MODULE_2_styled_components__["c" /* default */].a.withConfig({
   displayName: "especialidade__Download",
   componentId: "sc-1oavti5-4"
-})(["display:flex;justify-content:center;align-items:center;padding:1em;margin-top:16px;font-weight:bold;text-decoration:none;font-size:1.1em;text-transform:uppercase;background:", ";border:2px solid ", ";&:visited,&:active{color:inherit;}"], primaryColor, primaryColor);
+})(["display:flex;justify-content:center;align-items:center;padding:1em;margin-top:16px;font-weight:bold;text-decoration:none;font-size:1.1em;text-transform:uppercase;background:", ";border:2px solid ", ";&:visited,&:active,&:link{color:inherit;}"], primaryColor, primaryColor);
 
 var Especialidade = function Especialidade(props) {
   console.log(props);
