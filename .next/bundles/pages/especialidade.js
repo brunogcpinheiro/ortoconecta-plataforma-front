@@ -141,6 +141,303 @@ function memoize(fn) {
 
 /***/ }),
 
+/***/ "./node_modules/autosize/dist/autosize.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+	autosize 4.0.2
+	license: MIT
+	http://www.jacklmoore.com/autosize
+*/
+(function (global, factory) {
+	if (true) {
+		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [module, exports], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	} else if (typeof exports !== "undefined") {
+		factory(module, exports);
+	} else {
+		var mod = {
+			exports: {}
+		};
+		factory(mod, mod.exports);
+		global.autosize = mod.exports;
+	}
+})(this, function (module, exports) {
+	'use strict';
+
+	var map = typeof Map === "function" ? new Map() : function () {
+		var keys = [];
+		var values = [];
+
+		return {
+			has: function has(key) {
+				return keys.indexOf(key) > -1;
+			},
+			get: function get(key) {
+				return values[keys.indexOf(key)];
+			},
+			set: function set(key, value) {
+				if (keys.indexOf(key) === -1) {
+					keys.push(key);
+					values.push(value);
+				}
+			},
+			delete: function _delete(key) {
+				var index = keys.indexOf(key);
+				if (index > -1) {
+					keys.splice(index, 1);
+					values.splice(index, 1);
+				}
+			}
+		};
+	}();
+
+	var createEvent = function createEvent(name) {
+		return new Event(name, { bubbles: true });
+	};
+	try {
+		new Event('test');
+	} catch (e) {
+		// IE does not support `new Event()`
+		createEvent = function createEvent(name) {
+			var evt = document.createEvent('Event');
+			evt.initEvent(name, true, false);
+			return evt;
+		};
+	}
+
+	function assign(ta) {
+		if (!ta || !ta.nodeName || ta.nodeName !== 'TEXTAREA' || map.has(ta)) return;
+
+		var heightOffset = null;
+		var clientWidth = null;
+		var cachedHeight = null;
+
+		function init() {
+			var style = window.getComputedStyle(ta, null);
+
+			if (style.resize === 'vertical') {
+				ta.style.resize = 'none';
+			} else if (style.resize === 'both') {
+				ta.style.resize = 'horizontal';
+			}
+
+			if (style.boxSizing === 'content-box') {
+				heightOffset = -(parseFloat(style.paddingTop) + parseFloat(style.paddingBottom));
+			} else {
+				heightOffset = parseFloat(style.borderTopWidth) + parseFloat(style.borderBottomWidth);
+			}
+			// Fix when a textarea is not on document body and heightOffset is Not a Number
+			if (isNaN(heightOffset)) {
+				heightOffset = 0;
+			}
+
+			update();
+		}
+
+		function changeOverflow(value) {
+			{
+				// Chrome/Safari-specific fix:
+				// When the textarea y-overflow is hidden, Chrome/Safari do not reflow the text to account for the space
+				// made available by removing the scrollbar. The following forces the necessary text reflow.
+				var width = ta.style.width;
+				ta.style.width = '0px';
+				// Force reflow:
+				/* jshint ignore:start */
+				ta.offsetWidth;
+				/* jshint ignore:end */
+				ta.style.width = width;
+			}
+
+			ta.style.overflowY = value;
+		}
+
+		function getParentOverflows(el) {
+			var arr = [];
+
+			while (el && el.parentNode && el.parentNode instanceof Element) {
+				if (el.parentNode.scrollTop) {
+					arr.push({
+						node: el.parentNode,
+						scrollTop: el.parentNode.scrollTop
+					});
+				}
+				el = el.parentNode;
+			}
+
+			return arr;
+		}
+
+		function resize() {
+			if (ta.scrollHeight === 0) {
+				// If the scrollHeight is 0, then the element probably has display:none or is detached from the DOM.
+				return;
+			}
+
+			var overflows = getParentOverflows(ta);
+			var docTop = document.documentElement && document.documentElement.scrollTop; // Needed for Mobile IE (ticket #240)
+
+			ta.style.height = '';
+			ta.style.height = ta.scrollHeight + heightOffset + 'px';
+
+			// used to check if an update is actually necessary on window.resize
+			clientWidth = ta.clientWidth;
+
+			// prevents scroll-position jumping
+			overflows.forEach(function (el) {
+				el.node.scrollTop = el.scrollTop;
+			});
+
+			if (docTop) {
+				document.documentElement.scrollTop = docTop;
+			}
+		}
+
+		function update() {
+			resize();
+
+			var styleHeight = Math.round(parseFloat(ta.style.height));
+			var computed = window.getComputedStyle(ta, null);
+
+			// Using offsetHeight as a replacement for computed.height in IE, because IE does not account use of border-box
+			var actualHeight = computed.boxSizing === 'content-box' ? Math.round(parseFloat(computed.height)) : ta.offsetHeight;
+
+			// The actual height not matching the style height (set via the resize method) indicates that 
+			// the max-height has been exceeded, in which case the overflow should be allowed.
+			if (actualHeight < styleHeight) {
+				if (computed.overflowY === 'hidden') {
+					changeOverflow('scroll');
+					resize();
+					actualHeight = computed.boxSizing === 'content-box' ? Math.round(parseFloat(window.getComputedStyle(ta, null).height)) : ta.offsetHeight;
+				}
+			} else {
+				// Normally keep overflow set to hidden, to avoid flash of scrollbar as the textarea expands.
+				if (computed.overflowY !== 'hidden') {
+					changeOverflow('hidden');
+					resize();
+					actualHeight = computed.boxSizing === 'content-box' ? Math.round(parseFloat(window.getComputedStyle(ta, null).height)) : ta.offsetHeight;
+				}
+			}
+
+			if (cachedHeight !== actualHeight) {
+				cachedHeight = actualHeight;
+				var evt = createEvent('autosize:resized');
+				try {
+					ta.dispatchEvent(evt);
+				} catch (err) {
+					// Firefox will throw an error on dispatchEvent for a detached element
+					// https://bugzilla.mozilla.org/show_bug.cgi?id=889376
+				}
+			}
+		}
+
+		var pageResize = function pageResize() {
+			if (ta.clientWidth !== clientWidth) {
+				update();
+			}
+		};
+
+		var destroy = function (style) {
+			window.removeEventListener('resize', pageResize, false);
+			ta.removeEventListener('input', update, false);
+			ta.removeEventListener('keyup', update, false);
+			ta.removeEventListener('autosize:destroy', destroy, false);
+			ta.removeEventListener('autosize:update', update, false);
+
+			Object.keys(style).forEach(function (key) {
+				ta.style[key] = style[key];
+			});
+
+			map.delete(ta);
+		}.bind(ta, {
+			height: ta.style.height,
+			resize: ta.style.resize,
+			overflowY: ta.style.overflowY,
+			overflowX: ta.style.overflowX,
+			wordWrap: ta.style.wordWrap
+		});
+
+		ta.addEventListener('autosize:destroy', destroy, false);
+
+		// IE9 does not fire onpropertychange or oninput for deletions,
+		// so binding to onkeyup to catch most of those events.
+		// There is no way that I know of to detect something like 'cut' in IE9.
+		if ('onpropertychange' in ta && 'oninput' in ta) {
+			ta.addEventListener('keyup', update, false);
+		}
+
+		window.addEventListener('resize', pageResize, false);
+		ta.addEventListener('input', update, false);
+		ta.addEventListener('autosize:update', update, false);
+		ta.style.overflowX = 'hidden';
+		ta.style.wordWrap = 'break-word';
+
+		map.set(ta, {
+			destroy: destroy,
+			update: update
+		});
+
+		init();
+	}
+
+	function destroy(ta) {
+		var methods = map.get(ta);
+		if (methods) {
+			methods.destroy();
+		}
+	}
+
+	function update(ta) {
+		var methods = map.get(ta);
+		if (methods) {
+			methods.update();
+		}
+	}
+
+	var autosize = null;
+
+	// Do nothing in Node.js environment and IE8 (or lower)
+	if (typeof window === 'undefined' || typeof window.getComputedStyle !== 'function') {
+		autosize = function autosize(el) {
+			return el;
+		};
+		autosize.destroy = function (el) {
+			return el;
+		};
+		autosize.update = function (el) {
+			return el;
+		};
+	} else {
+		autosize = function autosize(el, options) {
+			if (el) {
+				Array.prototype.forEach.call(el.length ? el : [el], function (x) {
+					return assign(x, options);
+				});
+			}
+			return el;
+		};
+		autosize.destroy = function (el) {
+			if (el) {
+				Array.prototype.forEach.call(el.length ? el : [el], destroy);
+			}
+			return el;
+		};
+		autosize.update = function (el) {
+			if (el) {
+				Array.prototype.forEach.call(el.length ? el : [el], update);
+			}
+			return el;
+		};
+	}
+
+	exports.default = autosize;
+	module.exports = exports['default'];
+});
+
+/***/ }),
+
 /***/ "./node_modules/axios/index.js":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1709,6 +2006,40 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/computed-style/dist/computedStyle.commonjs.js":
+/***/ (function(module, exports) {
+
+// This code has been refactored for 140 bytes
+// You can see the original here: https://github.com/twolfson/computedStyle/blob/04cd1da2e30fa45844f95f5cb1ac898e9b9ef050/lib/computedStyle.js
+var computedStyle = function (el, prop, getComputedStyle) {
+  getComputedStyle = window.getComputedStyle;
+
+  // In one fell swoop
+  return (
+    // If we have getComputedStyle
+    getComputedStyle ?
+      // Query it
+      // TODO: From CSS-Query notes, we might need (node, null) for FF
+      getComputedStyle(el) :
+
+    // Otherwise, we are in IE and use currentStyle
+      el.currentStyle
+  )[
+    // Switch to camelCase for CSSOM
+    // DEV: Grabbed from jQuery
+    // https://github.com/jquery/jquery/blob/1.9-stable/src/css.js#L191-L194
+    // https://github.com/jquery/jquery/blob/1.9-stable/src/core.js#L593-L597
+    prop.replace(/-(\w)/gi, function (word, letter) {
+      return letter.toUpperCase();
+    })
+  ];
+};
+
+module.exports = computedStyle;
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/library/fn/json/stringify.js":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1947,6 +2278,110 @@ function isBuffer (obj) {
 function isSlowBuffer (obj) {
   return typeof obj.readFloatLE === 'function' && typeof obj.slice === 'function' && isBuffer(obj.slice(0, 0))
 }
+
+
+/***/ }),
+
+/***/ "./node_modules/line-height/lib/line-height.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Load in dependencies
+var computedStyle = __webpack_require__("./node_modules/computed-style/dist/computedStyle.commonjs.js");
+
+/**
+ * Calculate the `line-height` of a given node
+ * @param {HTMLElement} node Element to calculate line height of. Must be in the DOM.
+ * @returns {Number} `line-height` of the element in pixels
+ */
+function lineHeight(node) {
+  // Grab the line-height via style
+  var lnHeightStr = computedStyle(node, 'line-height');
+  var lnHeight = parseFloat(lnHeightStr, 10);
+
+  // If the lineHeight did not contain a unit (i.e. it was numeric), convert it to ems (e.g. '2.3' === '2.3em')
+  if (lnHeightStr === lnHeight + '') {
+    // Save the old lineHeight style and update the em unit to the element
+    var _lnHeightStyle = node.style.lineHeight;
+    node.style.lineHeight = lnHeightStr + 'em';
+
+    // Calculate the em based height
+    lnHeightStr = computedStyle(node, 'line-height');
+    lnHeight = parseFloat(lnHeightStr, 10);
+
+    // Revert the lineHeight style
+    if (_lnHeightStyle) {
+      node.style.lineHeight = _lnHeightStyle;
+    } else {
+      delete node.style.lineHeight;
+    }
+  }
+
+  // If the lineHeight is in `pt`, convert it to pixels (4px for 3pt)
+  // DEV: `em` units are converted to `pt` in IE6
+  // Conversion ratio from https://developer.mozilla.org/en-US/docs/Web/CSS/length
+  if (lnHeightStr.indexOf('pt') !== -1) {
+    lnHeight *= 4;
+    lnHeight /= 3;
+  // Otherwise, if the lineHeight is in `mm`, convert it to pixels (96px for 25.4mm)
+  } else if (lnHeightStr.indexOf('mm') !== -1) {
+    lnHeight *= 96;
+    lnHeight /= 25.4;
+  // Otherwise, if the lineHeight is in `cm`, convert it to pixels (96px for 2.54cm)
+  } else if (lnHeightStr.indexOf('cm') !== -1) {
+    lnHeight *= 96;
+    lnHeight /= 2.54;
+  // Otherwise, if the lineHeight is in `in`, convert it to pixels (96px for 1in)
+  } else if (lnHeightStr.indexOf('in') !== -1) {
+    lnHeight *= 96;
+  // Otherwise, if the lineHeight is in `pc`, convert it to pixels (12pt for 1pc)
+  } else if (lnHeightStr.indexOf('pc') !== -1) {
+    lnHeight *= 16;
+  }
+
+  // Continue our computation
+  lnHeight = Math.round(lnHeight);
+
+  // If the line-height is "normal", calculate by font-size
+  if (lnHeightStr === 'normal') {
+    // Create a temporary node
+    var nodeName = node.nodeName;
+    var _node = document.createElement(nodeName);
+    _node.innerHTML = '&nbsp;';
+
+    // If we have a text area, reset it to only 1 row
+    // https://github.com/twolfson/line-height/issues/4
+    if (nodeName.toUpperCase() === 'TEXTAREA') {
+      _node.setAttribute('rows', '1');
+    }
+
+    // Set the font-size of the element
+    var fontSizeStr = computedStyle(node, 'font-size');
+    _node.style.fontSize = fontSizeStr;
+
+    // Remove default padding/border which can affect offset height
+    // https://github.com/twolfson/line-height/issues/4
+    // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetHeight
+    _node.style.padding = '0px';
+    _node.style.border = '0px';
+
+    // Append it to the body
+    var body = document.body;
+    body.appendChild(_node);
+
+    // Assume the line height of the element is the height
+    var height = _node.offsetHeight;
+    lnHeight = height;
+
+    // Remove our child from the DOM
+    body.removeChild(_node);
+  }
+
+  // Return the calculated height
+  return lnHeight;
+}
+
+// Export lineHeight
+module.exports = lineHeight;
 
 
 /***/ }),
@@ -36512,6 +36947,154 @@ module.exports = exports['default'];
 
 /***/ }),
 
+/***/ "./node_modules/react-autosize-textarea/lib/TextareaAutosize.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __assign = (this && this.__assign) || Object.assign || function(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+            t[p] = s[p];
+    }
+    return t;
+};
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
+            t[p[i]] = s[p[i]];
+    return t;
+};
+exports.__esModule = true;
+var React = __webpack_require__("./node_modules/react/cjs/react.development.js");
+var PropTypes = __webpack_require__("./node_modules/prop-types/index.js");
+var autosize = __webpack_require__("./node_modules/autosize/dist/autosize.js");
+var _getLineHeight = __webpack_require__("./node_modules/line-height/lib/line-height.js");
+var getLineHeight = _getLineHeight;
+var UPDATE = 'autosize:update';
+var DESTROY = 'autosize:destroy';
+var RESIZED = 'autosize:resized';
+/**
+ * A light replacement for built-in textarea component
+ * which automaticaly adjusts its height to match the content
+ */
+var TextareaAutosize = /** @class */ (function (_super) {
+    __extends(TextareaAutosize, _super);
+    function TextareaAutosize() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = {
+            lineHeight: null
+        };
+        _this.dispatchEvent = function (EVENT_TYPE) {
+            var event = document.createEvent('Event');
+            event.initEvent(EVENT_TYPE, true, false);
+            _this.textarea.dispatchEvent(event);
+        };
+        _this.updateLineHeight = function () {
+            _this.setState({
+                lineHeight: getLineHeight(_this.textarea)
+            });
+        };
+        _this.onChange = function (e) {
+            var onChange = _this.props.onChange;
+            _this.currentValue = e.currentTarget.value;
+            onChange && onChange(e);
+        };
+        _this.saveDOMNodeRef = function (ref) {
+            var innerRef = _this.props.innerRef;
+            if (innerRef) {
+                innerRef(ref);
+            }
+            _this.textarea = ref;
+        };
+        _this.getLocals = function () {
+            var _a = _this, _b = _a.props, onResize = _b.onResize, maxRows = _b.maxRows, onChange = _b.onChange, style = _b.style, innerRef = _b.innerRef, props = __rest(_b, ["onResize", "maxRows", "onChange", "style", "innerRef"]), lineHeight = _a.state.lineHeight, saveDOMNodeRef = _a.saveDOMNodeRef;
+            var maxHeight = maxRows && lineHeight ? lineHeight * maxRows : null;
+            return __assign({}, props, { saveDOMNodeRef: saveDOMNodeRef, style: maxHeight ? __assign({}, style, { maxHeight: maxHeight }) : style, onChange: _this.onChange });
+        };
+        return _this;
+    }
+    TextareaAutosize.prototype.componentDidMount = function () {
+        var _this = this;
+        var _a = this.props, onResize = _a.onResize, maxRows = _a.maxRows, async = _a.async;
+        if (typeof maxRows === 'number') {
+            this.updateLineHeight();
+        }
+        if (typeof maxRows === "number" || async) {
+            /*
+              the defer is needed to:
+                - force "autosize" to activate the scrollbar when this.props.maxRows is passed
+                - support StyledComponents (see #71)
+            */
+            setTimeout(function () { return autosize(_this.textarea); });
+        }
+        else {
+            autosize(this.textarea);
+        }
+        if (onResize) {
+            this.textarea.addEventListener(RESIZED, onResize);
+        }
+    };
+    TextareaAutosize.prototype.componentWillUnmount = function () {
+        var onResize = this.props.onResize;
+        if (onResize) {
+            this.textarea.removeEventListener(RESIZED, onResize);
+        }
+        this.dispatchEvent(DESTROY);
+    };
+    TextareaAutosize.prototype.render = function () {
+        var _a = this.getLocals(), children = _a.children, saveDOMNodeRef = _a.saveDOMNodeRef, locals = __rest(_a, ["children", "saveDOMNodeRef"]);
+        return (React.createElement("textarea", __assign({}, locals, { ref: saveDOMNodeRef }), children));
+    };
+    TextareaAutosize.prototype.componentDidUpdate = function (prevProps) {
+        if (this.props.value !== this.currentValue || this.props.rows !== prevProps.rows) {
+            this.dispatchEvent(UPDATE);
+        }
+    };
+    TextareaAutosize.defaultProps = {
+        rows: 1,
+        async: false
+    };
+    TextareaAutosize.propTypes = {
+        rows: PropTypes.number,
+        maxRows: PropTypes.number,
+        onResize: PropTypes.func,
+        innerRef: PropTypes.func,
+        async: PropTypes.bool
+    };
+    return TextareaAutosize;
+}(React.Component));
+exports.TextareaAutosize = TextareaAutosize;
+
+
+/***/ }),
+
+/***/ "./node_modules/react-autosize-textarea/lib/index.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+var TextareaAutosize_1 = __webpack_require__("./node_modules/react-autosize-textarea/lib/TextareaAutosize.js");
+exports["default"] = TextareaAutosize_1.TextareaAutosize;
+
+
+/***/ }),
+
 /***/ "./node_modules/react-icons/fa/index.js":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -43888,424 +44471,6 @@ if (false) {
 
 /***/ }),
 
-/***/ "./node_modules/react-textarea-autosize/dist/react-textarea-autosize.esm.browser.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_esm_extends__ = __webpack_require__("./node_modules/react-textarea-autosize/node_modules/@babel/runtime/helpers/esm/extends.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__babel_runtime_helpers_esm_objectWithoutPropertiesLoose__ = __webpack_require__("./node_modules/react-textarea-autosize/node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__babel_runtime_helpers_esm_inheritsLoose__ = __webpack_require__("./node_modules/react-textarea-autosize/node_modules/@babel/runtime/helpers/esm/inheritsLoose.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__babel_runtime_helpers_esm_assertThisInitialized__ = __webpack_require__("./node_modules/react-textarea-autosize/node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react__ = __webpack_require__("./node_modules/react/cjs/react.development.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_prop_types__ = __webpack_require__("./node_modules/prop-types/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_prop_types__);
-
-
-
-
-
-
-
-var isIE = !!document.documentElement.currentStyle;
-var HIDDEN_TEXTAREA_STYLE = {
-  'min-height': '0',
-  'max-height': 'none',
-  height: '0',
-  visibility: 'hidden',
-  overflow: 'hidden',
-  position: 'absolute',
-  'z-index': '-1000',
-  top: '0',
-  right: '0'
-};
-var SIZING_STYLE = ['letter-spacing', 'line-height', 'font-family', 'font-weight', 'font-size', 'font-style', 'tab-size', 'text-rendering', 'text-transform', 'width', 'text-indent', 'padding-top', 'padding-right', 'padding-bottom', 'padding-left', 'border-top-width', 'border-right-width', 'border-bottom-width', 'border-left-width', 'box-sizing'];
-var computedStyleCache = {};
-var hiddenTextarea = document.createElement('textarea');
-
-var forceHiddenStyles = function forceHiddenStyles(node) {
-  Object.keys(HIDDEN_TEXTAREA_STYLE).forEach(function (key) {
-    node.style.setProperty(key, HIDDEN_TEXTAREA_STYLE[key], 'important');
-  });
-};
-
-{
-  forceHiddenStyles(hiddenTextarea);
-}
-
-function calculateNodeHeight(uiTextNode, uid, useCache, minRows, maxRows) {
-  if (useCache === void 0) {
-    useCache = false;
-  }
-
-  if (minRows === void 0) {
-    minRows = null;
-  }
-
-  if (maxRows === void 0) {
-    maxRows = null;
-  }
-
-  if (hiddenTextarea.parentNode === null) {
-    document.body.appendChild(hiddenTextarea);
-  } // Copy all CSS properties that have an impact on the height of the content in
-  // the textbox
-
-
-  var nodeStyling = calculateNodeStyling(uiTextNode, uid, useCache);
-
-  if (nodeStyling === null) {
-    return null;
-  }
-
-  var paddingSize = nodeStyling.paddingSize,
-      borderSize = nodeStyling.borderSize,
-      boxSizing = nodeStyling.boxSizing,
-      sizingStyle = nodeStyling.sizingStyle; // Need to have the overflow attribute to hide the scrollbar otherwise
-  // text-lines will not calculated properly as the shadow will technically be
-  // narrower for content
-
-  Object.keys(sizingStyle).forEach(function (key) {
-    hiddenTextarea.style[key] = sizingStyle[key];
-  });
-  forceHiddenStyles(hiddenTextarea);
-  hiddenTextarea.value = uiTextNode.value || uiTextNode.placeholder || 'x';
-  var minHeight = -Infinity;
-  var maxHeight = Infinity;
-  var height = hiddenTextarea.scrollHeight;
-
-  if (boxSizing === 'border-box') {
-    // border-box: add border, since height = content + padding + border
-    height = height + borderSize;
-  } else if (boxSizing === 'content-box') {
-    // remove padding, since height = content
-    height = height - paddingSize;
-  } // measure height of a textarea with a single row
-
-
-  hiddenTextarea.value = 'x';
-  var singleRowHeight = hiddenTextarea.scrollHeight - paddingSize; // Stores the value's rows count rendered in `hiddenTextarea`,
-  // regardless if `maxRows` or `minRows` props are passed
-
-  var valueRowCount = Math.floor(height / singleRowHeight);
-
-  if (minRows !== null) {
-    minHeight = singleRowHeight * minRows;
-
-    if (boxSizing === 'border-box') {
-      minHeight = minHeight + paddingSize + borderSize;
-    }
-
-    height = Math.max(minHeight, height);
-  }
-
-  if (maxRows !== null) {
-    maxHeight = singleRowHeight * maxRows;
-
-    if (boxSizing === 'border-box') {
-      maxHeight = maxHeight + paddingSize + borderSize;
-    }
-
-    height = Math.min(maxHeight, height);
-  }
-
-  var rowCount = Math.floor(height / singleRowHeight);
-  return {
-    height: height,
-    minHeight: minHeight,
-    maxHeight: maxHeight,
-    rowCount: rowCount,
-    valueRowCount: valueRowCount
-  };
-}
-
-function calculateNodeStyling(node, uid, useCache) {
-  if (useCache === void 0) {
-    useCache = false;
-  }
-
-  if (useCache && computedStyleCache[uid]) {
-    return computedStyleCache[uid];
-  }
-
-  var style = window.getComputedStyle(node);
-
-  if (style === null) {
-    return null;
-  }
-
-  var sizingStyle = SIZING_STYLE.reduce(function (obj, name) {
-    obj[name] = style.getPropertyValue(name);
-    return obj;
-  }, {});
-  var boxSizing = sizingStyle['box-sizing']; // probably node is detached from DOM, can't read computed dimensions
-
-  if (boxSizing === '') {
-    return null;
-  } // IE (Edge has already correct behaviour) returns content width as computed width
-  // so we need to add manually padding and border widths
-
-
-  if (isIE && boxSizing === 'border-box') {
-    sizingStyle.width = parseFloat(sizingStyle.width) + parseFloat(style['border-right-width']) + parseFloat(style['border-left-width']) + parseFloat(style['padding-right']) + parseFloat(style['padding-left']) + 'px';
-  }
-
-  var paddingSize = parseFloat(sizingStyle['padding-bottom']) + parseFloat(sizingStyle['padding-top']);
-  var borderSize = parseFloat(sizingStyle['border-bottom-width']) + parseFloat(sizingStyle['border-top-width']);
-  var nodeInfo = {
-    sizingStyle: sizingStyle,
-    paddingSize: paddingSize,
-    borderSize: borderSize,
-    boxSizing: boxSizing
-  };
-
-  if (useCache) {
-    computedStyleCache[uid] = nodeInfo;
-  }
-
-  return nodeInfo;
-}
-
-var purgeCache = function purgeCache(uid) {
-  delete computedStyleCache[uid];
-};
-
-var noop = function noop() {};
-
-var uid = 0;
-
-var TextareaAutosize =
-/*#__PURE__*/
-function (_React$Component) {
-  Object(__WEBPACK_IMPORTED_MODULE_2__babel_runtime_helpers_esm_inheritsLoose__["a" /* default */])(TextareaAutosize, _React$Component);
-
-  function TextareaAutosize(props) {
-    var _this;
-
-    _this = _React$Component.call(this, props) || this;
-
-    _this._onRef = function (node) {
-      _this._ref = node;
-
-      _this.props.inputRef(node);
-    };
-
-    _this._onChange = function (event) {
-      if (!_this._controlled) {
-        _this._resizeComponent();
-      }
-
-      _this.props.onChange(event, Object(__WEBPACK_IMPORTED_MODULE_3__babel_runtime_helpers_esm_assertThisInitialized__["a" /* default */])(Object(__WEBPACK_IMPORTED_MODULE_3__babel_runtime_helpers_esm_assertThisInitialized__["a" /* default */])(_this)));
-    };
-
-    _this._resizeComponent = function (callback) {
-      if (callback === void 0) {
-        callback = noop;
-      }
-
-      var nodeHeight = calculateNodeHeight(_this._ref, _this._uid, _this.props.useCacheForDOMMeasurements, _this.props.minRows, _this.props.maxRows);
-
-      if (nodeHeight === null) {
-        callback();
-        return;
-      }
-
-      var height = nodeHeight.height,
-          minHeight = nodeHeight.minHeight,
-          maxHeight = nodeHeight.maxHeight,
-          rowCount = nodeHeight.rowCount,
-          valueRowCount = nodeHeight.valueRowCount;
-      _this.rowCount = rowCount;
-      _this.valueRowCount = valueRowCount;
-
-      if (_this.state.height !== height || _this.state.minHeight !== minHeight || _this.state.maxHeight !== maxHeight) {
-        _this.setState({
-          height: height,
-          minHeight: minHeight,
-          maxHeight: maxHeight
-        }, callback);
-
-        return;
-      }
-
-      callback();
-    };
-
-    _this.state = {
-      height: props.style && props.style.height || 0,
-      minHeight: -Infinity,
-      maxHeight: Infinity
-    };
-    _this._uid = uid++;
-    _this._controlled = props.value !== undefined;
-    _this._resizeLock = false;
-    return _this;
-  }
-
-  var _proto = TextareaAutosize.prototype;
-
-  _proto.render = function render() {
-    var _this$props = this.props,
-        _inputRef = _this$props.inputRef,
-        _maxRows = _this$props.maxRows,
-        _minRows = _this$props.minRows,
-        _onHeightChange = _this$props.onHeightChange,
-        _useCacheForDOMMeasurements = _this$props.useCacheForDOMMeasurements,
-        props = Object(__WEBPACK_IMPORTED_MODULE_1__babel_runtime_helpers_esm_objectWithoutPropertiesLoose__["a" /* default */])(_this$props, ["inputRef", "maxRows", "minRows", "onHeightChange", "useCacheForDOMMeasurements"]);
-
-    props.style = Object(__WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_esm_extends__["a" /* default */])({}, props.style, {
-      height: this.state.height
-    });
-    var maxHeight = Math.max(props.style.maxHeight || Infinity, this.state.maxHeight);
-
-    if (maxHeight < this.state.height) {
-      props.style.overflow = 'hidden';
-    }
-
-    return __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement("textarea", Object(__WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_esm_extends__["a" /* default */])({}, props, {
-      onChange: this._onChange,
-      ref: this._onRef
-    }));
-  };
-
-  _proto.componentDidMount = function componentDidMount() {
-    var _this2 = this;
-
-    this._resizeComponent(); // Working around Firefox bug which runs resize listeners even when other JS is running at the same moment
-    // causing competing rerenders (due to setState in the listener) in React.
-    // More can be found here - facebook/react#6324
-
-
-    this._resizeListener = function () {
-      if (_this2._resizeLock) {
-        return;
-      }
-
-      _this2._resizeLock = true;
-
-      _this2._resizeComponent(function () {
-        _this2._resizeLock = false;
-      });
-    };
-
-    window.addEventListener('resize', this._resizeListener);
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps, prevState) {
-    if (prevProps !== this.props) {
-      this._resizeComponent();
-    }
-
-    if (this.state.height !== prevState.height) {
-      this.props.onHeightChange(this.state.height, this);
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    window.removeEventListener('resize', this._resizeListener);
-    purgeCache(this._uid);
-  };
-
-  return TextareaAutosize;
-}(__WEBPACK_IMPORTED_MODULE_4_react___default.a.Component);
-
-TextareaAutosize.defaultProps = {
-  inputRef: noop,
-  onChange: noop,
-  onHeightChange: noop,
-  useCacheForDOMMeasurements: false
-};
- true ? TextareaAutosize.propTypes = {
-  inputRef: __WEBPACK_IMPORTED_MODULE_5_prop_types___default.a.func,
-  maxRows: __WEBPACK_IMPORTED_MODULE_5_prop_types___default.a.number,
-  minRows: __WEBPACK_IMPORTED_MODULE_5_prop_types___default.a.number,
-  onChange: __WEBPACK_IMPORTED_MODULE_5_prop_types___default.a.func,
-  onHeightChange: __WEBPACK_IMPORTED_MODULE_5_prop_types___default.a.func,
-  style: __WEBPACK_IMPORTED_MODULE_5_prop_types___default.a.object,
-  useCacheForDOMMeasurements: __WEBPACK_IMPORTED_MODULE_5_prop_types___default.a.bool,
-  value: __WEBPACK_IMPORTED_MODULE_5_prop_types___default.a.string
-} : void 0;
-
-/* harmony default export */ __webpack_exports__["a"] = (TextareaAutosize);
-
-
-/***/ }),
-
-/***/ "./node_modules/react-textarea-autosize/node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = _assertThisInitialized;
-function _assertThisInitialized(self) {
-  if (self === void 0) {
-    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  }
-
-  return self;
-}
-
-/***/ }),
-
-/***/ "./node_modules/react-textarea-autosize/node_modules/@babel/runtime/helpers/esm/extends.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = _extends;
-function _extends() {
-  _extends = Object.assign || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-
-    return target;
-  };
-
-  return _extends.apply(this, arguments);
-}
-
-/***/ }),
-
-/***/ "./node_modules/react-textarea-autosize/node_modules/@babel/runtime/helpers/esm/inheritsLoose.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = _inheritsLoose;
-function _inheritsLoose(subClass, superClass) {
-  subClass.prototype = Object.create(superClass.prototype);
-  subClass.prototype.constructor = subClass;
-  subClass.__proto__ = superClass;
-}
-
-/***/ }),
-
-/***/ "./node_modules/react-textarea-autosize/node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = _objectWithoutPropertiesLoose;
-function _objectWithoutPropertiesLoose(source, excluded) {
-  if (source == null) return {};
-  var target = {};
-  var sourceKeys = Object.keys(source);
-  var key, i;
-
-  for (i = 0; i < sourceKeys.length; i++) {
-    key = sourceKeys[i];
-    if (excluded.indexOf(key) >= 0) continue;
-    target[key] = source[key];
-  }
-
-  return target;
-}
-
-/***/ }),
-
 /***/ "./node_modules/styled-components/dist/styled-components.browser.esm.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -46903,7 +47068,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react_icons_fa___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_react_icons_fa__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_lodash__ = __webpack_require__("./node_modules/lodash/lodash.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_lodash__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_react_textarea_autosize__ = __webpack_require__("./node_modules/react-textarea-autosize/dist/react-textarea-autosize.esm.browser.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_react_autosize_textarea__ = __webpack_require__("./node_modules/react-autosize-textarea/lib/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_react_autosize_textarea___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_react_autosize_textarea__);
 
 var _jsxFileName = "/home/ubuntu/workspace/pages/especialidade.js";
 
@@ -46941,18 +47107,10 @@ var Download = __WEBPACK_IMPORTED_MODULE_2_styled_components__["c" /* default */
   displayName: "especialidade__Download",
   componentId: "sc-1oavti5-3"
 })(["display:flex;justify-content:center;align-items:center;padding:1em;margin-top:16px;font-weight:bold;text-decoration:none;font-size:1.1em;text-transform:uppercase;background:", ";border:2px solid ", ";&:visited,&:active,&:link{color:inherit;}"], primaryColor, primaryColor);
-var articleStyles = {
-  padding: '26px',
-  background: 'transparent',
-  textAlign: 'justify',
-  fontSize: '1.3rem',
-  border: 'none',
-  width: '95%',
-  height: '100%',
-  overflow: 'hidden',
-  resize: 'none',
-  boxSizing: 'content-box'
-};
+var StyledTextarea = Object(__WEBPACK_IMPORTED_MODULE_2_styled_components__["c" /* default */])(__WEBPACK_IMPORTED_MODULE_9_react_autosize_textarea___default.a).withConfig({
+  displayName: "especialidade__StyledTextarea",
+  componentId: "sc-1oavti5-4"
+})(["padding:26px;background:transparent;text-align:justify;font-size:1.3rem;border:none;width:90%;height:600px;overflow:hidden;resize:none;"]);
 
 var Especialidade = function Especialidade(props) {
   var _props$speciality = props.speciality,
@@ -46966,56 +47124,56 @@ var Especialidade = function Especialidade(props) {
   return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react__["Fragment"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105
+      lineNumber: 104
     }
   }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_next_head___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106
+      lineNumber: 105
     }
   }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107
+      lineNumber: 106
     }
   }, "Orto Conecta | ", props.speciality.title)), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__layouts_main__["a" /* default */], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109
+      lineNumber: 108
     }
   }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(SpecialityWrapper, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110
+      lineNumber: 109
     }
   }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Title, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 111
+      lineNumber: 110
     }
   }, title), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Img, {
     src: "http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080".concat(author_avatar.url),
     alt: author,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 112
+      lineNumber: 111
     }
   }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("h2", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113
+      lineNumber: 112
     }
   }, author, " (", speciality, ")"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("h3", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114
+      lineNumber: 113
     }
   }, "Publicado em ", (__WEBPACK_IMPORTED_MODULE_5_moment___default.a.locale('pt-br'), __WEBPACK_IMPORTED_MODULE_5_moment___default()(publishedAt).format("LL"))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Download, {
     href: "http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080".concat(material.url),
     target: "blank",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 118
+      lineNumber: 117
     }
   }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7_react_icons_fa__["FaDownload"], {
     style: {
@@ -47025,15 +47183,15 @@ var Especialidade = function Especialidade(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 118
+      lineNumber: 117
     }
-  }), " Baixar Material"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_9_react_textarea_autosize__["a" /* default */], {
+  }), " Baixar Material"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(StyledTextarea, {
     disabled: true,
-    style: articleStyles,
-    value: article,
+    async: true,
+    defaultValue: article,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 119
+      lineNumber: 118
     }
   }))));
 };
@@ -47090,7 +47248,7 @@ var _default = Especialidade;
   reactHotLoader.register(Title, "Title", "/home/ubuntu/workspace/pages/especialidade.js");
   reactHotLoader.register(Img, "Img", "/home/ubuntu/workspace/pages/especialidade.js");
   reactHotLoader.register(Download, "Download", "/home/ubuntu/workspace/pages/especialidade.js");
-  reactHotLoader.register(articleStyles, "articleStyles", "/home/ubuntu/workspace/pages/especialidade.js");
+  reactHotLoader.register(StyledTextarea, "StyledTextarea", "/home/ubuntu/workspace/pages/especialidade.js");
   reactHotLoader.register(Especialidade, "Especialidade", "/home/ubuntu/workspace/pages/especialidade.js");
   reactHotLoader.register(_default, "default", "/home/ubuntu/workspace/pages/especialidade.js");
   leaveModule(module);

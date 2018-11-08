@@ -6,7 +6,7 @@ import moment from 'moment'
 import Main from '../layouts/main'
 import { FaDownload } from 'react-icons/fa'
 import _ from 'lodash'
-import Textarea from 'react-textarea-autosize';
+import TextareaAutosize from 'react-autosize-textarea'
 
 const primaryColor = "#ffd32a";
 
@@ -86,18 +86,17 @@ const Download = styled.a`
     }
 `
 
-const articleStyles = {
-    padding: '26px',
-    background: 'transparent',
-    textAlign: 'justify',
-    fontSize: '1.3rem',
-    border: 'none',
-    width: '95%',
-    height: '100%',
-    overflow: 'hidden',
-    resize: 'none',
-    boxSizing: 'content-box'
-}
+const StyledTextarea = styled(TextareaAutosize)`
+    padding: 26px;
+    background: transparent;
+    text-align: justify;
+    font-size: 1.3rem;
+    border: none;
+    width: 90%;
+    height: 600px;
+    overflow: hidden;
+    resize: none;   
+`
 
 const Especialidade = props => {
     const { title, author, speciality, publishedAt, author_avatar, material, article } = props.speciality
@@ -116,7 +115,11 @@ const Especialidade = props => {
                         moment(publishedAt).format("LL")
                     }</h3>
                     <Download href={`http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${material.url}`} target="blank"><FaDownload style={{ background: 'transparent', fontSize: '1.2rem', marginRight: '10px' }} /> Baixar Material</Download>
-                    <Textarea disabled style={articleStyles} value={article} />
+                    <StyledTextarea 
+                        disabled
+                        async
+                        defaultValue={article} 
+                    />
                 </SpecialityWrapper>
             </Main>
         </Fragment>

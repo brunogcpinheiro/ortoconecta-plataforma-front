@@ -67,7 +67,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -143,185 +143,134 @@ var _jsxFileName = "/home/ubuntu/workspace/layouts/main.js";
 
 /***/ }),
 
-/***/ "./pages/especialidade.js":
+/***/ "./pages/index.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__ = __webpack_require__("@babel/runtime/regenerator");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__("react");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_styled_components__ = __webpack_require__("styled-components");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_styled_components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_styled_components__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_axios__ = __webpack_require__("axios");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_axios__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_next_head__ = __webpack_require__("next/head");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_next_head___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_next_head__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_moment__ = __webpack_require__("moment");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_moment__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__layouts_main__ = __webpack_require__("./layouts/main.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react_icons_fa__ = __webpack_require__("react-icons/fa");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react_icons_fa___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_react_icons_fa__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_lodash__ = __webpack_require__("lodash");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_lodash__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_react_autosize_textarea__ = __webpack_require__("react-autosize-textarea");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_react_autosize_textarea___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_react_autosize_textarea__);
-
-var _jsxFileName = "/home/ubuntu/workspace/pages/especialidade.js";
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } } function _next(value) { step("next", value); } function _throw(err) { step("throw", err); } _next(); }); }; }
-
-
-
-
-
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_styled_components__ = __webpack_require__("styled-components");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_styled_components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_styled_components__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__layouts_main__ = __webpack_require__("./layouts/main.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_next_head__ = __webpack_require__("next/head");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_next_head___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_next_head__);
+var _jsxFileName = "/home/ubuntu/workspace/pages/index.js";
 
 
 
 
 var primaryColor = "#ffd32a";
-var SpecialityWrapper = __WEBPACK_IMPORTED_MODULE_2_styled_components___default.a.div.withConfig({
-  displayName: "especialidade__SpecialityWrapper",
-  componentId: "sc-1oavti5-0"
-})(["max-width:80%;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;margin:50px auto;background:#fff;border:1px solid #ccc;border-radius:10px;-webkit-box-shadow:0px 3px 5px 0px rgba(184,184,184,1);-moz-box-shadow:0px 3px 5px 0px rgba(184,184,184,1);box-shadow:0px 3px 5px 0px rgba(184,184,184,1);h2,h3{background:#fff;}h2{font-size:1.3rem;padding:16px 0;color:#636e72;text-weight:bold;}h3{color:#7f8c8d;font-style:italic;}"]);
-var Title = __WEBPACK_IMPORTED_MODULE_2_styled_components___default.a.h1.withConfig({
-  displayName: "especialidade__Title",
-  componentId: "sc-1oavti5-1"
-})(["color:inherit;font-size:2.2rem;font-weight:bold;transition:color 0.2s;background:#fff;text-align:center;margin-top:16px;padding:16px;&:hover{color:#000;transition:color 0.2s;}"]);
-var Img = __WEBPACK_IMPORTED_MODULE_2_styled_components___default.a.img.withConfig({
-  displayName: "especialidade__Img",
-  componentId: "sc-1oavti5-2"
-})(["width:150px;height:150px;object-fit:cover;object-position:top;border-radius:50%;border:2px solid ", ";margin-top:16px;"], primaryColor);
-var Download = __WEBPACK_IMPORTED_MODULE_2_styled_components___default.a.a.withConfig({
-  displayName: "especialidade__Download",
-  componentId: "sc-1oavti5-3"
-})(["display:flex;justify-content:center;align-items:center;padding:1em;margin-top:16px;font-weight:bold;text-decoration:none;font-size:1.1em;text-transform:uppercase;background:", ";border:2px solid ", ";&:visited,&:active,&:link{color:inherit;}"], primaryColor, primaryColor);
-var StyledTextarea = __WEBPACK_IMPORTED_MODULE_2_styled_components___default()(__WEBPACK_IMPORTED_MODULE_9_react_autosize_textarea___default.a).withConfig({
-  displayName: "especialidade__StyledTextarea",
-  componentId: "sc-1oavti5-4"
-})(["padding:26px;background:transparent;text-align:justify;font-size:1.3rem;border:none;width:90%;height:600px;overflow:hidden;resize:none;"]);
+var Hero = __WEBPACK_IMPORTED_MODULE_1_styled_components___default.a.div.withConfig({
+  displayName: "pages__Hero",
+  componentId: "sc-1hta4ma-0"
+})(["width:100%;height:100vh;background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('/static/dentist.jpg');background-size:cover;background-repeat:no-repeat;background-position:center center;background-attachment:fixed;display:flex;align-items:center;justify-content:center;text-align:center;"]);
+var HeroInner = __WEBPACK_IMPORTED_MODULE_1_styled_components___default.a.div.withConfig({
+  displayName: "pages__HeroInner",
+  componentId: "sc-1hta4ma-1"
+})(["background:transparent;color:#d6d6d6;margin-top:-50px;h1{font-size:3.5em;margin-top:0;margin-bottom:0.5em;background:transparent;}h2{background:transparent;font-size:1.7em;}a{display:block;width:150px;padding:1em;margin-top:50px;margin-left:auto;margin-right:auto;color:#000;font-weight:bold;text-decoration:none;font-size:1.1em;text-transform:uppercase;background:", ";border:2px solid ", ";transition:background 0.3s ease-in-out;-webkit-box-shadow:0px 3px 5px 0px rgba(94,94,94,1);-moz-box-shadow:0px 3px 5px 0px rgba(94,94,94,1);box-shadow:0px 3px 5px 0px rgba(94,94,94,1);&:hover{background:transparent;color:#fff;transition:background 0.3s ease-in-out;}}"], primaryColor, primaryColor);
+var About = __WEBPACK_IMPORTED_MODULE_1_styled_components___default.a.section.withConfig({
+  displayName: "pages__About",
+  componentId: "sc-1hta4ma-2"
+})(["display:flex;align-items:center;justify-content:center;flex-direction:column;max-width:860px;margin:26px auto;h1{font-size:5rem;color:", ";font-weight:bold;}p{margin-top:16px;text-align:justify;font-size:1.5rem;color:#636e72;strong{font-size:1.5rem;color:#181818;}span{margin-left:24px;font-size:1.5rem;}}h3{font-size:2rem;margin-top:24px;color:#636e72;span{margin-top:16px;font-size:2rem;color:#181818;font-weight:bold;}}"], primaryColor);
 
-var Especialidade = function Especialidade(props) {
-  var _props$speciality = props.speciality,
-      title = _props$speciality.title,
-      author = _props$speciality.author,
-      speciality = _props$speciality.speciality,
-      publishedAt = _props$speciality.publishedAt,
-      author_avatar = _props$speciality.author_avatar,
-      material = _props$speciality.material,
-      article = _props$speciality.article;
-  return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react__["Fragment"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 104
-    }
-  }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_next_head___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 105
-    }
-  }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("title", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 106
-    }
-  }, "Orto Conecta | ", props.speciality.title)), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__layouts_main__["a" /* default */], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 108
-    }
-  }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(SpecialityWrapper, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 109
-    }
-  }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Title, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 110
-    }
-  }, title), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Img, {
-    src: "http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080".concat(author_avatar.url),
-    alt: author,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 111
-    }
-  }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("h2", {
+var Home = function Home(props) {
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_0_react__["Fragment"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 112
     }
-  }, author, " (", speciality, ")"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("h3", {
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_next_head___default.a, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 113
     }
-  }, "Publicado em ", (__WEBPACK_IMPORTED_MODULE_5_moment___default.a.locale('pt-br'), __WEBPACK_IMPORTED_MODULE_5_moment___default()(publishedAt).format("LL"))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Download, {
-    href: "http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080".concat(material.url),
-    target: "blank",
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("title", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 114
+    }
+  }, "Orto Conecta")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__layouts_main__["a" /* default */], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 116
+    }
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Hero, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 117
     }
-  }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7_react_icons_fa__["FaDownload"], {
-    style: {
-      background: 'transparent',
-      fontSize: '1.2rem',
-      marginRight: '10px'
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 117
-    }
-  }), " Baixar Material"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(StyledTextarea, {
-    disabled: true,
-    async: true,
-    defaultValue: article,
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(HeroInner, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 118
     }
-  }))));
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h1", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 119
+    }
+  }, "Conectando a Ortodontia \xE0 toda \xE1rea da sa\xFAde"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h2", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 120
+    }
+  }, "Navegue pelo nosso site e descubra como!"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
+    href: "#about",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 121
+    }
+  }, "Saiba mais"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(About, {
+    id: "about",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 124
+    }
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h1", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 125
+    }
+  }, "Quem Somos"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 126
+    }
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 127
+    }
+  }, "Em"), " reuni\xF5es espor\xE1dicas sobre temas que frequentemente convergiam para o tempo em que o praticante da ortodontia conseguiria desenvolver sua autonomia, nasce a Orto Conecta. Idealizada por tr\xEAs colegas de profiss\xE3o, ", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("strong", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 128
+    }
+  }, "Dr. Renato Tanabe"), ", ", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("strong", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 128
+    }
+  }, "Dr. Gustavo Furlan"), " e ", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("strong", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 128
+    }
+  }, "Dr. Alexandre Mendon\xE7a"), ", esta ferramenta tem como objetivo trazer informa\xE7\xF5es sobre a ortodontia executada de forma eficiente, pr\xE1tica e segura, al\xE9m de integrar \xE1reas intimamente ligadas a esta especialidade. Know-how, sensibilidade e entusiasmo d\xE3o direcionamento para a constru\xE7\xE3o desta plataforma digital cuidadosamente planejada para produzir e compartilhar conhecimentos.  Um novo canal que ir\xE1 fazer parte da lista de manuais de consulta sobre os assuntos mais atuais das \xE1reas de sa\xFAde que se conectam diretamente \xE0 ortodontia. Esperamos que aproveitem este espa\xE7o e sua diversidade de materiais dispon\xEDveis no site, nos cursos online e presenciais que contribuir\xE3o para o aprimoramento de compet\xEAncias e habilidades fundamentais para o profissional que busca a excel\xEAncia."), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h3", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 132
+    }
+  }, "Bem-vindos \xE0 plataforma ", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 132
+    }
+  }, "Orto Conecta!")))));
 };
 
-Especialidade.getInitialProps =
-/*#__PURE__*/
-function () {
-  var _ref2 = _asyncToGenerator(
-  /*#__PURE__*/
-  __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.mark(function _callee(_ref) {
-    var query, response;
-    return __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            query = _ref.query;
-            _context.next = 3;
-            return __WEBPACK_IMPORTED_MODULE_3_axios___default.a.get("http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080/specialities/".concat(query.id));
-
-          case 3:
-            response = _context.sent;
-            return _context.abrupt("return", {
-              speciality: response.data
-            });
-
-          case 5:
-          case "end":
-            return _context.stop();
-        }
-      }
-    }, _callee, this);
-  }));
-
-  return function (_x) {
-    return _ref2.apply(this, arguments);
-  };
-}();
-
-/* harmony default export */ __webpack_exports__["default"] = (Especialidade);
+/* harmony default export */ __webpack_exports__["default"] = (Home);
 
 /***/ }),
 
@@ -484,39 +433,11 @@ var GlobalStyle = Object(__WEBPACK_IMPORTED_MODULE_0_styled_components__["create
 
 /***/ }),
 
-/***/ 5:
+/***/ 3:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("./pages/especialidade.js");
+module.exports = __webpack_require__("./pages/index.js");
 
-
-/***/ }),
-
-/***/ "@babel/runtime/regenerator":
-/***/ (function(module, exports) {
-
-module.exports = require("@babel/runtime/regenerator");
-
-/***/ }),
-
-/***/ "axios":
-/***/ (function(module, exports) {
-
-module.exports = require("axios");
-
-/***/ }),
-
-/***/ "lodash":
-/***/ (function(module, exports) {
-
-module.exports = require("lodash");
-
-/***/ }),
-
-/***/ "moment":
-/***/ (function(module, exports) {
-
-module.exports = require("moment");
 
 /***/ }),
 
@@ -541,20 +462,6 @@ module.exports = require("react");
 
 /***/ }),
 
-/***/ "react-autosize-textarea":
-/***/ (function(module, exports) {
-
-module.exports = require("react-autosize-textarea");
-
-/***/ }),
-
-/***/ "react-icons/fa":
-/***/ (function(module, exports) {
-
-module.exports = require("react-icons/fa");
-
-/***/ }),
-
 /***/ "styled-components":
 /***/ (function(module, exports) {
 
@@ -563,4 +470,4 @@ module.exports = require("styled-components");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=especialidade.js.map
+//# sourceMappingURL=index.js.map
