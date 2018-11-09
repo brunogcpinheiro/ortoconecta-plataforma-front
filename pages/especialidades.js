@@ -14,12 +14,11 @@ const SpecialitiesWrapper = styled.div`
   align-items: center;
   justify-content: center;
   max-width: 80%;
-  margin: 20px auto;
+  margin: 50px auto;
+  padding: 16px;
 
   h2 {
-    text-transform: uppercase;
-    font-size: 2rem;
-    color: #636e72;
+    font-size: 3rem;
   }
 `
 

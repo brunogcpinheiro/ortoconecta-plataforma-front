@@ -12,11 +12,16 @@ const TipsWrapper = styled.div`
     max-width: 80%;
     height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 50px auto;
     padding: 16px;
     background: transparent;
+    
+    h2 {
+        font-size: 3rem;
+    }
 `
 
 const Tip = styled.div`
@@ -33,6 +38,7 @@ const Tip = styled.div`
     -webkit-box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
     -moz-box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
     box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
+    flex-wrap: wrap;
     
     div {
         display: flex;
@@ -44,6 +50,17 @@ const Tip = styled.div`
     h3 {
         color: #7f8c8d;
         font-style: italic;
+    }
+    
+    h4 {
+        font-size: 1.3rem;
+    }
+    
+    p {
+        flex: 1;
+        text-align: justify;
+        margin-top: 16px;
+        font-size: 1.1rem;
     }
 `
 
@@ -96,6 +113,8 @@ const Tips = props => {
             </Head>
             <Main>
                 <TipsWrapper>
+                    <h2>Dicas Orto Conecta</h2>
+                    <p><strong>OBS.:</strong> Baixe o material para ler o artigo completo!</p>
                     {props.tips.map(tip => (
                         <Tip key={tip.id}>
                             <Img src={`http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${tip.tips_image.url}`} alt={tip.title} />
@@ -105,7 +124,10 @@ const Tips = props => {
                                     moment.locale('pt-br'),
                                     moment(tip.publishedAt).format("LL")
                                 }</h3>
+                                <h4>Por {tip.author}</h4>
+                                <h5>Páginas: {tip.pages}</h5>
                                 <Download href={`http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${tip.material.url}`} target="blank"><FaDownload style={{ background: 'transparent', fontSize: '1.2rem', marginRight: '10px' }} /> Baixar Material</Download>
+                                <p>{tip.description}</p>
                             </div>
                         </Tip> 
                     ))}

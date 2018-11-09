@@ -29389,11 +29389,11 @@ var primaryColor = "#ffd32a";
 var TipsWrapper = __WEBPACK_IMPORTED_MODULE_2_styled_components__["c" /* default */].div.withConfig({
   displayName: "dicas__TipsWrapper",
   componentId: "sc-1tsbltd-0"
-})(["max-width:80%;height:100%;display:flex;justify-content:center;align-items:center;margin:50px auto;padding:16px;background:transparent;"]);
+})(["max-width:80%;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;margin:50px auto;padding:16px;background:transparent;h2{font-size:3rem;}"]);
 var Tip = __WEBPACK_IMPORTED_MODULE_2_styled_components__["c" /* default */].div.withConfig({
   displayName: "dicas__Tip",
   componentId: "sc-1tsbltd-1"
-})(["width:450px;height:100%;display:flex;justify-content:space-around;align-items:center;margin:50px auto;padding:16px;background:#fff;border:1px solid #ccc;border-radius:10px;-webkit-box-shadow:0px 3px 5px 0px rgba(184,184,184,1);-moz-box-shadow:0px 3px 5px 0px rgba(184,184,184,1);box-shadow:0px 3px 5px 0px rgba(184,184,184,1);div{display:flex;flex-direction:column;justify-content:center;align-items:center;}h3{color:#7f8c8d;font-style:italic;}"]);
+})(["width:450px;height:100%;display:flex;justify-content:space-around;align-items:center;margin:50px auto;padding:16px;background:#fff;border:1px solid #ccc;border-radius:10px;-webkit-box-shadow:0px 3px 5px 0px rgba(184,184,184,1);-moz-box-shadow:0px 3px 5px 0px rgba(184,184,184,1);box-shadow:0px 3px 5px 0px rgba(184,184,184,1);flex-wrap:wrap;div{display:flex;flex-direction:column;justify-content:center;align-items:center;}h3{color:#7f8c8d;font-style:italic;}h4{font-size:1.3rem;}p{flex:1;text-align:justify;margin-top:16px;font-size:1.1rem;}"]);
 var Title = __WEBPACK_IMPORTED_MODULE_2_styled_components__["c" /* default */].h1.withConfig({
   displayName: "dicas__Title",
   componentId: "sc-1tsbltd-2"
@@ -29411,63 +29411,88 @@ var Tips = function Tips(props) {
   return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react__["Fragment"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93
+      lineNumber: 110
     }
   }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_next_head___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
+      lineNumber: 111
     }
   }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95
+      lineNumber: 112
     }
   }, "Orto Conecta | Dicas")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__layouts_main__["a" /* default */], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97
+      lineNumber: 114
     }
   }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(TipsWrapper, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98
+      lineNumber: 115
     }
-  }, props.tips.map(function (tip) {
+  }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("h2", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 116
+    }
+  }, "Dicas Orto Conecta"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 117
+    }
+  }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("strong", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 117
+    }
+  }, "OBS.:"), " Baixe o material para ler o artigo completo!"), props.tips.map(function (tip) {
     return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Tip, {
       key: tip.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 100
+        lineNumber: 119
       }
     }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Img, {
       src: "http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080".concat(tip.tips_image.url),
       alt: tip.title,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 101
+        lineNumber: 120
       }
     }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 102
+        lineNumber: 121
       }
     }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Title, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 103
+        lineNumber: 122
       }
     }, tip.title), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("h3", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 104
+        lineNumber: 123
       }
-    }, "Publicado em ", (__WEBPACK_IMPORTED_MODULE_5_moment___default.a.locale('pt-br'), __WEBPACK_IMPORTED_MODULE_5_moment___default()(tip.publishedAt).format("LL"))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Download, {
+    }, "Publicado em ", (__WEBPACK_IMPORTED_MODULE_5_moment___default.a.locale('pt-br'), __WEBPACK_IMPORTED_MODULE_5_moment___default()(tip.publishedAt).format("LL"))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("h4", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 127
+      }
+    }, "Por ", tip.author), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("h5", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 128
+      }
+    }, "P\xE1ginas: ", tip.pages), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Download, {
       href: "http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080".concat(tip.material.url),
       target: "blank",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 108
+        lineNumber: 129
       }
     }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7_react_icons_fa__["FaDownload"], {
       style: {
@@ -29477,9 +29502,14 @@ var Tips = function Tips(props) {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 108
+        lineNumber: 129
       }
-    }), " Baixar Material")));
+    }), " Baixar Material"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 130
+      }
+    }, tip.description)));
   }))));
 };
 
