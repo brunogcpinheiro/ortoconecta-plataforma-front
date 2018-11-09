@@ -93,7 +93,7 @@ const Header = props => (
       </Logo>
       <Menu>
         <li><Link href="/"><a>Início</a></Link></li>
-        <li><a href="#">Quem Somos</a></li>
+        <li><Link href="/dicas"><a>Dicas</a></Link></li>
         <li><a href="#">Material gratuito</a></li>
         <li><Link href="/especialidades"><a>Especialidades</a></Link></li>
         <li><a href="#">Contato</a></li>

@@ -5,7 +5,6 @@ import Head from 'next/head'
 import moment from 'moment'
 import Main from '../layouts/main'
 import { FaDownload } from 'react-icons/fa'
-import _ from 'lodash'
 import TextareaAutosize from 'react-autosize-textarea'
 
 const primaryColor = "#ffd32a";

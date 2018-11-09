@@ -3,12 +3,12 @@ import styled from 'styled-components'
 import Main from '../layouts/main'
 import Head from 'next/head'
 
-const primaryColor = "#ffd32a"
+const primaryColor = "#FFD32A"
 
 const Hero = styled.div`
   width: 100%;
   height: 100vh;
-  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/static/dentist.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('/static/dentist.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -68,41 +68,48 @@ const About = styled.section`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  width: 80%;
   max-width: 860px;
-  margin: 26px auto;
+  margin: -50px auto;
+  border: 1px solid #ccc;
+  padding: 26px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 1px 1px 1px #f5f5f5;
+  -moz-box-shadow: 0px 1px 1px 1px #f5f5f5;
+  box-shadow: 0px 1px 1px 1px #f5f5f5;
   
   h1 {
-    font-size: 5rem;
-    color: ${primaryColor};
+    font-size: 3rem;
+    color: #f1c40f;
     font-weight: bold;
   }
   
   p {
     margin-top: 16px;
     text-align: justify;
-    font-size: 1.5rem;
-    color: #636e72;
+    font-size: 1.2rem;
+    color: #2d3436;
     
     strong {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       color: #181818;
     }
     
     span {
       margin-left: 24px;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
     }
   }
   
   h3 {
     font-size: 2rem;
     margin-top: 24px;
-    color: #636e72;
+    color: #2d3436;
     
     span {
       margin-top: 16px;
       font-size: 2rem;
-      color: #181818;
+      color: #f1c40f;
       font-weight: bold;
     }
   }
