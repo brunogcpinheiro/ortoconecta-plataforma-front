@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
+import { Container, Row, Col } from 'reactstrap';
 import axios from 'axios'
 import Head from 'next/head'
 import moment from 'moment'
@@ -25,8 +26,9 @@ const TipsWrapper = styled.div`
 `
 
 const Tip = styled.div`
-    width: 450px;
+    width: 350px;
     height: 100%;
+    min-height: 250px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -45,15 +47,22 @@ const Tip = styled.div`
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        background: #fff;
     }
     
     h3 {
         color: #7f8c8d;
         font-style: italic;
+        background: #fff;
     }
     
     h4 {
         font-size: 1.3rem;
+        background: #fff;
+    }
+    
+    h5 {
+        background: #fff;
     }
     
     p {
@@ -61,6 +70,7 @@ const Tip = styled.div`
         text-align: justify;
         margin-top: 16px;
         font-size: 1.1rem;
+        background: #fff;
     }
 `
 
@@ -112,26 +122,32 @@ const Tips = props => {
                 <title>Orto Conecta | Dicas</title>
             </Head>
             <Main>
-                <TipsWrapper>
-                    <h2>Dicas Orto Conecta</h2>
-                    <p><strong>OBS.:</strong> Baixe o material para ler o artigo completo!</p>
-                    {props.tips.map(tip => (
-                        <Tip key={tip.id}>
-                            <Img src={`http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${tip.tips_image.url}`} alt={tip.title} />
-                            <div>
-                                <Title>{tip.title}</Title>
-                                <h3>Publicado em {
-                                    moment.locale('pt-br'),
-                                    moment(tip.publishedAt).format("LL")
-                                }</h3>
-                                <h4>Por {tip.author}</h4>
-                                <h5>Páginas: {tip.pages}</h5>
-                                <Download href={`http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${tip.material.url}`} target="blank"><FaDownload style={{ background: 'transparent', fontSize: '1.2rem', marginRight: '10px' }} /> Baixar Material</Download>
-                                <p>{tip.description}</p>
-                            </div>
-                        </Tip> 
-                    ))}
-                </TipsWrapper>
+                <Container>
+                    <TipsWrapper>
+                        <h2>Dicas Orto Conecta</h2>
+                        <p><strong>OBS.:</strong> Baixe o material para ler o artigo completo!</p>
+                        <Row>
+                            <Col>
+                                {props.tips.map(tip => (
+                                    <Tip key={tip.id}>
+                                        <Img src={`http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${tip.tips_image.url}`} alt={tip.title} />
+                                        <div>
+                                            <Title>{tip.title}</Title>
+                                            <h3>Publicado em {
+                                                moment.locale('pt-br'),
+                                                moment(tip.publishedAt).format("LL")
+                                            }</h3>
+                                            <h4>Por {tip.author}</h4>
+                                            <h5>Páginas: {tip.pages}</h5>
+                                            <Download href={`http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${tip.material.url}`} target="blank"><FaDownload style={{ background: 'transparent', fontSize: '1.2rem', marginRight: '10px' }} /> Baixar Material</Download>
+                                            <p>{tip.description}</p>
+                                        </div>
+                                    </Tip> 
+                                ))}
+                            </Col>
+                        </Row>
+                    </TipsWrapper>
+                </Container>
             </Main>
         </Fragment>
     );

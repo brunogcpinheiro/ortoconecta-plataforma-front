@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, Component } from 'react'
 import styled from 'styled-components'
 import Link from 'next/link'
 
 const primaryColor = "#ffd32a";
 
-const Navbar = styled.div`
+const Navigation = styled.div`
   height: 80px;
   display: flex;
   align-items: center;
@@ -15,6 +15,31 @@ const Navbar = styled.div`
   -webkit-box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
   -moz-box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
   box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
+  
+  @media(max-width: 800px) {
+    ul {
+      display: none;
+    }
+    
+    ${MenuIcon} .icon {
+      display: block;
+      float: right;
+    }
+  }
+`
+
+const MenuIcon = styled.div`
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  
+  div {
+    width: 35px;
+    height: 5px;
+    background-color: #999;
+    margin: 2px 0;
+    display: none;
+  }
 `
 
 const Logo = styled.div`
@@ -80,26 +105,35 @@ const Menu = styled.ul`
     }
 `
 
-const Header = props => (
-  <Fragment>
-    <Navbar>
-      <Logo>
-        <Link href="/">
-          <a>
-            <img src="/static/dental.png" />
-            <h2>Orto Conecta</h2>
-          </a>
-        </Link>
-      </Logo>
-      <Menu>
-        <li><Link href="/"><a>Início</a></Link></li>
-        <li><Link href="/dicas"><a>Dicas</a></Link></li>
-        <li><a href="#">Material gratuito</a></li>
-        <li><Link href="/especialidades"><a>Especialidades</a></Link></li>
-        <li><a href="#">Contato</a></li>
-      </Menu>
-    </Navbar>
-  </Fragment>
-);
+class Header extends Component {
+  render () {
+    return (
+      <Fragment>
+          <Navigation>
+            <Logo>
+              <Link href="/">
+                <a>
+                  <img src="/static/dental.png" />
+                  <h2>Orto Conecta</h2>
+                </a>
+              </Link>
+            </Logo>
+            <MenuIcon>
+              <div className="icon"/>
+              <div className="icon"/>
+              <div className="icon"/>
+            </MenuIcon> 
+            <Menu>
+              <li><Link href="/"><a>Início</a></Link></li>
+              <li><Link href="/dicas"><a>Dicas</a></Link></li>
+              <li><a href="#">Material gratuito</a></li>
+              <li><Link href="/especialidades"><a>Especialidades</a></Link></li>
+              <li><a href="#">Contato</a></li>
+            </Menu>
+          </Navigation>
+      </Fragment>    
+    )
+  }
+}
 
 export default Header
