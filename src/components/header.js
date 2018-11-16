@@ -16,7 +16,7 @@ const Navigation = styled.div`
   -moz-box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
   box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
   
-  @media(max-width: 800px) {
+  @media(max-width: 980px) {
     ul {
       display: none;
     }
@@ -125,13 +125,14 @@ class Header extends Component {
             </MenuIcon> 
             <Menu>
               <li><Link href="/"><a>Início</a></Link></li>
+              <li><Link href="/painel"><a>Painel Orto Conecta</a></Link></li>
+              <li><Link href="/cursos_e_materiais"><a>Cursos e Materiais</a></Link></li>
               <li><Link href="/dicas"><a>Dicas</a></Link></li>
-              <li><a href="#">Material gratuito</a></li>
               <li><Link href="/especialidades"><a>Especialidades</a></Link></li>
               <li><a href="#">Contato</a></li>
             </Menu>
           </Navigation>
-      </Fragment>    
+      </Fragment>
     )
   }
 }
