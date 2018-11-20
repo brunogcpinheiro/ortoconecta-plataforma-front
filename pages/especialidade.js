@@ -33,6 +33,7 @@ const SpecialityWrapper = styled.div`
         padding: 16px 0;
         color: #636e72;
         text-weight: bold;
+        text-align: center;
     }
     
     h3 {

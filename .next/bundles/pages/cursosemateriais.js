@@ -29398,81 +29398,174 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 var primaryColor = "#ffd32a";
-var TipsWrapper = __WEBPACK_IMPORTED_MODULE_2_styled_components__["c" /* default */].div.withConfig({
-  displayName: "cursosemateriais__TipsWrapper",
+var CoursesAndMaterialsWrapper = __WEBPACK_IMPORTED_MODULE_2_styled_components__["c" /* default */].div.withConfig({
+  displayName: "cursosemateriais__CoursesAndMaterialsWrapper",
   componentId: "sc-1d8ifnv-0"
-})(["padding:16px;background:transparent;div{margin-top:50px;text-align:center;}h2{font-size:3rem;span{color:", ";font-size:3rem;font-weight:bold;}}h2,p{text-align:center;}"], primaryColor);
-var TipWrapper = __WEBPACK_IMPORTED_MODULE_2_styled_components__["c" /* default */].div.withConfig({
-  displayName: "cursosemateriais__TipWrapper",
+})(["padding:16px;background:transparent;div{margin:20px 0 50px 0;text-align:center;}h2{font-size:3rem;span{color:", ";font-size:3rem;font-weight:bold;}}h2,p{text-align:center;}"], primaryColor);
+var CourseAndMaterialWrapper = __WEBPACK_IMPORTED_MODULE_2_styled_components__["c" /* default */].div.withConfig({
+  displayName: "cursosemateriais__CourseAndMaterialWrapper",
   componentId: "sc-1d8ifnv-1"
-})(["display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;@media(max-width:980px){display:flex;justify-content:space-around;align-items:center;}"]);
-var Tip = __WEBPACK_IMPORTED_MODULE_2_styled_components__["c" /* default */].div.withConfig({
-  displayName: "cursosemateriais__Tip",
+})(["display:flex;justify-content:space-evenly;align-items:flex-start;flex-wrap:wrap;@media(max-width:980px){display:flex;justify-content:space-around;align-items:center;}"]);
+var Course = __WEBPACK_IMPORTED_MODULE_2_styled_components__["c" /* default */].div.withConfig({
+  displayName: "cursosemateriais__Course",
   componentId: "sc-1d8ifnv-2"
+})(["width:50%;height:100%;min-height:300px;display:flex;justify-content:space-around;align-items:center;background:#fff;border:1px solid #ccc;border-radius:10px;-webkit-box-shadow:0px 3px 5px 0px rgba(184,184,184,1);-moz-box-shadow:0px 3px 5px 0px rgba(184,184,184,1);box-shadow:0px 3px 5px 0px rgba(184,184,184,1);flex-wrap:wrap;div{display:flex;flex-direction:column;justify-content:center;align-items:center;background:#fff;margin-top:30px;}h1{margin-top:10px;font-size:1.5rem;}h2{font-size:1.3rem;color:#ee5253;margin-top:10px;}h3{font-size:1.2rem;background:#fff;span{font-weight:normal;background:#fff;}}@media(max-width:980px){display:flex;justify-content:space-around;align-items:center;width:85%;padding:5px;}"]);
+var Material = __WEBPACK_IMPORTED_MODULE_2_styled_components__["c" /* default */].div.withConfig({
+  displayName: "cursosemateriais__Material",
+  componentId: "sc-1d8ifnv-3"
 })(["width:350px;height:100%;min-height:300px;display:flex;justify-content:space-around;align-items:center;margin-top:50px;padding:16px;background:#fff;border:1px solid #ccc;border-radius:10px;-webkit-box-shadow:0px 3px 5px 0px rgba(184,184,184,1);-moz-box-shadow:0px 3px 5px 0px rgba(184,184,184,1);box-shadow:0px 3px 5px 0px rgba(184,184,184,1);flex-wrap:wrap;div{display:flex;flex-direction:column;justify-content:center;align-items:center;background:#fff;}h3{color:#7f8c8d;font-style:italic;background:#fff;}h4{font-size:1.3rem;background:#fff;}h5{background:#fff;}p{flex:1;text-align:justify;margin-top:16px;font-size:1.1rem;background:#fff;}"]);
 var Title = __WEBPACK_IMPORTED_MODULE_2_styled_components__["c" /* default */].h1.withConfig({
   displayName: "cursosemateriais__Title",
-  componentId: "sc-1d8ifnv-3"
-})(["color:inherit;font-size:2.2rem;font-weight:bold;transition:color 0.2s;background:#fff;text-align:center;&:hover{color:#000;transition:color 0.2s;}"]);
+  componentId: "sc-1d8ifnv-4"
+})(["color:inherit;font-size:2.2rem;font-weight:bold;transition:color 0.2s;background:#fff;text-align:center;margin-top:-20px;&:hover{color:#000;transition:color 0.2s;}"]);
+var CourseImg = __WEBPACK_IMPORTED_MODULE_2_styled_components__["c" /* default */].img.withConfig({
+  displayName: "cursosemateriais__CourseImg",
+  componentId: "sc-1d8ifnv-5"
+})(["width:100%;height:100%;margin:0;padding:0;border-top-left-radius:10px;border-top-right-radius:10px;"]);
 var Img = __WEBPACK_IMPORTED_MODULE_2_styled_components__["c" /* default */].img.withConfig({
   displayName: "cursosemateriais__Img",
-  componentId: "sc-1d8ifnv-4"
+  componentId: "sc-1d8ifnv-6"
 })(["width:150px;height:150px;object-fit:cover;object-position:top;border-radius:50%;border:2px solid ", ";"], primaryColor);
-var Download = __WEBPACK_IMPORTED_MODULE_2_styled_components__["c" /* default */].a.withConfig({
-  displayName: "cursosemateriais__Download",
-  componentId: "sc-1d8ifnv-5"
+var Button = __WEBPACK_IMPORTED_MODULE_2_styled_components__["c" /* default */].a.withConfig({
+  displayName: "cursosemateriais__Button",
+  componentId: "sc-1d8ifnv-7"
 })(["display:flex;justify-content:center;align-items:center;padding:1em;margin-top:16px;font-weight:bold;text-decoration:none;font-size:1.1em;text-transform:uppercase;background:", ";border:2px solid ", ";&:visited,&:active,&:link{color:inherit;}"], primaryColor, primaryColor);
 
-var Tips = function Tips(props) {
+var CoursesAndMaterials = function CoursesAndMaterials(props) {
   return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react__["Fragment"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 141
+      lineNumber: 205
     }
   }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5_next_head___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 142
+      lineNumber: 206
     }
   }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 143
+      lineNumber: 207
     }
-  }, "Orto Conecta | Dicas")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__layouts_main__["a" /* default */], {
+  }, "Orto Conecta | Cursos e Materiais")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__layouts_main__["a" /* default */], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 145
+      lineNumber: 209
     }
-  }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(TipsWrapper, {
+  }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(CoursesAndMaterialsWrapper, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 146
+      lineNumber: 210
     }
   }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 147
+      lineNumber: 211
     }
   }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("h2", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 148
+      lineNumber: 212
+    }
+  }, "Cursos e eventos OrtoConecta"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(CourseAndMaterialWrapper, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 213
+    }
+  }, props.courses.map(function (course) {
+    return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Course, {
+      key: course.id,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 215
+      }
+    }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(CourseImg, {
+      src: "http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080".concat(course.course_image.url),
+      alt: course.title,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 216
+      }
+    }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 217
+      }
+    }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Title, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 218
+      }
+    }, course.title), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("h3", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 219
+      }
+    }, "Local.: ", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("span", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 219
+      }
+    }, course.local)), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("h3", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 220
+      }
+    }, "Quando.: ", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("span", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 220
+      }
+    }, course.date_event)), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("h1", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 221
+      }
+    }, course.price), course.sold_out === true ? __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("h2", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 223
+      }
+    }, "Ingressos esgotados!") : __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Button, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 225
+      }
+    }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8_react_icons_fa__["FaCreditCard"], {
+      style: {
+        background: 'transparent',
+        fontSize: '1.2rem',
+        marginRight: '10px'
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 225
+      }
+    }), " Comprar")));
+  }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 233
+    }
+  }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("h2", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 234
     }
   }, "Material ", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 148
+      lineNumber: 234
     }
-  }, "exclusivo"), " Orto Conecta"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("p", {
+  }, "exclusivo"), " OrtoConecta"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 149
+      lineNumber: 235
     }
   }, "Estudo sobre Alicates Ortod\xF4nticos"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_iframe___default.a, {
     url: "https://www.slideshare.net/slideshow/embed_code/key/wuMVMJvfdz3k5J",
-    width: "70%",
-    height: "500px",
+    width: "90%",
+    height: "550px",
     className: "iframe",
     display: "initial",
     position: "relative",
@@ -29482,83 +29575,83 @@ var Tips = function Tips(props) {
     allowFullScreen: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 150
+      lineNumber: 236
     }
   })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 161
+      lineNumber: 247
     }
   }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("h2", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 162
+      lineNumber: 248
     }
   }, "Materiais ", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 162
+      lineNumber: 248
     }
-  }, "gratuitos"), " Orto Conecta"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("p", {
+  }, "gratuitos"), " OrtoConecta"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 163
+      lineNumber: 249
     }
   }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("strong", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 163
+      lineNumber: 249
     }
-  }, "OBS.:"), " Baixe o material para ler o artigo completo!"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(TipWrapper, {
+  }, "OBS.:"), " Baixe o material para ler o artigo completo!"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(CourseAndMaterialWrapper, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 164
+      lineNumber: 250
     }
-  }, props.tips.map(function (tip) {
-    return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Tip, {
-      key: tip.id,
+  }, props.materials.map(function (material) {
+    return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Material, {
+      key: material.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 166
+        lineNumber: 252
       }
     }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Img, {
-      src: "http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080".concat(tip.tips_image.url),
-      alt: tip.title,
+      src: "http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080".concat(material.material_image.url),
+      alt: material.title,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 167
+        lineNumber: 253
       }
     }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 168
+        lineNumber: 254
       }
     }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Title, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 169
+        lineNumber: 255
       }
-    }, tip.title), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("h3", {
+    }, material.title), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("h3", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 170
+        lineNumber: 256
       }
-    }, "Publicado em ", (__WEBPACK_IMPORTED_MODULE_6_moment___default.a.locale('pt-br'), __WEBPACK_IMPORTED_MODULE_6_moment___default()(tip.publishedAt).format("LL"))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("h4", {
+    }, "Publicado em ", (__WEBPACK_IMPORTED_MODULE_6_moment___default.a.locale('pt-br'), __WEBPACK_IMPORTED_MODULE_6_moment___default()(material.publishedAt).format("LL"))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("h4", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 174
+        lineNumber: 260
       }
-    }, "Por ", tip.author), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("h5", {
+    }, "Por ", material.author), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("h5", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 175
+        lineNumber: 261
       }
-    }, "P\xE1ginas: ", tip.pages), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Download, {
-      href: "http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080".concat(tip.material.url),
+    }, "P\xE1ginas: ", material.pages), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Button, {
+      href: "http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080".concat(material.material.url),
       target: "blank",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 176
+        lineNumber: 262
       }
     }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8_react_icons_fa__["FaDownload"], {
       style: {
@@ -29568,39 +29661,45 @@ var Tips = function Tips(props) {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 176
+        lineNumber: 262
       }
     }), " Baixar Material"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 177
+        lineNumber: 263
       }
-    }, tip.description)));
+    }, material.description)));
   }))))));
 };
 
-Tips.getInitialProps =
+CoursesAndMaterials.getInitialProps =
 /*#__PURE__*/
 function () {
   var _ref2 = _asyncToGenerator(
   /*#__PURE__*/
   __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.mark(function _callee(_ref) {
-    var query, response;
+    var query, materialResponse, coursesResponse;
     return __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
             query = _ref.query;
             _context.next = 3;
-            return __WEBPACK_IMPORTED_MODULE_4_axios___default.a.get("http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080/tips");
+            return __WEBPACK_IMPORTED_MODULE_4_axios___default.a.get("http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080/materials");
 
           case 3:
-            response = _context.sent;
+            materialResponse = _context.sent;
+            _context.next = 6;
+            return __WEBPACK_IMPORTED_MODULE_4_axios___default.a.get("http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080/courses");
+
+          case 6:
+            coursesResponse = _context.sent;
             return _context.abrupt("return", {
-              tips: response.data
+              materials: materialResponse.data,
+              courses: coursesResponse.data
             });
 
-          case 5:
+          case 8:
           case "end":
             return _context.stop();
         }
@@ -29613,7 +29712,7 @@ function () {
   };
 }();
 
-var _default = Tips;
+var _default = CoursesAndMaterials;
 /* harmony default export */ __webpack_exports__["default"] = (_default);
 ;
 
@@ -29627,13 +29726,15 @@ var _default = Tips;
   }
 
   reactHotLoader.register(primaryColor, "primaryColor", "/home/ubuntu/workspace/pages/cursosemateriais.js");
-  reactHotLoader.register(TipsWrapper, "TipsWrapper", "/home/ubuntu/workspace/pages/cursosemateriais.js");
-  reactHotLoader.register(TipWrapper, "TipWrapper", "/home/ubuntu/workspace/pages/cursosemateriais.js");
-  reactHotLoader.register(Tip, "Tip", "/home/ubuntu/workspace/pages/cursosemateriais.js");
+  reactHotLoader.register(CoursesAndMaterialsWrapper, "CoursesAndMaterialsWrapper", "/home/ubuntu/workspace/pages/cursosemateriais.js");
+  reactHotLoader.register(CourseAndMaterialWrapper, "CourseAndMaterialWrapper", "/home/ubuntu/workspace/pages/cursosemateriais.js");
+  reactHotLoader.register(Course, "Course", "/home/ubuntu/workspace/pages/cursosemateriais.js");
+  reactHotLoader.register(Material, "Material", "/home/ubuntu/workspace/pages/cursosemateriais.js");
   reactHotLoader.register(Title, "Title", "/home/ubuntu/workspace/pages/cursosemateriais.js");
+  reactHotLoader.register(CourseImg, "CourseImg", "/home/ubuntu/workspace/pages/cursosemateriais.js");
   reactHotLoader.register(Img, "Img", "/home/ubuntu/workspace/pages/cursosemateriais.js");
-  reactHotLoader.register(Download, "Download", "/home/ubuntu/workspace/pages/cursosemateriais.js");
-  reactHotLoader.register(Tips, "Tips", "/home/ubuntu/workspace/pages/cursosemateriais.js");
+  reactHotLoader.register(Button, "Button", "/home/ubuntu/workspace/pages/cursosemateriais.js");
+  reactHotLoader.register(CoursesAndMaterials, "CoursesAndMaterials", "/home/ubuntu/workspace/pages/cursosemateriais.js");
   reactHotLoader.register(_default, "default", "/home/ubuntu/workspace/pages/cursosemateriais.js");
   leaveModule(module);
 })();
@@ -29707,7 +29808,7 @@ var MenuIcon = __WEBPACK_IMPORTED_MODULE_1_styled_components__["c" /* default */
 var Logo = __WEBPACK_IMPORTED_MODULE_1_styled_components__["c" /* default */].div.withConfig({
   displayName: "header__Logo",
   componentId: "sc-1srxfqa-2"
-})(["background:transparent;a{display:flex;text-decoration:none;color:inherit;justify-content:center;align-items:center;background:transparent;img{width:50px;height:50px;background:transparent;}h2{font-size:2rem;margin-left:16px;color:", ";background:transparent;}}"], primaryColor);
+})(["background:transparent;a{display:flex;text-decoration:none;color:inherit;justify-content:center;align-items:center;background:transparent;img{width:70px;height:70px;background:transparent;}h2{font-size:2rem;margin-left:16px;color:", ";background:transparent;}}"], primaryColor);
 var Menu = __WEBPACK_IMPORTED_MODULE_1_styled_components__["c" /* default */].ul.withConfig({
   displayName: "header__Menu",
   componentId: "sc-1srxfqa-3"
@@ -29754,7 +29855,7 @@ function (_Component) {
           lineNumber: 115
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
-        src: "/static/dental.png",
+        src: "/static/logo.jpeg",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 116
@@ -29764,7 +29865,7 @@ function (_Component) {
           fileName: _jsxFileName,
           lineNumber: 117
         }
-      }, "Orto Conecta")))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(MenuIcon, {
+      }, "OrtoConecta")))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(MenuIcon, {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 121
@@ -29824,7 +29925,7 @@ function (_Component) {
           fileName: _jsxFileName,
           lineNumber: 128
         }
-      }, "Painel Orto Conecta"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
+      }, "Painel OrtoConecta"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 129
@@ -29930,7 +30031,7 @@ var _default = Header;
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_components__ = __webpack_require__("./node_modules/styled-components/dist/styled-components.browser.esm.js");
-var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\n  * {\n    font-family: 'Poppins', sans-serif;\n    padding: 0;\n    margin: 0;\n    \n    font-size: 13px;\n    background: #f5f5f5;\n  }\n\n  body, html {\n    height: 100%;\n  }\n\n  a, button {\n    cursor: pointer;\n  }\n"]);
+var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\n  * {\n    font-family: 'Poppins', sans-serif;\n    padding: 0;\n    margin: 0;\n    \n    font-size: 13px;\n  }\n\n  body, html {\n    height: 100%;\n    background: #f5f5f5;\n  }\n\n  a, button {\n    cursor: pointer;\n  }\n"]);
 
 (function () {
   var enterModule = __webpack_require__("./node_modules/react-hot-loader/index.js").enterModule;

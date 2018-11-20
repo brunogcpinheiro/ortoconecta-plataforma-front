@@ -7,11 +7,11 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     
     font-size: 13px;
-    background: #f5f5f5;
   }
 
   body, html {
     height: 100%;
+    background: #f5f5f5;
   }
 
   a, button {

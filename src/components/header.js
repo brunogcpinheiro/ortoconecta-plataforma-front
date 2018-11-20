@@ -53,8 +53,8 @@ const Logo = styled.div`
     background: transparent;
 
     img {
-      width: 50px;
-      height: 50px;
+      width: 70px;
+      height: 70px;
       background: transparent;
     }
 
@@ -113,8 +113,8 @@ class Header extends Component {
             <Logo>
               <Link href="/">
                 <a>
-                  <img src="/static/dental.png" />
-                  <h2>Orto Conecta</h2>
+                  <img src="/static/logo.jpeg" />
+                  <h2>OrtoConecta</h2>
                 </a>
               </Link>
             </Logo>
@@ -125,7 +125,7 @@ class Header extends Component {
             </MenuIcon> 
             <Menu>
               <li><Link href="/"><a>Início</a></Link></li>
-              <li><Link href="/painel"><a>Painel Orto Conecta</a></Link></li>
+              <li><Link href="/painel"><a>Painel OrtoConecta</a></Link></li>
               <li><Link href="/cursos_e_materiais"><a>Cursos e Materiais</a></Link></li>
               <li><Link href="/dicas"><a>Dicas</a></Link></li>
               <li><Link href="/especialidades"><a>Especialidades</a></Link></li>

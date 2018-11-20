@@ -5,16 +5,16 @@ import axios from 'axios'
 import Head from 'next/head'
 import moment from 'moment'
 import Main from '../layouts/main'
-import { FaDownload } from 'react-icons/fa'
+import { FaDownload, FaCreditCard } from 'react-icons/fa'
 
 const primaryColor = "#ffd32a";
 
-const TipsWrapper = styled.div`
+const CoursesAndMaterialsWrapper = styled.div`
     padding: 16px;
     background: transparent;
     
     div {
-        margin-top: 50px;
+        margin: 20px 0 50px 0;
         text-align: center;
     }
     
@@ -33,9 +33,9 @@ const TipsWrapper = styled.div`
     }
 `
 
-const TipWrapper = styled.div`
+const CourseAndMaterialWrapper = styled.div`
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: flex-start;
     flex-wrap: wrap;
     
@@ -46,7 +46,61 @@ const TipWrapper = styled.div`
     }
 `
 
-const Tip = styled.div`
+const Course = styled.div`
+    width: 50%;
+    height: 100%;
+    min-height: 300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
+    -moz-box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
+    box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
+    flex-wrap: wrap;
+    
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #fff;
+        margin-top: 30px;
+    }
+    
+    h1 {
+        margin-top: 10px;
+        font-size: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1.3rem;
+        color: #ee5253;
+        margin-top: 10px;
+    }
+    
+    h3 {
+        font-size: 1.2rem;
+        background: #fff;
+        
+        span {
+            font-weight: normal;
+            background: #fff;
+        }
+    }
+    
+    @media(max-width: 980px) {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 85%;
+        padding: 5px;
+    }
+`
+
+const Material = styled.div`
     width: 350px;
     height: 100%;
     min-height: 300px;
@@ -102,11 +156,21 @@ const Title = styled.h1`
   transition: color 0.2s;
   background: #fff;
   text-align: center;
+  margin-top: -20px;
   
   &:hover {
     color: #000;
     transition: color 0.2s;
   }
+`
+
+const CourseImg = styled.img`
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 `
 
 const Img = styled.img`
@@ -118,7 +182,7 @@ const Img = styled.img`
     border: 2px solid ${primaryColor};
 `
 
-const Download = styled.a`
+const Button = styled.a`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -136,20 +200,42 @@ const Download = styled.a`
     }
 `
 
-const Tips = props => {
+const CoursesAndMaterials = props => {
     return (
         <Fragment>
             <Head>
-                <title>Orto Conecta | Dicas</title>
+                <title>Orto Conecta | Cursos e Materiais</title>
             </Head>
             <Main>
-                <TipsWrapper>
+                <CoursesAndMaterialsWrapper>
                     <div>
-                        <h2>Material <span>exclusivo</span> Orto Conecta</h2>
+                        <h2>Cursos e eventos OrtoConecta</h2>
+                        <CourseAndMaterialWrapper>
+                            {props.courses.map(course => (
+                                <Course key={course.id}>
+                                    <CourseImg src={`http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${course.course_image.url}`} alt={course.title} />
+                                    <div>
+                                        <Title>{course.title}</Title>
+                                        <h3>Local.: <span>{course.local}</span></h3>
+                                        <h3>Quando.: <span>{course.date_event}</span></h3>
+                                        <h1>{course.price}</h1>
+                                        {course.sold_out === true ? (
+                                            <h2>Ingressos esgotados!</h2>
+                                        ): (
+                                            <Button><FaCreditCard style={{ background: 'transparent', fontSize: '1.2rem', marginRight: '10px' }}/> Comprar</Button>
+                                        )}
+                                    </div>
+                                </Course> 
+                            ))}
+                        </CourseAndMaterialWrapper>
+                    </div>
+                
+                    <div>
+                        <h2>Material <span>exclusivo</span> OrtoConecta</h2>
                         <p>Estudo sobre Alicates Ortodônticos</p>
                         <Iframe url="https://www.slideshare.net/slideshow/embed_code/key/wuMVMJvfdz3k5J"
-                            width="70%"
-                            height="500px"
+                            width="90%"
+                            height="550px"
                             className="iframe"
                             display="initial"
                             position="relative"
@@ -159,37 +245,40 @@ const Tips = props => {
                     </div>
                     
                     <div>
-                        <h2>Materiais <span>gratuitos</span> Orto Conecta</h2>
+                        <h2>Materiais <span>gratuitos</span> OrtoConecta</h2>
                         <p><strong>OBS.:</strong> Baixe o material para ler o artigo completo!</p>
-                        <TipWrapper>
-                            {props.tips.map(tip => (
-                                <Tip key={tip.id}>
-                                    <Img src={`http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${tip.tips_image.url}`} alt={tip.title} />
+                        <CourseAndMaterialWrapper>
+                            {props.materials.map(material => (
+                                <Material key={material.id}>
+                                    <Img src={`http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${material.material_image.url}`} alt={material.title} />
                                     <div>
-                                        <Title>{tip.title}</Title>
+                                        <Title>{material.title}</Title>
                                         <h3>Publicado em {
                                             moment.locale('pt-br'),
-                                            moment(tip.publishedAt).format("LL")
+                                            moment(material.publishedAt).format("LL")
                                         }</h3>
-                                        <h4>Por {tip.author}</h4>
-                                        <h5>Páginas: {tip.pages}</h5>
-                                        <Download href={`http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${tip.material.url}`} target="blank"><FaDownload style={{ background: 'transparent', fontSize: '1.2rem', marginRight: '10px' }} /> Baixar Material</Download>
-                                        <p>{tip.description}</p>
+                                        <h4>Por {material.author}</h4>
+                                        <h5>Páginas: {material.pages}</h5>
+                                        <Button href={`http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${material.material.url}`} target="blank"><FaDownload style={{ background: 'transparent', fontSize: '1.2rem', marginRight: '10px' }} /> Baixar Material</Button>
+                                        <p>{material.description}</p>
                                     </div>
-                                </Tip> 
+                                </Material> 
                             ))}
-                        </TipWrapper>
+                        </CourseAndMaterialWrapper>
                     </div>
-                </TipsWrapper>
+                </CoursesAndMaterialsWrapper>
             </Main>
         </Fragment>
     );
 }
 
-Tips.getInitialProps = async ({ query }) => {
-    const response = await axios.get(`http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080/tips`)
+CoursesAndMaterials.getInitialProps = async ({ query }) => {
+    const materialResponse = await axios.get(`http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080/materials`)
+    const coursesResponse = await axios.get(`http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080/courses`)
     
-    return { tips: response.data }
+    return { materials: materialResponse.data, courses: coursesResponse.data }
 }
 
-export default Tips
+
+
+export default CoursesAndMaterials

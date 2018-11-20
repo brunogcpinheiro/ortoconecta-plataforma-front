@@ -84,6 +84,14 @@ const About = styled.section`
     font-weight: bold;
   }
   
+  img {
+    width: 80%;
+    height: 100%;
+    margin-top: 16px;
+    border-radius: 15px;
+    border: 2px solid ${primaryColor}
+  }
+  
   p {
     margin-top: 16px;
     text-align: justify;
@@ -105,6 +113,7 @@ const About = styled.section`
     font-size: 2rem;
     margin-top: 24px;
     color: #2d3436;
+    text-align: center;
     
     span {
       margin-top: 16px;
@@ -130,9 +139,10 @@ const Home = props => (
       </Hero>
       <About id="about">
         <h1>Quem Somos</h1>
+        <img src="/static/ale-gustavo-renato.jpg" alt="OrtoConecta"/> 
         <p>
           <span>Em</span> reuniões esporádicas sobre temas que frequentemente convergiam para o tempo em que o praticante da ortodontia conseguiria desenvolver sua autonomia, nasce a Orto Conecta.
-          Idealizada por três colegas de profissão, <strong>Dr. Renato Tanabe</strong>, <strong>Dr. Gustavo Furlan</strong> e <strong>Dr. Alexandre Mendonça</strong>, esta ferramenta tem como objetivo trazer informações sobre a ortodontia executada de forma eficiente, prática e segura, além de integrar áreas intimamente ligadas a esta especialidade.
+          Idealizada por três colegas de profissão, <strong>Dr. Renato Tanabe</strong>, <strong>Dr. Alexandre Mendonça</strong> e <strong>Dr. Gustavo Furlan</strong>, esta ferramenta tem como objetivo trazer informações sobre a ortodontia executada de forma eficiente, prática e segura, além de integrar áreas intimamente ligadas a esta especialidade.
           Know-how, sensibilidade e entusiasmo dão direcionamento para a construção desta plataforma digital cuidadosamente planejada para produzir e compartilhar conhecimentos.  Um novo canal que irá fazer parte da lista de manuais de consulta sobre os assuntos mais atuais das áreas de saúde que se conectam diretamente à ortodontia.
           Esperamos que aproveitem este espaço e sua diversidade de materiais disponíveis no site, nos cursos online e presenciais que contribuirão para o aprimoramento de competências e habilidades fundamentais para o profissional que busca a excelência.
         </p>
