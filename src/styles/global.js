@@ -17,6 +17,12 @@ const GlobalStyle = createGlobalStyle`
   a, button {
     cursor: pointer;
   }
+  
+  .iframe {
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
+    -moz-box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
+    box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
+  }
 `
 
 export default GlobalStyle

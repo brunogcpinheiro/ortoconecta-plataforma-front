@@ -106,6 +106,19 @@ const Menu = styled.ul`
 `
 
 class Header extends Component {
+  state = {
+    showMenu: false
+  }
+  
+  handleMenuOpen = e => {
+    e.preventDefault()
+    
+    this.setState(state => ({
+      showMenu: !state.showMenu
+    }))
+    
+  }
+  
   render () {
     return (
       <Fragment>
@@ -118,7 +131,7 @@ class Header extends Component {
                 </a>
               </Link>
             </Logo>
-            <MenuIcon>
+            <MenuIcon onClick={(e) => this.handleMenuOpen(e)}>
               <div className="icon"/>
               <div className="icon"/>
               <div className="icon"/>

@@ -5,6 +5,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import axios from 'axios'
 import moment from 'moment'
+import Iframe from 'react-iframe'
 
 const primaryColor = "#ffd32a";
 
@@ -101,12 +102,22 @@ const Especialidades = props => {
   return (
     <Fragment>
       <Head>
-        <title>Especialidades | OrtoConecta</title>
+        <title>OrtoConecta | Especialidades</title>
       </Head>
       <Main>
         <SpecialitiesWrapper>
           <h2>Especialidades</h2>
           <h4>(Fisioterapia, Nutrição e Psicologia)</h4>
+          <Iframe url="https://www.youtube.com/embed/7lZ1QHBcWiY"
+            width="100%"
+            height="450px"
+            display="initial"
+            position="relative"
+            className="iframe"
+            styles={{ marginTop: '15px' }}
+            allowFullScreen
+          />
+          
             {sorted
               .map(speciality => (
               <Speciality key={speciality.id}>

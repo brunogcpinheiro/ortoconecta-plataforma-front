@@ -103,7 +103,7 @@ const Especialidade = props => {
     return (
         <Fragment>
             <Head>
-                <title>Orto Conecta | {props.speciality.title}</title>
+                <title>OrtoConecta | {props.speciality.title}</title>
             </Head>
             <Main>
                 <SpecialityWrapper>

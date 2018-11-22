@@ -2,7 +2,7 @@ module.exports =
 
         __NEXT_REGISTER_PAGE('/cursosemateriais', function() {
           var comp = 
-      webpackJsonp([6],{
+      webpackJsonp([8],{
 
 /***/ "./layouts/main.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -12,8 +12,10 @@ module.exports =
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_head__ = __webpack_require__("./node_modules/next/head.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_head___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_next_head__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_components_header__ = __webpack_require__("./src/components/header.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_styles_global__ = __webpack_require__("./src/styles/global.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_styled_components__ = __webpack_require__("./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_components_header__ = __webpack_require__("./src/components/header.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_components_footer__ = __webpack_require__("./src/components/footer.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__src_styles_global__ = __webpack_require__("./src/styles/global.js");
 var _jsxFileName = "/home/ubuntu/workspace/layouts/main.js";
 
 (function () {
@@ -27,58 +29,69 @@ var _jsxFileName = "/home/ubuntu/workspace/layouts/main.js";
 
 
 
+
+var Container = __WEBPACK_IMPORTED_MODULE_2_styled_components__["c" /* default */].div.withConfig({
+  displayName: "main__Container",
+  componentId: "sc-196d63t-0"
+})(["height:100%;"]);
+
 var _default = function _default(props) {
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_0_react__["Fragment"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 14
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 15
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_head___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 16
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("meta", {
     name: "viewport",
     content: "width=device-width, initial-scale=1",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 17
     }
   }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("meta", {
     charSet: "utf-8",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 18
     }
   }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("link", {
     href: "https://fonts.googleapis.com/css?family=Poppins",
     rel: "stylesheet",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 19
     }
-  }))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+  }))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 22
     }
-  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__src_styles_global__["a" /* default */], {
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__src_styles_global__["a" /* default */], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 23
     }
-  }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__src_components_header__["a" /* default */], {
+  }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__src_components_header__["a" /* default */], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 24
     }
-  }), props.children));
+  }), props.children, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__src_components_footer__["a" /* default */], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26
+    }
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["a"] = (_default);
@@ -93,6 +106,7 @@ var _default = function _default(props) {
     return;
   }
 
+  reactHotLoader.register(Container, "Container", "/home/ubuntu/workspace/layouts/main.js");
   reactHotLoader.register(_default, "default", "/home/ubuntu/workspace/layouts/main.js");
   leaveModule(module);
 })();
@@ -29447,7 +29461,7 @@ var CoursesAndMaterials = function CoursesAndMaterials(props) {
       fileName: _jsxFileName,
       lineNumber: 207
     }
-  }, "Orto Conecta | Cursos e Materiais")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__layouts_main__["a" /* default */], {
+  }, "OrtoConecta | Cursos e Materiais")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__layouts_main__["a" /* default */], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 209
@@ -29762,6 +29776,61 @@ var _default = CoursesAndMaterials;
 
 /***/ }),
 
+/***/ "./src/components/footer.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("./node_modules/react/cjs/react.development.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_styled_components__ = __webpack_require__("./node_modules/styled-components/dist/styled-components.browser.esm.js");
+var _jsxFileName = "/home/ubuntu/workspace/src/components/footer.js";
+
+(function () {
+  var enterModule = __webpack_require__("./node_modules/react-hot-loader/index.js").enterModule;
+
+  enterModule && enterModule(module);
+})();
+
+
+
+var FooterWrapper = __WEBPACK_IMPORTED_MODULE_1_styled_components__["c" /* default */].div.withConfig({
+  displayName: "footer__FooterWrapper",
+  componentId: "hdo0sp-0"
+})(["width:100%;height:100px;background:#2d3436;position:relative;"]);
+
+var Footer = function Footer(props) {
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(FooterWrapper, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    }
+  });
+};
+
+var _default = Footer;
+/* harmony default export */ __webpack_exports__["a"] = (_default);
+;
+
+(function () {
+  var reactHotLoader = __webpack_require__("./node_modules/react-hot-loader/index.js").default;
+
+  var leaveModule = __webpack_require__("./node_modules/react-hot-loader/index.js").leaveModule;
+
+  if (!reactHotLoader) {
+    return;
+  }
+
+  reactHotLoader.register(FooterWrapper, "FooterWrapper", "/home/ubuntu/workspace/src/components/footer.js");
+  reactHotLoader.register(Footer, "Footer", "/home/ubuntu/workspace/src/components/footer.js");
+  reactHotLoader.register(_default, "default", "/home/ubuntu/workspace/src/components/footer.js");
+  leaveModule(module);
+})();
+
+;
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("./node_modules/webpack/buildin/harmony-module.js")(module)))
+
+/***/ }),
+
 /***/ "./src/components/header.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -29789,9 +29858,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 
 
@@ -29820,169 +29889,202 @@ function (_Component) {
   _inherits(Header, _Component);
 
   function Header() {
+    var _ref;
+
+    var _temp, _this;
+
     _classCallCheck(this, Header);
 
-    return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _possibleConstructorReturn(_this, (_temp = _this = _possibleConstructorReturn(this, (_ref = Header.__proto__ || Object.getPrototypeOf(Header)).call.apply(_ref, [this].concat(args))), Object.defineProperty(_assertThisInitialized(_this), "state", {
+      configurable: true,
+      enumerable: true,
+      writable: true,
+      value: {
+        showMenu: false
+      }
+    }), Object.defineProperty(_assertThisInitialized(_this), "handleMenuOpen", {
+      configurable: true,
+      enumerable: true,
+      writable: true,
+      value: function value(e) {
+        e.preventDefault();
+
+        _this.setState(function (state) {
+          return {
+            showMenu: !state.showMenu
+          };
+        });
+      }
+    }), _temp));
   }
 
   _createClass(Header, [{
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_0_react__["Fragment"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 111
+          lineNumber: 124
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Navigation, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 112
+          lineNumber: 125
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Logo, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 113
+          lineNumber: 126
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
         href: "/",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 114
+          lineNumber: 127
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 115
+          lineNumber: 128
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
         src: "/static/logo.jpeg",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 116
+          lineNumber: 129
         }
       }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h2", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 117
+          lineNumber: 130
         }
       }, "OrtoConecta")))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(MenuIcon, {
+        onClick: function onClick(e) {
+          return _this2.handleMenuOpen(e);
+        },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 121
+          lineNumber: 134
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "icon",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 122
+          lineNumber: 135
         }
       }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "icon",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 123
+          lineNumber: 136
         }
       }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "icon",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 124
+          lineNumber: 137
         }
       })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Menu, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 126
+          lineNumber: 139
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 127
+          lineNumber: 140
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
         href: "/",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 127
+          lineNumber: 140
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 127
+          lineNumber: 140
         }
       }, "In\xEDcio"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 128
+          lineNumber: 141
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
         href: "/painel",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 128
+          lineNumber: 141
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 128
+          lineNumber: 141
         }
       }, "Painel OrtoConecta"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 129
+          lineNumber: 142
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
         href: "/cursos_e_materiais",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 129
+          lineNumber: 142
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 129
+          lineNumber: 142
         }
       }, "Cursos e Materiais"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 130
+          lineNumber: 143
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
         href: "/dicas",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 130
+          lineNumber: 143
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 130
+          lineNumber: 143
         }
       }, "Dicas"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 131
+          lineNumber: 144
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
         href: "/especialidades",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 131
+          lineNumber: 144
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 131
+          lineNumber: 144
         }
       }, "Especialidades"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 132
+          lineNumber: 145
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
         href: "#",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 132
+          lineNumber: 145
         }
       }, "Contato")))));
     }
@@ -30031,7 +30133,7 @@ var _default = Header;
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_components__ = __webpack_require__("./node_modules/styled-components/dist/styled-components.browser.esm.js");
-var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\n  * {\n    font-family: 'Poppins', sans-serif;\n    padding: 0;\n    margin: 0;\n    \n    font-size: 13px;\n  }\n\n  body, html {\n    height: 100%;\n    background: #f5f5f5;\n  }\n\n  a, button {\n    cursor: pointer;\n  }\n"]);
+var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\n  * {\n    font-family: 'Poppins', sans-serif;\n    padding: 0;\n    margin: 0;\n    \n    font-size: 13px;\n  }\n\n  body, html {\n    height: 100%;\n    background: #f5f5f5;\n  }\n\n  a, button {\n    cursor: pointer;\n  }\n  \n  .iframe {\n    -webkit-box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);\n    -moz-box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);\n    box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);\n  }\n"]);
 
 (function () {
   var enterModule = __webpack_require__("./node_modules/react-hot-loader/index.js").enterModule;
@@ -30066,7 +30168,7 @@ var _default = GlobalStyle;
 
 /***/ }),
 
-/***/ 5:
+/***/ 7:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("./pages/cursosemateriais.js");
@@ -30074,7 +30176,7 @@ module.exports = __webpack_require__("./pages/cursosemateriais.js");
 
 /***/ })
 
-},[5])
+},[7])
           return { page: comp.default }
         })
       ;

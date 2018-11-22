@@ -204,7 +204,7 @@ const CoursesAndMaterials = props => {
     return (
         <Fragment>
             <Head>
-                <title>Orto Conecta | Cursos e Materiais</title>
+                <title>OrtoConecta | Cursos e Materiais</title>
             </Head>
             <Main>
                 <CoursesAndMaterialsWrapper>

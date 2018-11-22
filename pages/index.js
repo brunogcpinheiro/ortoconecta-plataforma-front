@@ -68,9 +68,11 @@ const About = styled.section`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background: #fff;
   width: 80%;
   max-width: 860px;
   margin: -50px auto;
+  margin-bottom: 50px;
   border: 1px solid #ccc;
   padding: 26px;
   border-radius: 10px;
@@ -127,7 +129,7 @@ const About = styled.section`
 const Home = props => (
   <Fragment>
     <Head>
-      <title>Orto Conecta</title>
+      <title>OrtoConecta</title>
     </Head>
     <Main>
       <Hero>
