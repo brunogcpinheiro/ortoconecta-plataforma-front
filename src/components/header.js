@@ -105,6 +105,21 @@ const Menu = styled.ul`
     }
 `
 
+const Dropdown = styled.div`
+  position: relative;
+  display: block;
+`
+
+const DropdownContent = styled.div`
+  display: block;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+`
+
 class Header extends Component {
   state = {
     showMenu: false
@@ -116,6 +131,8 @@ class Header extends Component {
     this.setState(state => ({
       showMenu: !state.showMenu
     }))
+    
+    console.log(this.state.showMenu)
     
   }
   
@@ -135,7 +152,19 @@ class Header extends Component {
               <div className="icon"/>
               <div className="icon"/>
               <div className="icon"/>
-            </MenuIcon> 
+            </MenuIcon>
+            {this.state.showMenu === true && (
+                <Dropdown>
+                  <DropdownContent>
+                    <li><Link href="/"><a>Início</a></Link></li>
+                    <li><Link href="/painel"><a>Painel OrtoConecta</a></Link></li>
+                    <li><Link href="/cursos_e_materiais"><a>Cursos e Materiais</a></Link></li>
+                    <li><Link href="/dicas"><a>Dicas</a></Link></li>
+                    <li><Link href="/especialidades"><a>Especialidades</a></Link></li>
+                    <li><a href="#">Contato</a></li>
+                  </DropdownContent>
+                </Dropdown>
+              )}
             <Menu>
               <li><Link href="/"><a>Início</a></Link></li>
               <li><Link href="/painel"><a>Painel OrtoConecta</a></Link></li>
