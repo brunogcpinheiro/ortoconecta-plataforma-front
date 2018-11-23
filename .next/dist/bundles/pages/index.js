@@ -67,7 +67,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -303,21 +303,101 @@ var Home = function Home(props) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_styled_components__ = __webpack_require__("styled-components");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_styled_components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_styled_components__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_icons_fa__ = __webpack_require__("react-icons/fa");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_icons_fa___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_icons_fa__);
 var _jsxFileName = "/home/ubuntu/workspace/src/components/footer.js";
 
 
+
+var primaryColor = "#ffd32a";
 var FooterWrapper = __WEBPACK_IMPORTED_MODULE_1_styled_components___default.a.div.withConfig({
   displayName: "footer__FooterWrapper",
   componentId: "hdo0sp-0"
-})(["width:100%;height:100px;background:#2d3436;position:relative;"]);
+})(["width:100%;height:150px;background:#181818;display:flex;flex-direction:column;justify-content:center;align-items:center;p{color:#fff;text-align:center;a{color:", ";text-decoration:none;&:hover{text-decoration:underline;}}}div{display:flex;align-items:center;justify-content:center;a{color:", ";font-size:2rem;padding:16px;&:hover{color:#fff;}}}"], primaryColor, primaryColor);
 
 var Footer = function Footer(props) {
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(FooterWrapper, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 49
     }
-  });
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50
+    }
+  }, "Entre em contato conosco pelas redes sociais!"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51
+    }
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
+    href: "https://instagram.com/ortoconecta",
+    target: "blank",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52
+    }
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_icons_fa__["FaInstagram"], {
+    style: {
+      fontSize: '2rem'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53
+    }
+  })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
+    href: "https://facebook.com/ortoconecta",
+    target: "blank",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 55
+    }
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_icons_fa__["FaFacebookSquare"], {
+    style: {
+      fontSize: '2rem'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 56
+    }
+  })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
+    href: "https://facebook.com/ortoconecta",
+    target: "blank",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 58
+    }
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_icons_fa__["FaWhatsapp"], {
+    style: {
+      fontSize: '2rem'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59
+    }
+  }))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 62
+    }
+  }, "Desenvolvido por ", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
+    href: "https://facebook.com/bruno_pinheiro373",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 62
+    }
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 62
+    }
+  }, "Bruno Carpinelli"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 63
+    }
+  }, "Direitos Reservados \xAE"));
 };
 
 /* harmony default export */ __webpack_exports__["a"] = (Footer);
@@ -712,7 +792,7 @@ var GlobalStyle = Object(__WEBPACK_IMPORTED_MODULE_0_styled_components__["create
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("./pages/index.js");
@@ -738,6 +818,13 @@ module.exports = require("next/link");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "react-icons/fa":
+/***/ (function(module, exports) {
+
+module.exports = require("react-icons/fa");
 
 /***/ }),
 

@@ -90,7 +90,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "fc39d86e49eee6192156"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "26b0fe810d416514d6d4"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -755,7 +755,7 @@
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"main.js","1":"bundles/pages/_document.js","2":"bundles/pages/_error.js","3":"bundles/pages/_app.js","6":"bundles/pages/index.js"}[chunkId]||chunkId) + "-" + {"0":"69d9cdc7db98c598a55f","1":"7692f4a48ec2aa1c3ada","2":"40f4d95a83e28aaf9b38","3":"18584c4255257cc25b13","6":"2bcc0adc3fa2425aaa12"}[chunkId] + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"main.js","1":"bundles/pages/_document.js","2":"bundles/pages/_error.js","3":"bundles/pages/_app.js","5":"bundles/pages/index.js","6":"bundles/pages/cursosemateriais.js","7":"bundles/pages/especialidades.js"}[chunkId]||chunkId) + "-" + {"0":"69d9cdc7db98c598a55f","1":"7692f4a48ec2aa1c3ada","2":"40f4d95a83e28aaf9b38","3":"18584c4255257cc25b13","5":"9a49d9a8897d972c032e","6":"4a86d0e03be8eaafac9f","7":"a3f5c9476ec7c0591767"}[chunkId] + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
