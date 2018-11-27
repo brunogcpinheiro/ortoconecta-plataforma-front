@@ -106,18 +106,38 @@ const Menu = styled.ul`
 `
 
 const Dropdown = styled.div`
-  position: relative;
+  position: absolute;
   display: block;
+  width: 100%;
+  margin-top: 35px;
 `
 
 const DropdownContent = styled.div`
   display: block;
   position: absolute;
+  width: 100vw;
   background-color: #f9f9f9;
-  min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   padding: 12px 16px;
   z-index: 1;
+  
+  li {
+    padding: 16px;
+    border-bottom: 1px solid #ccc;
+    
+    a {
+      text-decoration: none;
+      font-size: 1.2rem;
+      
+      &:visited, &:active, &:link {
+        color: inherit;
+      }
+      
+      &:hover {
+        color: ${primaryColor}
+      }
+    }
+  }
 `
 
 class Header extends Component {
@@ -131,8 +151,6 @@ class Header extends Component {
     this.setState(state => ({
       showMenu: !state.showMenu
     }))
-    
-    console.log(this.state.showMenu)
     
   }
   
@@ -156,12 +174,11 @@ class Header extends Component {
             {this.state.showMenu === true && (
                 <Dropdown>
                   <DropdownContent>
-                    <li><Link href="/"><a>Início</a></Link></li>
-                    <li><Link href="/painel"><a>Painel OrtoConecta</a></Link></li>
-                    <li><Link href="/cursos_e_materiais"><a>Cursos e Materiais</a></Link></li>
-                    <li><Link href="/dicas"><a>Dicas</a></Link></li>
-                    <li><Link href="/especialidades"><a>Especialidades</a></Link></li>
-                    <li><a href="#">Contato</a></li>
+                    <Link href="/"><li><a>Início</a></li></Link>
+                    <Link href="/painel"><li><a>Painel OrtoConecta</a></li></Link>
+                    <Link href="/cursos_e_materiais"><li><a>Cursos e Materiais</a></li></Link>
+                    <Link href="/dicas"><li><a>Dicas</a></li></Link>
+                    <Link href="/especialidades"><li><a>Especialidades</a></li></Link>
                   </DropdownContent>
                 </Dropdown>
               )}

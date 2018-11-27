@@ -2,7 +2,7 @@ module.exports =
 
         __NEXT_REGISTER_PAGE('/', function() {
           var comp = 
-      webpackJsonp([5],{
+      webpackJsonp([9],{
 
 /***/ "./layouts/main.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -11293,7 +11293,8 @@ var Footer = function Footer(props) {
       lineNumber: 62
     }
   }, "Desenvolvido por ", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-    href: "https://facebook.com/bruno_pinheiro373",
+    href: "https://facebook.com/bruno.carpinelli",
+    target: "blank",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 62
@@ -11390,11 +11391,11 @@ var Menu = __WEBPACK_IMPORTED_MODULE_1_styled_components__["c" /* default */].ul
 var Dropdown = __WEBPACK_IMPORTED_MODULE_1_styled_components__["c" /* default */].div.withConfig({
   displayName: "header__Dropdown",
   componentId: "sc-1srxfqa-4"
-})(["position:relative;display:block;"]);
+})(["position:absolute;display:block;width:100%;margin-top:35px;"]);
 var DropdownContent = __WEBPACK_IMPORTED_MODULE_1_styled_components__["c" /* default */].div.withConfig({
   displayName: "header__DropdownContent",
   componentId: "sc-1srxfqa-5"
-})(["display:block;position:absolute;background-color:#f9f9f9;min-width:160px;box-shadow:0px 8px 16px 0px rgba(0,0,0,0.2);padding:12px 16px;z-index:1;"]);
+})(["display:block;position:absolute;width:100vw;background-color:#f9f9f9;box-shadow:0px 8px 16px 0px rgba(0,0,0,0.2);padding:12px 16px;z-index:1;li{padding:16px;border-bottom:1px solid #ccc;a{text-decoration:none;font-size:1.2rem;&:visited,&:active,&:link{color:inherit;}&:hover{color:", "}}}"], primaryColor);
 
 var Header =
 /*#__PURE__*/
@@ -11431,8 +11432,6 @@ function (_Component) {
             showMenu: !state.showMenu
           };
         });
-
-        console.log(_this.state.showMenu);
       }
     }), _temp));
   }
@@ -11445,39 +11444,39 @@ function (_Component) {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_0_react__["Fragment"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 141
+          lineNumber: 159
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Navigation, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 142
+          lineNumber: 160
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Logo, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 143
+          lineNumber: 161
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
         href: "/",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 144
+          lineNumber: 162
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 145
+          lineNumber: 163
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
         src: "/static/logo.jpeg",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 146
+          lineNumber: 164
         }
       }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h2", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 147
+          lineNumber: 165
         }
       }, "OrtoConecta")))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(MenuIcon, {
         onClick: function onClick(e) {
@@ -11485,222 +11484,211 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 151
+          lineNumber: 169
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "icon",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 152
+          lineNumber: 170
         }
       }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "icon",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 153
+          lineNumber: 171
         }
       }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "icon",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 154
+          lineNumber: 172
         }
       })), this.state.showMenu === true && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Dropdown, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 157
+          lineNumber: 175
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(DropdownContent, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 158
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 159
+          lineNumber: 176
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
         href: "/",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 159
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 159
-        }
-      }, "In\xEDcio"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 160
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
-        href: "/painel",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 160
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 160
-        }
-      }, "Painel OrtoConecta"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 161
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
-        href: "/cursos_e_materiais",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 161
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 161
-        }
-      }, "Cursos e Materiais"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 162
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
-        href: "/dicas",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 162
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 162
-        }
-      }, "Dicas"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 163
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
-        href: "/especialidades",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 163
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 163
-        }
-      }, "Especialidades"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 164
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-        href: "#",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 164
-        }
-      }, "Contato")))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Menu, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 168
+          lineNumber: 177
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 169
+          lineNumber: 177
+        }
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 177
+        }
+      }, "In\xEDcio"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
+        href: "/painel",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 178
+        }
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 178
+        }
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 178
+        }
+      }, "Painel OrtoConecta"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
+        href: "/cursos_e_materiais",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 179
+        }
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 179
+        }
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 179
+        }
+      }, "Cursos e Materiais"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
+        href: "/dicas",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 180
+        }
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 180
+        }
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 180
+        }
+      }, "Dicas"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
+        href: "/especialidades",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 181
+        }
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 181
+        }
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 181
+        }
+      }, "Especialidades"))))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Menu, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 185
+        }
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 186
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
         href: "/",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 169
+          lineNumber: 186
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 169
+          lineNumber: 186
         }
       }, "In\xEDcio"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 170
+          lineNumber: 187
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
         href: "/painel",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 170
+          lineNumber: 187
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 170
+          lineNumber: 187
         }
       }, "Painel OrtoConecta"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 171
+          lineNumber: 188
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
         href: "/cursos_e_materiais",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 171
+          lineNumber: 188
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 171
+          lineNumber: 188
         }
       }, "Cursos e Materiais"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 172
+          lineNumber: 189
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
         href: "/dicas",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 172
+          lineNumber: 189
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 172
+          lineNumber: 189
         }
       }, "Dicas"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 173
+          lineNumber: 190
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
         href: "/especialidades",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 173
+          lineNumber: 190
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 173
+          lineNumber: 190
         }
       }, "Especialidades"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 174
+          lineNumber: 191
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
         href: "#",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 174
+          lineNumber: 191
         }
       }, "Contato")))));
     }

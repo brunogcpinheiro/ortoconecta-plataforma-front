@@ -59,7 +59,7 @@ const Footer = props => {
                     <FaWhatsapp style={{ fontSize: '2rem' }} />
                 </a>
             </div>
-            <p>Desenvolvido por <a href="https://facebook.com/bruno_pinheiro373"><span>Bruno Carpinelli</span></a></p>
+            <p>Desenvolvido por <a href="https://facebook.com/bruno.carpinelli" target="blank"><span>Bruno Carpinelli</span></a></p>
             <p>Direitos Reservados &reg;</p>
         </FooterWrapper>
     )

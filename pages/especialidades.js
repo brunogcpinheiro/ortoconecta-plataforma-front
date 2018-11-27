@@ -14,12 +14,12 @@ const SpecialitiesWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 80%;
   margin: 50px auto;
   padding: 16px;
 
   h2 {
     font-size: 3rem;
+    text-align: center;
   }
 `
 
@@ -39,14 +39,6 @@ const Speciality = styled.div`
   box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
   
   li {
-    background: #fff;
-  }
-
-  h4 {
-    font-size: 1.3rem;
-    padding: 16px 0;
-    color: #636e72;
-    text-weight: bold;
     background: #fff;
   }
 `
@@ -97,6 +89,14 @@ const ReadMore = styled.a`
   }
 `
 
+const IframeContainer = styled.div`
+  width: 60%;
+  
+  @media(max-width: 980px) {
+    width: 100%;
+  }
+`
+
 const Especialidades = props => {
   const sorted = props.specialities.sort((a,b) => (a.publishedAt > b.publishedAt) ? 1 : ((b.publishedAt > a.publishedAt) ? -1 : 0)).reverse();
   return (
@@ -106,17 +106,18 @@ const Especialidades = props => {
       </Head>
       <Main>
         <SpecialitiesWrapper>
-          <h2>Especialidades</h2>
-          <h4>(Fisioterapia, Nutrição e Psicologia)</h4>
-          <Iframe url="https://www.youtube.com/embed/7lZ1QHBcWiY"
-            width="100%"
-            height="450px"
-            display="initial"
-            position="relative"
-            className="iframe"
-            styles={{ marginTop: '15px' }}
-            allowFullScreen
-          />
+          <h2>Especialidades OrtoConecta</h2>
+          <IframeContainer>
+            <Iframe url="https://www.youtube.com/embed/7lZ1QHBcWiY"
+              width="100%"
+              height="380px"
+              display="initial"
+              position="relative"
+              className="iframe"
+              styles={{ marginTop: '15px' }}
+              allowFullScreen
+            />
+          </IframeContainer>
           
             {sorted
               .map(speciality => (
