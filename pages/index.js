@@ -76,9 +76,9 @@ const About = styled.section`
   border: 1px solid #ccc;
   padding: 26px;
   border-radius: 10px;
-  -webkit-box-shadow: 0px 1px 1px 1px #f5f5f5;
-  -moz-box-shadow: 0px 1px 1px 1px #f5f5f5;
-  box-shadow: 0px 1px 1px 1px #f5f5f5;
+  -webkit-box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
+  -moz-box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
+  box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
   
   h1 {
     font-size: 3rem;

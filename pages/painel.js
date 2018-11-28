@@ -2,7 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import Iframe from 'react-iframe'
 import Head from 'next/head'
+import { FaDownload } from 'react-icons/fa'
 import Main from '../layouts/main'
+
+const primaryColor = "#ffd32a"
 
 const PainelWrapper = styled.div`
   display: flex;
@@ -35,6 +38,24 @@ const PainelContainer = styled.div`
     }
 `
 
+const Download = styled.a`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    margin-top: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    background: ${primaryColor};
+    border: 2px solid ${primaryColor};
+    
+    &:visited, &:active, &:link {
+        color: inherit;
+    }
+`
+
 const Painel = props => {
     return (
         <Main>
@@ -54,6 +75,11 @@ const Painel = props => {
                         allowFullScreen
                     />
                 </IframeContainer>
+                <div>
+                    <Download href="/static/slide.jpg" download="painel.jpg">
+                        <FaDownload style={{ background: 'transparent', fontSize: '1.2rem', marginRight: '10px' }} /> Baixar Painel OrtoConecta
+                    </Download>
+                </div>
                 <PainelContainer>
                     <img src="/static/slide.jpg" alt="Painel OrtoConecta" />
                 </PainelContainer>

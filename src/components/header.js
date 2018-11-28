@@ -177,6 +177,7 @@ class Header extends Component {
                     <Link href="/"><li><a>Início</a></li></Link>
                     <Link href="/painel"><li><a>Painel OrtoConecta</a></li></Link>
                     <Link href="/cursos_e_materiais"><li><a>Cursos e Materiais</a></li></Link>
+                    <Link href="/experiencias"><li><a>Experiências</a></li></Link>
                     <Link href="/dicas"><li><a>Dicas</a></li></Link>
                     <Link href="/especialidades"><li><a>Especialidades</a></li></Link>
                   </DropdownContent>
@@ -186,9 +187,9 @@ class Header extends Component {
               <li><Link href="/"><a>Início</a></Link></li>
               <li><Link href="/painel"><a>Painel OrtoConecta</a></Link></li>
               <li><Link href="/cursos_e_materiais"><a>Cursos e Materiais</a></Link></li>
+              <li><Link href="/experiencias"><a>Experiências</a></Link></li>
               <li><Link href="/dicas"><a>Dicas</a></Link></li>
               <li><Link href="/especialidades"><a>Especialidades</a></Link></li>
-              <li><a href="#">Contato</a></li>
             </Menu>
           </Navigation>
       </Fragment>

@@ -7,7 +7,7 @@ import axios from 'axios'
 import moment from 'moment'
 import Iframe from 'react-iframe'
 
-const primaryColor = "#ffd32a";
+const primaryColor = "#ffd32a"
 
 const SpecialitiesWrapper = styled.div`
   display: flex;

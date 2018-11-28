@@ -2,7 +2,7 @@ module.exports =
 
         __NEXT_REGISTER_PAGE('/painel', function() {
           var comp = 
-      webpackJsonp([6],{
+      webpackJsonp([7],{
 
 /***/ "./layouts/main.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -11036,7 +11036,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_iframe___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_iframe__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_next_head__ = __webpack_require__("./node_modules/next/head.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_next_head___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_next_head__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__layouts_main__ = __webpack_require__("./layouts/main.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react_icons_fa__ = __webpack_require__("./node_modules/react-icons/fa/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react_icons_fa___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_react_icons_fa__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__layouts_main__ = __webpack_require__("./layouts/main.js");
 var _jsxFileName = "/home/ubuntu/workspace/pages/painel.js";
 
 (function () {
@@ -11050,44 +11052,59 @@ var _jsxFileName = "/home/ubuntu/workspace/pages/painel.js";
 
 
 
+
+var primaryColor = "#ffd32a";
 var PainelWrapper = __WEBPACK_IMPORTED_MODULE_1_styled_components__["c" /* default */].div.withConfig({
   displayName: "painel__PainelWrapper",
   componentId: "sc-1e30nmp-0"
 })(["display:flex;flex-direction:column;align-items:center;justify-content:center;margin:50px auto;padding:16px;h2{font-size:3rem;text-align:center;}"]);
+var IframeContainer = __WEBPACK_IMPORTED_MODULE_1_styled_components__["c" /* default */].div.withConfig({
+  displayName: "painel__IframeContainer",
+  componentId: "sc-1e30nmp-1"
+})(["width:60%;@media(max-width:980px){width:100%;}"]);
 var PainelContainer = __WEBPACK_IMPORTED_MODULE_1_styled_components__["c" /* default */].div.withConfig({
   displayName: "painel__PainelContainer",
-  componentId: "sc-1e30nmp-1"
+  componentId: "sc-1e30nmp-2"
 })(["margin:30px auto;img{width:100%;}"]);
+var Download = __WEBPACK_IMPORTED_MODULE_1_styled_components__["c" /* default */].a.withConfig({
+  displayName: "painel__Download",
+  componentId: "sc-1e30nmp-3"
+})(["display:flex;justify-content:center;align-items:center;padding:1em;margin-top:16px;font-weight:bold;text-decoration:none;font-size:1.1em;text-transform:uppercase;background:", ";border:2px solid ", ";&:visited,&:active,&:link{color:inherit;}"], primaryColor, primaryColor);
 
 var Painel = function Painel(props) {
-  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__layouts_main__["a" /* default */], {
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__layouts_main__["a" /* default */], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 61
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_next_head___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 62
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 63
     }
   }, "OrtoConecta | Painel")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(PainelWrapper, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 65
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h2", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 66
     }
-  }, "Painel OrtoConecta"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_iframe___default.a, {
+  }, "Painel OrtoConecta"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(IframeContainer, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 67
+    }
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_iframe___default.a, {
     url: "https://www.youtube.com/embed/pSFqDSUX4kE",
-    width: "70%",
+    width: "100%",
     height: "380px",
     className: "iframe",
     display: "initial",
@@ -11098,19 +11115,41 @@ var Painel = function Painel(props) {
     allowFullScreen: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 68
     }
-  }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(PainelContainer, {
+  })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 78
+    }
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Download, {
+    href: "/static/slide.jpg",
+    download: "painel.jpg",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 79
+    }
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_react_icons_fa__["FaDownload"], {
+    style: {
+      background: 'transparent',
+      fontSize: '1.2rem',
+      marginRight: '10px'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 80
+    }
+  }), " Baixar Painel OrtoConecta")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(PainelContainer, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 83
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
     src: "/static/slide.jpg",
     alt: "Painel OrtoConecta",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 84
     }
   }))));
 };
@@ -11128,8 +11167,11 @@ var _default = Painel;
     return;
   }
 
+  reactHotLoader.register(primaryColor, "primaryColor", "/home/ubuntu/workspace/pages/painel.js");
   reactHotLoader.register(PainelWrapper, "PainelWrapper", "/home/ubuntu/workspace/pages/painel.js");
+  reactHotLoader.register(IframeContainer, "IframeContainer", "/home/ubuntu/workspace/pages/painel.js");
   reactHotLoader.register(PainelContainer, "PainelContainer", "/home/ubuntu/workspace/pages/painel.js");
+  reactHotLoader.register(Download, "Download", "/home/ubuntu/workspace/pages/painel.js");
   reactHotLoader.register(Painel, "Painel", "/home/ubuntu/workspace/pages/painel.js");
   reactHotLoader.register(_default, "default", "/home/ubuntu/workspace/pages/painel.js");
   leaveModule(module);
@@ -11521,7 +11563,7 @@ function (_Component) {
           lineNumber: 179
         }
       }, "Cursos e Materiais"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
-        href: "/dicas",
+        href: "/experiencias",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 180
@@ -11535,120 +11577,141 @@ function (_Component) {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 180
+        }
+      }, "Experi\xEAncias"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
+        href: "/dicas",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 181
+        }
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 181
+        }
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 181
         }
       }, "Dicas"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
         href: "/especialidades",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 181
+          lineNumber: 182
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 181
+          lineNumber: 182
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 181
+          lineNumber: 182
         }
       }, "Especialidades"))))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Menu, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 185
+          lineNumber: 186
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 186
+          lineNumber: 187
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
         href: "/",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 186
+          lineNumber: 187
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 186
+          lineNumber: 187
         }
       }, "In\xEDcio"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 187
+          lineNumber: 188
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
         href: "/painel",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 187
+          lineNumber: 188
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 187
+          lineNumber: 188
         }
       }, "Painel OrtoConecta"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 188
+          lineNumber: 189
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
         href: "/cursos_e_materiais",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 188
+          lineNumber: 189
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 188
+          lineNumber: 189
         }
       }, "Cursos e Materiais"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 189
+          lineNumber: 190
+        }
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
+        href: "/experiencias",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 190
+        }
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 190
+        }
+      }, "Experi\xEAncias"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 191
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
         href: "/dicas",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 189
+          lineNumber: 191
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 189
+          lineNumber: 191
         }
       }, "Dicas"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 190
+          lineNumber: 192
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
         href: "/especialidades",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 190
+          lineNumber: 192
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 190
+          lineNumber: 192
         }
-      }, "Especialidades"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 191
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-        href: "#",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 191
-        }
-      }, "Contato")))));
+      }, "Especialidades"))))));
     }
   }, {
     key: "__reactstandin__regenerateByEval",
@@ -11732,7 +11795,7 @@ var _default = GlobalStyle;
 
 /***/ }),
 
-/***/ 5:
+/***/ 6:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("./pages/painel.js");
@@ -11740,7 +11803,7 @@ module.exports = __webpack_require__("./pages/painel.js");
 
 /***/ })
 
-},[5])
+},[6])
           return { page: comp.default }
         })
       ;
