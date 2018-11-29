@@ -1,10 +1,13 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, Component } from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
 import moment from 'moment'
 import Iframe from 'react-iframe'
 import Head from 'next/head'
+import { withRouter } from 'next/router'
+import Router from 'next/router'
 import Main from '../layouts/main'
+import AlertBox from '../src/components/alertbox'
 import { FaRegThumbsUp, FaRegCommentAlt } from 'react-icons/fa'
 
 const primaryColor = "#ffd32a"
@@ -142,7 +145,7 @@ const NewComment = styled.div`
     }
 `
 
-const CommentBtn = styled.a`
+const CommentBtn = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -167,63 +170,94 @@ const Reactions = styled.div`
     padding: 10px;
 `
 
-const Experiencia = props => {
-    const sorted = props.experience.comments.sort((a,b) => (a.date > b.date) ? 1 : ((b.date > a.date) ? -1 : 0)).reverse();
-    return (
-        <Main>
-            <Head>
-                <title>OrtoConecta | {props.experience.title}</title>
-            </Head>
-            <ExperienceWrapper>
-                <Experience>
-                    <Fragment>
-                        <div>
-                            <Iframe url={`http://www.youtube.com/embed/${props.experience.video_url}`}
-                                position="relative"
-                                width="100%"
-                                height="500px"
-                                display="initial"
-                                className="iframe"
-                                allowFullScreen />
-                        </div>
-                        <div>
-                            <h1>{props.experience.title}</h1>
-                            <p>{props.experience.description}</p>
-                            <Reactions>
-                                <FaRegThumbsUp style={{ fontSize: '1.5rem', marginTop: '-4px', padding: '10px' }} /> (4)
-                                <FaRegCommentAlt style={{ fontSize: '1.5rem', marginLeft: '10px', padding: '10px' }} /> ({props.experience.comments.length})
-                            </Reactions>
-                        </div>
-                    </Fragment>
-                </Experience>
-                <h2>Comentários</h2>
-                <CommentsWrapper>
-                    <NewComment>
-                        <h3>Novo Comentário</h3>
-                        <form>
-                            <input type="text" placeholder="Nome..." />
-                            <input type="email" placeholder="Email..." />
-                            <textarea placeholder="Comentário..."></textarea>
-                            <CommentBtn>Comentar</CommentBtn>
-                        </form>
-                    </NewComment>
-                    {sorted.map(comment => (
-                        <Comment key={comment.id}>
+class Experiencia extends Component {
+    state = {
+        author: '',
+        author_email: '',
+        body: '',
+        alertBox: false
+    }
+    
+    handleSubmit = async e => {
+        e.preventDefault()
+        
+        const newComment = {
+            author: this.state.author,
+            author_email: this.state.author_email,
+            date: moment().format(),
+            body: this.state.body,
+            experience: Router.query.id 
+        }
+        
+        if (this.state.author && this.state.author_email && this.state.body) {
+            await axios.post(`http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080/comments`, newComment)
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
+        } else {
+            this.setState({ alertBox: true })
+        }
+    }
+    
+    render () {
+        const sorted = this.props.experience.comments.sort((a,b) => (a.date > b.date) ? 1 : ((b.date > a.date) ? -1 : 0)).reverse();
+        
+        return (
+            <Main>
+                <Head>
+                    <title>OrtoConecta | {this.props.experience.title}</title>
+                </Head>
+                <ExperienceWrapper>
+                    <Experience>
+                        <Fragment>
                             <div>
-                                <h3>{comment.author}</h3>
-                                <h4>{comment.author_email}</h4>
-                                <small>{
-                                    moment.locale('pt-br'),
-                                    moment(comment.date).format("LLL")
-                                }</small>
-                                  <p>{comment.body}</p>
+                                <Iframe url={`http://www.youtube.com/embed/${this.props.experience.video_url}`}
+                                    position="relative"
+                                    width="100%"
+                                    height="500px"
+                                    display="initial"
+                                    className="iframe"
+                                    allowFullScreen />
                             </div>
-                        </Comment>
-                    ))}
-                </CommentsWrapper>
-            </ExperienceWrapper>
-        </Main>
-    )
+                            <div>
+                                <h1>{this.props.experience.title}</h1>
+                                <p>{this.props.experience.description}</p>
+                                <Reactions>
+                                    <FaRegThumbsUp style={{ fontSize: '1.5rem', marginTop: '-4px', padding: '10px' }} /> (4)
+                                    <FaRegCommentAlt style={{ fontSize: '1.5rem', marginLeft: '10px', padding: '10px' }} /> ({this.props.experience.comments.length})
+                                </Reactions>
+                            </div>
+                        </Fragment>
+                    </Experience>
+                    <h2>Comentários</h2>
+                    <CommentsWrapper>
+                        <NewComment>
+                            <h3>Novo Comentário</h3>
+                            <form onSubmit={(e) => this.handleSubmit(e)}>
+                                <input type="text" placeholder="Nome..." onChange={(e) => this.setState({ author: e.target.value })} value={this.state.author} />
+                                <input type="email" placeholder="Email..." onChange={(e) => this.setState({ author_email: e.target.value })} value={this.state.author_email} />
+                                <textarea rows="5" placeholder="Comentário..." onChange={(e) => this.setState({ body: e.target.value })} value={this.state.body}></textarea>
+                                <CommentBtn type="submit">Comentar</CommentBtn>
+                                {this.state.alertBox === true && <AlertBox errorMessage="Por favor, preencha todos dos campos!" />}
+                            </form>
+                        </NewComment>
+                        {sorted.map(comment => (
+                            <Comment key={comment.id}>
+                                <div>
+                                    <h3>{comment.author}</h3>
+                                    <h4>{comment.author_email}</h4>
+                                    <small>{
+                                        moment.locale('pt-br'),
+                                        moment(comment.date).format("LLL")
+                                    }</small>
+                                      <p>{comment.body}</p>
+                                </div>
+                            </Comment>
+                        ))}
+                    </CommentsWrapper>
+                </ExperienceWrapper>
+            </Main>
+        )   
+    }
 }
 
 Experiencia.getInitialProps = async ({ query }) => {
@@ -232,4 +266,4 @@ Experiencia.getInitialProps = async ({ query }) => {
     return { experience: experienceResponse.data }
 }
 
-export default Experiencia
+export default withRouter(Experiencia)
