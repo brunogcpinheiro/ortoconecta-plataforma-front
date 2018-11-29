@@ -11375,7 +11375,7 @@ var primaryColor = "#ffd32a";
 var Navigation = __WEBPACK_IMPORTED_MODULE_1_styled_components__["c" /* default */].div.withConfig({
   displayName: "header__Navigation",
   componentId: "sc-1srxfqa-0"
-})(["height:80px;display:flex;align-items:center;justify-content:space-around;list-style:none;background:#fff;width:100%;-webkit-box-shadow:0px 3px 5px 0px rgba(184,184,184,1);-moz-box-shadow:0px 3px 5px 0px rgba(184,184,184,1);box-shadow:0px 3px 5px 0px rgba(184,184,184,1);@media(max-width:980px){ul{display:none;}", " .icon{display:block;float:right;}}"], MenuIcon);
+})(["height:80px;display:flex;align-items:center;justify-content:space-around;list-style:none;background:#fff;width:100%;-webkit-box-shadow:0px 3px 5px 0px rgba(184,184,184,1);-moz-box-shadow:0px 3px 5px 0px rgba(184,184,184,1);box-shadow:0px 3px 5px 0px rgba(184,184,184,1);@media(max-width:1080px){ul{display:none;}", " .icon{display:block;float:right;}}"], MenuIcon);
 var MenuIcon = __WEBPACK_IMPORTED_MODULE_1_styled_components__["c" /* default */].div.withConfig({
   displayName: "header__MenuIcon",
   componentId: "sc-1srxfqa-1"

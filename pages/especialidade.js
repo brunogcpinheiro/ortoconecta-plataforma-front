@@ -7,7 +7,7 @@ import Main from '../layouts/main'
 import { FaDownload } from 'react-icons/fa'
 import TextareaAutosize from 'react-autosize-textarea'
 
-const primaryColor = "#ffd32a";
+const primaryColor = "#ffd32a"
 
 const SpecialityWrapper = styled.div`
     max-width: 80%;

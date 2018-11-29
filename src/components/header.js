@@ -16,7 +16,7 @@ const Navigation = styled.div`
   -moz-box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
   box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
   
-  @media(max-width: 980px) {
+  @media(max-width: 1080px) {
     ul {
       display: none;
     }
