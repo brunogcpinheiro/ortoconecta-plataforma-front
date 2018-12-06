@@ -7,8 +7,8 @@ import Head from 'next/head'
 import { withRouter } from 'next/router'
 import Router from 'next/router'
 import Main from '../layouts/main'
-import AlertBox from '../src/components/alertbox'
-import { FaRegThumbsUp, FaRegCommentAlt } from 'react-icons/fa'
+import { FaRegCommentAlt } from 'react-icons/fa'
+import swal from 'sweetalert2'
 
 const primaryColor = "#ffd32a"
 
@@ -175,7 +175,7 @@ class Experiencia extends Component {
         author: '',
         author_email: '',
         body: '',
-        alertBox: false
+        likes: 0
     }
     
     handleSubmit = async e => {
@@ -191,11 +191,30 @@ class Experiencia extends Component {
         
         if (this.state.author && this.state.author_email && this.state.body) {
             await axios.post(`http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080/comments`, newComment)
-            .then(res => console.log(res))
-            .catch(err => console.log(err))
+            .then(this.setState({
+                author: '',
+                author_email: '',
+                body: ''
+            })).then(
+                swal({
+                  type: 'success',
+                  title: 'Comentário adicionado com sucesso!'
+                })
+            )
+            .catch(() => {
+                swal({
+                  type: 'error',
+                  title: 'Algo errado com a requisição. Tente novamente!'
+                })
+            })
         } else {
-            this.setState({ alertBox: true })
+            swal({
+              type: 'error',
+              title: 'Preencha todos os dados!'
+            })
         }
+        
+        Router.replace(`http://ortoconecta-plataforma-front-brunogcpinheiro.c9users.io:8080/experiencias/${Router.query.id}`)
     }
     
     render () {
@@ -222,7 +241,6 @@ class Experiencia extends Component {
                                 <h1>{this.props.experience.title}</h1>
                                 <p>{this.props.experience.description}</p>
                                 <Reactions>
-                                    <FaRegThumbsUp style={{ fontSize: '1.5rem', marginTop: '-4px', padding: '10px' }} /> (4)
                                     <FaRegCommentAlt style={{ fontSize: '1.5rem', marginLeft: '10px', padding: '10px' }} /> ({this.props.experience.comments.length})
                                 </Reactions>
                             </div>
@@ -237,7 +255,6 @@ class Experiencia extends Component {
                                 <input type="email" placeholder="Email..." onChange={(e) => this.setState({ author_email: e.target.value })} value={this.state.author_email} />
                                 <textarea rows="5" placeholder="Comentário..." onChange={(e) => this.setState({ body: e.target.value })} value={this.state.body}></textarea>
                                 <CommentBtn type="submit">Comentar</CommentBtn>
-                                {this.state.alertBox === true && <AlertBox errorMessage="Por favor, preencha todos dos campos!" />}
                             </form>
                         </NewComment>
                         {sorted.map(comment => (
@@ -247,7 +264,7 @@ class Experiencia extends Component {
                                     <h4>{comment.author_email}</h4>
                                     <small>{
                                         moment.locale('pt-br'),
-                                        moment(comment.date).format("LLL")
+                                        moment(comment.date).fromNow()
                                     }</small>
                                       <p>{comment.body}</p>
                                 </div>

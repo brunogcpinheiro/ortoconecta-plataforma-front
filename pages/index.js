@@ -148,7 +148,7 @@ const Home = props => (
           Know-how, sensibilidade e entusiasmo dão direcionamento para a construção desta plataforma digital cuidadosamente planejada para produzir e compartilhar conhecimentos.  Um novo canal que irá fazer parte da lista de manuais de consulta sobre os assuntos mais atuais das áreas de saúde que se conectam diretamente à ortodontia.
           Esperamos que aproveitem este espaço e sua diversidade de materiais disponíveis no site, nos cursos online e presenciais que contribuirão para o aprimoramento de competências e habilidades fundamentais para o profissional que busca a excelência.
         </p>
-        <h3>Bem-vindos à plataforma <span>Orto Conecta!</span></h3>
+        <h3>Bem-vindos à plataforma <span>OrtoConecta!</span></h3>
       </About>
     </Main>
   </Fragment>

@@ -2,9 +2,9 @@ import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
 import Head from 'next/head'
-import Link from 'next/link'
+import { Link } from '../routes'
 import Main from '../layouts/main'
-import { FaRegThumbsUp, FaRegCommentAlt } from 'react-icons/fa'
+import { FaRegCommentAlt } from 'react-icons/fa'
 
 const primaryColor = "#ffd32a"
 
@@ -24,7 +24,7 @@ const ExperiencesWrapper = styled.div`
 
 const Experience = styled.div`
     margin: 35px auto;
-    width: 70%;
+    width: 95%;
     display: flex;
     justify-content: center;
     border: 1px solid #ccc;
@@ -36,7 +36,7 @@ const Experience = styled.div`
     transition: 0.5s background;
     
     img {
-        width: 35%;
+        width: 40%;
         height: 35%;
         
         @media (max-width: 980px) {
@@ -105,16 +105,15 @@ const Experiencias = props => {
             <ExperiencesWrapper>
                 <h2>Compartilhando Experiências OrtoConecta</h2>
                     {sorted.map(experience => (
-                        <Link key={experience.id} href={`http://ortoconecta-plataforma-front-brunogcpinheiro.c9users.io:8080/experiencias/${experience.id}`}>
+                        <Link prefetch key={experience.id} route={`http://ortoconecta-plataforma-front-brunogcpinheiro.c9users.io:8080/experiencias/${experience.id}`}>
                             <Experience>
                                 <Fragment>
-                                    <img src={`http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${experience.thumbnail.url}`} alt="Miniatura Experiência" />
+                                    <img src={`http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${experience.thumbnail.url}`} alt={experience.title} />
                                     <div>
                                         <h1>{experience.title}</h1>
                                         <p>{experience.description}<span>Leia mais...</span></p>
                                         <Reactions>
-                                            <FaRegThumbsUp style={{ fontSize: '1.5rem', marginTop: '-4px', padding: '10px' }} /> (4)
-                                            <FaRegCommentAlt style={{ fontSize: '1.5rem', marginLeft: '10px', padding: '10px' }} /> ({props.comments.length})
+                                            <FaRegCommentAlt style={{ fontSize: '1.5rem', marginLeft: '10px', padding: '10px' }} /> ({experience.comments.length})
                                         </Reactions>
                                     </div>
                                 </Fragment>

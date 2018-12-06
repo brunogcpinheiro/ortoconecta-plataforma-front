@@ -1,6 +1,6 @@
 import React, { Fragment, Component } from 'react'
 import styled from 'styled-components'
-import Link from 'next/link'
+import { Link } from '../../routes'
 
 const primaryColor = "#ffd32a";
 
@@ -174,22 +174,22 @@ class Header extends Component {
             {this.state.showMenu === true && (
                 <Dropdown>
                   <DropdownContent>
-                    <Link href="/"><li><a>Início</a></li></Link>
-                    <Link href="/painel"><li><a>Painel OrtoConecta</a></li></Link>
-                    <Link href="/cursos_e_materiais"><li><a>Cursos e Materiais</a></li></Link>
-                    <Link href="/experiencias"><li><a>Experiências</a></li></Link>
-                    <Link href="/dicas"><li><a>Dicas</a></li></Link>
-                    <Link href="/especialidades"><li><a>Especialidades</a></li></Link>
+                    <Link href="/" prefetch><li><a>Início</a></li></Link>
+                    <Link href="/painel" prefetch><li><a>Painel OrtoConecta</a></li></Link>
+                    <Link href="/cursos_e_materiais" prefetch><li><a>Cursos e Materiais</a></li></Link>
+                    <Link href="/experiencias" prefetch><li><a>Experiências</a></li></Link>
+                    <Link href="/dicas" prefetch><li><a>Dicas</a></li></Link>
+                    <Link href="/especialidades" prefetch><li><a>Especialidades</a></li></Link>
                   </DropdownContent>
                 </Dropdown>
               )}
             <Menu>
-              <li><Link href="/"><a>Início</a></Link></li>
-              <li><Link href="/painel"><a>Painel OrtoConecta</a></Link></li>
-              <li><Link href="/cursos_e_materiais"><a>Cursos e Materiais</a></Link></li>
-              <li><Link href="/experiencias"><a>Experiências</a></Link></li>
-              <li><Link href="/dicas"><a>Dicas</a></Link></li>
-              <li><Link href="/especialidades"><a>Especialidades</a></Link></li>
+              <li><Link route="/" prefetch><a>Início</a></Link></li>
+              <li><Link route="/painel" prefetch><a>Painel OrtoConecta</a></Link></li>
+              <li><Link route="/cursos_e_materiais" prefetch><a>Cursos e Materiais</a></Link></li>
+              <li><Link route="/experiencias" prefetch><a>Experiências</a></Link></li>
+              <li><Link route="/dicas" prefetch><a>Dicas</a></Link></li>
+              <li><Link route="/especialidades" prefetch><a>Especialidades</a></Link></li>
             </Menu>
           </Navigation>
       </Fragment>
