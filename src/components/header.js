@@ -16,7 +16,7 @@ const Navigation = styled.div`
   -moz-box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
   box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
   
-  @media(max-width: 1080px) {
+  @media(max-width: 1128px) {
     ul {
       display: none;
     }
@@ -174,22 +174,24 @@ class Header extends Component {
             {this.state.showMenu === true && (
                 <Dropdown>
                   <DropdownContent>
-                    <Link href="/" prefetch><li><a>Início</a></li></Link>
-                    <Link href="/painel" prefetch><li><a>Painel OrtoConecta</a></li></Link>
-                    <Link href="/cursos_e_materiais" prefetch><li><a>Cursos e Materiais</a></li></Link>
-                    <Link href="/experiencias" prefetch><li><a>Experiências</a></li></Link>
-                    <Link href="/dicas" prefetch><li><a>Dicas</a></li></Link>
-                    <Link href="/especialidades" prefetch><li><a>Especialidades</a></li></Link>
+                    <Link route="/"><li><a>Início</a></li></Link>
+                    <Link route="/painel"><li><a>Painel OrtoConecta</a></li></Link>
+                    <Link route="/cursos_e_materiais"><li><a>Cursos e Materiais</a></li></Link>
+                    <Link route="/experiencias"><li><a>Experiências</a></li></Link>
+                    <Link route="/dicas"><li><a>Dicas</a></li></Link>
+                    <Link route="/especialidades"><li><a>Especialidades</a></li></Link>
+                    <Link route="/casos_clinicos"><li><a>Casos Clínicos</a></li></Link>
                   </DropdownContent>
                 </Dropdown>
               )}
             <Menu>
-              <li><Link route="/" prefetch><a>Início</a></Link></li>
-              <li><Link route="/painel" prefetch><a>Painel OrtoConecta</a></Link></li>
-              <li><Link route="/cursos_e_materiais" prefetch><a>Cursos e Materiais</a></Link></li>
-              <li><Link route="/experiencias" prefetch><a>Experiências</a></Link></li>
-              <li><Link route="/dicas" prefetch><a>Dicas</a></Link></li>
-              <li><Link route="/especialidades" prefetch><a>Especialidades</a></Link></li>
+              <li><Link route="/"><a>Início</a></Link></li>
+              <li><Link route="/painel"><a>Painel OrtoConecta</a></Link></li>
+              <li><Link route="/cursos_e_materiais"><a>Cursos e Materiais</a></Link></li>
+              <li><Link route="/experiencias"><a>Experiências</a></Link></li>
+              <li><Link route="/dicas"><a>Dicas</a></Link></li>
+              <li><Link route="/especialidades"><a>Especialidades</a></Link></li>
+              <li><Link route="/casos_clinicos"><a>Casos Clínicos</a></Link></li>
             </Menu>
           </Navigation>
       </Fragment>

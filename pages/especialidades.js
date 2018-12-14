@@ -4,8 +4,9 @@ import Main from '../layouts/main'
 import Head from 'next/head'
 import { Link } from '../routes'
 import axios from 'axios'
-import moment from 'moment'
+import dayjs from 'dayjs'
 import Iframe from 'react-iframe'
+import 'dayjs/locale/pt-br'
 
 const primaryColor = "#ffd32a"
 
@@ -128,8 +129,8 @@ const Especialidades = props => {
                   </Link>
                   <h4>{speciality.author} ({speciality.speciality})</h4>
                   <Date>Publicado em.: {
-                    moment.locale('pt-br'),
-                    moment(speciality.publishedAt).format("LL")
+                    dayjs.locale('pt-br'),
+                    dayjs(speciality.publishedAt).format('DD_MMMM_YYYY').split('_').join(' de ')
                   }</Date>
                   <Article>{`${speciality.article.substr(0, 500)}...`}</Article>
                   <Link href={`/especialidades/${speciality.id}`}>
@@ -146,7 +147,7 @@ const Especialidades = props => {
 
 Especialidades.getInitialProps = async () => {
   let response = await axios.get("http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080/specialities");
-
+  
   return { specialities: response.data }
 }
 

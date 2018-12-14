@@ -2,10 +2,11 @@ import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
 import Head from 'next/head'
-import moment from 'moment'
+import dayjs from 'dayjs'
 import Main from '../layouts/main'
 import { FaDownload } from 'react-icons/fa'
 import TextareaAutosize from 'react-autosize-textarea'
+import 'dayjs/locale/pt-br'
 
 const primaryColor = "#ffd32a"
 
@@ -111,8 +112,8 @@ const Especialidade = props => {
                     <Img src={`http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${author_avatar.url}`} alt={author} />
                     <h2>{author} ({speciality})</h2>
                     <h3>Publicado em {
-                        moment.locale('pt-br'),
-                        moment(publishedAt).format("LL")
+                        dayjs.locale('pt-br'),
+                        dayjs(publishedAt).format('DD_MMMM_YYYY').split('_').join(' de ')
                     }</h3>
                     <Download href={`http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${material.url}`} target="blank"><FaDownload style={{ background: 'transparent', fontSize: '1.2rem', marginRight: '10px' }} /> Baixar Material</Download>
                     <StyledTextarea 

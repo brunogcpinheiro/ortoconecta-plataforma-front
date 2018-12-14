@@ -2,13 +2,15 @@ import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import Main from '../layouts/main'
 import Head from 'next/head'
+import { Link } from '../routes'
+import { FaChalkboard, FaBook, FaBriefcase, FaLightbulb, FaHeartbeat, FaRegNewspaper } from 'react-icons/fa'
 
 const primaryColor = "#FFD32A"
 
 const Hero = styled.div`
   width: 100%;
   height: 100vh;
-  background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('/static/dentist.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('/static/background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -70,7 +72,7 @@ const About = styled.section`
   flex-direction: column;
   background: #fff;
   width: 80%;
-  max-width: 860px;
+  max-width: 800px;
   margin: -50px auto;
   margin-bottom: 50px;
   border: 1px solid #ccc;
@@ -126,6 +128,124 @@ const About = styled.section`
   }
 `
 
+const ProfilesWrapper = styled.div`
+  width: 100%; 
+  height: 100%;
+  background: ${primaryColor};
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 100px;
+  
+  h1 {
+    margin: 20px 0;
+    font-size: 3rem;
+  }
+`
+
+const Profiles = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+`
+
+const Profile = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 280px;
+  height: 500px;
+  background: #f5f5f5;
+  text-align: justify;
+  padding: 16px;
+  margin: 15px;
+  -webkit-box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
+  -moz-box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
+  box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
+  
+  @media(max-width: 965px) {
+    width: 30%;
+    margin: 16px;
+  }
+  
+  @media(max-width: 885px) {
+    width: 70%;
+  }
+  
+  
+  img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+`
+
+const ContentWrapper = styled.div`
+  width: 70%;
+  height: 100%;
+  background: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  margin: 50px auto;
+  
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+`
+const Contents = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+`
+
+const Content = styled.div`
+    width: 250px;
+    height: 300px;
+    background: #fff;
+    box-shadow:
+      0 1px 1px rgba(0,0,0,0.15),
+      0 10px 0 -5px #eee,
+      0 10px 1px -4px rgba(0,0,0,0.15),
+      0 20px 0 -10px #eee,
+      0 20px 1px -9px rgba(0,0,0,0.15);
+      padding: 30px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+`
+
+const Acessar = styled.button`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    margin-top: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    background: ${primaryColor};
+    border: 2px solid ${primaryColor};
+    
+    &:visited, &:active, &:link {
+        color: inherit;
+    }
+`
+
 const Home = props => (
   <Fragment>
     <Head>
@@ -150,6 +270,79 @@ const Home = props => (
         </p>
         <h3>Bem-vindos à plataforma <span>OrtoConecta!</span></h3>
       </About>
+      <ProfilesWrapper>
+        <h1>Perfis Profissionais</h1>
+        <Profiles>
+          <Profile>
+            <img src="/static/renato.png" alt="Dr. Renato Tanabe" />
+            <h2>Dr. Renato Tanabe</h2>
+            <p>É formado pela UNISA-SP desde 1995. Especializou-se em ortodontia, estomatologia e ortopedia facial. Posteriormente tornou-se mestre em ortodontia e clínica infantil. Coordenador das Atividades Científicas em 7 edições do Congresso Brasileiro de Ortodontia trabalhou sempre pelo crescimento da área. Possui credenciamento nos sistemas Invisalign® e Damon Smile®. Atua como professor dos cursos de atualização e especialização em ortodontia e ortopedia facial. Ortodontista clínico desde 2001 e proprietário da marca “Sorriso Ativo Odontologia”, Dr. Renato Tanabe é referência de conhecimento da área em São Paulo.</p>
+          </Profile>
+          <Profile>
+            <img src="/static/alexandre.png" alt="Dr. Alexandre Mendonça" />
+            <h2>Dr. Alexandre Mendonça</h2>
+            <p>É formado pela Universidade de Uberaba desde 1997. Especializou-se em Ortodontia pela ANEO-SP sendo também pós graduado latu sensu em implantodontia e cirurgia oral menor. Atuante na área desde 1997, Dr. Alexandre Mendonça é proprietário da marca     OAM – Odontologia com grande ênfase na área de Planos Assistenciais Odontológicos voltados às empresas</p>
+          </Profile>
+          <Profile>
+            <img src="/static/gustavo.png" alt="Dr. Gustavo Furlan" />
+            <h2>Dr. Gustavo Furlan</h2>
+            <p>É formado pela Universidade de São Paulo desde 2002. Especializou-se em ortodontia para posteriormente tornar-se mestre e atuar como professor dos cursos de atualização e especialização nos estados de Minas Gerais, Rio Grande do Sul e São Paulo. Ortodontista clínico desde 2005, Dr. Gustavo Furlan é proprietário da marca “GF Ortodontia”.</p>
+          </Profile>
+        </Profiles>
+      </ProfilesWrapper>
+      <ContentWrapper>
+        <h1>Conteúdo do Site</h1>
+        <Contents>
+          <Content>
+            <FaChalkboard style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>Painel OrtoConecta</h4>
+            <br />
+            <p>O contrário da crença popular, o Lorem Ipsum não é simplesmente texto aleatório. Tem raízes numa peça de literatura clássica em Latim, de 45 AC, tornando-o com mais de 2000 anos. Richard McClintock.</p>
+            <Link route="/painel">
+              <Acessar>Acessar</Acessar>
+            </Link>
+          </Content>
+          <Content>
+            <FaBook style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>Cursos e Materiais</h4>
+            <br />
+            <p>O contrário da crença popular, o Lorem Ipsum não é simplesmente texto aleatório. Tem raízes numa peça de literatura clássica em Latim, de 45 AC, tornando-o com mais de 2000 anos. Richard McClintock.</p>
+            <Link route="/cursos_e_materiais">
+              <Acessar>Acessar</Acessar>
+            </Link>
+          </Content>
+          <Content>
+            <FaBriefcase style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>Experiências</h4>
+            <br />
+            <p>O contrário da crença popular, o Lorem Ipsum não é simplesmente texto aleatório. Tem raízes numa peça de literatura clássica em Latim, de 45 AC, tornando-o com mais de 2000 anos. Richard McClintock.</p>
+            <Link route="/experiencias">
+              <Acessar>Acessar</Acessar>
+            </Link>
+          </Content>
+          <Content>
+            <FaLightbulb style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>Dicas</h4>
+            <br />
+            <p>O contrário da crença popular, o Lorem Ipsum não é simplesmente texto aleatório. Tem raízes numa peça de literatura clássica em Latim, de 45 AC, tornando-o com mais de 2000 anos. Richard McClintock.</p>
+            <Link route="/dicas">
+              <Acessar>Acessar</Acessar>
+            </Link>
+          </Content>
+          <Content>
+            <FaHeartbeat style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>Especialidades</h4>
+            <br />
+            <p>O contrário da crença popular, o Lorem Ipsum não é simplesmente texto aleatório. Tem raízes numa peça de literatura clássica em Latim, de 45 AC, tornando-o com mais de 2000 anos. Richard McClintock.</p>
+            <Link route="/especialidades">
+              <Acessar>Acessar</Acessar>
+            </Link>
+          </Content>
+          <Content>
+            <FaRegNewspaper style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>Casos Clínicos</h4>
+            <br />
+            <p>O contrário da crença popular, o Lorem Ipsum não é simplesmente texto aleatório. Tem raízes numa peça de literatura clássica em Latim, de 45 AC, tornando-o com mais de 2000 anos. Richard McClintock.</p>
+            <Link route="/casos_clinicos">
+              <Acessar>Acessar</Acessar>
+            </Link>
+          </Content>
+        </Contents>
+      </ContentWrapper>
     </Main>
   </Fragment>
 )

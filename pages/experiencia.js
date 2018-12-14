@@ -1,7 +1,6 @@
 import React, { Fragment, Component } from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
-import moment from 'moment'
 import Iframe from 'react-iframe'
 import Head from 'next/head'
 import { withRouter } from 'next/router'
@@ -9,6 +8,10 @@ import Router from 'next/router'
 import Main from '../layouts/main'
 import { FaRegCommentAlt } from 'react-icons/fa'
 import swal from 'sweetalert2'
+import dayjs from 'dayjs'
+import relativeTime from 'dayjs/plugin/relativeTime'
+import 'dayjs/locale/pt-br'
+dayjs.extend(relativeTime)
 
 const primaryColor = "#ffd32a"
 
@@ -184,7 +187,7 @@ class Experiencia extends Component {
         const newComment = {
             author: this.state.author,
             author_email: this.state.author_email,
-            date: moment().format(),
+            date: dayjs().format(),
             body: this.state.body,
             experience: Router.query.id 
         }
@@ -207,14 +210,13 @@ class Experiencia extends Component {
                   title: 'Algo errado com a requisição. Tente novamente!'
                 })
             })
+            Router.replace(`http://ortoconecta-plataforma-front-brunogcpinheiro.c9users.io:8080/experiencias/${Router.query.id}`)
         } else {
             swal({
               type: 'error',
               title: 'Preencha todos os dados!'
             })
         }
-        
-        Router.replace(`http://ortoconecta-plataforma-front-brunogcpinheiro.c9users.io:8080/experiencias/${Router.query.id}`)
     }
     
     render () {
@@ -263,8 +265,8 @@ class Experiencia extends Component {
                                     <h3>{comment.author}</h3>
                                     <h4>{comment.author_email}</h4>
                                     <small>{
-                                        moment.locale('pt-br'),
-                                        moment(comment.date).fromNow()
+                                        dayjs.locale('pt-br'),
+                                        dayjs(comment.date).fromNow()
                                     }</small>
                                       <p>{comment.body}</p>
                                 </div>

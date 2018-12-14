@@ -3,9 +3,10 @@ import styled from 'styled-components'
 import Iframe from 'react-iframe'
 import axios from 'axios'
 import Head from 'next/head'
-import moment from 'moment'
+import dayjs from 'dayjs'
 import Main from '../layouts/main'
 import { FaDownload, FaCreditCard } from 'react-icons/fa'
+import 'dayjs/locale/pt-br'
 
 const primaryColor = "#ffd32a";
 
@@ -254,8 +255,8 @@ const CoursesAndMaterials = props => {
                                     <div>
                                         <Title>{material.title}</Title>
                                         <h3>Publicado em {
-                                            moment.locale('pt-br'),
-                                            moment(material.publishedAt).format("LL")
+                                            dayjs.locale('pt-br'),
+                                            dayjs(material.publishedAt).format('DD_MMMM_YYYY').split('_').join(' de ')
                                         }</h3>
                                         <h4>Por {material.author}</h4>
                                         <h5>Páginas: {material.pages}</h5>
