@@ -13,6 +13,7 @@ const primaryColor = "#ffd32a";
 const CoursesAndMaterialsWrapper = styled.div`
     padding: 16px;
     background: transparent;
+    margin: 0 auto;
     
     div {
         margin: 20px 0 50px 0;
@@ -37,8 +38,9 @@ const CoursesAndMaterialsWrapper = styled.div`
 const CourseAndMaterialWrapper = styled.div`
     display: flex;
     justify-content: space-evenly;
-    align-items: flex-start;
+    align-items: center;
     flex-wrap: wrap;
+    margin: 0 auto;
     
     @media(max-width: 980px) {
         display: flex;
@@ -61,6 +63,7 @@ const Course = styled.div`
     -moz-box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
     box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
     flex-wrap: wrap;
+    margin: 0 auto;
     
     div {
         display: flex;
@@ -68,7 +71,7 @@ const Course = styled.div`
         justify-content: center;
         align-items: center;
         background: #fff;
-        margin-top: 30px;
+        margin: 30px auto;
     }
     
     h1 {
@@ -124,21 +127,29 @@ const Material = styled.div`
         justify-content: center;
         align-items: center;
         background: #fff;
+        width: 100%;
+        height: 100%;
     }
     
     h3 {
         color: #7f8c8d;
         font-style: italic;
         background: #fff;
+        width: 100%;
+        height: 100%;
     }
     
     h4 {
         font-size: 1.3rem;
         background: #fff;
+        width: 100%;
+        height: 100%;
     }
     
     h5 {
         background: #fff;
+        width: 100%;
+        height: 100%;
     }
     
     p {
@@ -147,6 +158,8 @@ const Material = styled.div`
         margin-top: 16px;
         font-size: 1.1rem;
         background: #fff;
+        width: 100%;
+        height: 100%;
     }
 `
 
@@ -214,7 +227,7 @@ const CoursesAndMaterials = props => {
                         <CourseAndMaterialWrapper>
                             {props.courses.map(course => (
                                 <Course key={course.id}>
-                                    <CourseImg src={`http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${course.course_image.url}`} alt={course.title} />
+                                    <CourseImg src={`https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${course.course_image.url}`} alt={course.title} />
                                     <div>
                                         <Title>{course.title}</Title>
                                         <h3>Local.: <span>{course.local}</span></h3>
@@ -251,7 +264,7 @@ const CoursesAndMaterials = props => {
                         <CourseAndMaterialWrapper>
                             {props.materials.map(material => (
                                 <Material key={material.id}>
-                                    <Img src={`http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${material.material_image.url}`} alt={material.title} />
+                                    <Img src={`https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${material.material_image.url}`} alt={material.title} />
                                     <div>
                                         <Title>{material.title}</Title>
                                         <h3>Publicado em {
@@ -260,7 +273,7 @@ const CoursesAndMaterials = props => {
                                         }</h3>
                                         <h4>Por {material.author}</h4>
                                         <h5>Páginas: {material.pages}</h5>
-                                        <Button href={`http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${material.material.url}`} target="blank"><FaDownload style={{ background: 'transparent', fontSize: '1.2rem', marginRight: '10px' }} /> Baixar Material</Button>
+                                        <Button href={`https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${material.material.url}`} target="blank"><FaDownload style={{ background: 'transparent', fontSize: '1.2rem', marginRight: '10px' }} /> Baixar Material</Button>
                                         <p>{material.description}</p>
                                     </div>
                                 </Material> 
@@ -274,8 +287,8 @@ const CoursesAndMaterials = props => {
 }
 
 CoursesAndMaterials.getInitialProps = async ({ query }) => {
-    const materialResponse = await axios.get(`http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080/materials`)
-    const coursesResponse = await axios.get(`http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080/courses`)
+    const materialResponse = await axios.get(`https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080/materials`)
+    const coursesResponse = await axios.get(`https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080/courses`)
     
     return { materials: materialResponse.data, courses: coursesResponse.data }
 }

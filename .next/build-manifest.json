@@ -11,11 +11,19 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
+    "/especialidades": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/especialidade": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
     "/index": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/especialidades": [
+    "/painel": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],

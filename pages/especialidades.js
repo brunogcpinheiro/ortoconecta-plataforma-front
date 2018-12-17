@@ -133,7 +133,7 @@ const Especialidades = props => {
                     dayjs(speciality.publishedAt).format('DD_MMMM_YYYY').split('_').join(' de ')
                   }</Date>
                   <Article>{`${speciality.article.substr(0, 500)}...`}</Article>
-                  <Link href={`/especialidades/${speciality.id}`}>
+                  <Link route={`/especialidades/${speciality.id}`} prefetch>
                     <ReadMore>Leia mais</ReadMore>
                   </Link>
                 </li>
@@ -146,7 +146,7 @@ const Especialidades = props => {
 }
 
 Especialidades.getInitialProps = async () => {
-  let response = await axios.get("http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080/specialities");
+  let response = await axios.get("https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080/specialities");
   
   return { specialities: response.data }
 }

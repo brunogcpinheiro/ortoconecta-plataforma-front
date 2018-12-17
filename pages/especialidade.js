@@ -109,13 +109,13 @@ const Especialidade = props => {
             <Main>
                 <SpecialityWrapper>
                     <Title>{title}</Title>
-                    <Img src={`http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${author_avatar.url}`} alt={author} />
+                    <Img src={`https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${author_avatar.url}`} alt={author} />
                     <h2>{author} ({speciality})</h2>
                     <h3>Publicado em {
                         dayjs.locale('pt-br'),
                         dayjs(publishedAt).format('DD_MMMM_YYYY').split('_').join(' de ')
                     }</h3>
-                    <Download href={`http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${material.url}`} target="blank"><FaDownload style={{ background: 'transparent', fontSize: '1.2rem', marginRight: '10px' }} /> Baixar Material</Download>
+                    <Download href={`https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${material.url}`} target="blank"><FaDownload style={{ background: 'transparent', fontSize: '1.2rem', marginRight: '10px' }} /> Baixar Material</Download>
                     <StyledTextarea 
                         disabled
                         async
@@ -128,7 +128,7 @@ const Especialidade = props => {
 }
 
 Especialidade.getInitialProps = async ({ query }) => {
-    const response = await axios.get(`http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080/specialities/${query.id}`)
+    const response = await axios.get(`https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080/specialities/${query.id}`)
     
     return { speciality: response.data }
 }

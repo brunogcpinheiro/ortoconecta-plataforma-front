@@ -231,7 +231,7 @@ class Experiencia extends Component {
                     <Experience>
                         <Fragment>
                             <div>
-                                <Iframe url={`http://www.youtube.com/embed/${this.props.experience.video_url}`}
+                                <Iframe url={`https://www.youtube.com/embed/${this.props.experience.video_url}`}
                                     position="relative"
                                     width="100%"
                                     height="500px"
@@ -280,7 +280,7 @@ class Experiencia extends Component {
 }
 
 Experiencia.getInitialProps = async ({ query }) => {
-    const experienceResponse = await axios.get(`http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080/experiences/${query.id}`)
+    const experienceResponse = await axios.get(`https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080/experiences/${query.id}`)
     
     return { experience: experienceResponse.data }
 }

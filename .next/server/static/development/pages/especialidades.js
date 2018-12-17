@@ -230,7 +230,8 @@ var Especialidades = function Especialidades(props) {
       route: "/especialidades/".concat(speciality.id),
       prefetch: true
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Title, null, speciality.title)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, speciality.author, " (", speciality.speciality, ")"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Date, null, "Publicado em.: ", (dayjs__WEBPACK_IMPORTED_MODULE_7___default.a.locale('pt-br'), dayjs__WEBPACK_IMPORTED_MODULE_7___default()(speciality.publishedAt).format('DD_MMMM_YYYY').split('_').join(' de '))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Article, null, "".concat(speciality.article.substr(0, 500), "...")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_5__["Link"], {
-      href: "/especialidades/".concat(speciality.id)
+      route: "/especialidades/".concat(speciality.id),
+      prefetch: true
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(ReadMore, null, "Leia mais"))));
   }))));
 };
@@ -246,7 +247,7 @@ _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function 
       switch (_context.prev = _context.next) {
         case 0:
           _context.next = 2;
-          return axios__WEBPACK_IMPORTED_MODULE_6___default.a.get("http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080/specialities");
+          return axios__WEBPACK_IMPORTED_MODULE_6___default.a.get("https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080/specialities");
 
         case 2:
           response = _context.sent;
@@ -439,7 +440,8 @@ function (_Component) {
       var _this2 = this;
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Navigation, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Logo, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        href: "/"
+        href: "/",
+        prefetch: true
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "/static/logo.jpeg"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "OrtoConecta")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(MenuIcon, {

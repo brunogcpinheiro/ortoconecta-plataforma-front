@@ -101,6 +101,7 @@ const About = styled.section`
     text-align: justify;
     font-size: 1.2rem;
     color: #2d3436;
+    width: 100%;
     
     strong {
       font-size: 1.2rem;
@@ -175,6 +176,10 @@ const Profile = styled.div`
   
   @media(max-width: 885px) {
     width: 70%;
+  }
+  
+  p {
+    width: 100%;
   }
   
   
@@ -258,6 +263,7 @@ const NewsletterWrapper = styled.div`
   
   h1 {
     font-size: 2.5rem;
+    text-align: center;
   }
   
   p {

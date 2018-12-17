@@ -105,10 +105,10 @@ const Experiencias = props => {
             <ExperiencesWrapper>
                 <h2>Compartilhando Experiências OrtoConecta</h2>
                     {sorted.map(experience => (
-                        <Link prefetch key={experience.id} route={`http://ortoconecta-plataforma-front-brunogcpinheiro.c9users.io:8080/experiencias/${experience.id}`}>
+                        <Link prefetch key={experience.id} route={`https://ortoconecta-plataforma-front-brunogcpinheiro.c9users.io:8080/experiencias/${experience.id}`}>
                             <Experience>
                                 <Fragment>
-                                    <img src={`http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${experience.thumbnail.url}`} alt={experience.title} />
+                                    <img src={`https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${experience.thumbnail.url}`} alt={experience.title} />
                                     <div>
                                         <h1>{experience.title}</h1>
                                         <p>{experience.description}<span>Leia mais...</span></p>
@@ -126,8 +126,8 @@ const Experiencias = props => {
 }
 
 Experiencias.getInitialProps = async () => {
-    const experiencesResponse = await axios.get(`http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080/experiences`)
-    const commentsResponse = await axios.get(`http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080/comments`)
+    const experiencesResponse = await axios.get(`https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080/experiences`)
+    const commentsResponse = await axios.get(`https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080/comments`)
     
     return { experiences: experiencesResponse.data, comments: commentsResponse.data }
 }
