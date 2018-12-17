@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
   body, html {
     height: 100%;
     background: #f5f5f5;
+    scroll-behavior: smooth;
   }
 
   a, button {

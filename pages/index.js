@@ -213,7 +213,7 @@ const Contents = styled.div`
 `
 
 const Content = styled.div`
-    width: 250px;
+    width: 200px;
     height: 300px;
     background: #fff;
     box-shadow:
@@ -244,6 +244,42 @@ const Acessar = styled.button`
     &:visited, &:active, &:link {
         color: inherit;
     }
+`
+
+const NewsletterWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: ${primaryColor};
+  padding: 5rem 0;
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  p {
+    font-size: 1.1rem;
+    margin: 20px 0;
+  }
+`
+
+const Newsletter = styled.form`
+  input {
+    border: none;
+    border: 1px solid #fff;
+    padding: 1.2rem;
+    width: 300px;
+  }
+  
+  button {
+    border: none;
+    background: #181818;
+    color: ${primaryColor};
+    padding: 1.2rem;
+  }
 `
 
 const Home = props => (
@@ -281,7 +317,7 @@ const Home = props => (
           <Profile>
             <img src="/static/alexandre.png" alt="Dr. Alexandre Mendonça" />
             <h2>Dr. Alexandre Mendonça</h2>
-            <p>É formado pela Universidade de Uberaba desde 1997. Especializou-se em Ortodontia pela ANEO-SP sendo também pós graduado latu sensu em implantodontia e cirurgia oral menor. Atuante na área desde 1997, Dr. Alexandre Mendonça é proprietário da marca     OAM – Odontologia com grande ênfase na área de Planos Assistenciais Odontológicos voltados às empresas</p>
+            <p>É formado pela Universidade de Uberaba desde 1997. Especializou-se em Ortodontia pela ANEO-SP sendo também pós graduado latu sensu em implantodontia e cirurgia oral menor. Atuante na área desde 1997, Dr. Alexandre Mendonça é proprietário da marca     OAM – Odontologia com grande ênfase na área de Planos Assistenciais Odontológicos voltados às empresas.</p>
           </Profile>
           <Profile>
             <img src="/static/gustavo.png" alt="Dr. Gustavo Furlan" />
@@ -343,6 +379,14 @@ const Home = props => (
           </Content>
         </Contents>
       </ContentWrapper>
+      <NewsletterWrapper>
+        <h1>Registre-se em nossa Newsletter!</h1>
+        <p>Receba nosso contéudo por email! Não é spam!</p>
+        <Newsletter>
+          <input type="text" placeholder="Digite seu melhor email..." />
+          <button>Inscrever</button>
+        </Newsletter>
+      </NewsletterWrapper>
     </Main>
   </Fragment>
 )

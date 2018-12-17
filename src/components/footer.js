@@ -59,6 +59,7 @@ const Footer = props => {
                     <FaWhatsapp style={{ fontSize: '2rem' }} />
                 </a>
             </div>
+            <p>Ou por email no endereço: ortoconecta@ortoconecta.com.br</p>
             <p>Desenvolvido por <a href="https://facebook.com/bruno.carpinelli" target="blank"><span>Bruno Carpinelli</span></a></p>
             <p>Direitos Reservados &reg;</p>
         </FooterWrapper>
