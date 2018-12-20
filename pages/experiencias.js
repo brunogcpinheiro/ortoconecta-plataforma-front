@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
 import Head from 'next/head'
-import { Link } from '../routes'
+import { Link }  from '../routes'
 import Main from '../layouts/main'
 import { FaRegCommentAlt } from 'react-icons/fa'
 
@@ -105,7 +105,7 @@ const Experiencias = props => {
             <ExperiencesWrapper>
                 <h2>Compartilhando Experiências OrtoConecta</h2>
                     {sorted.map(experience => (
-                        <Link prefetch key={experience.id} route={`https://ortoconecta-plataforma-front-brunogcpinheiro.c9users.io:8080/experiencias/${experience.id}`}>
+                        <Link key={experience.id} route={`https://ortoconecta-plataforma-front-brunogcpinheiro.c9users.io:8080/experiencias/${experience.id}`}>
                             <Experience>
                                 <Fragment>
                                     <img src={`https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${experience.thumbnail.url}`} alt={experience.title} />
@@ -127,9 +127,8 @@ const Experiencias = props => {
 
 Experiencias.getInitialProps = async () => {
     const experiencesResponse = await axios.get(`https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080/experiences`)
-    const commentsResponse = await axios.get(`https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080/comments`)
     
-    return { experiences: experiencesResponse.data, comments: commentsResponse.data }
+    return { experiences: experiencesResponse.data }
 }
 
 export default Experiencias

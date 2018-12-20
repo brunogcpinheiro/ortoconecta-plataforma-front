@@ -259,7 +259,7 @@ const CoursesAndMaterials = props => {
                     </div>
                     
                     <div>
-                        <h2>Materiais <span>gratuitos</span> OrtoConecta</h2>
+                        <h2>Materiais <span>disponíveis</span> OrtoConecta</h2>
                         <p><strong>OBS.:</strong> Baixe o material para ler o artigo completo!</p>
                         <CourseAndMaterialWrapper>
                             {props.materials.map(material => (

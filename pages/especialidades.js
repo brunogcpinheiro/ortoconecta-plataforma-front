@@ -124,7 +124,7 @@ const Especialidades = props => {
               .map(speciality => (
               <Speciality key={speciality.id}>
                 <li>
-                  <Link route={`/especialidades/${speciality.id}`} prefetch>
+                  <Link route={`/especialidades/${speciality.id}`}>
                     <Title>{speciality.title}</Title>
                   </Link>
                   <h4>{speciality.author} ({speciality.speciality})</h4>
@@ -133,7 +133,7 @@ const Especialidades = props => {
                     dayjs(speciality.publishedAt).format('DD_MMMM_YYYY').split('_').join(' de ')
                   }</Date>
                   <Article>{`${speciality.article.substr(0, 500)}...`}</Article>
-                  <Link route={`/especialidades/${speciality.id}`} prefetch>
+                  <Link route={`/especialidades/${speciality.id}`}>
                     <ReadMore>Leia mais</ReadMore>
                   </Link>
                 </li>
