@@ -10,6 +10,11 @@ const Container = styled.div`
   height: 100%;
 `
 
+const Content = styled.div`
+  max-width: 1366px;
+  margin: 0 auto;
+`
+
 export default (props) => (
   <Fragment>
     <div>
@@ -22,7 +27,9 @@ export default (props) => (
     <Container>
       <GlobalStyle />
       <Header />
-      {props.children}
+      <Content>
+        {props.children}
+      </Content>
       <Footer />
     </Container>
   </Fragment>

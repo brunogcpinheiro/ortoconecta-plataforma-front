@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import Main from '../layouts/main'
 import Head from 'next/head'
-import { Link } from '../routes'
+import Link from 'next/link'
 import { FaChalkboard, FaBook, FaBriefcase, FaLightbulb, FaHeartbeat, FaRegNewspaper } from 'react-icons/fa'
 
 const primaryColor = "#FFD32A"
@@ -339,7 +339,7 @@ const Home = props => (
             <FaChalkboard style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>Painel OrtoConecta</h4>
             <br />
             <p>O contrário da crença popular, o Lorem Ipsum não é simplesmente texto aleatório. Tem raízes numa peça de literatura clássica em Latim, de 45 AC, tornando-o com mais de 2000 anos. Richard McClintock.</p>
-            <Link route="/painel">
+            <Link prefetch href="/painel">
               <Acessar>Acessar</Acessar>
             </Link>
           </Content>
@@ -347,7 +347,7 @@ const Home = props => (
             <FaBook style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>Cursos e Materiais</h4>
             <br />
             <p>O contrário da crença popular, o Lorem Ipsum não é simplesmente texto aleatório. Tem raízes numa peça de literatura clássica em Latim, de 45 AC, tornando-o com mais de 2000 anos. Richard McClintock.</p>
-            <Link route="/cursos_e_materiais">
+            <Link prefetch href="/cursos_e_materiais">
               <Acessar>Acessar</Acessar>
             </Link>
           </Content>
@@ -355,7 +355,7 @@ const Home = props => (
             <FaBriefcase style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>Experiências</h4>
             <br />
             <p>O contrário da crença popular, o Lorem Ipsum não é simplesmente texto aleatório. Tem raízes numa peça de literatura clássica em Latim, de 45 AC, tornando-o com mais de 2000 anos. Richard McClintock.</p>
-            <Link route="/experiencias">
+            <Link prefetch href="/experiencias">
               <Acessar>Acessar</Acessar>
             </Link>
           </Content>
@@ -363,7 +363,7 @@ const Home = props => (
             <FaLightbulb style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>Dicas</h4>
             <br />
             <p>O contrário da crença popular, o Lorem Ipsum não é simplesmente texto aleatório. Tem raízes numa peça de literatura clássica em Latim, de 45 AC, tornando-o com mais de 2000 anos. Richard McClintock.</p>
-            <Link route="/dicas">
+            <Link prefetch href="/dicas">
               <Acessar>Acessar</Acessar>
             </Link>
           </Content>
@@ -371,7 +371,7 @@ const Home = props => (
             <FaHeartbeat style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>Especialidades</h4>
             <br />
             <p>O contrário da crença popular, o Lorem Ipsum não é simplesmente texto aleatório. Tem raízes numa peça de literatura clássica em Latim, de 45 AC, tornando-o com mais de 2000 anos. Richard McClintock.</p>
-            <Link route="/especialidades">
+            <Link prefetch href="/especialidades">
               <Acessar>Acessar</Acessar>
             </Link>
           </Content>
@@ -379,7 +379,7 @@ const Home = props => (
             <FaRegNewspaper style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>Casos Clínicos</h4>
             <br />
             <p>O contrário da crença popular, o Lorem Ipsum não é simplesmente texto aleatório. Tem raízes numa peça de literatura clássica em Latim, de 45 AC, tornando-o com mais de 2000 anos. Richard McClintock.</p>
-            <Link route="/casos_clinicos">
+            <Link prefetch href="/casos_clinicos">
               <Acessar>Acessar</Acessar>
             </Link>
           </Content>

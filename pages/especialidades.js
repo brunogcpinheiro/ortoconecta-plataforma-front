@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import Main from '../layouts/main'
 import Head from 'next/head'
-import { Link } from '../routes'
+import Link from 'next/link'
 import axios from 'axios'
 import dayjs from 'dayjs'
 import Iframe from 'react-iframe'
@@ -124,7 +124,7 @@ const Especialidades = props => {
               .map(speciality => (
               <Speciality key={speciality.id}>
                 <li>
-                  <Link route={`/especialidades/${speciality.id}`}>
+                  <Link prefetch href={`/especialidades/${speciality.id}`}>
                     <Title>{speciality.title}</Title>
                   </Link>
                   <h4>{speciality.author} ({speciality.speciality})</h4>
@@ -133,7 +133,7 @@ const Especialidades = props => {
                     dayjs(speciality.publishedAt).format('DD_MMMM_YYYY').split('_').join(' de ')
                   }</Date>
                   <Article>{`${speciality.article.substr(0, 500)}...`}</Article>
-                  <Link route={`/especialidades/${speciality.id}`}>
+                  <Link prefetch href={`/especialidades/${speciality.id}`}>
                     <ReadMore>Leia mais</ReadMore>
                   </Link>
                 </li>

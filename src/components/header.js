@@ -1,6 +1,6 @@
 import React, { Fragment, Component } from 'react'
 import styled from 'styled-components'
-import { Link } from '../../routes'
+import Link from 'next/link'
 
 const primaryColor = "#ffd32a";
 
@@ -174,24 +174,24 @@ class Header extends Component {
             {this.state.showMenu === true && (
                 <Dropdown>
                   <DropdownContent>
-                    <Link route="/"><li><a>Início</a></li></Link>
-                    <Link route="/painel"><li><a>Painel OrtoConecta</a></li></Link>
-                    <Link route="/cursos_e_materiais"><li><a>Cursos e Materiais</a></li></Link>
-                    <Link route="/experiencias"><li><a>Experiências</a></li></Link>
-                    <Link route="/dicas"><li><a>Dicas</a></li></Link>
-                    <Link route="/especialidades"><li><a>Especialidades</a></li></Link>
-                    <Link route="/casos_clinicos"><li><a>Casos Clínicos</a></li></Link>
+                    <Link prefetch href="/"><li><a>Início</a></li></Link>
+                    <Link prefetch href="/painel"><li><a>Painel OrtoConecta</a></li></Link>
+                    <Link prefetch href="/cursos_e_materiais"><li><a>Cursos e Materiais</a></li></Link>
+                    <Link prefetch href="/experiencias"><li><a>Experiências</a></li></Link>
+                    <Link prefetch href="/dicas"><li><a>Dicas</a></li></Link>
+                    <Link prefetch href="/especialidades"><li><a>Especialidades</a></li></Link>
+                    <Link prefetch href="/casos_clinicos"><li><a>Casos Clínicos</a></li></Link>
                   </DropdownContent>
                 </Dropdown>
               )}
             <Menu>
-              <li><Link route="/"><a>Início</a></Link></li>
-              <li><Link route="/painel"><a>Painel OrtoConecta</a></Link></li>
-              <li><Link route="/cursos_e_materiais"><a>Cursos e Materiais</a></Link></li>
-              <li><Link route="/experiencias"><a>Experiências</a></Link></li>
-              <li><Link route="/dicas"><a>Dicas</a></Link></li>
-              <li><Link route="/especialidades"><a>Especialidades</a></Link></li>
-              <li><Link route="/casos_clinicos"><a>Casos Clínicos</a></Link></li>
+              <li><Link prefetch href="/"><a>Início</a></Link></li>
+              <li><Link prefetch href="/painel"><a>Painel OrtoConecta</a></Link></li>
+              <li><Link prefetch href="/cursos_e_materiais"><a>Cursos e Materiais</a></Link></li>
+              <li><Link prefetch href="/experiencias"><a>Experiências</a></Link></li>
+              <li><Link prefetch href="/dicas"><a>Dicas</a></Link></li>
+              <li><Link prefetch href="/especialidades"><a>Especialidades</a></Link></li>
+              <li><Link prefetch href="/casos_clinicos"><a>Casos Clínicos</a></Link></li>
             </Menu>
           </Navigation>
       </Fragment>

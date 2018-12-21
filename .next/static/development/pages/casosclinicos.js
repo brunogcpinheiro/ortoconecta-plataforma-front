@@ -27,6 +27,10 @@ var Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.wi
   displayName: "main__Container",
   componentId: "sc-196d63t-0"
 })(["height:100%;"]);
+var Content = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
+  displayName: "main__Content",
+  componentId: "sc-196d63t-1"
+})(["max-width:1366px;margin:0 auto;"]);
 /* harmony default export */ __webpack_exports__["default"] = (function (props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", {
     name: "viewport",
@@ -36,7 +40,7 @@ var Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.wi
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
     href: "https://fonts.googleapis.com/css?family=Poppins",
     rel: "stylesheet"
-  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src_styles_global__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src_components_header__WEBPACK_IMPORTED_MODULE_3__["default"], null), props.children, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src_components_footer__WEBPACK_IMPORTED_MODULE_4__["default"], null)));
+  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src_styles_global__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src_components_header__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Content, null, props.children), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src_components_footer__WEBPACK_IMPORTED_MODULE_4__["default"], null)));
 });
 
 /***/ }),
@@ -11825,7 +11829,7 @@ Tokenizer.prototype._emitPartial = function(value){
 module.exports = Stream;
 
 var Parser = __webpack_require__(/*! ./Parser.js */ "./node_modules/htmlparser2/lib/Parser.js");
-var WritableStream = __webpack_require__(/*! readable-stream */ 3).Writable;
+var WritableStream = __webpack_require__(/*! readable-stream */ 5).Writable;
 var StringDecoder = __webpack_require__(/*! string_decoder */ "./node_modules/string_decoder/lib/string_decoder.js").StringDecoder;
 var Buffer = __webpack_require__(/*! buffer */ "./node_modules/buffer/index.js").Buffer;
 
@@ -12155,321 +12159,6 @@ function index (resultFn, isEqual) {
 
 /* harmony default export */ __webpack_exports__["default"] = (index);
 
-
-/***/ }),
-
-/***/ "./node_modules/next-routes/dist/index.js":
-/*!************************************************!*\
-  !*** ./node_modules/next-routes/dist/index.js ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _pathToRegexp = _interopRequireDefault(__webpack_require__(/*! path-to-regexp */ "./node_modules/path-to-regexp/index.js"));
-
-var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-
-var _url = __webpack_require__(/*! url */ "./node_modules/url/url.js");
-
-var _link = _interopRequireDefault(__webpack_require__(/*! next/link */ "./node_modules/next/link.js"));
-
-var _router = _interopRequireDefault(__webpack_require__(/*! next/router */ "./node_modules/next/router.js"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-module.exports = function (opts) {
-  return new Routes(opts);
-};
-
-var Routes =
-/*#__PURE__*/
-function () {
-  function Routes() {
-    var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-        _ref$Link = _ref.Link,
-        Link = _ref$Link === void 0 ? _link.default : _ref$Link,
-        _ref$Router = _ref.Router,
-        Router = _ref$Router === void 0 ? _router.default : _ref$Router;
-
-    _classCallCheck(this, Routes);
-
-    this.routes = [];
-    this.Link = this.getLink(Link);
-    this.Router = this.getRouter(Router);
-  }
-
-  _createClass(Routes, [{
-    key: "add",
-    value: function add(name, pattern, page) {
-      var options;
-
-      if (name instanceof Object) {
-        options = name;
-        name = options.name;
-      } else {
-        if (name[0] === '/') {
-          page = pattern;
-          pattern = name;
-          name = null;
-        }
-
-        options = {
-          name: name,
-          pattern: pattern,
-          page: page
-        };
-      }
-
-      if (this.findByName(name)) {
-        throw new Error("Route \"".concat(name, "\" already exists"));
-      }
-
-      this.routes.push(new Route(options));
-      return this;
-    }
-  }, {
-    key: "findByName",
-    value: function findByName(name) {
-      if (name) {
-        return this.routes.filter(function (route) {
-          return route.name === name;
-        })[0];
-      }
-    }
-  }, {
-    key: "match",
-    value: function match(url) {
-      var parsedUrl = (0, _url.parse)(url, true);
-      var pathname = parsedUrl.pathname,
-          query = parsedUrl.query;
-      return this.routes.reduce(function (result, route) {
-        if (result.route) return result;
-        var params = route.match(pathname);
-        if (!params) return result;
-        return _objectSpread({}, result, {
-          route: route,
-          params: params,
-          query: _objectSpread({}, query, params)
-        });
-      }, {
-        query: query,
-        parsedUrl: parsedUrl
-      });
-    }
-  }, {
-    key: "findAndGetUrls",
-    value: function findAndGetUrls(nameOrUrl, params) {
-      var route = this.findByName(nameOrUrl);
-
-      if (route) {
-        return {
-          route: route,
-          urls: route.getUrls(params),
-          byName: true
-        };
-      } else {
-        var _this$match = this.match(nameOrUrl),
-            _route = _this$match.route,
-            query = _this$match.query;
-
-        var href = _route ? _route.getHref(query) : nameOrUrl;
-        var urls = {
-          href: href,
-          as: nameOrUrl
-        };
-        return {
-          route: _route,
-          urls: urls
-        };
-      }
-    }
-  }, {
-    key: "getRequestHandler",
-    value: function getRequestHandler(app, customHandler) {
-      var _this = this;
-
-      var nextHandler = app.getRequestHandler();
-      return function (req, res) {
-        var _this$match2 = _this.match(req.url),
-            route = _this$match2.route,
-            query = _this$match2.query,
-            parsedUrl = _this$match2.parsedUrl;
-
-        if (route) {
-          if (customHandler) {
-            customHandler({
-              req: req,
-              res: res,
-              route: route,
-              query: query
-            });
-          } else {
-            app.render(req, res, route.page, query);
-          }
-        } else {
-          nextHandler(req, res, parsedUrl);
-        }
-      };
-    }
-  }, {
-    key: "getLink",
-    value: function getLink(Link) {
-      var _this2 = this;
-
-      var LinkRoutes = function LinkRoutes(props) {
-        var route = props.route,
-            params = props.params,
-            to = props.to,
-            newProps = _objectWithoutProperties(props, ["route", "params", "to"]);
-
-        var nameOrUrl = route || to;
-
-        if (nameOrUrl) {
-          Object.assign(newProps, _this2.findAndGetUrls(nameOrUrl, params).urls);
-        }
-
-        return _react.default.createElement(Link, newProps);
-      };
-
-      return LinkRoutes;
-    }
-  }, {
-    key: "getRouter",
-    value: function getRouter(Router) {
-      var _this3 = this;
-
-      var wrap = function wrap(method) {
-        return function (route, params, options) {
-          var _this3$findAndGetUrls = _this3.findAndGetUrls(route, params),
-              byName = _this3$findAndGetUrls.byName,
-              _this3$findAndGetUrls2 = _this3$findAndGetUrls.urls,
-              as = _this3$findAndGetUrls2.as,
-              href = _this3$findAndGetUrls2.href;
-
-          return Router[method](href, as, byName ? options : params);
-        };
-      };
-
-      Router.pushRoute = wrap('push');
-      Router.replaceRoute = wrap('replace');
-      Router.prefetchRoute = wrap('prefetch');
-      return Router;
-    }
-  }]);
-
-  return Routes;
-}();
-
-var Route =
-/*#__PURE__*/
-function () {
-  function Route(_ref2) {
-    var name = _ref2.name,
-        pattern = _ref2.pattern,
-        _ref2$page = _ref2.page,
-        page = _ref2$page === void 0 ? name : _ref2$page;
-
-    _classCallCheck(this, Route);
-
-    if (!name && !page) {
-      throw new Error("Missing page to render for route \"".concat(pattern, "\""));
-    }
-
-    this.name = name;
-    this.pattern = pattern || "/".concat(name);
-    this.page = page.replace(/(^|\/)index$/, '').replace(/^\/?/, '/');
-    this.regex = (0, _pathToRegexp.default)(this.pattern, this.keys = []);
-    this.keyNames = this.keys.map(function (key) {
-      return key.name;
-    });
-    this.toPath = _pathToRegexp.default.compile(this.pattern);
-  }
-
-  _createClass(Route, [{
-    key: "match",
-    value: function match(path) {
-      var values = this.regex.exec(path);
-
-      if (values) {
-        return this.valuesToParams(values.slice(1));
-      }
-    }
-  }, {
-    key: "valuesToParams",
-    value: function valuesToParams(values) {
-      var _this4 = this;
-
-      return values.reduce(function (params, val, i) {
-        if (val === undefined) return params;
-        return Object.assign(params, _defineProperty({}, _this4.keys[i].name, decodeURIComponent(val)));
-      }, {});
-    }
-  }, {
-    key: "getHref",
-    value: function getHref() {
-      var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-      return "".concat(this.page, "?").concat(toQuerystring(params));
-    }
-  }, {
-    key: "getAs",
-    value: function getAs() {
-      var _this5 = this;
-
-      var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-      var as = this.toPath(params) || '/';
-      var keys = Object.keys(params);
-      var qsKeys = keys.filter(function (key) {
-        return _this5.keyNames.indexOf(key) === -1;
-      });
-      if (!qsKeys.length) return as;
-      var qsParams = qsKeys.reduce(function (qs, key) {
-        return Object.assign(qs, _defineProperty({}, key, params[key]));
-      }, {});
-      return "".concat(as, "?").concat(toQuerystring(qsParams));
-    }
-  }, {
-    key: "getUrls",
-    value: function getUrls(params) {
-      var as = this.getAs(params);
-      var href = this.getHref(params);
-      return {
-        as: as,
-        href: href
-      };
-    }
-  }]);
-
-  return Route;
-}();
-
-var toQuerystring = function toQuerystring(obj) {
-  return Object.keys(obj).filter(function (key) {
-    return obj[key] !== null && obj[key] !== undefined;
-  }).map(function (key) {
-    var value = obj[key];
-
-    if (Array.isArray(value)) {
-      value = value.join('/');
-    }
-
-    return [encodeURIComponent(key), encodeURIComponent(value)].join('=');
-  }).join('&');
-};
 
 /***/ }),
 
@@ -15193,18 +14882,6 @@ module.exports = (__webpack_require__(/*! dll-reference dll_fa967e7ef9dcf763db5a
 
 /***/ }),
 
-/***/ "./node_modules/next/router.js":
-/*!*************************************!*\
-  !*** ./node_modules/next/router.js ***!
-  \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! ./dist/lib/router */ "./node_modules/next/dist/lib/router/index.js")
-
-
-/***/ }),
-
 /***/ "./node_modules/node-libs-browser/node_modules/punycode/punycode.js":
 /*!**************************************************************************!*\
   !*** ./node_modules/node-libs-browser/node_modules/punycode/punycode.js ***!
@@ -16096,388 +15773,6 @@ module.exports = function shimAssign() {
 	);
 	return polyfill;
 };
-
-
-/***/ }),
-
-/***/ "./node_modules/path-to-regexp/index.js":
-/*!**********************************************!*\
-  !*** ./node_modules/path-to-regexp/index.js ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Expose `pathToRegexp`.
- */
-module.exports = pathToRegexp
-module.exports.parse = parse
-module.exports.compile = compile
-module.exports.tokensToFunction = tokensToFunction
-module.exports.tokensToRegExp = tokensToRegExp
-
-/**
- * Default configs.
- */
-var DEFAULT_DELIMITER = '/'
-var DEFAULT_DELIMITERS = './'
-
-/**
- * The main path matching regexp utility.
- *
- * @type {RegExp}
- */
-var PATH_REGEXP = new RegExp([
-  // Match escaped characters that would otherwise appear in future matches.
-  // This allows the user to escape special characters that won't transform.
-  '(\\\\.)',
-  // Match Express-style parameters and un-named parameters with a prefix
-  // and optional suffixes. Matches appear as:
-  //
-  // "/:test(\\d+)?" => ["/", "test", "\d+", undefined, "?"]
-  // "/route(\\d+)"  => [undefined, undefined, undefined, "\d+", undefined]
-  '(?:\\:(\\w+)(?:\\(((?:\\\\.|[^\\\\()])+)\\))?|\\(((?:\\\\.|[^\\\\()])+)\\))([+*?])?'
-].join('|'), 'g')
-
-/**
- * Parse a string for the raw tokens.
- *
- * @param  {string}  str
- * @param  {Object=} options
- * @return {!Array}
- */
-function parse (str, options) {
-  var tokens = []
-  var key = 0
-  var index = 0
-  var path = ''
-  var defaultDelimiter = (options && options.delimiter) || DEFAULT_DELIMITER
-  var delimiters = (options && options.delimiters) || DEFAULT_DELIMITERS
-  var pathEscaped = false
-  var res
-
-  while ((res = PATH_REGEXP.exec(str)) !== null) {
-    var m = res[0]
-    var escaped = res[1]
-    var offset = res.index
-    path += str.slice(index, offset)
-    index = offset + m.length
-
-    // Ignore already escaped sequences.
-    if (escaped) {
-      path += escaped[1]
-      pathEscaped = true
-      continue
-    }
-
-    var prev = ''
-    var next = str[index]
-    var name = res[2]
-    var capture = res[3]
-    var group = res[4]
-    var modifier = res[5]
-
-    if (!pathEscaped && path.length) {
-      var k = path.length - 1
-
-      if (delimiters.indexOf(path[k]) > -1) {
-        prev = path[k]
-        path = path.slice(0, k)
-      }
-    }
-
-    // Push the current path onto the tokens.
-    if (path) {
-      tokens.push(path)
-      path = ''
-      pathEscaped = false
-    }
-
-    var partial = prev !== '' && next !== undefined && next !== prev
-    var repeat = modifier === '+' || modifier === '*'
-    var optional = modifier === '?' || modifier === '*'
-    var delimiter = prev || defaultDelimiter
-    var pattern = capture || group
-
-    tokens.push({
-      name: name || key++,
-      prefix: prev,
-      delimiter: delimiter,
-      optional: optional,
-      repeat: repeat,
-      partial: partial,
-      pattern: pattern ? escapeGroup(pattern) : '[^' + escapeString(delimiter) + ']+?'
-    })
-  }
-
-  // Push any remaining characters.
-  if (path || index < str.length) {
-    tokens.push(path + str.substr(index))
-  }
-
-  return tokens
-}
-
-/**
- * Compile a string to a template function for the path.
- *
- * @param  {string}             str
- * @param  {Object=}            options
- * @return {!function(Object=, Object=)}
- */
-function compile (str, options) {
-  return tokensToFunction(parse(str, options))
-}
-
-/**
- * Expose a method for transforming tokens into the path function.
- */
-function tokensToFunction (tokens) {
-  // Compile all the tokens into regexps.
-  var matches = new Array(tokens.length)
-
-  // Compile all the patterns before compilation.
-  for (var i = 0; i < tokens.length; i++) {
-    if (typeof tokens[i] === 'object') {
-      matches[i] = new RegExp('^(?:' + tokens[i].pattern + ')$')
-    }
-  }
-
-  return function (data, options) {
-    var path = ''
-    var encode = (options && options.encode) || encodeURIComponent
-
-    for (var i = 0; i < tokens.length; i++) {
-      var token = tokens[i]
-
-      if (typeof token === 'string') {
-        path += token
-        continue
-      }
-
-      var value = data ? data[token.name] : undefined
-      var segment
-
-      if (Array.isArray(value)) {
-        if (!token.repeat) {
-          throw new TypeError('Expected "' + token.name + '" to not repeat, but got array')
-        }
-
-        if (value.length === 0) {
-          if (token.optional) continue
-
-          throw new TypeError('Expected "' + token.name + '" to not be empty')
-        }
-
-        for (var j = 0; j < value.length; j++) {
-          segment = encode(value[j])
-
-          if (!matches[i].test(segment)) {
-            throw new TypeError('Expected all "' + token.name + '" to match "' + token.pattern + '"')
-          }
-
-          path += (j === 0 ? token.prefix : token.delimiter) + segment
-        }
-
-        continue
-      }
-
-      if (typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean') {
-        segment = encode(String(value))
-
-        if (!matches[i].test(segment)) {
-          throw new TypeError('Expected "' + token.name + '" to match "' + token.pattern + '", but got "' + segment + '"')
-        }
-
-        path += token.prefix + segment
-        continue
-      }
-
-      if (token.optional) {
-        // Prepend partial segment prefixes.
-        if (token.partial) path += token.prefix
-
-        continue
-      }
-
-      throw new TypeError('Expected "' + token.name + '" to be ' + (token.repeat ? 'an array' : 'a string'))
-    }
-
-    return path
-  }
-}
-
-/**
- * Escape a regular expression string.
- *
- * @param  {string} str
- * @return {string}
- */
-function escapeString (str) {
-  return str.replace(/([.+*?=^!:${}()[\]|/\\])/g, '\\$1')
-}
-
-/**
- * Escape the capturing group by escaping special characters and meaning.
- *
- * @param  {string} group
- * @return {string}
- */
-function escapeGroup (group) {
-  return group.replace(/([=!:$/()])/g, '\\$1')
-}
-
-/**
- * Get the flags for a regexp from the options.
- *
- * @param  {Object} options
- * @return {string}
- */
-function flags (options) {
-  return options && options.sensitive ? '' : 'i'
-}
-
-/**
- * Pull out keys from a regexp.
- *
- * @param  {!RegExp} path
- * @param  {Array=}  keys
- * @return {!RegExp}
- */
-function regexpToRegexp (path, keys) {
-  if (!keys) return path
-
-  // Use a negative lookahead to match only capturing groups.
-  var groups = path.source.match(/\((?!\?)/g)
-
-  if (groups) {
-    for (var i = 0; i < groups.length; i++) {
-      keys.push({
-        name: i,
-        prefix: null,
-        delimiter: null,
-        optional: false,
-        repeat: false,
-        partial: false,
-        pattern: null
-      })
-    }
-  }
-
-  return path
-}
-
-/**
- * Transform an array into a regexp.
- *
- * @param  {!Array}  path
- * @param  {Array=}  keys
- * @param  {Object=} options
- * @return {!RegExp}
- */
-function arrayToRegexp (path, keys, options) {
-  var parts = []
-
-  for (var i = 0; i < path.length; i++) {
-    parts.push(pathToRegexp(path[i], keys, options).source)
-  }
-
-  return new RegExp('(?:' + parts.join('|') + ')', flags(options))
-}
-
-/**
- * Create a path regexp from string input.
- *
- * @param  {string}  path
- * @param  {Array=}  keys
- * @param  {Object=} options
- * @return {!RegExp}
- */
-function stringToRegexp (path, keys, options) {
-  return tokensToRegExp(parse(path, options), keys, options)
-}
-
-/**
- * Expose a function for taking tokens and returning a RegExp.
- *
- * @param  {!Array}  tokens
- * @param  {Array=}  keys
- * @param  {Object=} options
- * @return {!RegExp}
- */
-function tokensToRegExp (tokens, keys, options) {
-  options = options || {}
-
-  var strict = options.strict
-  var end = options.end !== false
-  var delimiter = escapeString(options.delimiter || DEFAULT_DELIMITER)
-  var delimiters = options.delimiters || DEFAULT_DELIMITERS
-  var endsWith = [].concat(options.endsWith || []).map(escapeString).concat('$').join('|')
-  var route = ''
-  var isEndDelimited = false
-
-  // Iterate over the tokens and create our regexp string.
-  for (var i = 0; i < tokens.length; i++) {
-    var token = tokens[i]
-
-    if (typeof token === 'string') {
-      route += escapeString(token)
-      isEndDelimited = i === tokens.length - 1 && delimiters.indexOf(token[token.length - 1]) > -1
-    } else {
-      var prefix = escapeString(token.prefix)
-      var capture = token.repeat
-        ? '(?:' + token.pattern + ')(?:' + prefix + '(?:' + token.pattern + '))*'
-        : token.pattern
-
-      if (keys) keys.push(token)
-
-      if (token.optional) {
-        if (token.partial) {
-          route += prefix + '(' + capture + ')?'
-        } else {
-          route += '(?:' + prefix + '(' + capture + '))?'
-        }
-      } else {
-        route += prefix + '(' + capture + ')'
-      }
-    }
-  }
-
-  if (end) {
-    if (!strict) route += '(?:' + delimiter + ')?'
-
-    route += endsWith === '$' ? '$' : '(?=' + endsWith + ')'
-  } else {
-    if (!strict) route += '(?:' + delimiter + '(?=' + endsWith + '))?'
-    if (!isEndDelimited) route += '(?=' + delimiter + '|' + endsWith + ')'
-  }
-
-  return new RegExp('^' + route, flags(options))
-}
-
-/**
- * Normalize the given path string, returning a regular expression.
- *
- * An empty array can be passed in for the keys, which will hold the
- * placeholder key descriptions. For example, using `/user/:id`, `keys` will
- * contain `[{ name: 'id', delimiter: '/', optional: false, repeat: false }]`.
- *
- * @param  {(string|RegExp|Array)} path
- * @param  {Array=}                keys
- * @param  {Object=}               options
- * @return {!RegExp}
- */
-function pathToRegexp (path, keys, options) {
-  if (path instanceof RegExp) {
-    return regexpToRegexp(path, keys)
-  }
-
-  if (Array.isArray(path)) {
-    return arrayToRegexp(/** @type {!Array} */ (path), keys, options)
-  }
-
-  return stringToRegexp(/** @type {string} */ (path), keys, options)
-}
 
 
 /***/ }),
@@ -30966,11 +30261,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/head */ "./node_modules/next/head.js");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../routes */ "./routes.js");
-/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _layouts_main__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../layouts/main */ "./layouts/main.js");
 /* harmony import */ var react_tooltip__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-tooltip */ "./node_modules/react-tooltip/dist/index.js");
 /* harmony import */ var react_tooltip__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_tooltip__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-icons/fa */ "./node_modules/react-icons/fa/index.mjs");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -30998,29 +30294,34 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 var primaryColor = "#ffd32a";
 var CasesWrapper = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "casosclinicos__CasesWrapper",
   componentId: "lbaym8-0"
 })(["width:100%;height:100%;display:flex;flex-direction:column;align-items:center;"]);
+var OptionsWrapper = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
+  displayName: "casosclinicos__OptionsWrapper",
+  componentId: "lbaym8-1"
+})(["display:flex;justify-content:space-evenly;align-items:center;width:80%;height:100%;margin:20px;"]);
 var Options = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "casosclinicos__Options",
-  componentId: "lbaym8-1"
-})(["display:flex;"]);
-var Button = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].button.withConfig({
-  displayName: "casosclinicos__Button",
   componentId: "lbaym8-2"
-})(["border:none;border:2px solid ", ";padding:16px 26px;background:", ";color:#000;font-weight:bold;text-transform:uppercase;text-decoration:none;margin:24px 0;transition:background 0.3s;-webkit-box-shadow:0px 3px 5px 0px rgba(184,184,184,1);-moz-box-shadow:0px 3px 5px 0px rgba(184,184,184,1);box-shadow:0px 3px 5px 0px rgba(184,184,184,1);&:hover{background:#fff;transition:background 0.3s;}"], primaryColor, function (props) {
+})(["display:flex;flex-direction:column;align-items:center;padding:20px;margin:20px;background:#fff;-webkit-box-shadow:0px 3px 5px 0px rgba(184,184,184,1);-moz-box-shadow:0px 3px 5px 0px rgba(184,184,184,1);box-shadow:0px 3px 5px 0px rgba(184,184,184,1);h3{font-size:1.7rem;margin-bottom:20px;}"]);
+var Button = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].a.withConfig({
+  displayName: "casosclinicos__Button",
+  componentId: "lbaym8-3"
+})(["display:flex;justify-content:center;align-items:center;border:none;border:2px solid ", ";padding:16px 26px;background:", ";color:#000;font-weight:bold;text-transform:uppercase;text-decoration:none;margin:24px 0;transition:background 0.3s;-webkit-box-shadow:0px 3px 5px 0px rgba(184,184,184,1);-moz-box-shadow:0px 3px 5px 0px rgba(184,184,184,1);box-shadow:0px 3px 5px 0px rgba(184,184,184,1);&:hover{background:#fff;transition:background 0.3s;}"], primaryColor, function (props) {
   return props.active ? '#fff' : primaryColor;
 });
 var ContentsWrapper = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "casosclinicos__ContentsWrapper",
-  componentId: "lbaym8-3"
+  componentId: "lbaym8-4"
 })(["display:flex;align-items:center;justify-content:center;padding:20px;margin:20px;flex-wrap:wrap;"]);
 var Content = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "casosclinicos__Content",
-  componentId: "lbaym8-4"
-})(["width:80%;height:100%;background:#fff;box-shadow:0 1px 1px rgba(0,0,0,0.15),0 10px 0 -5px #eee,0 10px 1px -4px rgba(0,0,0,0.15),0 20px 0 -10px #eee,0 20px 1px -9px rgba(0,0,0,0.15);padding:30px;margin:15px;display:flex;flex-direction:column;line-height:2rem;h2{font-size:2rem;}div{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;img{width:200px;height:200px;margin:20px;}}"]);
+  componentId: "lbaym8-5"
+})(["width:80%;height:100%;background:#fff;box-shadow:0 1px 1px rgba(0,0,0,0.15),0 10px 0 -5px #eee,0 10px 1px -4px rgba(0,0,0,0.15),0 20px 0 -10px #eee,0 20px 1px -9px rgba(0,0,0,0.15);padding:30px;margin:15px;display:flex;flex-direction:column;line-height:2rem;h1{font-size:2.5rem;text-align:center;margin:20px 0;}h2{font-size:2rem;margin-bottom:25px;}div{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;img{width:200px;height:170px;margin:20px;}}"]);
 
 var CasosClinicos =
 /*#__PURE__*/
@@ -31041,8 +30342,8 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(CasosClinicos)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
-      switchCases: true,
-      activeStateDefaultCases: true,
+      switchCases: false,
+      activeStateDefaultCases: false,
       activeStateTodayCases: false
     });
 
@@ -31054,7 +30355,7 @@ function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_layouts_main__WEBPACK_IMPORTED_MODULE_5__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_3___default.a, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", null, "OrtoConecta | Casos Cl\xEDnicos")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(CasesWrapper, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Options, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Button, {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_layouts_main__WEBPACK_IMPORTED_MODULE_5__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_3___default.a, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", null, "OrtoConecta | Casos Cl\xEDnicos")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(CasesWrapper, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(OptionsWrapper, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Options, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Solu\xE7\xF5es OrtoConecta"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Casos cl\xEDnicos tratados com base em evid\xEAncias cient\xEDficas respeitando os conceitos mais modernos."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Button, {
         active: this.state.activeStateDefaultCases,
         onClick: function onClick() {
           return _this2.setState(function (state) {
@@ -31065,108 +30366,194 @@ function (_Component) {
             };
           });
         }
-      }, "Casos Clinicos"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Button, {
+      }, "Mostrar casos")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Options, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "E se fosse hoje..."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Casos cl\xEDnicos tratados h\xE1 mais de 13 anos com as tend\xEAncias da \xE9poca. Com os recursos e conceitos atuais, o que poder\xEDamos modificar??"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Button, {
         active: this.state.activeStateTodayCases,
         onClick: function onClick() {
           return _this2.setState({
-            switchCases: false,
+            switchCases: true,
             activeStateDefaultCases: false,
             activeStateTodayCases: true
           });
         }
-      }, "E se fosse hoje? (Casos cl\xEDnicos atuais)")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ContentsWrapper, null, this.state.switchCases === true ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Content, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "CASO CL\xCDNICO"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Paciente: "), "V.O."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Idade: "), "33a 02m"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Sexo: "), "Feminino"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Melanoderma"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Queixa Principal: "), "espa\xE7o entre os dentes (mordida aberta)"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "/static/heroimage.jpg",
-        alt: "caso 1"
+      }, "Mostrar casos"))), this.state.switchCases === false ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: {
+          height: 'calc(100vh - 547px)'
+        }
+      }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ContentsWrapper, null, this.state.activeStateDefaultCases === true ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Content, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "CASO CL\xCDNICO V - 07"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Paciente: "), "V.O."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Idade: "), "33a 02m"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Sexo: "), "Feminino"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Melanoderma"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Queixa Principal: "), "espa\xE7o entre os dentes (mordida aberta)"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "/static/casos-v/v1.png",
+        alt: "v1"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "/static/heroimage.jpg",
-        alt: "caso 2"
+        src: "/static/casos-v/v2.png",
+        alt: "v2"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Diagn\xF3stico:"), " paciente em fase adulta e denti\xE7\xE3o permanente, apresentou maloclus\xE3o Classe II de Angle, Classe II de Andrews, mordida aberta anterior causada por h\xE1bito de suc\xE7\xE3o digital (-4mm), interposi\xE7\xE3o de l\xEDngua, respira\xE7\xE3o bucal viciosa, suave discrep\xE2ncias de modelos superior (-1mm) e inferior (-2mm), linha m\xE9dia dent\xE1ria superior com desvio para lado esquerdo (1mm) em rela\xE7\xE3o ao plano sagital mediano, linha m\xE9dia dent\xE1ria inferior coincidente em rela\xE7\xE3o ao plano sagital mediano, curva de Spee suave, padr\xE3o face longa, convexidade facial devido \xE0 rota\xE7\xE3o mandibular no sentido hor\xE1rio, assimetria facial discreta em norma frontal, exposi\xE7\xE3o excessiva dos dentes superiores em repouso, hipotonicidade labial, degluti\xE7\xE3o at\xEDpica com participa\xE7\xE3o irregular principalmente dos m\xFAsculos mentuais e l\xEDngua, tend\xEAncia de crescimento no sentido vertical, diverg\xEAncias dos planos horizontais em dados cefalom\xE9tricos, vestibulariza\xE7\xE3o excessiva dos incisivos superiores e inferiores."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "/static/heroimage.jpg",
-        alt: "caso 1"
+        src: "/static/casos-v/v3.png",
+        alt: "v3"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "/static/heroimage.jpg",
-        alt: "caso 2"
+        src: "/static/casos-v/v4.png",
+        alt: "v4"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "/static/heroimage.jpg",
-        alt: "caso 2"
+        src: "/static/casos-v/v5.png",
+        alt: "v5"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "/static/heroimage.jpg",
-        alt: "caso 2"
+        src: "/static/casos-v/v6.png",
+        alt: "v6"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "/static/heroimage.jpg",
-        alt: "caso 2"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Progn\xF3stico: "), "favor\xE1vel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Plano de tratamento:")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "1a op\xE7\xE3o:"), " Ortodontia corretiva + Cirurgia Ortogn\xE1tica Apesar da op\xE7\xE3o de tratamento onde a combina\xE7\xE3o entre Ortodontia e Cirurgia Ortogn\xE1tica ser a mais adequada devido \xE0 maloclus\xE3o ocorrer pela desarmonia esquel\xE9tica, a paciente se negou ao tratamento proposto."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "2a op\xE7\xE3o:"), " Ortodontia corretiva compensat\xF3ria - Aparelho ortod\xF4ntico fixo met\xE1lico prescri\xE7\xE3o Roth superior e inferior, slot 0.022\u201D, modelo Kirium da marca Abzil. - ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_4__["Link"], {
-        route: "/cursos_e_materiais"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        "data-tip": "Material: Ancoragem",
-        style: {
-          fontWeight: 'bold',
-          textDecoration: 'underline'
-        }
-      }, "Ancoragem")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_tooltip__WEBPACK_IMPORTED_MODULE_6___default.a, null), ": . Superior: barra transpalatina (BTP) . Inferior: \xD8 - Exodontias: \xD8 - Encaminhamento para avalia\xE7\xE3o e fisioterapia fonoarticulat\xF3ria - Biomec\xE2nica: 1) Separa\xE7\xE3o (16), (26), (36), (46) 2) Moldagem de transfer\xEAncia para confec\xE7\xE3o de BTP fixa soldada Banda e cimenta\xE7\xE3o (36) e (46) com tubo simples com gancho 3) Cimenta\xE7\xE3o BTP com tubos triplos com ganchos(16) e (26) 4) Colagem direta superior + Alinhamento/Nivelamento (arco tamanho M NiTi.012\u201D) 5) Colagem direta inferior + Alinhamento/Nivelamento (arco tamanho P NiTi.012\u201D) OrtoConecta Tratamento V07 Desgaste interproximal (32 \u2013 M e D), (42 \u2013 M e D) com tiras de lixa de a\xE7o 6) Alinhamento e Nivelamento pleno: Superior arcos tamanho M: NiTi .014\u201D ; NiTi .016 \u0308; NiTi .018 \u0308; NiTi .020 \u0308; SS .018 \u0308; SS .020 \u0308, NiTi .017 x .025 \u0308; NiTi .017 x .025 \u0308 em 3 segmentos. Inferior arcos tamanho P: NiTi .014\u201D ; NiTi .016 \u0308; NiTi .018 \u0308; NiTi .020 \u0308; SS .018 \u0308; SS .020 \u0308, NiTi .017 x .025 \u0308; NiTi .019 x .025 \u0308. 7) Superior: NiTi .017 x .025 \u0308 em 3 segmentos + Arco acess\xF3rio de extrus\xE3o de Burstone (120g de for\xE7a extrusiva) Inferior: NiTi .019 x .025 \u0308 8) Superior: NiTi .017 x .025 \u0308 Inferior: NiTi .019 x .025 \u0308 El\xE1sticos de intercuspida\xE7\xE3o: 02 anteriores em forma retangular (5/16 leve) e 02 posteriores em forma triangular (5/16 leve) 9) Superior: NiTi .019 x .025 \u0308 Inferior: NiTi .019 x .025 \u0308 10) SS .019 x .025 \u0308superior e inferior 11) Moldagem para conten\xE7\xE3o superior 12) Remo\xE7\xE3o do aparelho fixo superior e inferior 13) Conten\xE7\xE3o: Superior: Placa Hawley Inferior: arco lingual 3x3."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "/static/heroimage.jpg",
-        alt: "caso 1"
+        src: "/static/casos-v/v7.png",
+        alt: "v7"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Progn\xF3stico: "), "favor\xE1vel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Plano de tratamento:")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "1a op\xE7\xE3o:"), " Ortodontia corretiva + Cirurgia Ortogn\xE1tica Apesar da op\xE7\xE3o de tratamento onde a combina\xE7\xE3o entre Ortodontia e Cirurgia Ortogn\xE1tica ser a mais adequada devido \xE0 maloclus\xE3o ocorrer pela desarmonia esquel\xE9tica, a paciente se negou ao tratamento proposto."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "2a op\xE7\xE3o:"), " Ortodontia corretiva compensat\xF3ria. - Aparelho ortod\xF4ntico fixo met\xE1lico prescri\xE7\xE3o Roth superior e inferior, slot 0.022\u201D, modelo Kirium da marca Abzil. - Ancoragem: . Superior: barra transpalatina (BTP) . Inferior: \xD8 - Exodontias: \xD8 - Encaminhamento para avalia\xE7\xE3o e fisioterapia fonoarticulat\xF3ria - Biomec\xE2nica: 1) Separa\xE7\xE3o (16), (26), (36), (46) 2) Moldagem de transfer\xEAncia para confec\xE7\xE3o de BTP fixa soldada Banda e cimenta\xE7\xE3o (36) e (46) com tubo simples com gancho 3) Cimenta\xE7\xE3o BTP com tubos triplos com ganchos(16) e (26) 4) Colagem direta superior + Alinhamento/Nivelamento (arco tamanho M NiTi.012\u201D) 5) Colagem direta inferior + Alinhamento/Nivelamento (arco tamanho P NiTi.012\u201D) OrtoConecta Tratamento V07 Desgaste interproximal (32 \u2013 M e D), (42 \u2013 M e D) com tiras de lixa de a\xE7o 6) Alinhamento e Nivelamento pleno: Superior arcos tamanho M: NiTi .014\u201D ; NiTi .016 \u0308; NiTi .018 \u0308; NiTi .020 \u0308; SS .018 \u0308; SS .020 \u0308, NiTi .017 x .025 \u0308; NiTi .017 x .025 \u0308 em 3 segmentos. Inferior arcos tamanho P: NiTi .014\u201D ; NiTi .016 \u0308; NiTi .018 \u0308; NiTi .020 \u0308; SS .018 \u0308; SS .020 \u0308, NiTi .017 x .025 \u0308; NiTi .019 x .025 \u0308. 7) Superior: NiTi .017 x .025 \u0308 em 3 segmentos + Arco acess\xF3rio de extrus\xE3o de Burstone (120g de for\xE7a extrusiva) Inferior: NiTi .019 x .025 \u0308 8) Superior: NiTi .017 x .025 \u0308 Inferior: NiTi .019 x .025 \u0308 El\xE1sticos de intercuspida\xE7\xE3o: 02 anteriores em forma retangular (5/16 leve) e 02 posteriores em forma triangular (5/16 leve) 9) Superior: NiTi .019 x .025 \u0308 Inferior: NiTi .019 x .025 \u0308 10) SS .019 x .025 \u0308superior e inferior 11) Moldagem para conten\xE7\xE3o superior 12) Remo\xE7\xE3o do aparelho fixo superior e inferior 13) Conten\xE7\xE3o: Superior: Placa Hawley Inferior: arco lingual 3x3"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_tooltip__WEBPACK_IMPORTED_MODULE_6___default.a, null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "/static/casos-v/v8.png",
+        alt: "v8"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "/static/heroimage.jpg",
-        alt: "caso 2"
+        src: "/static/casos-v/v9.png",
+        alt: "v9"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "/static/heroimage.jpg",
-        alt: "caso 2"
+        src: "/static/casos-v/v10.png",
+        alt: "v10"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "/static/heroimage.jpg",
-        alt: "caso 2"
+        src: "/static/casos-v/v11.png",
+        alt: "v11"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Button, {
+        href: "/static/casos-v/v07.pdf",
+        target: "blank",
         style: {
-          width: '30%',
+          width: '50%',
           alignSelf: 'center'
         }
-      }, "BAIXAR CASO CL\xCDNICO")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Content, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "CASO CL\xCDNICO"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Paciente: "), "F. S. M."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Idade: "), "13a 10m"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Sexo: "), "Masculino"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Leucoderma"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Queixa Principal: "), "espa\xE7o entre os dentes (dentes abertos)"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "/static/heroimage.jpg",
-        alt: "caso 1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_icons_fa__WEBPACK_IMPORTED_MODULE_7__["FaDownload"], {
+        style: {
+          fontSize: '1.2rem',
+          marginRight: '10px'
+        }
+      }), "BAIXAR CASO CL\xCDNICO")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Content, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "CASO CL\xCDNICO F - 04"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Paciente: "), "F. S. M."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Idade: "), "13a 10m"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Sexo: "), "Masculino"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Leucoderma"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Queixa Principal: "), "espa\xE7o entre os dentes (dentes abertos)"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "/static/casos-f/f1.png",
+        alt: "f1"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "/static/heroimage.jpg",
-        alt: "caso 2"
+        src: "/static/casos-f/f2.png",
+        alt: "f2"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Diagn\xF3stico:"), " paciente com denti\xE7\xE3o permanente, apresentou maloclus\xE3o Classe II divis\xE3o 2 subdivis\xE3o direita de Angle, Classe II subdivis\xE3o direita de Andrews, mordida profunda (+8mm), discrep\xE2ncias de modelos superior positiva (+3mm) e inferior negativa (-1mm), linha m\xE9dia dent\xE1ria inferior com desvio para lado direito (2mm) em rela\xE7\xE3o ao plano sagital mediano, linha m\xE9dia dent\xE1ria superior coincidente em rela\xE7\xE3o ao plano sagital mediano, curva de Spee acentuada (4mm), padr\xE3o 2 facial com retrognatismo mandibular, \xE2ngulo mento-labial agudo, \xE2ngulo nasolabial adequado, l\xE1bio superior suavemente anteriorizado em rela\xE7\xE3o ao l\xE1bio inferior, ter\xE7os faciais proporcionais, proje\xE7\xE3o do zigom\xE1tico adequada, convexidade facial devido \xE0 retrognatismo mandibular, aus\xEAncia de assimetria facial em norma frontal, exposi\xE7\xE3o excessiva dos dentes anteriores superiores no sorriso, tend\xEAncia de crescimento equilibrado com padr\xE3o facial mesocef\xE1lico."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "/static/heroimage.jpg",
-        alt: "caso 1"
+        src: "/static/casos-f/f3.png",
+        alt: "f3"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "/static/heroimage.jpg",
-        alt: "caso 2"
+        src: "/static/casos-f/f4.png",
+        alt: "f4"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "/static/heroimage.jpg",
-        alt: "caso 2"
+        src: "/static/casos-f/f5.png",
+        alt: "f5"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "/static/heroimage.jpg",
-        alt: "caso 2"
+        src: "/static/casos-f/f6.png",
+        alt: "f6"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "/static/heroimage.jpg",
-        alt: "caso 2"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Progn\xF3stico: "), "favor\xE1vel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Plano de tratamento:")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "1a op\xE7\xE3o:"), " Ortodontia corretiva compensat\xF3ria - Aparelho ortod\xF4ntico fixo met\xE1lico prescri\xE7\xE3o Roth superior e inferior, slot 0.022\u201D, marca Abzil. - ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_4__["Link"], {
-        route: "/cursos_e_materiais"
+        src: "/static/casos-f/f7.png",
+        alt: "f7"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Progn\xF3stico: "), "favor\xE1vel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Plano de tratamento:")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "1a op\xE7\xE3o:"), " Ortodontia corretiva compensat\xF3ria - Aparelho ortod\xF4ntico fixo met\xE1lico prescri\xE7\xE3o Roth superior e inferior, slot 0.022\u201D, marca Abzil. - ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+        prefetch: true,
+        href: "/cursos_e_materiais"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         "data-tip": "Material: Ancoragem",
         style: {
           fontWeight: 'bold',
           textDecoration: 'underline'
         }
-      }, "Ancoragem")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_tooltip__WEBPACK_IMPORTED_MODULE_6___default.a, null), ": . Superior: barra transpalatina (BTP) . Inferior: \xD8 - Exodontias: \xD8 - Biomec\xE2nica: 1) Separa\xE7\xE3o (16), (26), (36), (46) 2) Moldagem de transfer\xEAncia para confec\xE7\xE3o de BTP fixa soldada Banda e cimenta\xE7\xE3o (36) e (46) com tubo simples com gancho 3) Cimenta\xE7\xE3o BTP com tubos simples com ganchos(16) e (26) 4) Colagem direta superior + Alinhamento/Nivelamento com fio Twist Flex 0.015 \u0308contornado no diagrama ortod\xF4ntico de Interlandi raio 24mm 5) Alinhamento e Nivelamento pleno: OrtoConecta Tratamento V07 Superior arcos diagramados no raio 24mm de Interlandi: Twist Flex .0.017 \u0308, SS.016 \u0308; SS.018 \u0308; todos com degrau de intrus\xE3o nos dentes (12/11/21/22) 6) Ap\xF3s 7 meses do in\xEDcio do tratamento, foi realizada a colagem direta dos br\xE1quetes inferiores; Colagem direta inferior + Alinhamento/Nivelamento com fio Twist Flex 0.015 \u0308contornado no diagrama ortod\xF4ntico de Interlandi raio 23mm Superior: arco SS.018\u201D com degrau de intrus\xE3o anterior 7) Superior: arcos diagramados no raio 24mm de Interlandi: SS .020 \u0308 com degrau de intrus\xE3o Inferior arcos diagramados no raio 23mm de Interlandi: Twist Flex .0.017 \u0308, SS.016\u201D 8) Superior: arcos diagramados no raio 24mm de Interlandi: SS .019 x .025 \u0308 com degrau de intrus\xE3o + el\xE1sticos em cadeia tamanho longo 6 elos (13 a 23) Inferior arcos diagramados no raio 23mm de Interlandi: SS.018 \u0308; SS .020 \u0308 El\xE1sticos de classe II de for\xE7a exc\xEAntrica: 5/16 M lado esquerdo, 3/16 M lado direito 9) Superior: arco diagramados no raio 24mm de Interlandi: SS.021 x .025 \u0308 passivo; manteve-se o degrau de intrus\xE3o anterior Inferior arcos diagramados no raio 23mm de Interlandi: SS .019 x .025 \u0308; SS.021 x .025\u201D passivo 10) Moldagem para conten\xE7\xE3o superior 11) Remo\xE7\xE3o do aparelho fixo superior, BTP e inferior 12) Conten\xE7\xE3o: Superior: Placa Hawley Inferior: arco lingual 3x3."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "/static/heroimage.jpg",
-        alt: "caso 1"
+      }, "Ancoragem")), ": . Superior: barra transpalatina (BTP) . Inferior: \xD8 - Exodontias: \xD8 - Biomec\xE2nica: 1) Separa\xE7\xE3o (16), (26), (36), (46) 2) Moldagem de transfer\xEAncia para confec\xE7\xE3o de BTP fixa soldada Banda e cimenta\xE7\xE3o (36) e (46) com tubo simples com gancho 3) Cimenta\xE7\xE3o BTP com tubos simples com ganchos(16) e (26) 4) Colagem direta superior + Alinhamento/Nivelamento com fio Twist Flex 0.015 \u0308contornado no diagrama ortod\xF4ntico de Interlandi raio 24mm 5) Alinhamento e Nivelamento pleno: OrtoConecta Tratamento V07 Superior arcos diagramados no raio 24mm de Interlandi: Twist Flex .0.017 \u0308, SS.016 \u0308; SS.018 \u0308; todos com degrau de intrus\xE3o nos dentes (12/11/21/22) 6) Ap\xF3s 7 meses do in\xEDcio do tratamento, foi realizada a colagem direta dos br\xE1quetes inferiores; Colagem direta inferior + Alinhamento/Nivelamento com fio Twist Flex 0.015 \u0308contornado no diagrama ortod\xF4ntico de Interlandi raio 23mm Superior: arco SS.018\u201D com degrau de intrus\xE3o anterior 7) Superior: arcos diagramados no raio 24mm de Interlandi: SS .020 \u0308 com degrau de intrus\xE3o Inferior arcos diagramados no raio 23mm de Interlandi: Twist Flex .0.017 \u0308, SS.016\u201D 8) Superior: arcos diagramados no raio 24mm de Interlandi: SS .019 x .025 \u0308 com degrau de intrus\xE3o + el\xE1sticos em cadeia tamanho longo 6 elos (13 a 23) Inferior arcos diagramados no raio 23mm de Interlandi: SS.018 \u0308; SS .020 \u0308 El\xE1sticos de classe II de for\xE7a exc\xEAntrica: 5/16 M lado esquerdo, 3/16 M lado direito 9) Superior: arco diagramados no raio 24mm de Interlandi: SS.021 x .025 \u0308 passivo; manteve-se o degrau de intrus\xE3o anterior Inferior arcos diagramados no raio 23mm de Interlandi: SS .019 x .025 \u0308; SS.021 x .025\u201D passivo 10) Moldagem para conten\xE7\xE3o superior 11) Remo\xE7\xE3o do aparelho fixo superior, BTP e inferior 12) Conten\xE7\xE3o: Superior: Placa Hawley Inferior: arco lingual 3x3."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "/static/casos-f/f8.png",
+        alt: "f8"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "/static/heroimage.jpg",
-        alt: "caso 2"
+        src: "/static/casos-f/f9.png",
+        alt: "f9"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "/static/heroimage.jpg",
-        alt: "caso 2"
+        src: "/static/casos-f/f10.png",
+        alt: "f10"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "/static/heroimage.jpg",
-        alt: "caso 2"
+        src: "/static/casos-f/f11.png",
+        alt: "f11"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Button, {
+        href: "/static/casos-f/f04.pdf",
+        target: "blank",
         style: {
-          width: '30%',
+          width: '50%',
           alignSelf: 'center'
         }
-      }, "BAIXAR CASO CL\xCDNICO"))) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Outros casos"))));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_icons_fa__WEBPACK_IMPORTED_MODULE_7__["FaDownload"], {
+        style: {
+          fontSize: '1.2rem',
+          marginRight: '10px'
+        }
+      }), "BAIXAR CASO CL\xCDNICO"))) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Content, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        style: {
+          marginLeft: '10px'
+        }
+      }, "A"), " a\xE7\xE3o cl\xEDnica de Ortodontia e Ortopedia Facial do grupo OrtoConecta\xAE atua h\xE1 mais de duas d\xE9cadas, respeitando a filosofia de tratamentos baseado em evid\xEAncias cient\xEDficas."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        style: {
+          marginLeft: '10px'
+        }
+      }, "D"), "esde a introdu\xE7\xE3o da Ortodontia corretiva por Edward Angle na d\xE9cada de 1920 at\xE9 os dias atuais, a tecnologia voltada para essa especialidade apresenta evolu\xE7\xF5es constantes, assim como todas as \xE1reas afins. Entretanto, o postulado de Angle sempre se manifesta em todas as evolu\xE7\xF5es tecnol\xF3gicas e princ\xEDpios biomec\xE2nicos."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        style: {
+          marginLeft: '10px'
+        }
+      }, "D"), "esta forma, a OrtoConecta\xAE resolveu abrir um canal de discuss\xE3o e compartilhar com todos os participantes, os casos cl\xEDnicos tratados por exemplo, h\xE1 15, 20 anos atr\xE1s, mostrando os recursos poss\xEDveis da \xE9poca e os planos de tratamento limitados \xE0 experi\xEAncia cl\xEDnica e profissional naquele momento. Assim, o nosso prop\xF3sito \xE9 reavaliar hoje e compartilhar esses casos tratados, simulando planos de tratamento atuais de acordo com a experi\xEAncia adquirida durante todos esses anos, analisando os pontos positivos e negativos alcan\xE7ados, sugerindo dicas atrav\xE9s de uma \xF3tica cr\xEDtica e s\xF3bria das condi\xE7\xF5es atingidas."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "CASO CL\xCDNICO"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Paciente: "), "F. V."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Idade: "), "19a 10m"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Sexo: "), "Masculino"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Leucoderma"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Queixa Principal: "), "dentes inferiores muito tortos"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Ano: "), "2000 a 2002"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "/static/casos-como-f/f1.png",
+        alt: "f1"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "/static/casos-como-f/f2.png",
+        alt: "f2"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "/static/casos-como-f/f3.png",
+        alt: "f3"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "/static/casos-como-f/f4.png",
+        alt: "f4"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "/static/casos-como-f/f5.png",
+        alt: "f5"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Plano de tratamento:"), " Ortodontia corretiva prescri\xE7\xE3o Edgewise slot .022 x .030\u201D superior e inferior, marca Abzil/Lancer.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Ancoragem:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "- Superior: \xD8", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "- Inferior: arco lingual"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Exodontia: "), "(42), (18), (28), (38), (48)"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Justificativa: "), "optou-se pela exodontia do incisivo lateral inferior direito (7 mm) para tratamento da discrep\xE2ncia negativa de modelo (DMinf = -10 mm) pois os fatores indicados para realizar a extra\xE7\xE3o de incisivo inferior em Ortodontia estavam presentes, ou seja, Classe I de Angle bilateral, aus\xEAncia de apinhamento significativo no arco superior, trespasse horizontal adequado, perfil equilibrado, quantidade do espa\xE7o requerido pr\xF3ximo ao tamanho m\xE9sio-distal do dente a ser extra\xEDdo."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Resultados: "), "o caso cl\xEDnico apresentava um bom progn\xF3stico e desta forma, todos os objetivos foram alcan\xE7ados. No final, o paciente estava extremamente satisfeito, com o alinhamento e nivelamento adequados, est\xE9tica do sorriso obtida, oclus\xE3o equilibrada e sem altera\xE7\xF5es faciais."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "/static/casos-como-f/f6.png",
+        alt: "f6"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "/static/casos-como-f/f7.png",
+        alt: "f7"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "/static/casos-como-f/f8.png",
+        alt: "f8"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "/static/casos-como-f/f9.png",
+        alt: "f9"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "/static/casos-como-f/f10.png",
+        alt: "f10"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "/static/casos-como-f/f11.png",
+        alt: "f11"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "...e se fosse hoje?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        style: {
+          marginLeft: '10px'
+        }
+      }, "O"), " tratamento cl\xEDnico ortod\xF4ntico deste caso foi realizado em 27 meses, tempo que consideramos prolongado em compara\xE7\xE3o \xE0s possibilidades atuais. Os materiais utilizados neste caso foram br\xE1quetes Edgewise standart, fios Twist Flex e arcos de a\xE7o inox."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        style: {
+          marginLeft: '10px'
+        }
+      }, "A"), "pesar do sucesso obtido no final do tratamento, nossa orienta\xE7\xE3o de conduta cl\xEDnica para este caso, hoje, seria diferente. Trabalhos cient\xEDficos analisados com exaust\xE3o e a nossa experi\xEAncia adquirida, nos mostram que esse mesmo caso tratado atualmente poderia ser realizado com desgastes interproximais, sem a necessidade de exodontia de incisivo inferior, procedimento eficiente sem a possibilidade de fenestra\xE7\xE3o \xF3ssea, apresentar a linha m\xE9dia dent\xE1ria coincidente, al\xE9m de reduzir praticamente pela metade o tempo de tratamento utilizando o sistema de prescri\xE7\xF5es e materiais tecnologicamente avan\xE7ados."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        style: {
+          marginLeft: '10px'
+        }
+      }, "A"), "ssim, nosso objetivo \xE9 buscar a efici\xEAncia e excel\xEAncia de forma rec\xEDproca, adequando os casos \xE0 realidade e possibilidade de todos n\xF3s."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "/static/casos-f/f11.png",
+        alt: "f11",
+        style: {
+          width: '300px'
+        }
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Button, {
+        href: "/static/casos-como-f/e_se_fosse_hoje_1.pdf",
+        target: "blank",
+        style: {
+          width: '50%',
+          alignSelf: 'center'
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_icons_fa__WEBPACK_IMPORTED_MODULE_7__["FaDownload"], {
+        style: {
+          fontSize: '1.2rem',
+          marginRight: '10px'
+        }
+      }), "BAIXAR CASO CL\xCDNICO"))))));
     }
   }]);
 
@@ -31193,19 +30580,6 @@ function (_Component) {
     })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/casosclinicos")
   
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/webpack/buildin/harmony-module.js */ "./node_modules/webpack/buildin/harmony-module.js")(module)))
-
-/***/ }),
-
-/***/ "./routes.js":
-/*!*******************!*\
-  !*** ./routes.js ***!
-  \*******************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var routes = __webpack_require__(/*! next-routes */ "./node_modules/next-routes/dist/index.js");
-
-module.exports = routes().add('/', 'index').add('/especialidades', 'especialidades').add('/especialidades/:id', 'especialidade').add('/cursos_e_materiais', 'cursosemateriais').add('/painel', 'painel').add('/experiencias', 'experiencias').add('/experiencias/:id', 'experiencia').add('/casos_clinicos', 'casosclinicos');
 
 /***/ }),
 
@@ -31275,8 +30649,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../routes */ "./routes.js");
-/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -31366,7 +30740,7 @@ function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Navigation, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Logo, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Navigation, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Logo, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
         href: "/",
         prefetch: true
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -31381,34 +30755,48 @@ function (_Component) {
         className: "icon"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "icon"
-      })), this.state.showMenu === true && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Dropdown, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(DropdownContent, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        route: "/"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "In\xEDcio"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        route: "/painel"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "Painel OrtoConecta"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        route: "/cursos_e_materiais"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "Cursos e Materiais"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        route: "/experiencias"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "Experi\xEAncias"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        route: "/dicas"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "Dicas"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        route: "/especialidades"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "Especialidades"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        route: "/casos_clinicos"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "Casos Cl\xEDnicos"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Menu, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        route: "/"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "In\xEDcio"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        route: "/painel"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "Painel OrtoConecta"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        route: "/cursos_e_materiais"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "Cursos e Materiais"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        route: "/experiencias"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "Experi\xEAncias"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        route: "/dicas"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "Dicas"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        route: "/especialidades"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "Especialidades"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        route: "/casos_clinicos"
+      })), this.state.showMenu === true && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Dropdown, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(DropdownContent, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+        prefetch: true,
+        href: "/"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "In\xEDcio"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+        prefetch: true,
+        href: "/painel"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "Painel OrtoConecta"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+        prefetch: true,
+        href: "/cursos_e_materiais"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "Cursos e Materiais"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+        prefetch: true,
+        href: "/experiencias"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "Experi\xEAncias"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+        prefetch: true,
+        href: "/dicas"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "Dicas"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+        prefetch: true,
+        href: "/especialidades"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "Especialidades"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+        prefetch: true,
+        href: "/casos_clinicos"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "Casos Cl\xEDnicos"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Menu, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+        prefetch: true,
+        href: "/"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "In\xEDcio"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+        prefetch: true,
+        href: "/painel"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "Painel OrtoConecta"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+        prefetch: true,
+        href: "/cursos_e_materiais"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "Cursos e Materiais"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+        prefetch: true,
+        href: "/experiencias"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "Experi\xEAncias"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+        prefetch: true,
+        href: "/dicas"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "Dicas"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+        prefetch: true,
+        href: "/especialidades"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "Especialidades"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+        prefetch: true,
+        href: "/casos_clinicos"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "Casos Cl\xEDnicos"))))));
     }
   }]);
@@ -31448,18 +30836,7 @@ var GlobalStyle = Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["createG
 
 /***/ }),
 
-/***/ 3:
-/*!*********************************!*\
-  !*** readable-stream (ignored) ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 7:
+/***/ 4:
 /*!**************************************!*\
   !*** multi ./pages/casosclinicos.js ***!
   \**************************************/
@@ -31470,6 +30847,17 @@ __NEXT_REGISTER_PAGE('/casosclinicos', function() {
 module.exports = __webpack_require__(/*! ./pages/casosclinicos.js */"./pages/casosclinicos.js");
 
 return { page: module.exports.default }});
+
+/***/ }),
+
+/***/ 5:
+/*!*********************************!*\
+  !*** readable-stream (ignored) ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
 
 /***/ }),
 
@@ -31484,5 +30872,5 @@ module.exports = dll_fa967e7ef9dcf763db5a;
 
 /***/ })
 
-},[[7,"static/runtime/webpack.js"]]]));;
+},[[4,"static/runtime/webpack.js"]]]));;
 //# sourceMappingURL=casosclinicos.js.map

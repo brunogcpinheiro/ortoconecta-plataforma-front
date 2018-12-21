@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
 import Head from 'next/head'
-import { Link }  from '../routes'
+import Link  from 'next/link'
 import Main from '../layouts/main'
 import { FaRegCommentAlt } from 'react-icons/fa'
 
@@ -97,6 +97,7 @@ const Reactions = styled.div`
 
 const Experiencias = props => {
     const sorted = props.experiences.sort((a,b) => (a.publishedAt > b.publishedAt) ? 1 : ((b.publishedAt > a.publishedAt) ? -1 : 0)).reverse();
+    
     return (
         <Main>
             <Head>
@@ -105,7 +106,7 @@ const Experiencias = props => {
             <ExperiencesWrapper>
                 <h2>Compartilhando Experiências OrtoConecta</h2>
                     {sorted.map(experience => (
-                        <Link key={experience.id} route={`https://ortoconecta-plataforma-front-brunogcpinheiro.c9users.io:8080/experiencias/${experience.id}`}>
+                        <Link key={experience.id} href={`/experiencias/${experience.id}`} prefetch>
                             <Experience>
                                 <Fragment>
                                     <img src={`https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${experience.thumbnail.url}`} alt={experience.title} />
