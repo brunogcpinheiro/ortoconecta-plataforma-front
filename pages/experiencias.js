@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import axios from 'axios'
 import Head from 'next/head'
 import Link  from 'next/link'
+import Iframe from 'react-iframe'
 import Main from '../layouts/main'
 import { FaRegCommentAlt } from 'react-icons/fa'
 
@@ -15,11 +16,24 @@ const ExperiencesWrapper = styled.div`
     justify-content: center;
     margin: 50px auto;
     padding: 16px;
+    max-width: 1366px;
     
     h2 {
         font-size: 3rem;
         text-align: center;
     }
+`
+
+const IframeContainer = styled.div`
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  @media(max-width: 980px) {
+    width: 100%;
+  }
 `
 
 const Experience = styled.div`
@@ -105,9 +119,21 @@ const Experiencias = props => {
             </Head>
             <ExperiencesWrapper>
                 <h2>Compartilhando Experiências OrtoConecta</h2>
+                    <IframeContainer>
+                        <img src="/static/saiba-mais.png" />
+                        <Iframe url="https://www.youtube.com/embed/wSRpbzust_w"
+                          width="100%"
+                          height="380px"
+                          display="initial"
+                          position="relative"
+                          className="iframe"
+                          styles={{ marginTop: '15px' }}
+                          allowFullScreen
+                        />
+                     </IframeContainer>
                     {sorted.map(experience => (
                         <Link key={experience.id} href={`/experiencias/${experience.id}`} prefetch>
-                            <Experience>
+                            <Experience data-aos="fade-down-right" data-aos-duration="1000">
                                 <Fragment>
                                     <img src={`https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${experience.thumbnail.url}`} alt={experience.title} />
                                     <div>

@@ -14,6 +14,7 @@ const PainelWrapper = styled.div`
   justify-content: center;
   margin: 50px auto;
   padding: 16px;
+  max-width: 1366px;
 
   h2 {
     font-size: 3rem;
@@ -80,7 +81,7 @@ const Painel = props => {
                         <FaDownload style={{ background: 'transparent', fontSize: '1.2rem', marginRight: '10px' }} /> Baixar Painel OrtoConecta
                     </Download>
                 </div>
-                <PainelContainer>
+                <PainelContainer data-aos="flip-down" data-aos-duration="1000" data-aos-easing="linear">
                     <img src="/static/slide.jpg" alt="Painel OrtoConecta" />
                 </PainelContainer>
             </PainelWrapper>

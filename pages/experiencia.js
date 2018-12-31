@@ -22,6 +22,7 @@ const ExperienceWrapper = styled.div`
     justify-content: center;
     margin: 50px auto;
     padding: 16px;
+    max-width: 1366px;
     
     h2 {
         font-size: 2.5rem;

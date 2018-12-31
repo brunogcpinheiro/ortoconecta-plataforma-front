@@ -10,11 +10,6 @@ const Container = styled.div`
   height: 100%;
 `
 
-const Content = styled.div`
-  max-width: 1366px;
-  margin: 0 auto;
-`
-
 export default (props) => (
   <Fragment>
     <div>
@@ -22,14 +17,14 @@ export default (props) => (
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="utf-8" />
         <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" />
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
       </Head>
     </div>
     <Container>
       <GlobalStyle />
       <Header />
-      <Content>
-        {props.children}
-      </Content>
+      {props.children}
       <Footer />
     </Container>
   </Fragment>

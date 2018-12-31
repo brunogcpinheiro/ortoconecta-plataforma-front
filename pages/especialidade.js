@@ -5,13 +5,13 @@ import Head from 'next/head'
 import dayjs from 'dayjs'
 import Main from '../layouts/main'
 import { FaDownload } from 'react-icons/fa'
-import TextareaAutosize from 'react-autosize-textarea'
+import ReactMarkdown from 'react-markdown'
 import 'dayjs/locale/pt-br'
 
 const primaryColor = "#ffd32a"
 
 const SpecialityWrapper = styled.div`
-    max-width: 80%;
+    max-width: 1024px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -87,16 +87,18 @@ const Download = styled.a`
     }
 `
 
-const StyledTextarea = styled(TextareaAutosize)`
-    padding: 26px;
+const StyledTextarea = styled.div`
+    padding: 20px;
     background: transparent;
     text-align: justify;
-    font-size: 1.3rem;
     border: none;
-    width: 90%;
-    height: 600px;
-    overflow: hidden;
-    resize: none;   
+    width: 100%;
+    height: 100%;
+    
+    p {
+        font-size: 1.2rem;
+        padding: 15px;
+    }
 `
 
 const Especialidade = props => {
@@ -116,11 +118,11 @@ const Especialidade = props => {
                         dayjs(publishedAt).format('DD_MMMM_YYYY').split('_').join(' de ')
                     }</h3>
                     <Download href={`https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${material.url}`} target="blank"><FaDownload style={{ background: 'transparent', fontSize: '1.2rem', marginRight: '10px' }} /> Baixar Material</Download>
-                    <StyledTextarea 
-                        disabled
-                        async
-                        defaultValue={article} 
-                    />
+                    <StyledTextarea>
+                        <p>
+                            <ReactMarkdown source={article} style={{ width: '100%' }} />
+                        </p>
+                    </StyledTextarea>
                 </SpecialityWrapper>
             </Main>
         </Fragment>

@@ -154,7 +154,9 @@ function (_Document) {
         rel: "shortcut icon",
         href: "/static/tooth.jpg",
         type: "image/x-icon"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("body", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_document__WEBPACK_IMPORTED_MODULE_1__["Main"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_document__WEBPACK_IMPORTED_MODULE_1__["NextScript"], null)));
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("body", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_document__WEBPACK_IMPORTED_MODULE_1__["Main"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
+        src: "https://unpkg.com/aos@next/dist/aos.js"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", null, "AOS.init();"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_document__WEBPACK_IMPORTED_MODULE_1__["NextScript"], null)));
     }
   }], [{
     key: "getInitialProps",

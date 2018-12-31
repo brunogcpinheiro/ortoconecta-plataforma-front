@@ -52,10 +52,10 @@ const Footer = props => {
                 <a href="https://instagram.com/ortoconecta" target="blank">
                     <FaInstagram style={{ fontSize: '2rem' }} />
                 </a>
-                <a href="https://facebook.com/ortoconecta" target="blank">
+                <a href="https://facebook.com/OrtoConecta-321693788686012" target="blank">
                     <FaFacebookSquare style={{ fontSize: '2rem' }} />
                 </a>
-                <a href="https://facebook.com/ortoconecta" target="blank">
+                <a href="https://wa.me/5511938002884" target="blank">
                     <FaWhatsapp style={{ fontSize: '2rem' }} />
                 </a>
             </div>

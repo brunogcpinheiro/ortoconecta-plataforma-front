@@ -6,6 +6,7 @@ import Link from 'next/link'
 import axios from 'axios'
 import dayjs from 'dayjs'
 import Iframe from 'react-iframe'
+import { FaUserGraduate } from 'react-icons/fa'
 import 'dayjs/locale/pt-br'
 
 const primaryColor = "#ffd32a"
@@ -15,8 +16,13 @@ const SpecialitiesWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 50px auto;
+  background-image: url('/static/network.jpg');
+    background-attachment: fixed;
+    background-position: top center;
+    background-size: cover;
+  margin: 5px auto;
   padding: 16px;
+  max-width: 1366px;
 
   h2 {
     font-size: 3rem;
@@ -92,10 +98,38 @@ const ReadMore = styled.a`
 
 const IframeContainer = styled.div`
   width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   
   @media(max-width: 980px) {
     width: 100%;
   }
+`
+
+const PortfolioBtn = styled.button`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    margin-top: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    background: ${primaryColor};
+    border: 2px solid ${primaryColor};
+    transition: background 0.5s ease;
+    
+    &:visited, &:active, &:link {
+        color: inherit;
+    }
+    
+    &:hover {
+      background: transparent;
+      transition: background 0.5s ease;
+    }
 `
 
 const Especialidades = props => {
@@ -109,6 +143,7 @@ const Especialidades = props => {
         <SpecialitiesWrapper>
           <h2>Especialidades OrtoConecta</h2>
           <IframeContainer>
+            <img src="/static/saiba-mais.png" />
             <Iframe url="https://www.youtube.com/embed/7lZ1QHBcWiY"
               width="100%"
               height="380px"
@@ -119,10 +154,12 @@ const Especialidades = props => {
               allowFullScreen
             />
           </IframeContainer>
-          
+          <Link prefetch href={`/especialidades/portfolio`}>
+            <PortfolioBtn><FaUserGraduate style={{ fontSize: '1.5rem', marginLeft: '10px', padding: '10px'}} /> Portfólio dos profissionais</PortfolioBtn>
+          </Link>
             {sorted
               .map(speciality => (
-              <Speciality key={speciality.id}>
+              <Speciality key={speciality.id} data-aos="fade-right" data-aos-duration="1000">
                 <li>
                   <Link prefetch href={`/especialidades/${speciality.id}`}>
                     <Title>{speciality.title}</Title>

@@ -5,7 +5,7 @@ import axios from 'axios'
 import Head from 'next/head'
 import dayjs from 'dayjs'
 import Main from '../layouts/main'
-import { FaDownload, FaCreditCard } from 'react-icons/fa'
+import { FaSistrix, FaCreditCard } from 'react-icons/fa'
 import 'dayjs/locale/pt-br'
 
 const primaryColor = "#ffd32a";
@@ -14,6 +14,7 @@ const CoursesAndMaterialsWrapper = styled.div`
     padding: 16px;
     background: transparent;
     margin: 0 auto;
+    max-width: 1366px;
     
     div {
         margin: 20px 0 50px 0;
@@ -223,10 +224,10 @@ const CoursesAndMaterials = props => {
             <Main>
                 <CoursesAndMaterialsWrapper>
                     <div>
-                        <h2>Cursos e eventos OrtoConecta</h2>
+                        <h2>Cursos e Eventos OrtoConecta</h2>
                         <CourseAndMaterialWrapper>
                             {props.courses.map(course => (
-                                <Course key={course.id}>
+                                <Course key={course.id} className="animated zoomIn delay-1s">
                                     <CourseImg src={`https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${course.course_image.url}`} alt={course.title} />
                                     <div>
                                         <Title>{course.title}</Title>
@@ -234,7 +235,7 @@ const CoursesAndMaterials = props => {
                                         <h3>Quando.: <span>{course.date_event}</span></h3>
                                         <h1>{course.price}</h1>
                                         {course.sold_out === true ? (
-                                            <h2>Ingressos esgotados!</h2>
+                                            <h2>Inscrições esgotadas!</h2>
                                         ): (
                                             <Button><FaCreditCard style={{ background: 'transparent', fontSize: '1.2rem', marginRight: '10px' }}/> Comprar</Button>
                                         )}
@@ -245,7 +246,7 @@ const CoursesAndMaterials = props => {
                     </div>
                 
                     <div>
-                        <h2>Material <span>exclusivo</span> OrtoConecta</h2>
+                        <h2>Material <span>Exclusivo</span> OrtoConecta</h2>
                         <p>Estudo sobre Alicates Ortodônticos</p>
                         <Iframe url="https://www.slideshare.net/slideshow/embed_code/key/wuMVMJvfdz3k5J"
                             width="90%"
@@ -259,11 +260,11 @@ const CoursesAndMaterials = props => {
                     </div>
                     
                     <div>
-                        <h2>Materiais <span>disponíveis</span> OrtoConecta</h2>
+                        <h2>Materiais <span>Disponíveis</span> OrtoConecta</h2>
                         <p><strong>OBS.:</strong> Baixe o material para ler o artigo completo!</p>
                         <CourseAndMaterialWrapper>
                             {props.materials.map(material => (
-                                <Material key={material.id}>
+                                <Material key={material.id} data-aos="fade-up" data-aos-duration="1000">
                                     <Img src={`https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${material.material_image.url}`} alt={material.title} />
                                     <div>
                                         <Title>{material.title}</Title>
@@ -273,7 +274,7 @@ const CoursesAndMaterials = props => {
                                         }</h3>
                                         <h4>Por {material.author}</h4>
                                         <h5>Páginas: {material.pages}</h5>
-                                        <Button href={`https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${material.material.url}`} target="blank"><FaDownload style={{ background: 'transparent', fontSize: '1.2rem', marginRight: '10px' }} /> Baixar Material</Button>
+                                        <Button href={`https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${material.material.url}`} target="blank"><FaSistrix style={{ background: 'transparent', fontSize: '1.2rem', marginRight: '10px' }} /> Visualizar Material</Button>
                                         <p>{material.description}</p>
                                     </div>
                                 </Material> 

@@ -74,9 +74,8 @@ const Menu = styled.ul`
   color: #303030;
 
   li {
-    padding: 16px;
+    padding: 10px;
     font-weight: bold;
-    font-size: 1.3rem;
     background: transparent;
     
     a {
@@ -85,6 +84,7 @@ const Menu = styled.ul`
       text-transform: uppercase;
       transition: color 0.4s;
       background: transparent;
+      font-size: 0.9rem;
 
       &:after {
         display: block;
@@ -177,10 +177,11 @@ class Header extends Component {
                     <Link prefetch href="/"><li><a>Início</a></li></Link>
                     <Link prefetch href="/painel"><li><a>Painel OrtoConecta</a></li></Link>
                     <Link prefetch href="/cursos_e_materiais"><li><a>Cursos e Materiais</a></li></Link>
-                    <Link prefetch href="/experiencias"><li><a>Experiências</a></li></Link>
+                    <Link prefetch href="/experiencias"><li><a>Compartilhando Experiências</a></li></Link>
                     <Link prefetch href="/dicas"><li><a>Dicas</a></li></Link>
                     <Link prefetch href="/especialidades"><li><a>Especialidades</a></li></Link>
                     <Link prefetch href="/casos_clinicos"><li><a>Casos Clínicos</a></li></Link>
+                    <Link prefetch href="/aplicativos"><li><a>Aplicativos</a></li></Link>
                   </DropdownContent>
                 </Dropdown>
               )}
@@ -188,10 +189,11 @@ class Header extends Component {
               <li><Link prefetch href="/"><a>Início</a></Link></li>
               <li><Link prefetch href="/painel"><a>Painel OrtoConecta</a></Link></li>
               <li><Link prefetch href="/cursos_e_materiais"><a>Cursos e Materiais</a></Link></li>
-              <li><Link prefetch href="/experiencias"><a>Experiências</a></Link></li>
+              <li><Link prefetch href="/experiencias"><a>Compartilhando Experiências</a></Link></li>
               <li><Link prefetch href="/dicas"><a>Dicas</a></Link></li>
               <li><Link prefetch href="/especialidades"><a>Especialidades</a></Link></li>
               <li><Link prefetch href="/casos_clinicos"><a>Casos Clínicos</a></Link></li>
+              <li><Link prefetch href="/aplicativos"><a style={{ color: 'red' }}>Aplicativos</a></Link></li>
             </Menu>
           </Navigation>
       </Fragment>
