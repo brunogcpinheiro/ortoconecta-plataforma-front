@@ -135,7 +135,7 @@ const Experiencias = props => {
                         <Link key={experience.id} href={`/experiencias/${experience.id}`} prefetch>
                             <Experience data-aos="fade-down-right" data-aos-duration="1000">
                                 <Fragment>
-                                    <img src={`https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${experience.thumbnail.url}`} alt={experience.title} />
+                                    <img src={`http://api.ortoconecta.com.br${experience.thumbnail.url}`} alt={experience.title} />
                                     <div>
                                         <h1>{experience.title}</h1>
                                         <p>{experience.description}<span>Leia mais...</span></p>
@@ -153,7 +153,7 @@ const Experiencias = props => {
 }
 
 Experiencias.getInitialProps = async () => {
-    const experiencesResponse = await axios.get(`https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080/experiences`)
+    const experiencesResponse = await axios.get(`http://api.ortoconecta.com.br/experiences`)
     
     return { experiences: experiencesResponse.data }
 }

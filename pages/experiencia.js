@@ -194,7 +194,7 @@ class Experiencia extends Component {
         }
         
         if (this.state.author && this.state.author_email && this.state.body) {
-            await axios.post(`http://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080/comments`, newComment)
+            await axios.post(`http://api.ortoconecta.com.br/comments`, newComment)
             .then(this.setState({
                 author: '',
                 author_email: '',
@@ -211,7 +211,7 @@ class Experiencia extends Component {
                   title: 'Algo errado com a requisição. Tente novamente!'
                 })
             })
-            Router.replace(`http://ortoconecta-plataforma-front-brunogcpinheiro.c9users.io:8080/experiencias/${Router.query.id}`)
+            Router.replace(`http://www.ortoconecta.com.br/experiencias/${Router.query.id}`)
         } else {
             swal({
               type: 'error',
@@ -281,7 +281,7 @@ class Experiencia extends Component {
 }
 
 Experiencia.getInitialProps = async ({ query }) => {
-    const experienceResponse = await axios.get(`https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080/experiences/${query.id}`)
+    const experienceResponse = await axios.get(`http://api.ortoconecta.com.br/experiences/${query.id}`)
     
     return { experience: experienceResponse.data }
 }

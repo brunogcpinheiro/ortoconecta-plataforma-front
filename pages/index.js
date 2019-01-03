@@ -313,7 +313,7 @@ class Home extends Component {
         }
         
         if (this.state.email) {
-            await axios.post(`https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080/subscribers`, newSubscriber)
+            await axios.post(`http://api.ortoconecta.com.br/subscribers`, newSubscriber)
             .then(this.setState({
                 email: ''
             })).then(
@@ -328,7 +328,7 @@ class Home extends Component {
                   title: 'Algo errado com a requisição. Tente novamente!'
                 })
             })
-            Router.replace(`http://ortoconecta-plataforma-front-brunogcpinheiro.c9users.io:8080/`)
+            Router.replace(`http://www.ortoconecta.com.br`)
         } else {
             swal({
               type: 'error',

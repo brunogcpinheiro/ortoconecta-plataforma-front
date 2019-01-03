@@ -288,8 +288,8 @@ const CoursesAndMaterials = props => {
 }
 
 CoursesAndMaterials.getInitialProps = async ({ query }) => {
-    const materialResponse = await axios.get(`https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080/materials`)
-    const coursesResponse = await axios.get(`https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080/courses`)
+    const materialResponse = await axios.get(`http://api.ortoconecta.com.br/materials`)
+    const coursesResponse = await axios.get(`http://api.ortoconecta.com.br/courses`)
     
     return { materials: materialResponse.data, courses: coursesResponse.data }
 }

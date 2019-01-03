@@ -232,7 +232,7 @@ class Dicas extends Component {
                   title: 'Algo errado com a requisição. Tente novamente!'
                 })
             })
-            Router.replace(`http://ortoconecta-plataforma-front-brunogcpinheiro.c9users.io:8080/dicas`)
+            Router.replace(`http://www.ortoconecta.com.br/dicas`)
         } else {
             swal({
               type: 'error',
@@ -305,8 +305,8 @@ class Dicas extends Component {
 }
 
 Dicas.getInitialProps = async() => {
-    const tipsResponse = await axios.get(`https://ortoconecta-plataforma-brunogcpinheiro.c9users.io/tips`)
-    const commentsResponse = await axios.get(`https://ortoconecta-plataforma-brunogcpinheiro.c9users.io/tipsComments`)
+    const tipsResponse = await axios.get(`http://api.ortoconecta.com.br/tips`)
+    const commentsResponse = await axios.get(`http://api.ortoconecta.com.br/tipsComments`)
     
     return { tips: tipsResponse.data, comments: commentsResponse.data }
 }

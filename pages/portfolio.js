@@ -57,7 +57,7 @@ const Portfolio = props => {
                 <Professionals>
                     {props.professionals.map(professional => (
                         <Professional key={professional.id}>
-                            <img src={`https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${professional.image.url}`}/>
+                            <img src={`http://api.ortoconecta.com.br${professional.image.url}`}/>
                             <p style={{ fontSize: '1.5rem', textAlign: 'center' }}><strong>{professional.name}</strong></p>
                             <p><strong>Especialidade.:</strong> {professional.speciality}</p>
                             <p><strong>Email.:</strong> {professional.email}</p>
@@ -72,7 +72,7 @@ const Portfolio = props => {
 }
 
 Portfolio.getInitialProps = async () => {
-    const response = await axios.get('https://ortoconecta-plataforma-brunogcpinheiro.c9users.io/professionals')
+    const response = await axios.get('http://api.ortoconecta.com.br/professionals')
     return { professionals: response.data }
 }
 

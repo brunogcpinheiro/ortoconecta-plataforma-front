@@ -25248,7 +25248,7 @@ function (_Component) {
                 }
 
                 _context.next = 5;
-                return axios__WEBPACK_IMPORTED_MODULE_8___default.a.post("https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080/subscribers", newSubscriber).then(_this.setState({
+                return axios__WEBPACK_IMPORTED_MODULE_8___default.a.post("http://api.ortoconecta.com.br/subscribers", newSubscriber).then(_this.setState({
                   email: ''
                 })).then(sweetalert2__WEBPACK_IMPORTED_MODULE_6___default()({
                   type: 'success',
@@ -25261,7 +25261,7 @@ function (_Component) {
                 });
 
               case 5:
-                next_router__WEBPACK_IMPORTED_MODULE_5___default.a.replace("http://ortoconecta-plataforma-front-brunogcpinheiro.c9users.io:8080/");
+                next_router__WEBPACK_IMPORTED_MODULE_5___default.a.replace("http://www.ortoconecta.com.br");
                 _context.next = 9;
                 break;
 
@@ -25671,7 +25671,7 @@ var GlobalStyle = Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["createG
 
 /***/ }),
 
-/***/ 7:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
@@ -25696,5 +25696,5 @@ module.exports = dll_fa967e7ef9dcf763db5a;
 
 /***/ })
 
-},[[7,"static/runtime/webpack.js"]]]));;
+},[[3,"static/runtime/webpack.js"]]]));;
 //# sourceMappingURL=index.js.map

@@ -111,13 +111,13 @@ const Especialidade = props => {
             <Main>
                 <SpecialityWrapper>
                     <Title>{title}</Title>
-                    <Img src={`https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${author_avatar.url}`} alt={author} />
+                    <Img src={`http://api.ortoconecta.com.br${author_avatar.url}`} alt={author} />
                     <h2>{author} ({speciality})</h2>
                     <h3>Publicado em {
                         dayjs.locale('pt-br'),
                         dayjs(publishedAt).format('DD_MMMM_YYYY').split('_').join(' de ')
                     }</h3>
-                    <Download href={`https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${material.url}`} target="blank"><FaDownload style={{ background: 'transparent', fontSize: '1.2rem', marginRight: '10px' }} /> Baixar Material</Download>
+                    <Download href={`http://api.ortoconecta.com.br${material.url}`} target="blank"><FaDownload style={{ background: 'transparent', fontSize: '1.2rem', marginRight: '10px' }} /> Baixar Material</Download>
                     <StyledTextarea>
                         <p>
                             <ReactMarkdown source={article} style={{ width: '100%' }} />
@@ -130,7 +130,7 @@ const Especialidade = props => {
 }
 
 Especialidade.getInitialProps = async ({ query }) => {
-    const response = await axios.get(`https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080/specialities/${query.id}`)
+    const response = await axios.get(`http://api.ortoconecta.com.br/specialities/${query.id}`)
     
     return { speciality: response.data }
 }

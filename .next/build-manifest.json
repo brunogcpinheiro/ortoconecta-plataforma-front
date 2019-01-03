@@ -11,7 +11,7 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/aplicativo": [
+    "/painel": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],

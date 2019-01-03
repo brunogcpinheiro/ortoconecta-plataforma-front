@@ -183,7 +183,7 @@ const Especialidades = props => {
 }
 
 Especialidades.getInitialProps = async () => {
-  let response = await axios.get("https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080/specialities");
+  let response = await axios.get("http://api.ortoconecta.com.br/specialities");
   
   return { specialities: response.data }
 }
