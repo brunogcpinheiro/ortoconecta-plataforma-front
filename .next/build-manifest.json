@@ -1,75 +1,23 @@
 {
-  "devFiles": [],
+  "devFiles": [
+    "static/development/dll/dll_d3316e1661f0c308e102.js"
+  ],
   "pages": {
-    "/aplicativo": [
-      "static/runtime/webpack-42652fa8b82c329c0559.js",
-      "static/chunks/commons.142e72c20710ae35714e.js",
-      "static/runtime/main-e66f175b7b41c75df0d1.js"
-    ],
-    "/casosclinicos": [
-      "static/runtime/webpack-42652fa8b82c329c0559.js",
-      "static/chunks/commons.142e72c20710ae35714e.js",
-      "static/runtime/main-e66f175b7b41c75df0d1.js"
-    ],
-    "/cursosemateriais": [
-      "static/runtime/webpack-42652fa8b82c329c0559.js",
-      "static/chunks/commons.142e72c20710ae35714e.js",
-      "static/runtime/main-e66f175b7b41c75df0d1.js"
-    ],
-    "/dicas": [
-      "static/runtime/webpack-42652fa8b82c329c0559.js",
-      "static/chunks/commons.142e72c20710ae35714e.js",
-      "static/runtime/main-e66f175b7b41c75df0d1.js"
-    ],
-    "/especialidade": [
-      "static/runtime/webpack-42652fa8b82c329c0559.js",
-      "static/chunks/commons.142e72c20710ae35714e.js",
-      "static/runtime/main-e66f175b7b41c75df0d1.js"
-    ],
-    "/especialidades": [
-      "static/runtime/webpack-42652fa8b82c329c0559.js",
-      "static/chunks/commons.142e72c20710ae35714e.js",
-      "static/runtime/main-e66f175b7b41c75df0d1.js"
-    ],
-    "/experiencia": [
-      "static/runtime/webpack-42652fa8b82c329c0559.js",
-      "static/chunks/commons.142e72c20710ae35714e.js",
-      "static/runtime/main-e66f175b7b41c75df0d1.js"
-    ],
-    "/experiencias": [
-      "static/runtime/webpack-42652fa8b82c329c0559.js",
-      "static/chunks/commons.142e72c20710ae35714e.js",
-      "static/runtime/main-e66f175b7b41c75df0d1.js"
-    ],
-    "/index": [
-      "static/runtime/webpack-42652fa8b82c329c0559.js",
-      "static/chunks/commons.142e72c20710ae35714e.js",
-      "static/runtime/main-e66f175b7b41c75df0d1.js"
-    ],
-    "/painel": [
-      "static/runtime/webpack-42652fa8b82c329c0559.js",
-      "static/chunks/commons.142e72c20710ae35714e.js",
-      "static/runtime/main-e66f175b7b41c75df0d1.js"
-    ],
-    "/portfolio": [
-      "static/runtime/webpack-42652fa8b82c329c0559.js",
-      "static/chunks/commons.142e72c20710ae35714e.js",
-      "static/runtime/main-e66f175b7b41c75df0d1.js"
-    ],
     "/_app": [
-      "static/runtime/webpack-42652fa8b82c329c0559.js",
-      "static/chunks/commons.142e72c20710ae35714e.js",
-      "static/runtime/main-e66f175b7b41c75df0d1.js"
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
     ],
     "/_error": [
-      "static/runtime/webpack-42652fa8b82c329c0559.js",
-      "static/chunks/commons.142e72c20710ae35714e.js",
-      "static/runtime/main-e66f175b7b41c75df0d1.js"
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/index": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
     ],
     "/": [
-      "static/runtime/webpack-42652fa8b82c329c0559.js",
-      "static/chunks/commons.142e72c20710ae35714e.js",
-      "static/runtime/main-e66f175b7b41c75df0d1.js"
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
     ]
   }
 }
