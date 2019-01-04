@@ -118,8 +118,8 @@ const Content = styled.div`
 
 class CasosClinicos extends Component {
     static async getInitialProps() {
-      let responseSolutions = await axios.get("https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080/solutions");
-      let responseActuals = await axios.get("https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080/actuals");
+      let responseSolutions = await axios.get("http://api.ortoconecta.com.br/solutions");
+      let responseActuals = await axios.get("http://api.ortoconecta.com.br/actuals");
       return { solutions: responseSolutions.data, actuals: responseActuals.data }
     }
 
@@ -165,7 +165,7 @@ class CasosClinicos extends Component {
                                             <div><strong>Assuntos relacionados:</strong>
                                                 <div> <ReactMarkdown source={solution.keywords} /></div>
                                             </div>
-                                            <Button href={`https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${solution.material.url}`} target="blank"><FaFolderOpen style={{ background: 'transparent', fontSize: '1.5rem', marginRight: '10px' }} /> Visualizar Caso Clínico</Button>
+                                            <Button href={`http://api.ortoconecta.com.br${solution.material.url}`} target="blank"><FaFolderOpen style={{ background: 'transparent', fontSize: '1.5rem', marginRight: '10px' }} /> Visualizar Caso Clínico</Button>
                                        </Content> 
                                     ))}
                                 </Fragment>
@@ -182,7 +182,7 @@ class CasosClinicos extends Component {
                                             <div><strong>Assuntos relacionados:</strong>
                                                 <div> <ReactMarkdown source={actual.keywords} /></div>
                                             </div>
-                                            <Button href={`https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${actual.material.url}`} target="blank"><FaFolderOpen style={{ background: 'transparent', fontSize: '1.5rem', marginRight: '10px' }} /> Visualizar Caso Clínico</Button>
+                                            <Button href={`http://api.ortoconecta.com.br${actual.material.url}`} target="blank"><FaFolderOpen style={{ background: 'transparent', fontSize: '1.5rem', marginRight: '10px' }} /> Visualizar Caso Clínico</Button>
                                        </Content>
                                     ))}
                                 </Fragment>
