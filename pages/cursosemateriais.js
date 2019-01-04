@@ -247,7 +247,7 @@ const CoursesAndMaterials = props => {
                 
                     <div>
                         <h2>Material <span>Exclusivo</span> OrtoConecta</h2>
-                        <p>Estudo sobre Alicates Ortodônticos</p>
+                        <p>Estudo sobre Alicates Ortodônticos.</p>
                         <Iframe url="https://www.slideshare.net/slideshow/embed_code/key/wuMVMJvfdz3k5J"
                             width="90%"
                             height="550px"
