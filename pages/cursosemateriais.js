@@ -228,7 +228,7 @@ const CoursesAndMaterials = props => {
                         <CourseAndMaterialWrapper>
                             {props.courses.map(course => (
                                 <Course key={course.id} className="animated zoomIn delay-1s">
-                                    <CourseImg src={`https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${course.course_image.url}`} alt={course.title} />
+                                    <CourseImg src={`http://api.ortoconecta.com.br${course.course_image.url}`} alt={course.title} />
                                     <div>
                                         <Title>{course.title}</Title>
                                         <h3>Local.: <span>{course.local}</span></h3>
@@ -265,7 +265,7 @@ const CoursesAndMaterials = props => {
                         <CourseAndMaterialWrapper>
                             {props.materials.map(material => (
                                 <Material key={material.id} data-aos="fade-up" data-aos-duration="1000">
-                                    <Img src={`https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${material.material_image.url}`} alt={material.title} />
+                                    <Img src={`http://api.ortoconecta.com.br${material.material_image.url}`} alt={material.title} />
                                     <div>
                                         <Title>{material.title}</Title>
                                         <h3>Publicado em {
@@ -274,7 +274,7 @@ const CoursesAndMaterials = props => {
                                         }</h3>
                                         <h4>Por {material.author}</h4>
                                         <h5>Páginas: {material.pages}</h5>
-                                        <Button href={`https://ortoconecta-plataforma-brunogcpinheiro.c9users.io:8080${material.material.url}`} target="blank"><FaSistrix style={{ background: 'transparent', fontSize: '1.2rem', marginRight: '10px' }} /> Visualizar Material</Button>
+                                        <Button href={`http://api.ortoconecta.com.br${material.material.url}`} target="blank"><FaSistrix style={{ background: 'transparent', fontSize: '1.2rem', marginRight: '10px' }} /> Visualizar Material</Button>
                                         <p>{material.description}</p>
                                     </div>
                                 </Material> 
