@@ -354,7 +354,7 @@ class Home extends Component {
             <h1>Quem Somos</h1>
             <img src="/static/ale-gustavo-renato.jpg" alt="OrtoConecta"/> 
             <p>
-              <span>Em</span> reuniões esporádicas sobre temas que frequentemente convergiam para o tempo em que o praticante da ortodontia conseguiria desenvolver sua autonomia, nasce a Orto Conecta.
+              <span>Em</span> reuniões esporádicas sobre temas que frequentemente convergiam para o tempo em que o praticante da ortodontia conseguiria desenvolver sua autonomia, nasce a OrtoConecta.
               Idealizada por três colegas de profissão, <strong>Dr. Renato Tanabe</strong>, <strong>Dr. Alexandre Mendonça</strong> e <strong>Dr. Gustavo Furlan</strong>, esta ferramenta tem como objetivo trazer informações sobre a ortodontia executada de forma eficiente, prática e segura, além de integrar áreas intimamente ligadas a esta especialidade.
               Know-how, sensibilidade e entusiasmo dão direcionamento para a construção desta plataforma digital cuidadosamente planejada para produzir e compartilhar conhecimentos.  Um novo canal que irá fazer parte da lista de manuais de consulta sobre os assuntos mais atuais das áreas de saúde que se conectam diretamente à ortodontia.
               Esperamos que aproveitem este espaço e sua diversidade de materiais disponíveis no site, nos cursos online e presenciais que contribuirão para o aprimoramento de competências e habilidades fundamentais para o profissional que busca a excelência.
@@ -401,7 +401,7 @@ class Home extends Component {
                 </Link>
               </Content>
               <Content>
-                <FaBriefcase style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>Compartilhando experiências</h4>
+                <FaBriefcase style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>Compartilhando Experiências</h4>
                 <br />
                 <p>O compartilhamento de experiências como ferramenta para ampliar o seu leque de conhecimento.</p>
                 <Link prefetch href="/experiencias">
@@ -417,7 +417,7 @@ class Home extends Component {
                 </Link>
               </Content>
               <Content>
-                <FaHeartbeat style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>OrtoConecta especialidades</h4>
+                <FaHeartbeat style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>OrtoConecta Especialidades</h4>
                 <br />
                 <p>Uma área destinada à multidisciplinaridade mostrando a importância da integração de especialidades na busca do melhor para o paciente.</p>
                 <Link prefetch href="/especialidades">

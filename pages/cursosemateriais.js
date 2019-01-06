@@ -261,7 +261,7 @@ const CoursesAndMaterials = props => {
                     
                     <div>
                         <h2>Materiais <span>Disponíveis</span> OrtoConecta</h2>
-                        <p><strong>OBS.:</strong> Baixe o material para ler o artigo completo!!</p>
+                        <p><strong>OBS.:</strong> Clique em visualizar material para ler artigo completo!</p>
                         <CourseAndMaterialWrapper>
                             {props.materials.map(material => (
                                 <Material key={material.id} data-aos="fade-up" data-aos-duration="1000">

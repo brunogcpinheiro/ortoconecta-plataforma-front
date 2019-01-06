@@ -141,7 +141,7 @@ const Especialidades = props => {
       </Head>
       <Main>
         <SpecialitiesWrapper>
-          <h2>Especialidades OrtoConecta</h2>
+          <h2>OrtoConecta Especialidades</h2>
           <IframeContainer>
             <img src="/static/saiba-mais.png" />
             <Iframe url="https://www.youtube.com/embed/7lZ1QHBcWiY"

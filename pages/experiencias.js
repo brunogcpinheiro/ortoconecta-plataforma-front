@@ -118,7 +118,7 @@ const Experiencias = props => {
                 <title>OrtoConecta | Experiências</title>
             </Head>
             <ExperiencesWrapper>
-                <h2>Compartilhando Experiências OrtoConecta</h2>
+                <h2>OrtoConecta Compartilhando Experiências</h2>
                     <IframeContainer>
                         <img src="/static/saiba-mais.png" />
                         <Iframe url="https://www.youtube.com/embed/wSRpbzust_w"
