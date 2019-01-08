@@ -41,7 +41,7 @@ const Entrevistas = props => {
                 <title>OrtoConecta | Palavra do Especialista</title>
             </Head>
             <EntrevistaWrapper>
-                <h2>Entrevistas com especialistas</h2>
+                <h2>Palavra do Especialista</h2>
                 {props.interviews.map(interview => (
                     <EntrevistasWrapper key={interview.id}>
                         <VideoWrapper>
