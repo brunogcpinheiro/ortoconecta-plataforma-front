@@ -6,7 +6,7 @@ import Link from 'next/link'
 import axios from 'axios'
 import dayjs from 'dayjs'
 import Iframe from 'react-iframe'
-import { FaUserGraduate } from 'react-icons/fa'
+import { FaUserGraduate, FaMicrophoneAlt } from 'react-icons/fa'
 import 'dayjs/locale/pt-br'
 
 const primaryColor = "#ffd32a"
@@ -108,6 +108,13 @@ const IframeContainer = styled.div`
   }
 `
 
+const BtnWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+`
+
 const PortfolioBtn = styled.button`
     display: flex;
     justify-content: center;
@@ -120,6 +127,30 @@ const PortfolioBtn = styled.button`
     text-transform: uppercase;
     background: ${primaryColor};
     border: 2px solid ${primaryColor};
+    transition: background 0.5s ease;
+    
+    &:visited, &:active, &:link {
+        color: inherit;
+    }
+    
+    &:hover {
+      background: transparent;
+      transition: background 0.5s ease;
+    }
+`
+
+const EntrevistasBtn = styled.button`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    margin-top: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    background: #e74c3c;
+    border: 2px dashed #e74c3c;
     transition: background 0.5s ease;
     
     &:visited, &:active, &:link {
@@ -154,9 +185,14 @@ const Especialidades = props => {
               allowFullScreen
             />
           </IframeContainer>
-          <Link prefetch href={`/especialidades/portfolio`}>
-            <PortfolioBtn><FaUserGraduate style={{ fontSize: '1.5rem', marginLeft: '10px', padding: '10px'}} /> Portfólio dos profissionais</PortfolioBtn>
-          </Link>
+          <BtnWrapper>
+            <Link prefetch href={`/especialidades/portfolio`}>
+              <PortfolioBtn><FaUserGraduate style={{ fontSize: '1.5rem', marginLeft: '10px', padding: '10px'}} /> Portfólio dos profissionais</PortfolioBtn>
+            </Link>
+            <Link prefetch href={`/especialidades/entrevistas`}>
+              <EntrevistasBtn><FaMicrophoneAlt style={{ fontSize: '1.5rem', marginLeft: '10px', padding: '10px'}} /> Entrevistas com especialistas</EntrevistasBtn>
+            </Link>
+          </BtnWrapper>
             {sorted
               .map(speciality => (
               <Speciality key={speciality.id} data-aos="fade-right" data-aos-duration="1000">
@@ -184,6 +220,7 @@ const Especialidades = props => {
 
 Especialidades.getInitialProps = async () => {
   let response = await axios.get("http://api.ortoconecta.com.br/specialities");
+  
   
   return { specialities: response.data }
 }
