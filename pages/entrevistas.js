@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Head from 'next/head'
 import axios from 'axios'
+import Iframe from 'react-iframe'
 import Main from '../layouts/main'
 
 const EntrevistaWrapper = styled.div`
@@ -42,7 +43,7 @@ const Entrevistas = props => {
             <EntrevistaWrapper>
                 <h2>Entrevistas com especialistas</h2>
                 {props.interviews.map(interview => (
-                    <EntrevistasWrapper>
+                    <EntrevistasWrapper key={interview.id}>
                         <VideoWrapper>
                               <Iframe url={`https://www.youtube.com/embed/${interview.video_url}`} 
                                 position="relative"
