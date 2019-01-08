@@ -37,7 +37,7 @@ const Entrevistas = props => {
     return (
         <Main>
             <Head>
-                <title>OrtoConecta | Entrevistas com especialistas</title>
+                <title>OrtoConecta | Entrevistas Com Especialistas</title>
             </Head>
             <EntrevistaWrapper>
                 <h2>Entrevistas com especialistas</h2>
