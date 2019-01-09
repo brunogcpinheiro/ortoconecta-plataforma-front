@@ -190,7 +190,7 @@ const Especialidades = props => {
               <PortfolioBtn><FaUserGraduate style={{ fontSize: '1.5rem', marginLeft: '10px', padding: '10px'}} /> Portfólio dos profissionais</PortfolioBtn>
             </Link>
             <Link prefetch href={`/especialidades/entrevistas`}>
-              <EntrevistasBtn><FaMicrophoneAlt style={{ fontSize: '1.5rem', marginLeft: '10px', padding: '10px'}} /> Palavra do especialista</EntrevistasBtn>
+              <EntrevistasBtn><FaMicrophoneAlt style={{ fontSize: '1.5rem', marginLeft: '10px', padding: '10px'}} /> Palavra do Especialista</EntrevistasBtn>
             </Link>
           </BtnWrapper>
             {sorted
