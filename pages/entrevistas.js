@@ -60,7 +60,7 @@ const Entrevistas = props => {
             <EntrevistaWrapper>
                 <h2>Palavra do Especialista</h2>
                 {props.interviews.map(interview => (
-                    <EntrevistasWrapper key={interview.id}>
+                    <EntrevistasWrapper key={interview.id} className="animated bounceIn delay-1s">
                         <VideoWrapper>
                               <Iframe url={`https://www.youtube.com/embed/${interview.video_url}`} 
                                 position="relative"
