@@ -10,18 +10,6 @@
     "/_error": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
-    ],
-    "/especialidades": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/entrevistas": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/especialidade": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
     ]
   }
 }

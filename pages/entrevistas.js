@@ -21,12 +21,29 @@ const EntrevistaWrapper = styled.div`
 `
 
 const EntrevistasWrapper = styled.div`
-    width: 80%;
-    height: 100%;
+    width: 30%;
+    height: 400px;
+    margin: 20px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
+    flex-direction: column;
+    align-itens: center;
+    justify-content: space-around;
+    background: #f5f5f5;
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
+    -moz-box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
+    box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
+    transform: scale(1);
+        transition: transform 0.5s;
+    
+    &:hover {
+        transform: scale(1.1);
+        transition: transform 0.5s;
+    }
+    
+    h2 {
+        text-align: center;
+        font-size: 1.5rem;
+    }
 `
 
 const VideoWrapper = styled.div`
