@@ -21,7 +21,7 @@ const EntrevistaWrapper = styled.div`
 `
 
 const EntrevistasWrapper = styled.div`
-    width: 30%;
+    width: 32%;
     height: 400px;
     margin: 20px;
     display: flex;
