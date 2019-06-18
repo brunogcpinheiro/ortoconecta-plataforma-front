@@ -300,6 +300,28 @@ const Newsletter = styled.form`
   }
 `
 
+const Maintance = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  img {
+    width: 500px;
+    height: 500px;
+  } 
+
+  h3 {
+    font-size: 3rem;
+    margin-top: 10px;
+  }
+
+  p {
+    font-size: 2.5rem;
+  }
+`
+
 class Home extends Component {
   state = {
     email: '',
@@ -341,11 +363,11 @@ class Home extends Component {
   render () {
     return (
       
-        <div>
+        <Maintance>
           <img src="/static/logo.jpeg" alt="Logo" />
-          <h3>Estamos em atualização...</h3>
-          <h5>Obrigado!</h5>
-        </div> 
+          <h3>Desculpe, estamos em atualização...</h3>
+          <p>Obrigado!</p>
+        </Maintance> 
       
       /*
         <Fragment>
