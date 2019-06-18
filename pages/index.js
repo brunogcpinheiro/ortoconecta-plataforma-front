@@ -308,17 +308,19 @@ const Maintance = styled.div`
   text-align: center;
 
   img {
-    width: 500px;
-    height: 500px;
+    width: 300px;
+    height: 300px;
   } 
 
   h3 {
-    font-size: 3rem;
+    font-family: Arial, sans-serif;
+    font-size: 2rem;
     margin-top: 10px;
   }
 
   p {
-    font-size: 2.5rem;
+    font-family: Arial, sans-serif;
+    font-size: 1.1rem;
   }
 `
 
