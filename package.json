@@ -5,7 +5,7 @@
   "license": "MIT",
   "keywords": [],
   "dependencies": {
-    "axios": "0.18.0",
+    "axios": "0.18.1",
     "dayjs": "^1.7.7",
     "lodash": "^4.17.11",
     "next": "7.0.2",
