@@ -93,7 +93,7 @@ const About = styled.section`
   
   img {
     width: 80%;
-    height: 100%;
+    height: 500px;
     margin-top: 16px;
     border-radius: 15px;
     border: 2px solid ${primaryColor}
