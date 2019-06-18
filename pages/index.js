@@ -340,14 +340,15 @@ class Home extends Component {
   
   render () {
     return (
-      {this.state.maintance ? (
+      
         <div>
           <img src="/static/logo.jpeg" alt="Logo" />
           <h3>Estamos em atualização...</h3>
           <h5>Obrigado!</h5>
         </div> 
-      ) : (
-       <Fragment>
+      
+      /*
+        <Fragment>
           <Head>
             <title>OrtoConecta</title>
           </Head>
@@ -452,7 +453,7 @@ class Home extends Component {
             </NewsletterWrapper>
           </Main>
         </Fragment>
-      )}
+      */
     )
   }
 }
