@@ -302,7 +302,8 @@ const Newsletter = styled.form`
 
 class Home extends Component {
   state = {
-    email: ''
+    email: '',
+    maintance: true
   }
   
   handleSubmit = async e => {
@@ -339,111 +340,119 @@ class Home extends Component {
   
   render () {
     return (
-      <Fragment>
-        <Head>
-          <title>OrtoConecta</title>
-        </Head>
-        <Main>
-          <Hero>
-            <HeroInner>
-                <h1>Você conectado ao mundo da Ortodontia!</h1>
-                <a href="#about">Saiba mais</a>
-            </HeroInner>
-          </Hero>
-          <About id="about" data-aos="fade-right">
-            <h1>Quem Somos</h1>
-            <img src="/static/ale-gustavo-renato.jpg" alt="OrtoConecta"/> 
-            <p>
-              <span>Em</span> reuniões esporádicas sobre temas que frequentemente convergiam para o tempo em que o praticante da ortodontia conseguiria desenvolver sua autonomia, nasce a OrtoConecta.
-              Idealizada por três colegas de profissão, <strong>Dr. Renato Tanabe</strong>, <strong>Dr. Alexandre Mendonça</strong> e <strong>Dr. Gustavo Furlan</strong>, esta ferramenta tem como objetivo trazer informações sobre a ortodontia executada de forma eficiente, prática e segura, além de integrar áreas intimamente ligadas a esta especialidade.
-              Know-how, sensibilidade e entusiasmo dão direcionamento para a construção desta plataforma digital cuidadosamente planejada para produzir e compartilhar conhecimentos.  Um novo canal que irá fazer parte da lista de manuais de consulta sobre os assuntos mais atuais das áreas de saúde que se conectam diretamente à ortodontia.
-              Esperamos que aproveitem este espaço e sua diversidade de materiais disponíveis no site, nos cursos online e presenciais que contribuirão para o aprimoramento de competências e habilidades fundamentais para o profissional que busca a excelência.
-            </p>
-            <h3>Bem-vindos à plataforma <span>OrtoConecta!</span></h3>
-          </About>
-          <ProfilesWrapper data-aos="fade-left">
-            <h1>Perfis Profissionais</h1>
-            <Profiles>
-              <Profile>
-                <img src="/static/renato.png" alt="Dr. Renato Tanabe" />
-                <h2>Dr. Renato Tanabe</h2>
-                <p>É formado pela UNISA-SP desde 1995. Especializou-se em ortodontia, estomatologia e ortopedia facial. Posteriormente tornou-se mestre em ortodontia e clínica infantil. Coordenador das Atividades Científicas em 7 edições do Congresso Brasileiro de Ortodontia trabalhou sempre pelo crescimento da área. Possui credenciamento nos sistemas Invisalign® e Damon Smile®. Atua como professor dos cursos de atualização e especialização em ortodontia e ortopedia facial. Ortodontista clínico desde 2001 e proprietário da marca “Sorriso Ativo Odontologia”, Dr. Renato Tanabe é referência de conhecimento da área em São Paulo.</p>
-              </Profile>
-              <Profile>
-                <img src="/static/alexandre.png" alt="Dr. Alexandre Mendonça" />
-                <h2>Dr. Alexandre Mendonça</h2>
-                <p>É formado pela Universidade de Uberaba desde 1997. Especializou-se em Ortodontia pela ANEO-SP sendo também pós graduado latu sensu em implantodontia e cirurgia oral menor. Atuante na área desde 1997, Dr. Alexandre Mendonça é proprietário da marca     OAM – Odontologia com grande ênfase na área de Planos Assistenciais Odontológicos voltados às empresas.</p>
-              </Profile>
-              <Profile>
-                <img src="/static/gustavo.png" alt="Dr. Gustavo Furlan" />
-                <h2>Dr. Gustavo Furlan</h2>
-                <p>É formado pela Universidade de São Paulo desde 2002. Especializou-se em ortodontia para posteriormente tornar-se mestre e atuar como professor dos cursos de atualização e especialização nos estados de Minas Gerais, Rio Grande do Sul e São Paulo. Ortodontista clínico desde 2005, Dr. Gustavo Furlan é proprietário da marca “GF Ortodontia”.</p>
-              </Profile>
-            </Profiles>
-          </ProfilesWrapper>
-          <ContentWrapper data-aos="fade-right" data-aos-duration="1000">
-            <h1>Conteúdo do Site</h1>
-            <Contents>
-              <Content>
-                <FaChalkboard style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>Painel OrtoConecta</h4>
-                <br />
-                <p>Um quadro sequenciado da ortodontia para você estar sempre ligado nas etapas do tratamento.</p>
-                <Link prefetch href="/painel">
-                  <Acessar>Acessar</Acessar>
-                </Link>
-              </Content>
-              <Content>
-                <FaBook style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>Cursos e Materiais</h4>
-                <br />
-                <p>Produção de cursos e materiais didáticos para que você aprimore suas competências e habilidades.</p>
-                <Link prefetch href="/cursos_e_materiais">
-                  <Acessar>Acessar</Acessar>
-                </Link>
-              </Content>
-              <Content>
-                <FaBriefcase style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>Compartilhando Experiências</h4>
-                <br />
-                <p>O compartilhamento de experiências como ferramenta para ampliar o seu leque de conhecimento.</p>
-                <Link prefetch href="/experiencias">
-                  <Acessar>Acessar</Acessar>
-                </Link>
-              </Content>
-              <Content>
-                <FaLightbulb style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>Dicas OrtoConecta</h4>
-                <br />
-                <p>Um espaço para você obter dicas clínicas que poderão facilitar o dia a dia do seu consultório.</p>
-                <Link prefetch href="/dicas">
-                  <Acessar>Acessar</Acessar>
-                </Link>
-              </Content>
-              <Content>
-                <FaHeartbeat style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>OrtoConecta Especialidades</h4>
-                <br />
-                <p>Uma área destinada à multidisciplinaridade mostrando a importância da integração de especialidades na busca do melhor para o paciente.</p>
-                <Link prefetch href="/especialidades">
-                  <Acessar>Acessar</Acessar>
-                </Link>
-              </Content>
-              <Content>
-                <FaRegNewspaper style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>Casos Clínicos</h4>
-                <br />
-                <p>Desenvolvimento de casos clínicos com links direcionando a conteúdos produzidos pela OrtoConecta para orientações e conhecimento.</p>
-                <Link prefetch href="/casos_clinicos">
-                  <Acessar>Acessar</Acessar>
-                </Link>
-              </Content>
-            </Contents>
-          </ContentWrapper>
-          <NewsletterWrapper data-aos="fade-left" data-aos-duration="1000">
-            <h1>Registre-se em nossa Newsletter!</h1>
-            <p>Receba nosso contéudo por email! Não é spam!</p>
-            <Newsletter onSubmit={(e) => this.handleSubmit(e)}>
-              <input type="email" placeholder="Digite seu melhor email..." onChange={(e) => this.setState({ email: e.target.value })} value={this.state.email} />
-              <button>Inscrever</button>
-            </Newsletter>
-          </NewsletterWrapper>
-        </Main>
-      </Fragment>
+      {this.state.maintance ? (
+        <div>
+          <img src="/static/logo.jpeg" alt="Logo" />
+          <h3>Estamos em atualização...</h3>
+          <h5>Obrigado!</h5>
+        </div> 
+      ) : (
+       <Fragment>
+          <Head>
+            <title>OrtoConecta</title>
+          </Head>
+          <Main>
+            <Hero>
+              <HeroInner>
+                  <h1>Você conectado ao mundo da Ortodontia!</h1>
+                  <a href="#about">Saiba mais</a>
+              </HeroInner>
+            </Hero>
+            <About id="about" data-aos="fade-right">
+              <h1>Quem Somos</h1>
+              <img src="/static/ale-gustavo-renato.jpg" alt="OrtoConecta"/> 
+              <p>
+                <span>Em</span> reuniões esporádicas sobre temas que frequentemente convergiam para o tempo em que o praticante da ortodontia conseguiria desenvolver sua autonomia, nasce a OrtoConecta.
+                Idealizada por três colegas de profissão, <strong>Dr. Renato Tanabe</strong>, <strong>Dr. Alexandre Mendonça</strong> e <strong>Dr. Gustavo Furlan</strong>, esta ferramenta tem como objetivo trazer informações sobre a ortodontia executada de forma eficiente, prática e segura, além de integrar áreas intimamente ligadas a esta especialidade.
+                Know-how, sensibilidade e entusiasmo dão direcionamento para a construção desta plataforma digital cuidadosamente planejada para produzir e compartilhar conhecimentos.  Um novo canal que irá fazer parte da lista de manuais de consulta sobre os assuntos mais atuais das áreas de saúde que se conectam diretamente à ortodontia.
+                Esperamos que aproveitem este espaço e sua diversidade de materiais disponíveis no site, nos cursos online e presenciais que contribuirão para o aprimoramento de competências e habilidades fundamentais para o profissional que busca a excelência.
+              </p>
+              <h3>Bem-vindos à plataforma <span>OrtoConecta!</span></h3>
+            </About>
+            <ProfilesWrapper data-aos="fade-left">
+              <h1>Perfis Profissionais</h1>
+              <Profiles>
+                <Profile>
+                  <img src="/static/renato.png" alt="Dr. Renato Tanabe" />
+                  <h2>Dr. Renato Tanabe</h2>
+                  <p>É formado pela UNISA-SP desde 1995. Especializou-se em ortodontia, estomatologia e ortopedia facial. Posteriormente tornou-se mestre em ortodontia e clínica infantil. Coordenador das Atividades Científicas em 7 edições do Congresso Brasileiro de Ortodontia trabalhou sempre pelo crescimento da área. Possui credenciamento nos sistemas Invisalign® e Damon Smile®. Atua como professor dos cursos de atualização e especialização em ortodontia e ortopedia facial. Ortodontista clínico desde 2001 e proprietário da marca “Sorriso Ativo Odontologia”, Dr. Renato Tanabe é referência de conhecimento da área em São Paulo.</p>
+                </Profile>
+                <Profile>
+                  <img src="/static/alexandre.png" alt="Dr. Alexandre Mendonça" />
+                  <h2>Dr. Alexandre Mendonça</h2>
+                  <p>É formado pela Universidade de Uberaba desde 1997. Especializou-se em Ortodontia pela ANEO-SP sendo também pós graduado latu sensu em implantodontia e cirurgia oral menor. Atuante na área desde 1997, Dr. Alexandre Mendonça é proprietário da marca     OAM – Odontologia com grande ênfase na área de Planos Assistenciais Odontológicos voltados às empresas.</p>
+                </Profile>
+                <Profile>
+                  <img src="/static/gustavo.png" alt="Dr. Gustavo Furlan" />
+                  <h2>Dr. Gustavo Furlan</h2>
+                  <p>É formado pela Universidade de São Paulo desde 2002. Especializou-se em ortodontia para posteriormente tornar-se mestre e atuar como professor dos cursos de atualização e especialização nos estados de Minas Gerais, Rio Grande do Sul e São Paulo. Ortodontista clínico desde 2005, Dr. Gustavo Furlan é proprietário da marca “GF Ortodontia”.</p>
+                </Profile>
+              </Profiles>
+            </ProfilesWrapper>
+            <ContentWrapper data-aos="fade-right" data-aos-duration="1000">
+              <h1>Conteúdo do Site</h1>
+              <Contents>
+                <Content>
+                  <FaChalkboard style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>Painel OrtoConecta</h4>
+                  <br />
+                  <p>Um quadro sequenciado da ortodontia para você estar sempre ligado nas etapas do tratamento.</p>
+                  <Link prefetch href="/painel">
+                    <Acessar>Acessar</Acessar>
+                  </Link>
+                </Content>
+                <Content>
+                  <FaBook style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>Cursos e Materiais</h4>
+                  <br />
+                  <p>Produção de cursos e materiais didáticos para que você aprimore suas competências e habilidades.</p>
+                  <Link prefetch href="/cursos_e_materiais">
+                    <Acessar>Acessar</Acessar>
+                  </Link>
+                </Content>
+                <Content>
+                  <FaBriefcase style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>Compartilhando Experiências</h4>
+                  <br />
+                  <p>O compartilhamento de experiências como ferramenta para ampliar o seu leque de conhecimento.</p>
+                  <Link prefetch href="/experiencias">
+                    <Acessar>Acessar</Acessar>
+                  </Link>
+                </Content>
+                <Content>
+                  <FaLightbulb style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>Dicas OrtoConecta</h4>
+                  <br />
+                  <p>Um espaço para você obter dicas clínicas que poderão facilitar o dia a dia do seu consultório.</p>
+                  <Link prefetch href="/dicas">
+                    <Acessar>Acessar</Acessar>
+                  </Link>
+                </Content>
+                <Content>
+                  <FaHeartbeat style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>OrtoConecta Especialidades</h4>
+                  <br />
+                  <p>Uma área destinada à multidisciplinaridade mostrando a importância da integração de especialidades na busca do melhor para o paciente.</p>
+                  <Link prefetch href="/especialidades">
+                    <Acessar>Acessar</Acessar>
+                  </Link>
+                </Content>
+                <Content>
+                  <FaRegNewspaper style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>Casos Clínicos</h4>
+                  <br />
+                  <p>Desenvolvimento de casos clínicos com links direcionando a conteúdos produzidos pela OrtoConecta para orientações e conhecimento.</p>
+                  <Link prefetch href="/casos_clinicos">
+                    <Acessar>Acessar</Acessar>
+                  </Link>
+                </Content>
+              </Contents>
+            </ContentWrapper>
+            <NewsletterWrapper data-aos="fade-left" data-aos-duration="1000">
+              <h1>Registre-se em nossa Newsletter!</h1>
+              <p>Receba nosso contéudo por email! Não é spam!</p>
+              <Newsletter onSubmit={(e) => this.handleSubmit(e)}>
+                <input type="email" placeholder="Digite seu melhor email..." onChange={(e) => this.setState({ email: e.target.value })} value={this.state.email} />
+                <button>Inscrever</button>
+              </Newsletter>
+            </NewsletterWrapper>
+          </Main>
+        </Fragment>
+      )}
     )
   }
 }
