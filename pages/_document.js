@@ -20,12 +20,7 @@ export default class MyDocument extends Document {
           <link rel="shortcut icon" href="/static/tooth.jpg" type="image/x-icon" />
         </Head>
         <body>
-          //<Main />
-          <div>
-            <img src="/static/logo.jpeg" alt="Logo" />
-            <h3>Estamos em atualização...</h3>
-            <h5>Obrigado!</h5>
-          </div>
+          <Main />
           <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
           <script>
             AOS.init();
