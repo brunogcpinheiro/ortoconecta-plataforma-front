@@ -244,20 +244,6 @@ const CoursesAndMaterials = props => {
                             ))}
                         </CourseAndMaterialWrapper>
                     </div>
-                
-                    <div>
-                        <h2>Material <span>Exclusivo</span> OrtoConecta</h2>
-                        <p>Estudo sobre Alicates Ortodônticos.</p>
-                        <Iframe url="https://www.slideshare.net/slideshow/embed_code/key/wuMVMJvfdz3k5J"
-                            width="90%"
-                            height="550px"
-                            className="iframe"
-                            display="initial"
-                            position="relative"
-                            styles={{ marginTop: "50px" }}
-                            allowFullScreen 
-                        />
-                    </div>
                     
                     <div>
                         <h2>Materiais <span>Disponíveis</span> OrtoConecta</h2>
