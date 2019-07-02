@@ -234,11 +234,12 @@ const CoursesAndMaterials = props => {
                                         <h3>Local.: <span>{course.local}</span></h3>
                                         <h3>Quando.: <span>{course.date_event}</span></h3>
                                         <h1>{course.price}</h1>
-                                        {course.sold_out === true ? (
+                                        {/* {course.sold_out === true ? (
                                             <h2>Inscrições esgotadas!</h2>
                                         ): (
                                             <Button><FaCreditCard style={{ background: 'transparent', fontSize: '1.2rem', marginRight: '10px' }}/> Comprar</Button>
-                                        )}
+                                        )} */}
+                                        <p>No momento estamos fazendo inscrições somente por WhatsApp. Entre em contato.</p>
                                     </div>
                                 </Course> 
                             ))}
