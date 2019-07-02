@@ -92,11 +92,11 @@ const About = styled.section`
   }
   
   img {
-    width: 80%;
-    height: 500px;
+    width: 300px;
+    height: 300px;
     margin-top: 16px;
     border-radius: 15px;
-    border: 2px solid ${primaryColor}
+    border: 2px solid ${primaryColor};
   }
   
   p {
@@ -163,7 +163,7 @@ const Profile = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 280px;
-  height: 500px;
+  height: 600px;
   background: #f5f5f5;
   text-align: justify;
   padding: 16px;
@@ -300,29 +300,29 @@ const Newsletter = styled.form`
   }
 `
 
-const Maintance = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+// const Maintance = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   text-align: center;
 
-  img {
-    width: 300px;
-    height: 300px;
-  } 
+//   img {
+//     width: 300px;
+//     height: 300px;
+//   } 
 
-  h3 {
-    font-family: Arial, sans-serif;
-    font-size: 2rem;
-    margin-top: 10px;
-  }
+//   h3 {
+//     font-family: Arial, sans-serif;
+//     font-size: 2rem;
+//     margin-top: 10px;
+//   }
 
-  p {
-    font-family: Arial, sans-serif;
-    font-size: 1.1rem;
-  }
-`
+//   p {
+//     font-family: Arial, sans-serif;
+//     font-size: 1.1rem;
+//   }
+// `
 
 class Home extends Component {
   state = {
@@ -364,14 +364,14 @@ class Home extends Component {
   
   render () {
     return (
+      // Tela de Manutenção
+        // <Maintance>
+        //   <img src="/static/logo.jpeg" alt="Logo" />
+        //   <h3>Desculpe, estamos em atualização...</h3>
+        //   <p>Obrigado!</p>
+        // </Maintance> 
       
-        <Maintance>
-          <img src="/static/logo.jpeg" alt="Logo" />
-          <h3>Desculpe, estamos em atualização...</h3>
-          <p>Obrigado!</p>
-        </Maintance> 
       
-      /*
         <Fragment>
           <Head>
             <title>OrtoConecta</title>
@@ -385,12 +385,13 @@ class Home extends Component {
             </Hero>
             <About id="about" data-aos="fade-right">
               <h1>Quem Somos</h1>
-              <img src="/static/ale-gustavo-renato.jpg" alt="OrtoConecta"/> 
+              <img src="/static/logo.jpeg" alt="OrtoConecta"/> 
               <p>
-                <span>Em</span> reuniões esporádicas sobre temas que frequentemente convergiam para o tempo em que o praticante da ortodontia conseguiria desenvolver sua autonomia, nasce a OrtoConecta.
-                Idealizada por três colegas de profissão, <strong>Dr. Renato Tanabe</strong>, <strong>Dr. Alexandre Mendonça</strong> e <strong>Dr. Gustavo Furlan</strong>, esta ferramenta tem como objetivo trazer informações sobre a ortodontia executada de forma eficiente, prática e segura, além de integrar áreas intimamente ligadas a esta especialidade.
-                Know-how, sensibilidade e entusiasmo dão direcionamento para a construção desta plataforma digital cuidadosamente planejada para produzir e compartilhar conhecimentos.  Um novo canal que irá fazer parte da lista de manuais de consulta sobre os assuntos mais atuais das áreas de saúde que se conectam diretamente à ortodontia.
-                Esperamos que aproveitem este espaço e sua diversidade de materiais disponíveis no site, nos cursos online e presenciais que contribuirão para o aprimoramento de competências e habilidades fundamentais para o profissional que busca a excelência.
+              <span>A</span> internet tornou-se um meio em que se trocam informações de forma rápida e eficaz com a intenção de enriquecer e propagar conhecimento para que esse seja aplicado em favor da qualidade de vida.
+Não sendo diferente e partilhando da mesma vocação de disseminar informações, <strong>Dr. Gustavo Furlan</strong>, <strong>Dr. Luiz Felipe Maffía</strong> e <strong>Dr. Alexandre Mendonça</strong> reúnem profissionalismo, experiência e dedicação para impulsionarem a OrtoConecta.
+Uma plataforma digital completa de ortodontia que hospeda em um mesmo espaço informações, compartilhamento de experiências, dicas clínicas, aulas, cursos e todo tipo de ferramenta para você poder atingir a excelência profissional. 
+Espero que curtam o espaço e que nos ajudem a fazer da OrtoConecta um site sem filtros ou photoshops. Um lugar da odontologia real.
+
               </p>
               <h3>Bem-vindos à plataforma <span>OrtoConecta!</span></h3>
             </About>
@@ -398,9 +399,9 @@ class Home extends Component {
               <h1>Perfis Profissionais</h1>
               <Profiles>
                 <Profile>
-                  <img src="/static/renato.png" alt="Dr. Renato Tanabe" />
-                  <h2>Dr. Renato Tanabe</h2>
-                  <p>É formado pela UNISA-SP desde 1995. Especializou-se em ortodontia, estomatologia e ortopedia facial. Posteriormente tornou-se mestre em ortodontia e clínica infantil. Coordenador das Atividades Científicas em 7 edições do Congresso Brasileiro de Ortodontia trabalhou sempre pelo crescimento da área. Possui credenciamento nos sistemas Invisalign® e Damon Smile®. Atua como professor dos cursos de atualização e especialização em ortodontia e ortopedia facial. Ortodontista clínico desde 2001 e proprietário da marca “Sorriso Ativo Odontologia”, Dr. Renato Tanabe é referência de conhecimento da área em São Paulo.</p>
+                  <img src="/static/Luiz.jpeg" alt="Dr. Luiz Felipe Maffia" />
+                  <h2>Dr. Luiz Felipe Maffia</h2>
+                  <p>É graduado em Odontologia em 1998 pela Universidade Metodista de São Paulo ; logo ingressou na área da Ortodontia terminando seu Aperfeiçoamento na técnica Edgewise e Straight wire em 2000 ( IPEO /SP) , em seguida ingressou no curso de aperfeiçoamento em Ortopedia Funcional dos Maxilares com término em 2004 ( GEOFOM ) ; Iniciando posteriormente sua especialização em Ortodontia, esta terminada em 2008 e desde então integra o quadro de professores e mais recentemente a de coordenador do curso de pós graduação em Ortodontia da Aneo/SP . Sua atuação clínica é relevante em diversas clínicas particulares ( Osasco e São Paulo ) tendo seu consultório situado na cidade de São Bernardo do Campo desde 1999.</p>
                 </Profile>
                 <Profile>
                   <img src="/static/alexandre.png" alt="Dr. Alexandre Mendonça" />
@@ -457,14 +458,6 @@ class Home extends Component {
                     <Acessar>Acessar</Acessar>
                   </Link>
                 </Content>
-                <Content>
-                  <FaRegNewspaper style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>Casos Clínicos</h4>
-                  <br />
-                  <p>Desenvolvimento de casos clínicos com links direcionando a conteúdos produzidos pela OrtoConecta para orientações e conhecimento.</p>
-                  <Link prefetch href="/casos_clinicos">
-                    <Acessar>Acessar</Acessar>
-                  </Link>
-                </Content>
               </Contents>
             </ContentWrapper>
             <NewsletterWrapper data-aos="fade-left" data-aos-duration="1000">
@@ -477,7 +470,7 @@ class Home extends Component {
             </NewsletterWrapper>
           </Main>
         </Fragment>
-      */
+      
     )
   }
 }

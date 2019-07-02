@@ -25090,7 +25090,7 @@ var HeroInner = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.wi
 var About = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].section.withConfig({
   displayName: "pages__About",
   componentId: "sc-1hta4ma-2"
-})(["display:flex;align-items:center;justify-content:center;flex-direction:column;background:#fff;width:80%;max-width:800px;margin:-50px auto;margin-bottom:50px;border:1px solid #ccc;padding:26px;border-radius:10px;-webkit-box-shadow:0px 3px 5px 0px rgba(184,184,184,1);-moz-box-shadow:0px 3px 5px 0px rgba(184,184,184,1);box-shadow:0px 3px 5px 0px rgba(184,184,184,1);h1{font-size:3rem;color:#f1c40f;font-weight:bold;}img{width:80%;height:500px;margin-top:16px;border-radius:15px;border:2px solid ", "}p{margin-top:16px;text-align:justify;font-size:1.2rem;color:#2d3436;width:100%;strong{font-size:1.2rem;color:#181818;}span{margin-left:24px;font-size:1.2rem;}}h3{font-size:2rem;margin-top:24px;color:#2d3436;text-align:center;span{margin-top:16px;font-size:2rem;color:#f1c40f;font-weight:bold;}}"], primaryColor);
+})(["display:flex;align-items:center;justify-content:center;flex-direction:column;background:#fff;width:80%;max-width:800px;margin:-50px auto;margin-bottom:50px;border:1px solid #ccc;padding:26px;border-radius:10px;-webkit-box-shadow:0px 3px 5px 0px rgba(184,184,184,1);-moz-box-shadow:0px 3px 5px 0px rgba(184,184,184,1);box-shadow:0px 3px 5px 0px rgba(184,184,184,1);h1{font-size:3rem;color:#f1c40f;font-weight:bold;}img{width:300px;height:300px;margin-top:16px;border-radius:15px;border:2px solid ", ";}p{margin-top:16px;text-align:justify;font-size:1.2rem;color:#2d3436;width:100%;strong{font-size:1.2rem;color:#181818;}span{margin-left:24px;font-size:1.2rem;}}h3{font-size:2rem;margin-top:24px;color:#2d3436;text-align:center;span{margin-top:16px;font-size:2rem;color:#f1c40f;font-weight:bold;}}"], primaryColor);
 var ProfilesWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "pages__ProfilesWrapper",
   componentId: "sc-1hta4ma-3"
@@ -25102,7 +25102,7 @@ var Profiles = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.wit
 var Profile = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "pages__Profile",
   componentId: "sc-1hta4ma-5"
-})(["display:flex;flex-direction:column;justify-content:space-around;align-items:center;width:280px;height:500px;background:#f5f5f5;text-align:justify;padding:16px;margin:15px;-webkit-box-shadow:0px 3px 5px 0px rgba(184,184,184,1);-moz-box-shadow:0px 3px 5px 0px rgba(184,184,184,1);box-shadow:0px 3px 5px 0px rgba(184,184,184,1);@media(max-width:965px){width:30%;margin:16px;}@media(max-width:885px){width:70%;}p{width:100%;}img{width:150px;height:150px;border-radius:50%;}"]);
+})(["display:flex;flex-direction:column;justify-content:space-around;align-items:center;width:280px;height:600px;background:#f5f5f5;text-align:justify;padding:16px;margin:15px;-webkit-box-shadow:0px 3px 5px 0px rgba(184,184,184,1);-moz-box-shadow:0px 3px 5px 0px rgba(184,184,184,1);box-shadow:0px 3px 5px 0px rgba(184,184,184,1);@media(max-width:965px){width:30%;margin:16px;}@media(max-width:885px){width:70%;}p{width:100%;}img{width:150px;height:150px;border-radius:50%;}"]);
 var ContentWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "pages__ContentWrapper",
   componentId: "sc-1hta4ma-6"
@@ -25126,11 +25126,26 @@ var NewsletterWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"
 var Newsletter = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].form.withConfig({
   displayName: "pages__Newsletter",
   componentId: "sc-1hta4ma-11"
-})(["input{border:none;border:1px solid #fff;padding:1.2rem;width:300px;}button{border:none;background:#181818;color:", ";padding:1.2rem;}"], primaryColor);
-var Maintance = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
-  displayName: "pages__Maintance",
-  componentId: "sc-1hta4ma-12"
-})(["display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;img{width:300px;height:300px;}h3{font-family:Arial,sans-serif;font-size:2rem;margin-top:10px;}p{font-family:Arial,sans-serif;font-size:1.1rem;}"]);
+})(["input{border:none;border:1px solid #fff;padding:1.2rem;width:300px;}button{border:none;background:#181818;color:", ";padding:1.2rem;}"], primaryColor); // const Maintance = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   text-align: center;
+//   img {
+//     width: 300px;
+//     height: 300px;
+//   } 
+//   h3 {
+//     font-family: Arial, sans-serif;
+//     font-size: 2rem;
+//     margin-top: 10px;
+//   }
+//   p {
+//     font-family: Arial, sans-serif;
+//     font-size: 1.1rem;
+//   }
+// `
 
 var Home =
 /*#__PURE__*/
@@ -25219,118 +25234,94 @@ function (_Component) {
   _createClass(Home, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Maintance, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
-        src: "/static/logo.jpeg",
-        alt: "Logo"
-      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", null, "Desculpe, estamos em atualiza\xE7\xE3o..."), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "Obrigado!"))
-      /*
-        <Fragment>
-          <Head>
-            <title>OrtoConecta</title>
-          </Head>
-          <Main>
-            <Hero>
-              <HeroInner>
-                  <h1>Você conectado ao mundo da Ortodontia!</h1>
-                  <a href="#about">Saiba mais</a>
-              </HeroInner>
-            </Hero>
-            <About id="about" data-aos="fade-right">
-              <h1>Quem Somos</h1>
-              <img src="/static/ale-gustavo-renato.jpg" alt="OrtoConecta"/> 
-              <p>
-                <span>Em</span> reuniões esporádicas sobre temas que frequentemente convergiam para o tempo em que o praticante da ortodontia conseguiria desenvolver sua autonomia, nasce a OrtoConecta.
-                Idealizada por três colegas de profissão, <strong>Dr. Renato Tanabe</strong>, <strong>Dr. Alexandre Mendonça</strong> e <strong>Dr. Gustavo Furlan</strong>, esta ferramenta tem como objetivo trazer informações sobre a ortodontia executada de forma eficiente, prática e segura, além de integrar áreas intimamente ligadas a esta especialidade.
-                Know-how, sensibilidade e entusiasmo dão direcionamento para a construção desta plataforma digital cuidadosamente planejada para produzir e compartilhar conhecimentos.  Um novo canal que irá fazer parte da lista de manuais de consulta sobre os assuntos mais atuais das áreas de saúde que se conectam diretamente à ortodontia.
-                Esperamos que aproveitem este espaço e sua diversidade de materiais disponíveis no site, nos cursos online e presenciais que contribuirão para o aprimoramento de competências e habilidades fundamentais para o profissional que busca a excelência.
-              </p>
-              <h3>Bem-vindos à plataforma <span>OrtoConecta!</span></h3>
-            </About>
-            <ProfilesWrapper data-aos="fade-left">
-              <h1>Perfis Profissionais</h1>
-              <Profiles>
-                <Profile>
-                  <img src="/static/renato.png" alt="Dr. Renato Tanabe" />
-                  <h2>Dr. Renato Tanabe</h2>
-                  <p>É formado pela UNISA-SP desde 1995. Especializou-se em ortodontia, estomatologia e ortopedia facial. Posteriormente tornou-se mestre em ortodontia e clínica infantil. Coordenador das Atividades Científicas em 7 edições do Congresso Brasileiro de Ortodontia trabalhou sempre pelo crescimento da área. Possui credenciamento nos sistemas Invisalign® e Damon Smile®. Atua como professor dos cursos de atualização e especialização em ortodontia e ortopedia facial. Ortodontista clínico desde 2001 e proprietário da marca “Sorriso Ativo Odontologia”, Dr. Renato Tanabe é referência de conhecimento da área em São Paulo.</p>
-                </Profile>
-                <Profile>
-                  <img src="/static/alexandre.png" alt="Dr. Alexandre Mendonça" />
-                  <h2>Dr. Alexandre Mendonça</h2>
-                  <p>É formado pela Universidade de Uberaba desde 1997. Especializou-se em Ortodontia pela ANEO-SP sendo também pós graduado latu sensu em implantodontia e cirurgia oral menor. Atuante na área desde 1997, Dr. Alexandre Mendonça é proprietário da marca     OAM – Odontologia com grande ênfase na área de Planos Assistenciais Odontológicos voltados às empresas.</p>
-                </Profile>
-                <Profile>
-                  <img src="/static/gustavo.png" alt="Dr. Gustavo Furlan" />
-                  <h2>Dr. Gustavo Furlan</h2>
-                  <p>É formado pela Universidade de São Paulo desde 2002. Especializou-se em ortodontia para posteriormente tornar-se mestre e atuar como professor dos cursos de atualização e especialização nos estados de Minas Gerais, Rio Grande do Sul e São Paulo. Ortodontista clínico desde 2005, Dr. Gustavo Furlan é proprietário da marca “GF Ortodontia”.</p>
-                </Profile>
-              </Profiles>
-            </ProfilesWrapper>
-            <ContentWrapper data-aos="fade-right" data-aos-duration="1000">
-              <h1>Conteúdo do Site</h1>
-              <Contents>
-                <Content>
-                  <FaChalkboard style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>Painel OrtoConecta</h4>
-                  <br />
-                  <p>Um quadro sequenciado da ortodontia para você estar sempre ligado nas etapas do tratamento.</p>
-                  <Link prefetch href="/painel">
-                    <Acessar>Acessar</Acessar>
-                  </Link>
-                </Content>
-                <Content>
-                  <FaBook style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>Cursos e Materiais</h4>
-                  <br />
-                  <p>Produção de cursos e materiais didáticos para que você aprimore suas competências e habilidades.</p>
-                  <Link prefetch href="/cursos_e_materiais">
-                    <Acessar>Acessar</Acessar>
-                  </Link>
-                </Content>
-                <Content>
-                  <FaBriefcase style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>Compartilhando Experiências</h4>
-                  <br />
-                  <p>O compartilhamento de experiências como ferramenta para ampliar o seu leque de conhecimento.</p>
-                  <Link prefetch href="/experiencias">
-                    <Acessar>Acessar</Acessar>
-                  </Link>
-                </Content>
-                <Content>
-                  <FaLightbulb style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>Dicas OrtoConecta</h4>
-                  <br />
-                  <p>Um espaço para você obter dicas clínicas que poderão facilitar o dia a dia do seu consultório.</p>
-                  <Link prefetch href="/dicas">
-                    <Acessar>Acessar</Acessar>
-                  </Link>
-                </Content>
-                <Content>
-                  <FaHeartbeat style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>OrtoConecta Especialidades</h4>
-                  <br />
-                  <p>Uma área destinada à multidisciplinaridade mostrando a importância da integração de especialidades na busca do melhor para o paciente.</p>
-                  <Link prefetch href="/especialidades">
-                    <Acessar>Acessar</Acessar>
-                  </Link>
-                </Content>
-                <Content>
-                  <FaRegNewspaper style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>Casos Clínicos</h4>
-                  <br />
-                  <p>Desenvolvimento de casos clínicos com links direcionando a conteúdos produzidos pela OrtoConecta para orientações e conhecimento.</p>
-                  <Link prefetch href="/casos_clinicos">
-                    <Acessar>Acessar</Acessar>
-                  </Link>
-                </Content>
-              </Contents>
-            </ContentWrapper>
-            <NewsletterWrapper data-aos="fade-left" data-aos-duration="1000">
-              <h1>Registre-se em nossa Newsletter!</h1>
-              <p>Receba nosso contéudo por email! Não é spam!</p>
-              <Newsletter onSubmit={(e) => this.handleSubmit(e)}>
-                <input type="email" placeholder="Digite seu melhor email..." onChange={(e) => this.setState({ email: e.target.value })} value={this.state.email} />
-                <button>Inscrever</button>
-              </Newsletter>
-            </NewsletterWrapper>
-          </Main>
-        </Fragment>
-      */
-      ;
+      var _this2 = this;
+
+      return (// Tela de Manutenção
+        // <Maintance>
+        //   <img src="/static/logo.jpeg" alt="Logo" />
+        //   <h3>Desculpe, estamos em atualização...</h3>
+        //   <p>Obrigado!</p>
+        // </Maintance> 
+        react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_4___default.a, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("title", null, "OrtoConecta")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_layouts_main__WEBPACK_IMPORTED_MODULE_3__["default"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Hero, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(HeroInner, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, "Voc\xEA conectado ao mundo da Ortodontia!"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+          href: "#about"
+        }, "Saiba mais"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(About, {
+          id: "about",
+          "data-aos": "fade-right"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, "Quem Somos"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+          src: "/static/logo.jpeg",
+          alt: "OrtoConecta"
+        }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "A"), " internet tornou-se um meio em que se trocam informa\xE7\xF5es de forma r\xE1pida e eficaz com a inten\xE7\xE3o de enriquecer e propagar conhecimento para que esse seja aplicado em favor da qualidade de vida. N\xE3o sendo diferente e partilhando da mesma voca\xE7\xE3o de disseminar informa\xE7\xF5es, ", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, "Dr. Gustavo Furlan"), ", ", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, "Dr. Luiz Felipe Maff\xEDa"), " e ", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, "Dr. Alexandre Mendon\xE7a"), " re\xFAnem profissionalismo, experi\xEAncia e dedica\xE7\xE3o para impulsionarem a OrtoConecta. Uma plataforma digital completa de ortodontia que hospeda em um mesmo espa\xE7o informa\xE7\xF5es, compartilhamento de experi\xEAncias, dicas cl\xEDnicas, aulas, cursos e todo tipo de ferramenta para voc\xEA poder atingir a excel\xEAncia profissional. Espero que curtam o espa\xE7o e que nos ajudem a fazer da OrtoConecta um site sem filtros ou photoshops. Um lugar da odontologia real."), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", null, "Bem-vindos \xE0 plataforma ", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "OrtoConecta!"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(ProfilesWrapper, {
+          "data-aos": "fade-left"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, "Perfis Profissionais"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Profiles, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Profile, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+          src: "/static/Luiz.jpeg",
+          alt: "Dr. Luiz Felipe Maffia"
+        }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", null, "Dr. Luiz Felipe Maffia"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "\xC9 graduado em Odontologia em 1998 pela Universidade Metodista de S\xE3o Paulo ; logo ingressou na \xE1rea da Ortodontia terminando seu Aperfei\xE7oamento na t\xE9cnica Edgewise e Straight wire em 2000 ( IPEO /SP) , em seguida ingressou no curso de aperfei\xE7oamento em Ortopedia Funcional dos Maxilares com t\xE9rmino em 2004 ( GEOFOM ) ; Iniciando posteriormente sua especializa\xE7\xE3o em Ortodontia, esta terminada em 2008 e desde ent\xE3o integra o quadro de professores e mais recentemente a de coordenador do curso de p\xF3s gradua\xE7\xE3o em Ortodontia da Aneo/SP . Sua atua\xE7\xE3o cl\xEDnica \xE9 relevante em diversas cl\xEDnicas particulares ( Osasco e S\xE3o Paulo ) tendo seu consult\xF3rio situado na cidade de S\xE3o Bernardo do Campo desde 1999.")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Profile, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+          src: "/static/alexandre.png",
+          alt: "Dr. Alexandre Mendon\xE7a"
+        }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", null, "Dr. Alexandre Mendon\xE7a"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "\xC9 formado pela Universidade de Uberaba desde 1997. Especializou-se em Ortodontia pela ANEO-SP sendo tamb\xE9m p\xF3s graduado latu sensu em implantodontia e cirurgia oral menor. Atuante na \xE1rea desde 1997, Dr. Alexandre Mendon\xE7a \xE9 propriet\xE1rio da marca     OAM \u2013 Odontologia com grande \xEAnfase na \xE1rea de Planos Assistenciais Odontol\xF3gicos voltados \xE0s empresas.")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Profile, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+          src: "/static/gustavo.png",
+          alt: "Dr. Gustavo Furlan"
+        }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", null, "Dr. Gustavo Furlan"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "\xC9 formado pela Universidade de S\xE3o Paulo desde 2002. Especializou-se em ortodontia para posteriormente tornar-se mestre e atuar como professor dos cursos de atualiza\xE7\xE3o e especializa\xE7\xE3o nos estados de Minas Gerais, Rio Grande do Sul e S\xE3o Paulo. Ortodontista cl\xEDnico desde 2005, Dr. Gustavo Furlan \xE9 propriet\xE1rio da marca \u201CGF Ortodontia\u201D.")))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(ContentWrapper, {
+          "data-aos": "fade-right",
+          "data-aos-duration": "1000"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, "Conte\xFAdo do Site"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Contents, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Content, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fa__WEBPACK_IMPORTED_MODULE_9__["FaChalkboard"], {
+          style: {
+            fontSize: '3rem',
+            color: '#ffc32a'
+          }
+        }), " ", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, "Painel OrtoConecta"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "Um quadro sequenciado da ortodontia para voc\xEA estar sempre ligado nas etapas do tratamento."), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
+          prefetch: true,
+          href: "/painel"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Acessar, null, "Acessar"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Content, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fa__WEBPACK_IMPORTED_MODULE_9__["FaBook"], {
+          style: {
+            fontSize: '3rem',
+            color: '#ffc32a'
+          }
+        }), " ", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, "Cursos e Materiais"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "Produ\xE7\xE3o de cursos e materiais did\xE1ticos para que voc\xEA aprimore suas compet\xEAncias e habilidades."), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
+          prefetch: true,
+          href: "/cursos_e_materiais"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Acessar, null, "Acessar"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Content, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fa__WEBPACK_IMPORTED_MODULE_9__["FaBriefcase"], {
+          style: {
+            fontSize: '3rem',
+            color: '#ffc32a'
+          }
+        }), " ", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, "Compartilhando Experi\xEAncias"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "O compartilhamento de experi\xEAncias como ferramenta para ampliar o seu leque de conhecimento."), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
+          prefetch: true,
+          href: "/experiencias"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Acessar, null, "Acessar"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Content, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fa__WEBPACK_IMPORTED_MODULE_9__["FaLightbulb"], {
+          style: {
+            fontSize: '3rem',
+            color: '#ffc32a'
+          }
+        }), " ", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, "Dicas OrtoConecta"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "Um espa\xE7o para voc\xEA obter dicas cl\xEDnicas que poder\xE3o facilitar o dia a dia do seu consult\xF3rio."), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
+          prefetch: true,
+          href: "/dicas"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Acessar, null, "Acessar"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Content, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fa__WEBPACK_IMPORTED_MODULE_9__["FaHeartbeat"], {
+          style: {
+            fontSize: '3rem',
+            color: '#ffc32a'
+          }
+        }), " ", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, "OrtoConecta Especialidades"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "Uma \xE1rea destinada \xE0 multidisciplinaridade mostrando a import\xE2ncia da integra\xE7\xE3o de especialidades na busca do melhor para o paciente."), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
+          prefetch: true,
+          href: "/especialidades"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Acessar, null, "Acessar"))))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(NewsletterWrapper, {
+          "data-aos": "fade-left",
+          "data-aos-duration": "1000"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, "Registre-se em nossa Newsletter!"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "Receba nosso cont\xE9udo por email! N\xE3o \xE9 spam!"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Newsletter, {
+          onSubmit: function onSubmit(e) {
+            return _this2.handleSubmit(e);
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+          type: "email",
+          placeholder: "Digite seu melhor email...",
+          onChange: function onChange(e) {
+            return _this2.setState({
+              email: e.target.value
+            });
+          },
+          value: this.state.email
+        }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", null, "Inscrever")))))
+      );
     }
   }]);
 
@@ -25532,7 +25523,10 @@ function (_Component) {
         className: "icon"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "icon"
-      })), this.state.showMenu === true && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Dropdown, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(DropdownContent, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      })), this.state.showMenu === true && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Dropdown, {
+        "data-aos": "fade-down",
+        "data-aos-duration": "1000"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(DropdownContent, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
         prefetch: true,
         href: "/"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "In\xEDcio"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {

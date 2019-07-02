@@ -173,7 +173,7 @@ class Header extends Component {
 						<div className="icon" />
 					</MenuIcon>
 					{this.state.showMenu === true && (
-						<Dropdown>
+						<Dropdown data-aos="fade-down" data-aos-duration="1000">
 							<DropdownContent>
 								<Link prefetch href="/">
 									<li>
