@@ -385,7 +385,7 @@ class Home extends Component {
             </Hero>
             <About id="about" data-aos="fade-right">
               <h1>Quem Somos</h1>
-              <img src="/static/logo.jpeg" alt="OrtoConecta"/> 
+              <img src="/static/logo-nova.jpeg" alt="OrtoConecta"/> 
               <p>
               <span>A</span> internet tornou-se um meio em que se trocam informações de forma rápida e eficaz com a intenção de enriquecer e propagar conhecimento para que esse seja aplicado em favor da qualidade de vida.
 Não sendo diferente e partilhando da mesma vocação de disseminar informações, <strong>Dr. Gustavo Furlan</strong>, <strong>Dr. Luiz Felipe Maffía</strong> e <strong>Dr. Alexandre Mendonça</strong> reúnem profissionalismo, experiência e dedicação para impulsionarem a OrtoConecta.

@@ -111,6 +111,7 @@ const CourseData = styled.div`
 	p {
 		margin-top: 20px;
 		color: ${primaryColor};
+		font-size: 1.2rem;
 	}
 `;
 
