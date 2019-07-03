@@ -267,7 +267,9 @@ const CoursesAndMaterials = props => {
 										<h3>
 											Quando.: <span>{course.date_event}</span>
 										</h3>
-										<h4>{course.price}</h4>
+										<h3>
+											Valor.: <span>{course.price}</span>
+										</h3>
 										{/* {course.sold_out === true ? (
                                             <h2>Inscrições esgotadas!</h2>
                                         ): (
