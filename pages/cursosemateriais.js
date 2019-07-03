@@ -43,6 +43,7 @@ const CourseAndMaterialWrapper = styled.div`
 	align-items: center;
 	flex-wrap: wrap;
 	margin: 0 auto;
+	width: 100%;
 
 	@media (max-width: 980px) {
 		display: flex;
@@ -52,7 +53,7 @@ const CourseAndMaterialWrapper = styled.div`
 `;
 
 const Course = styled.div`
-	width: 50%;
+	width: 100%;
 	height: 100%;
 	min-height: 300px;
 	display: flex;
@@ -69,9 +70,10 @@ const Course = styled.div`
 
 	div {
 		display: flex;
-		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		flex-wrap: wrap;
+		padding: 20px;
 		background: #fff;
 		margin: 30px auto;
 	}
@@ -192,8 +194,9 @@ const CourseImg = styled.div`
 	justify-content: center;
 
 	img {
-		width: 20%;
-		height: 20%;
+		width: 30%;
+		height: 30%;
+		padding: 20px;
 	}
 `;
 
