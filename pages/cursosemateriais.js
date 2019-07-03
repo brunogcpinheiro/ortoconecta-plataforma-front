@@ -100,6 +100,7 @@ const Course = styled.div`
 
 const CourseData = styled.div`
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
@@ -192,6 +193,7 @@ const CourseImg = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex-wrap: wrap;
 
 	img {
 		width: 30%;
