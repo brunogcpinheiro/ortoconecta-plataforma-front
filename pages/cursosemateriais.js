@@ -239,12 +239,15 @@ const CoursesAndMaterials = props => {
 						<CourseAndMaterialWrapper>
 							{props.courses.map(course => (
 								<Course key={course.id} className="animated zoomIn delay-1s">
-									{course.course_image.map(c => (
-										<CourseImg
-											src={`http://api.ortoconecta.com.br${c.url}`}
-											alt={c.name}
-										/>
-									))}
+									<CourseImg>
+										{course.course_image.map(c => (
+											<img
+												key={c._id}
+												src={`http://api.ortoconecta.com.br${c.url}`}
+												alt={c.name}
+											/>
+										))}
+									</CourseImg>
 									<div>
 										<Title>{course.title}</Title>
 										<h3>
