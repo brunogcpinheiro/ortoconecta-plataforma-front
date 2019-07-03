@@ -68,7 +68,7 @@ const Course = styled.div`
 	flex-wrap: wrap;
 	margin: 0 auto;
 
-	div {
+	> div {
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -76,7 +76,6 @@ const Course = styled.div`
 		padding: 20px;
 		background: #fff;
 		margin-bottom: 20px;
-		flex-direction: column;
 	}
 
 	h1 {
@@ -198,6 +197,12 @@ const CourseImg = styled.div`
 		width: 30%;
 		height: 30%;
 		padding: 20px;
+
+		@media (max-width: 980px) {
+			width: 80%;
+			height: 80%;
+			padding: 5px;
+		}
 	}
 `;
 
