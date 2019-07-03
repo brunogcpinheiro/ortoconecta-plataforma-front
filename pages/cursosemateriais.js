@@ -180,13 +180,21 @@ const Title = styled.h1`
 	}
 `;
 
-const CourseImg = styled.img`
+const CourseImg = styled.div`
 	width: 100%;
 	height: 100%;
 	margin: 0;
 	padding: 0;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	img {
+		width: 20%;
+		height: 20%;
+	}
 `;
 
 const Img = styled.img`
