@@ -68,16 +68,6 @@ const Course = styled.div`
 	flex-wrap: wrap;
 	margin: 0 auto;
 
-	> div {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-wrap: wrap;
-		padding: 20px;
-		background: #fff;
-		margin-bottom: 20px;
-	}
-
 	h1 {
 		margin-bottom: 30px;
 		font-size: 3rem;
@@ -106,6 +96,16 @@ const Course = styled.div`
 		width: 85%;
 		padding: 5px;
 	}
+`;
+
+const CourseData = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	padding: 20px;
+	background: #fff;
+	margin-bottom: 20px;
 `;
 
 const Material = styled.div`
@@ -257,7 +257,7 @@ const CoursesAndMaterials = props => {
 											/>
 										))}
 									</CourseImg>
-									<div>
+									<CourseData>
 										<Title>{course.title}</Title>
 										<h3>
 											Local.: <span>{course.local}</span>
@@ -275,7 +275,7 @@ const CoursesAndMaterials = props => {
 											No momento estamos fazendo inscrições somente por
 											WhatsApp. Entre em contato.
 										</p>
-									</div>
+									</CourseData>
 								</Course>
 							))}
 						</CourseAndMaterialWrapper>
