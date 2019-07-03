@@ -75,12 +75,13 @@ const Course = styled.div`
 		flex-wrap: wrap;
 		padding: 20px;
 		background: #fff;
-		margin: 30px auto;
+		margin-bottom: 20px;
+		flex-direction: column;
 	}
 
 	h1 {
-		margin-top: 10px;
-		font-size: 1.5rem;
+		margin-bottom: 30px;
+		font-size: 3rem;
 	}
 
 	h2 {
