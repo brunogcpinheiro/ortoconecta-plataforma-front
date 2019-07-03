@@ -107,6 +107,11 @@ const CourseData = styled.div`
 	padding: 20px;
 	background: #fff;
 	margin-bottom: 20px;
+
+	p {
+		margin-top: 20px;
+		color: ${primaryColor};
+	}
 `;
 
 const Material = styled.div`
