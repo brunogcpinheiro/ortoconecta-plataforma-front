@@ -11,39 +11,7 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/entrevistas": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/index": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/especialidades": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/painel": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
     "/cursosemateriais": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/experiencias": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/dicas": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/aplicativo": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]

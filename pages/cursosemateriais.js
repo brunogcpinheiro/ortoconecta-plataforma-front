@@ -104,7 +104,7 @@ const CourseData = styled.div`
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
-	padding: 20px;
+	padding: 0;
 	background: #fff;
 	margin-bottom: 20px;
 
@@ -235,12 +235,39 @@ const Button = styled.a`
 	text-transform: uppercase;
 	background: ${primaryColor};
 	border: 2px solid ${primaryColor};
+	color: #fff;
 
 	&:visited,
 	&:active,
 	&:link {
-		color: inherit;
+		color: #fff;
 	}
+`;
+
+const Purchase = styled.a`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1em;
+	margin: -70px 0 50px 0;
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 1.1em;
+	text-transform: uppercase;
+	background: ${primaryColor};
+	border: 2px solid ${primaryColor};
+	color: #fff;
+
+	&:visited,
+	&:active,
+	&:link {
+		color: #fff;
+	}
+`;
+
+const Image = styled.img`
+	width: 50%;
+	margin: -50px 0 50px 0;
 `;
 
 const CoursesAndMaterials = props => {
@@ -254,40 +281,51 @@ const CoursesAndMaterials = props => {
 					<div>
 						<h2>Cursos e Eventos OrtoConecta</h2>
 						<CourseAndMaterialWrapper>
-							{props.courses.map(course => (
-								<Course key={course.id} className="animated zoomIn delay-1s">
-									<CourseImg>
-										{course.course_image.map(c => (
-											<img
-												key={c._id}
-												src={`http://api.ortoconecta.com.br${c.url}`}
-												alt={c.name}
-											/>
-										))}
-									</CourseImg>
-									<CourseData>
-										<Title>{course.title}</Title>
-										<h3>
-											Local.: <span>{course.local}</span>
-										</h3>
-										<h3>
-											Quando.: <span>{course.date_event}</span>
-										</h3>
-										<h3>
-											Valor.: <span>{course.price}</span>
-										</h3>
-										{/* {course.sold_out === true ? (
-                                            <h2>Inscrições esgotadas!</h2>
-                                        ): (
-                                            <Button><FaCreditCard style={{ background: 'transparent', fontSize: '1.2rem', marginRight: '10px' }}/> Comprar</Button>
-                                        )} */}
-										<p>
-											No momento estamos fazendo inscrições somente por
-											WhatsApp. Entre em contato.
-										</p>
-									</CourseData>
-								</Course>
-							))}
+							{props.courses
+								.sort((a, b) => a.createdAt < b.createdAt)
+								.map(course => (
+									<Course key={course.id} className="animated zoomIn delay-1s">
+										<CourseImg>
+											{course.course_image.map(c => (
+												<img
+													key={c._id}
+													src={`http://api.ortoconecta.com.br${c.url}`}
+													alt={c.name}
+												/>
+											))}
+										</CourseImg>
+										<CourseData>
+											{course.sold_out === true ? (
+												<Image src="/static/esgotado.png" alt="Esgotado" />
+											) : (
+												<Purchase>
+													<FaCreditCard
+														style={{
+															background: "transparent",
+															fontSize: "1.2rem",
+															marginRight: "10px",
+														}}
+													/>{" "}
+													Comprar
+												</Purchase>
+											)}
+											<Title>{course.title}</Title>
+											<h3>
+												Local.: <span>{course.local}</span>
+											</h3>
+											<h3>
+												Quando.: <span>{course.date_event}</span>
+											</h3>
+											<h3>
+												Valor.: <span>{course.price}</span>
+											</h3>
+											<p>
+												No momento estamos fazendo inscrições somente por
+												WhatsApp. Entre em contato.
+											</p>
+										</CourseData>
+									</Course>
+								))}
 						</CourseAndMaterialWrapper>
 					</div>
 
