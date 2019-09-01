@@ -8,20 +8,27 @@ import Link from 'next/link'
 import axios from 'axios'
 import { FaChalkboard, FaBook, FaBriefcase, FaLightbulb, FaHeartbeat, FaRegNewspaper } from 'react-icons/fa'
 
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
+
 const primaryColor = "#FFD32A"
 
 const Hero = styled.div`
-  width: 100%;
-  height: 100vh;
-  background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('/static/background.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
+  height: 80%;
+  background: #fafafa;
+  background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('/static/background.jpg');
+  ${'' /* background-size: cover; */}
+  ${'' /* background-repeat: no-repeat; */}
+  ${'' /* background-position: center center; */}
+  ${'' /* background-attachment: fixed; */}
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+
+  > div {
+    margin: 30px 0 100px 0;
+  }
 `
 
 const HeroInner = styled.div`
@@ -378,11 +385,38 @@ class Home extends Component {
           </Head>
           <Main>
             <Hero>
+              <div>
+                <Carousel
+                  showThumbs={false}
+                  infiniteLoop={true}
+                  stopOnHover={false}
+                  width={700}
+                  autoPlay={true}
+                  showStatus={false}
+                  width={"800px"}
+                  dynamicHeight={true}
+                >
+                  <div>
+                    <img src="../static/0-fotocapa.jpg" />
+                  </div>
+                  <div>
+                    <img src="../static/4-fotocapa.jpg" />
+                  </div>
+                  <div>
+                    <img src="../static/5-fotocapa.jpg" />
+                  </div>
+                  <div>
+                    <img src="../static/3-fotocapa.jpg" />
+                  </div>
+                </Carousel>
+              </div>
+            </Hero>
+            {/* <Hero>
               <HeroInner>
                   <h1>Você conectado ao mundo da Ortodontia!</h1>
                   <a href="#about">Saiba mais</a>
               </HeroInner>
-            </Hero>
+            </Hero> */}
             <About id="about" data-aos="fade-right">
               <h1>Quem Somos</h1>
               <img src="/static/logo-nova.jpeg" alt="OrtoConecta"/> 
