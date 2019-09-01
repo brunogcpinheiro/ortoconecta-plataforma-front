@@ -389,7 +389,6 @@ class Home extends Component {
                 <Carousel
                   showThumbs={false}
                   infiniteLoop={true}
-                  stopOnHover={false}
                   width={700}
                   autoPlay={true}
                   showStatus={false}
