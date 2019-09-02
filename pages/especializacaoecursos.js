@@ -178,6 +178,30 @@ const Image = styled.img`
 	margin: -50px 0 50px 0;
 `;
 
+const Specialization = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+`
+
+const ImageWrapper = styled.div`
+  -webkit-box-shadow: 0px 3px 5px 0px rgba(184, 184, 184, 1);
+	-moz-box-shadow: 0px 3px 5px 0px rgba(184, 184, 184, 1);
+	box-shadow: 0px 3px 5px 0px rgba(184, 184, 184, 1);
+  padding: 20px;
+  border-radius: 10px;
+  width: 50%;
+
+  @media (max-width: 780px) {
+    width: 90%;
+  }
+
+  img {
+    width: 100%;
+  }
+`
+
 const SpecializationAndCourses = props => {
     return (
         <Fragment>
@@ -187,7 +211,15 @@ const SpecializationAndCourses = props => {
             <Main>
                 <CoursesAndMaterialsWrapper>
                     <div>
-                        <h2>Especialização e Cursos</h2>
+                        <h2>Especialização</h2>
+                        <Specialization>
+                            <ImageWrapper>
+                                <img src="/static/0-fotocapa.jpg" alt="Especialização" />
+                            </ImageWrapper>
+                        </Specialization>
+                    </div>
+                    <div>
+                        <h2>Cursos</h2>
                         <CourseAndMaterialWrapper>
                             {props.courses
                                 .sort((a, b) => a.createdAt < b.createdAt)

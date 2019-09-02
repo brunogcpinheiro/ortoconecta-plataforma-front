@@ -190,9 +190,9 @@ class Header extends Component {
 										<a>Materiais</a>
 									</li>
 								</Link>
-								<Link prefetch href="/experiencias">
+								<Link prefetch href="/galeria">
 									<li>
-										<a>Compartilhando Experiências</a>
+										<a>Galeria</a>
 									</li>
 								</Link>
 								<Link prefetch href="/dicas">
@@ -230,8 +230,8 @@ class Header extends Component {
 							</Link>
 						</li>
 						<li>
-							<Link prefetch href="/experiencias">
-								<a>Compartilhando Experiências</a>
+							<Link prefetch href="/galeria">
+								<a>Galeria</a>
 							</Link>
 						</li>
 						<li>

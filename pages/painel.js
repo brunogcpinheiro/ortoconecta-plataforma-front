@@ -91,7 +91,7 @@ const Painel = props => {
 					</p>
 				</Title>
 				<div>
-					<Download href="/static/slide.jpg" download="painel.jpg">
+					<Download href="/static/painel_novo.jpg" download="painel.jpg">
 						<FaDownload
 							style={{
 								background: "transparent",
@@ -106,7 +106,7 @@ const Painel = props => {
 					data-aos="flip-down"
 					data-aos-duration="1000"
 					data-aos-easing="linear">
-					<img src="/static/slide.jpg" alt="Painel OrtoConecta" />
+					<img src="/static/painel_novo.jpg" alt="Painel OrtoConecta" />
 				</PainelContainer>
 			</PainelWrapper>
 		</Main>
