@@ -225,19 +225,11 @@ var primaryColor = "#FFD32A";
 var Hero = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div.withConfig({
   displayName: "pages__Hero",
   componentId: "sc-1hta4ma-0"
-})(["height:80%;background:#fafafa;background-image:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url('/static/background.jpg');", " ", " ", " ", " display:flex;align-items:center;justify-content:center;text-align:center;> div{margin:30px 0 100px 0;}"], ''
-/* background-size: cover; */
-, ''
-/* background-repeat: no-repeat; */
-, ''
-/* background-position: center center; */
-, ''
-/* background-attachment: fixed; */
-);
+})(["height:100vh;background:#fafafa;background-image:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url('/static/background.jpg');background-size:cover;background-repeat:no-repeat;background-position:center center;background-attachment:fixed;display:flex;align-items:center;justify-content:center;text-align:center;flex-direction:column;> div{margin:-10px 0 50px 0;}"]);
 var HeroInner = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div.withConfig({
   displayName: "pages__HeroInner",
   componentId: "sc-1hta4ma-1"
-})(["background:transparent;color:#d6d6d6;margin-top:-50px;h1{font-size:3.5em;margin-top:0;margin-bottom:0.5em;background:transparent;}h2{background:transparent;font-size:1.7em;}a{display:block;width:150px;padding:1em;margin-top:50px;margin-left:auto;margin-right:auto;color:#000;font-weight:bold;text-decoration:none;font-size:1.1em;text-transform:uppercase;background:", ";border:2px solid ", ";transition:background 0.3s ease-in-out;-webkit-box-shadow:0px 3px 5px 0px rgba(94,94,94,1);-moz-box-shadow:0px 3px 5px 0px rgba(94,94,94,1);box-shadow:0px 3px 5px 0px rgba(94,94,94,1);&:hover{background:transparent;color:#fff;transition:background 0.3s ease-in-out;}}"], primaryColor, primaryColor);
+})(["background:transparent;color:#d6d6d6;margin-top:-50px;display:flex;align-items:center;justify-content:center;text-align:center;flex-direction:column;h1{font-size:3.5em;margin-top:0;margin-bottom:0.5em;background:transparent;}h2{background:transparent;font-size:1.7em;}a{display:block;width:150px;padding:1em;margin-top:10px;margin-bottom:100px;margin-left:auto;margin-right:auto;color:#000;font-weight:bold;text-decoration:none;font-size:1.1em;text-transform:uppercase;background:", ";border:2px solid ", ";transition:background 0.3s ease-in-out;-webkit-box-shadow:0px 3px 5px 0px rgba(94,94,94,1);-moz-box-shadow:0px 3px 5px 0px rgba(94,94,94,1);box-shadow:0px 3px 5px 0px rgba(94,94,94,1);&:hover{background:transparent;color:#fff;transition:background 0.3s ease-in-out;}}"], primaryColor, primaryColor);
 var About = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.section.withConfig({
   displayName: "pages__About",
   componentId: "sc-1hta4ma-2"
@@ -286,7 +278,7 @@ var Newsletter = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.form.w
 //   img {
 //     width: 300px;
 //     height: 300px;
-//   } 
+//   }
 //   h3 {
 //     font-family: Arial, sans-serif;
 //     font-size: 2rem;
@@ -385,22 +377,22 @@ function (_Component) {
   _createClass(Home, [{
     key: "render",
     value: function render() {
-      var _React$createElement,
-          _this2 = this;
+      var _this2 = this;
 
       return (// Tela de Manutenção
         // <Maintance>
         //   <img src="/static/logo.jpeg" alt="Logo" />
         //   <h3>Desculpe, estamos em atualização...</h3>
         //   <p>Obrigado!</p>
-        // </Maintance> 
-        react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_4___default.a, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("title", null, "OrtoConecta")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_layouts_main__WEBPACK_IMPORTED_MODULE_3__["default"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Hero, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_responsive_carousel__WEBPACK_IMPORTED_MODULE_11__["Carousel"], (_React$createElement = {
+        // </Maintance>
+        react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_4___default.a, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("title", null, "OrtoConecta")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_layouts_main__WEBPACK_IMPORTED_MODULE_3__["default"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Hero, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_responsive_carousel__WEBPACK_IMPORTED_MODULE_11__["Carousel"], {
           showThumbs: false,
           infiniteLoop: true,
-          width: 700,
           autoPlay: true,
-          showStatus: false
-        }, _defineProperty(_React$createElement, "width", "800px"), _defineProperty(_React$createElement, "dynamicHeight", true), _React$createElement), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+          showStatus: false,
+          width: "450px",
+          dynamicHeight: true
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
           src: "../static/0-fotocapa.jpg"
         })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
           src: "../static/4-fotocapa.jpg"
@@ -408,7 +400,9 @@ function (_Component) {
           src: "../static/5-fotocapa.jpg"
         })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
           src: "../static/3-fotocapa.jpg"
-        }))))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(About, {
+        }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(HeroInner, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, "Voc\xEA conectado ao mundo da Ortodontia!"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+          href: "#about"
+        }, "Saiba mais")))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(About, {
           id: "about",
           "data-aos": "fade-right"
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, "Quem Somos"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
@@ -743,7 +737,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  * {\n    font-family: 'Poppins', sans-serif;\n    padding: 0;\n    margin: 0;\n    \n    font-size: 13px;\n  }\n\n  body, html {\n    height: 100%;\n    background: #f5f5f5;\n    scroll-behavior: smooth;\n  }\n\n  a, button {\n    cursor: pointer;\n  }\n  \n  a {\n    color: #ffd32a;\n  }\n  \n  .iframe {\n    -webkit-box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);\n    -moz-box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);\n    box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  * {\n    font-family: 'Poppins', sans-serif;\n    padding: 0;\n    margin: 0;\n\n    font-size: 13px;\n  }\n\n  body, html {\n    height: 100%;\n    background: #f5f5f5;\n    scroll-behavior: smooth;\n  }\n\n  a, button {\n    cursor: pointer;\n  }\n\n  a {\n    color: #ffd32a;\n  }\n\n  .iframe {\n    -webkit-box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);\n    -moz-box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);\n    box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);\n  }\n\n  .carousel.carousel-slider {\n      margin: 100px auto 120px;\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;

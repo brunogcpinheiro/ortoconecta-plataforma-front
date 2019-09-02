@@ -14,20 +14,21 @@ import { Carousel } from 'react-responsive-carousel';
 const primaryColor = "#FFD32A"
 
 const Hero = styled.div`
-  height: 80%;
+  height: 100vh;
   background: #fafafa;
   background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('/static/background.jpg');
-  ${'' /* background-size: cover; */}
-  ${'' /* background-repeat: no-repeat; */}
-  ${'' /* background-position: center center; */}
-  ${'' /* background-attachment: fixed; */}
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  flex-direction: column;
 
   > div {
-    margin: 30px 0 100px 0;
+    margin: -10px 0 50px 0;
   }
 `
 
@@ -35,6 +36,11 @@ const HeroInner = styled.div`
   background: transparent;
   color: #d6d6d6;
   margin-top: -50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
 
   h1 {
     font-size: 3.5em;
@@ -52,7 +58,8 @@ const HeroInner = styled.div`
     display: block;
     width: 150px;
     padding: 1em;
-    margin-top: 50px;
+    margin-top: 10px;
+    margin-bottom: 100px;
     margin-left: auto;
     margin-right: auto;
     color: #000;
@@ -91,13 +98,13 @@ const About = styled.section`
   -webkit-box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
   -moz-box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
   box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
-  
+
   h1 {
     font-size: 3rem;
     color: #f1c40f;
     font-weight: bold;
   }
-  
+
   img {
     width: 300px;
     height: 300px;
@@ -105,31 +112,31 @@ const About = styled.section`
     border-radius: 15px;
     border: 2px solid ${primaryColor};
   }
-  
+
   p {
     margin-top: 16px;
     text-align: justify;
     font-size: 1.2rem;
     color: #2d3436;
     width: 100%;
-    
+
     strong {
       font-size: 1.2rem;
       color: #181818;
     }
-    
+
     span {
       margin-left: 24px;
       font-size: 1.2rem;
     }
   }
-  
+
   h3 {
     font-size: 2rem;
     margin-top: 24px;
     color: #2d3436;
     text-align: center;
-    
+
     span {
       margin-top: 16px;
       font-size: 2rem;
@@ -140,7 +147,7 @@ const About = styled.section`
 `
 
 const ProfilesWrapper = styled.div`
-  width: 100%; 
+  width: 100%;
   height: 100%;
   background: ${primaryColor};
   display: flex;
@@ -148,7 +155,7 @@ const ProfilesWrapper = styled.div`
   justify-content: space-evenly;
   align-items: center;
   margin-top: 100px;
-  
+
   h1 {
     margin: 20px 0;
     font-size: 3rem;
@@ -178,21 +185,21 @@ const Profile = styled.div`
   -webkit-box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
   -moz-box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
   box-shadow: 0px 3px 5px 0px rgba(184,184,184,1);
-  
+
   @media(max-width: 965px) {
     width: 30%;
     margin: 16px;
   }
-  
+
   @media(max-width: 885px) {
     width: 70%;
   }
-  
+
   p {
     width: 100%;
   }
-  
-  
+
+
   img {
     width: 150px;
     height: 150px;
@@ -211,7 +218,7 @@ const ContentWrapper = styled.div`
   flex-wrap: wrap;
   padding: 20px;
   margin: 50px auto;
-  
+
   h1 {
     font-size: 3rem;
     margin-bottom: 20px;
@@ -242,11 +249,11 @@ const Content = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
+
     h4 {
       color: #EAB543;
     }
-    
+
     p {
       color: #30336b
     }
@@ -264,7 +271,7 @@ const Acessar = styled.button`
     text-transform: uppercase;
     background: ${primaryColor};
     border: 2px solid ${primaryColor};
-    
+
     &:visited, &:active, &:link {
         color: inherit;
     }
@@ -279,12 +286,12 @@ const NewsletterWrapper = styled.div`
   justify-content: center;
   background: ${primaryColor};
   padding: 5rem 0;
-  
+
   h1 {
     font-size: 2.5rem;
     text-align: center;
   }
-  
+
   p {
     font-size: 1.1rem;
     margin: 20px 0;
@@ -298,7 +305,7 @@ const Newsletter = styled.form`
     padding: 1.2rem;
     width: 300px;
   }
-  
+
   button {
     border: none;
     background: #181818;
@@ -317,7 +324,7 @@ const Newsletter = styled.form`
 //   img {
 //     width: 300px;
 //     height: 300px;
-//   } 
+//   }
 
 //   h3 {
 //     font-family: Arial, sans-serif;
@@ -336,14 +343,14 @@ class Home extends Component {
     email: '',
     maintance: true
   }
-  
+
   handleSubmit = async e => {
         e.preventDefault()
-        
+
         const newSubscriber = {
             email: this.state.email,
         }
-        
+
         if (this.state.email) {
             await axios.post(`http://api.ortoconecta.com.br/subscribers`, newSubscriber)
             .then(this.setState({
@@ -368,7 +375,7 @@ class Home extends Component {
             })
         }
     }
-  
+
   render () {
     return (
       // Tela de Manutenção
@@ -376,9 +383,9 @@ class Home extends Component {
         //   <img src="/static/logo.jpeg" alt="Logo" />
         //   <h3>Desculpe, estamos em atualização...</h3>
         //   <p>Obrigado!</p>
-        // </Maintance> 
-      
-      
+        // </Maintance>
+
+
         <Fragment>
           <Head>
             <title>OrtoConecta</title>
@@ -389,10 +396,9 @@ class Home extends Component {
                 <Carousel
                   showThumbs={false}
                   infiniteLoop={true}
-                  width={700}
                   autoPlay={true}
                   showStatus={false}
-                  width={"800px"}
+                  width={"450px"}
                   dynamicHeight={true}
                 >
                   <div>
@@ -408,21 +414,20 @@ class Home extends Component {
                     <img src="../static/3-fotocapa.jpg" />
                   </div>
                 </Carousel>
+                <HeroInner>
+                    <h1>Você conectado ao mundo da Ortodontia!</h1>
+                    <a href="#about">Saiba mais</a>
+                </HeroInner>
               </div>
             </Hero>
-            {/* <Hero>
-              <HeroInner>
-                  <h1>Você conectado ao mundo da Ortodontia!</h1>
-                  <a href="#about">Saiba mais</a>
-              </HeroInner>
-            </Hero> */}
+
             <About id="about" data-aos="fade-right">
               <h1>Quem Somos</h1>
-              <img src="/static/logo-nova.jpeg" alt="OrtoConecta"/> 
+              <img src="/static/logo-nova.jpeg" alt="OrtoConecta"/>
               <p>
               <span>A</span> internet tornou-se um meio em que se trocam informações de forma rápida e eficaz com a intenção de enriquecer e propagar conhecimento para que esse seja aplicado em favor da qualidade de vida.
 Não sendo diferente e partilhando da mesma vocação de disseminar informações, <strong>Dr. Gustavo Furlan</strong>, <strong>Dr. Luiz Felipe Maffía</strong> e <strong>Dr. Alexandre Mendonça</strong> reúnem profissionalismo, experiência e dedicação para impulsionarem a OrtoConecta.
-Uma plataforma digital completa de ortodontia que hospeda em um mesmo espaço informações, compartilhamento de experiências, dicas clínicas, aulas, cursos e todo tipo de ferramenta para você poder atingir a excelência profissional. 
+Uma plataforma digital completa de ortodontia que hospeda em um mesmo espaço informações, compartilhamento de experiências, dicas clínicas, aulas, cursos e todo tipo de ferramenta para você poder atingir a excelência profissional.
 Espero que curtam o espaço e que nos ajudem a fazer da OrtoConecta um site sem filtros ou photoshops. Um lugar da odontologia real.
 
               </p>
@@ -503,7 +508,7 @@ Espero que curtam o espaço e que nos ajudem a fazer da OrtoConecta um site sem 
             </NewsletterWrapper>
           </Main>
         </Fragment>
-      
+
     )
   }
 }
