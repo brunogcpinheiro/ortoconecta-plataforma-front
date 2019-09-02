@@ -21,3 +21,5 @@ module.exports = withCSS({
     return config;
   },
 });
+
+module.exports = { useFileSystemPublicRoutes: false };
