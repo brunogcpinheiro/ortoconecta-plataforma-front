@@ -23,4 +23,4 @@
 //   },
 // });
 
-module.exports = {useFileSystemPublicRoutes: false};
+module.exports = {useFileSystemPublicRoutes: false}
