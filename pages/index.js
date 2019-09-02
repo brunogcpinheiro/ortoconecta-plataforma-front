@@ -28,7 +28,7 @@ const Hero = styled.div`
   flex-direction: column;
 
   > div {
-    margin: -10px 0 50px 0;
+    margin: -10px 0 5px 0;
   }
 `
 
