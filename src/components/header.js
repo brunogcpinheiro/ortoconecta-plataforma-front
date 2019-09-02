@@ -77,7 +77,7 @@ const Menu = styled.ul`
     padding: 10px;
     font-weight: bold;
     background: transparent;
-    
+
     a {
       text-decoration: none;
       color: #7f8c8d;
@@ -89,8 +89,8 @@ const Menu = styled.ul`
       &:after {
         display: block;
         content: '';
-        border-bottom: solid 3px ${primaryColor};  
-        transform: scaleX(0);  
+        border-bottom: solid 3px ${primaryColor};
+        transform: scaleX(0);
         transition: transform 250ms ease-in-out;
       }
 
@@ -185,9 +185,9 @@ class Header extends Component {
 										<a>Painel OrtoConecta</a>
 									</li>
 								</Link>
-								<Link prefetch href="/cursos_e_materiais">
+								<Link prefetch href="/materiais">
 									<li>
-										<a>Cursos e Materiais</a>
+										<a>Materiais</a>
 									</li>
 								</Link>
 								<Link prefetch href="/experiencias">
@@ -205,9 +205,9 @@ class Header extends Component {
 										<a>Especialidades</a>
 									</li>
 								</Link>
-								<Link prefetch href="/aplicativos">
+								<Link prefetch href="/especializacao_e_cursos">
 									<li>
-										<a>Aplicativos</a>
+										<a>Especialização e Cursos</a>
 									</li>
 								</Link>
 							</DropdownContent>
@@ -225,8 +225,8 @@ class Header extends Component {
 							</Link>
 						</li>
 						<li>
-							<Link prefetch href="/cursos_e_materiais">
-								<a>Cursos e Materiais</a>
+							<Link prefetch href="/materiais">
+								<a>Materiais</a>
 							</Link>
 						</li>
 						<li>
@@ -245,8 +245,8 @@ class Header extends Component {
 							</Link>
 						</li>
 						<li>
-							<Link prefetch href="/aplicativos">
-								<a style={{ color: "red" }}>Aplicativos</a>
+							<Link prefetch href="/especializacao_e_cursos">
+								<a>Especialização e Cursos</a>
 							</Link>
 						</li>
 					</Menu>
