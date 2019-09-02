@@ -16,10 +16,9 @@ function HACK_removeMinimizeOptionFromCssLoaders(config) {
 }
 
 module.exports = withCSS({
+  useFileSystemPublicRoutes: false,
   webpack(config) {
     HACK_removeMinimizeOptionFromCssLoaders(config);
     return config;
   },
 });
-
-module.exports = { useFileSystemPublicRoutes: false };
