@@ -174,8 +174,8 @@ const CoursesAndMaterials = props => {
 						</p>
 						<CourseAndMaterialWrapper>
 							{props.materials
-                                .sort((a, b) => a.createdAt < b.createdAt)
-                                .map(material => (
+                  .sort((a, b) => a.createdAt < b.createdAt)
+                  .map(material => (
 								<Material
 									key={material.id}
 									data-aos="fade-up"
