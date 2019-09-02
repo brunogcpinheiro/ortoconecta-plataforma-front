@@ -174,7 +174,6 @@ const CoursesAndMaterials = props => {
 						</p>
 						<CourseAndMaterialWrapper>
 							{props.materials
-                  .sort((a, b) => a.createdAt < b.createdAt)
                   .map(material => (
 								<Material
 									key={material.id}
@@ -226,7 +225,7 @@ const CoursesAndMaterials = props => {
 
 CoursesAndMaterials.getInitialProps = async ({ query }) => {
 	const materialResponse = await axios.get(
-		`http://api.ortoconecta.com.br/materials`,
+		`http://api.ortoconecta.com.br/materials?_sort=createdAt:desc`,
 	);
 
 	return { materials: materialResponse.data };
