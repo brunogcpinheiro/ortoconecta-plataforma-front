@@ -160,7 +160,7 @@ class Header extends Component {
 			<Fragment>
 				<Navigation>
 					<Logo>
-						<Link href="/" prefetch>
+						<Link route="/" prefetch>
 							<a>
 								<img src="/static/logo.jpeg" />
 								<h2>OrtoConecta</h2>
