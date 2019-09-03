@@ -1,6 +1,6 @@
 import React, { Fragment, Component } from "react";
 import styled from "styled-components";
-import Link from "next/link";
+import {Link} from "../../routes";
 
 const primaryColor = "#ffd32a";
 
@@ -175,37 +175,37 @@ class Header extends Component {
 					{this.state.showMenu === true && (
 						<Dropdown data-aos="fade-down" data-aos-duration="1000">
 							<DropdownContent>
-								<Link prefetch href="/">
+								<Link prefetch route="/">
 									<li>
 										<a>Início</a>
 									</li>
 								</Link>
-								<Link prefetch href="/painel">
+								<Link prefetch route="/painel">
 									<li>
 										<a>Painel OrtoConecta</a>
 									</li>
 								</Link>
-								<Link prefetch href="/materiais">
+								<Link prefetch route="/materiais">
 									<li>
 										<a>Materiais</a>
 									</li>
 								</Link>
-								<Link prefetch href="/galeria">
+								<Link prefetch route="/galeria">
 									<li>
 										<a>Galeria</a>
 									</li>
 								</Link>
-								<Link prefetch href="/dicas">
+								<Link prefetch route="/dicas">
 									<li>
 										<a>Dicas</a>
 									</li>
 								</Link>
-								<Link prefetch href="/especialidades">
+								<Link prefetch route="/especialidades">
 									<li>
 										<a>Especialidades</a>
 									</li>
 								</Link>
-								<Link prefetch href="/especializacao_e_cursos">
+								<Link prefetch route="/especializacao_e_cursos">
 									<li>
 										<a>Especialização e Cursos</a>
 									</li>
@@ -215,37 +215,37 @@ class Header extends Component {
 					)}
 					<Menu>
 						<li>
-							<Link prefetch href="/">
+							<Link prefetch route="/">
 								<a>Início</a>
 							</Link>
 						</li>
 						<li>
-							<Link prefetch href="/painel">
+							<Link prefetch route="/painel">
 								<a>Painel OrtoConecta</a>
 							</Link>
 						</li>
 						<li>
-							<Link prefetch href="/materiais">
+							<Link prefetch route="/materiais">
 								<a>Materiais</a>
 							</Link>
 						</li>
 						<li>
-							<Link prefetch href="/galeria">
+							<Link prefetch route="/galeria">
 								<a>Galeria</a>
 							</Link>
 						</li>
 						<li>
-							<Link prefetch href="/dicas">
+							<Link prefetch route="/dicas">
 								<a>Dicas</a>
 							</Link>
 						</li>
 						<li>
-							<Link prefetch href="/especialidades">
+							<Link prefetch route="/especialidades">
 								<a>Especialidades</a>
 							</Link>
 						</li>
 						<li>
-							<Link prefetch href="/especializacao_e_cursos">
+							<Link prefetch route="/especializacao_e_cursos">
 								<a>Especialização e Cursos</a>
 							</Link>
 						</li>

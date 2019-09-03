@@ -16,7 +16,6 @@ function HACK_removeMinimizeOptionFromCssLoaders(config) {
 }
 
 module.exports = withCSS({
-  
   webpack(config) {
     HACK_removeMinimizeOptionFromCssLoaders(config);
     return config;
