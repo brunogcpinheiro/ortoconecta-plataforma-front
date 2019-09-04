@@ -30,7 +30,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .carousel.carousel-slider {
-      margin-top: -60px;
       margin-left: auto;
       margin-right: auto;
       border: none;
