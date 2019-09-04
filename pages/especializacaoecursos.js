@@ -214,7 +214,7 @@ const SpecializationAndCourses = props => {
                         <h2>Especialização</h2>
                         <Specialization>
                             <ImageWrapper>
-                                <img src="/static/0-fotocapa.jpg" alt="Especialização" />
+                                <img src="/static/especializacao.jpg" alt="Especialização" />
                             </ImageWrapper>
                         </Specialization>
                     </div>

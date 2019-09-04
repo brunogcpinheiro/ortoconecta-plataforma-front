@@ -12,9 +12,9 @@ const Navigation = styled.div`
 	list-style: none;
 	background: #fff;
 	width: 100%;
-	-webkit-box-shadow: 0px 3px 5px 0px rgba(184, 184, 184, 1);
-	-moz-box-shadow: 0px 3px 5px 0px rgba(184, 184, 184, 1);
-	box-shadow: 0px 3px 5px 0px rgba(184, 184, 184, 1);
+	-webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0, 1);
+	-moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0, 1);
+	box-shadow: 0px 3px 5px 0px rgba(0,0,0,0, 1);
 
 	@media (max-width: 1128px) {
 		ul {
@@ -160,7 +160,7 @@ class Header extends Component {
 			<Fragment>
 				<Navigation>
 					<Logo>
-						<Link route="/" prefetch>
+						<Link route="/">
 							<a>
 								<img src="/static/logo.jpeg" />
 								<h2>OrtoConecta</h2>
@@ -175,37 +175,37 @@ class Header extends Component {
 					{this.state.showMenu === true && (
 						<Dropdown data-aos="fade-down" data-aos-duration="1000">
 							<DropdownContent>
-								<Link prefetch route="/">
+								<Link route="/">
 									<li>
 										<a>Início</a>
 									</li>
 								</Link>
-								<Link prefetch route="/painel">
+								<Link route="/painel">
 									<li>
 										<a>Painel OrtoConecta</a>
 									</li>
 								</Link>
-								<Link prefetch route="/materiais">
+								<Link route="/materiais">
 									<li>
 										<a>Materiais</a>
 									</li>
 								</Link>
-								<Link prefetch route="/galeria">
+								<Link route="/galeria">
 									<li>
 										<a>Galeria</a>
 									</li>
 								</Link>
-								<Link prefetch route="/dicas">
+								<Link route="/dicas">
 									<li>
 										<a>Dicas</a>
 									</li>
 								</Link>
-								<Link prefetch route="/especialidades">
+								<Link route="/especialidades">
 									<li>
 										<a>Especialidades</a>
 									</li>
 								</Link>
-								<Link prefetch route="/especializacao_e_cursos">
+								<Link route="/especializacao_e_cursos">
 									<li>
 										<a>Especialização e Cursos</a>
 									</li>
@@ -215,37 +215,37 @@ class Header extends Component {
 					)}
 					<Menu>
 						<li>
-							<Link prefetch route="/">
+							<Link route="/">
 								<a>Início</a>
 							</Link>
 						</li>
 						<li>
-							<Link prefetch route="/painel">
+							<Link route="/painel">
 								<a>Painel OrtoConecta</a>
 							</Link>
 						</li>
 						<li>
-							<Link prefetch route="/materiais">
+							<Link route="/materiais">
 								<a>Materiais</a>
 							</Link>
 						</li>
 						<li>
-							<Link prefetch route="/galeria">
+							<Link route="/galeria">
 								<a>Galeria</a>
 							</Link>
 						</li>
 						<li>
-							<Link prefetch route="/dicas">
+							<Link route="/dicas">
 								<a>Dicas</a>
 							</Link>
 						</li>
 						<li>
-							<Link prefetch route="/especialidades">
+							<Link route="/especialidades">
 								<a>Especialidades</a>
 							</Link>
 						</li>
 						<li>
-							<Link prefetch route="/especializacao_e_cursos">
+							<Link route="/especializacao_e_cursos">
 								<a>Especialização e Cursos</a>
 							</Link>
 						</li>
