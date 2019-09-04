@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Head from 'next/head'
 import axios from 'axios'
 import Main from '../layouts/main'
-import { FaCreditCard } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
 
 const primaryColor = "#ffd32a";
 
@@ -32,6 +32,12 @@ const CoursesAndMaterialsWrapper = styled.div`
 	p {
 		text-align: center;
 	}
+
+    h4 {
+      margin: 30px;
+      font-size: 1.8rem;
+      text-decoration: underline;
+    }
 `;
 
 const CourseAndMaterialWrapper = styled.div`
@@ -164,12 +170,12 @@ const Purchase = styled.a`
 	text-transform: uppercase;
 	background: ${primaryColor};
 	border: 2px solid ${primaryColor};
-	color: #fff;
+	color: #181818;
 
 	&:visited,
 	&:active,
 	&:link {
-		color: #fff;
+		color: #181818;
 	}
 `;
 
@@ -212,6 +218,7 @@ const SpecializationAndCourses = props => {
                 <CoursesAndMaterialsWrapper>
                     <div>
                         <h2>Especialização</h2>
+                        <h4>EM JANEIRO!!!</h4>
                         <Specialization>
                             <ImageWrapper>
                                 <img src="/static/especializacao.jpg" alt="Especialização" />
@@ -238,15 +245,18 @@ const SpecializationAndCourses = props => {
                                             {course.sold_out === true ? (
                                                 <Image src="/static/esgotado.png" alt="Esgotado" />
                                             ) : (
-                                                <Purchase>
-                                                    <FaCreditCard
+                                                <Purchase
+                                                  target="_blank"
+                                                  href="https://api.whatsapp.com/send?phone=5511948195388&text=Fale%20conosco"
+                                                >
+                                                    <FaWhatsapp
                                                         style={{
                                                             background: "transparent",
-                                                            fontSize: "1.2rem",
+                                                            fontSize: "1.5rem",
                                                             marginRight: "10px",
                                                         }}
                                                     />{" "}
-                                                    Comprar
+                                                    Fale concoso
                                                 </Purchase>
                                             )}
                                             <Title>{course.title}</Title>

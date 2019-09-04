@@ -47,143 +47,127 @@ const IMAGES1 =
   {
     src: "/static/galeria-1.jpg",
     thumbnail: "/static/galeria-1.jpg",
-    thumbnailWidth: 320,
-    thumbnailHeight: 212,
+    thumbnailWidth: 370,
+    thumbnailHeight: 250,
     caption: "Curso DAT na Ortodontia Contemporânea - Agosto/2019"
   },
-  {
-    src: "/static/galeria-2.jpg",
-    thumbnail: "/static/galeria-2.jpg",
-    thumbnailWidth: 320,
-    thumbnailHeight: 212,
-    caption: "Curso DAT na Ortodontia Contemporânea - Agosto/2019"
-  },
-
-  {
-    src: "/static/galeria-3.jpg",
-    thumbnail: "/static/galeria-3.jpg",
-    thumbnailWidth: 320,
-    thumbnailHeight: 212,
-    caption: "Curso DAT na Ortodontia Contemporânea - Agosto/2019"
-  },
-
   {
     src: "/static/galeria-4.jpg",
     thumbnail: "/static/galeria-4.jpg",
-    thumbnailWidth: 320,
-    thumbnailHeight: 212,
+    thumbnailWidth: 370,
+    thumbnailHeight: 250,
     caption: "Curso DAT na Ortodontia Contemporânea - Agosto/2019"
   },
 
   {
     src: "/static/galeria-5.jpg",
     thumbnail: "/static/galeria-5.jpg",
-    thumbnailWidth: 320,
-    thumbnailHeight: 212,
+    thumbnailWidth: 370,
+    thumbnailHeight: 250,
     caption: "Curso DAT na Ortodontia Contemporânea - Agosto/2019"
   },
 
   {
     src: "/static/galeria-6.jpg",
     thumbnail: "/static/galeria-6.jpg",
-    thumbnailWidth: 320,
-    thumbnailHeight: 212,
+    thumbnailWidth: 370,
+    thumbnailHeight: 250,
     caption: "Curso DAT na Ortodontia Contemporânea - Agosto/2019"
   },
 
   {
     src: "/static/galeria-7.jpg",
     thumbnail: "/static/galeria-7.jpg",
-    thumbnailWidth: 320,
-    thumbnailHeight: 212,
+    thumbnailWidth: 370,
+    thumbnailHeight: 250,
     caption: "Curso DAT na Ortodontia Contemporânea - Agosto/2019"
   },
 
   {
     src: "/static/galeria-8.jpg",
     thumbnail: "/static/galeria-8.jpg",
-    thumbnailWidth: 320,
-    thumbnailHeight: 212,
+    thumbnailWidth: 370,
+    thumbnailHeight: 250,
     caption: "Curso DAT na Ortodontia Contemporânea - Agosto/2019"
   },
 
   {
     src: "/static/galeria-9.jpg",
     thumbnail: "/static/galeria-9.jpg",
-    thumbnailWidth: 320,
-    thumbnailHeight: 212,
+    thumbnailWidth: 370,
+    thumbnailHeight: 250,
     caption: "Curso DAT na Ortodontia Contemporânea - Agosto/2019"
   },
 
   {
     src: "/static/galeria-10.jpg",
     thumbnail: "/static/galeria-10.jpg",
-    thumbnailWidth: 320,
-    thumbnailHeight: 212,
+    thumbnailWidth: 370,
+    thumbnailHeight: 250,
     caption: "Curso DAT na Ortodontia Contemporânea - Agosto/2019"
   },
 
   {
     src: "/static/galeria-11.jpg",
     thumbnail: "/static/galeria-11.jpg",
-    thumbnailWidth: 320,
-    thumbnailHeight: 212,
+    thumbnailWidth: 370,
+    thumbnailHeight: 250,
     caption: "Curso DAT na Ortodontia Contemporânea - Agosto/2019"
   },
 
   {
     src: "/static/galeria-12.jpg",
     thumbnail: "/static/galeria-12.jpg",
-    thumbnailWidth: 320,
-    thumbnailHeight: 212,
+    thumbnailWidth: 370,
+    thumbnailHeight: 250,
     caption: "Curso DAT na Ortodontia Contemporânea - Agosto/2019"
   },
 
   {
     src: "/static/galeria-13.jpg",
     thumbnail: "/static/galeria-13.jpg",
-    thumbnailWidth: 320,
-    thumbnailHeight: 212,
+    thumbnailWidth: 370,
+    thumbnailHeight: 250,
     caption: "Curso DAT na Ortodontia Contemporânea - Agosto/2019"
   },
 
   {
     src: "/static/galeria-14.jpg",
     thumbnail: "/static/galeria-14.jpg",
-    thumbnailWidth: 320,
-    thumbnailHeight: 212,
+    thumbnailWidth: 370,
+    thumbnailHeight: 250,
     caption: "Curso DAT na Ortodontia Contemporânea - Agosto/2019"
   },
 
   {
     src: "/static/galeria-15.jpg",
     thumbnail: "/static/galeria-15.jpg",
-    thumbnailWidth: 320,
-    thumbnailHeight: 212,
+    thumbnailWidth: 370,
+    thumbnailHeight: 250,
     caption: "Curso DAT na Ortodontia Contemporânea - Agosto/2019"
   },
 
   {
     src: "/static/galeria-16.jpg",
     thumbnail: "/static/galeria-16.jpg",
-    thumbnailWidth: 320,
-    thumbnailHeight: 212,
+    thumbnailWidth: 370,
+    thumbnailHeight: 250,
     caption: "Curso DAT na Ortodontia Contemporânea - Agosto/2019"
   },
 
   {
     src: "/static/galeria-17.jpg",
     thumbnail: "/static/galeria-17.jpg",
-    thumbnailWidth: 320,
-    thumbnailHeight: 212,
+    thumbnailWidth: 370,
+    thumbnailHeight: 250,
     caption: "Curso DAT na Ortodontia Contemporânea - Agosto/2019"
   },
 
   {
     src: "/static/galeria-18.jpg",
     thumbnail: "/static/galeria-18.jpg",
-    thumbnailWidth: 320,
-    thumbnailHeight: 212,
+    thumbnailWidth: 370,
+    thumbnailHeight: 250,
     caption: "Curso DAT na Ortodontia Contemporânea - Agosto/2019"
   },
 ]
