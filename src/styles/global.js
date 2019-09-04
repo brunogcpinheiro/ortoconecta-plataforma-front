@@ -30,7 +30,10 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .carousel.carousel-slider {
-      margin: 100px auto 120px;
+      margin-top: -60px;
+      margin-left: auto;
+      margin-right: auto;
+      border: none;
   }
 `
 

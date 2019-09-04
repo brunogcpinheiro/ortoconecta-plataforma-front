@@ -15,20 +15,16 @@ const primaryColor = "#FFD32A"
 
 const Hero = styled.div`
   height: 100vh;
-  background: #fafafa;
-  background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('/static/background.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
+  background: #f5f5f5;
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   flex-direction: column;
 
-  > div {
-    margin: -10px 0 5px 0;
+  @media(max-width: 780px) {
+    height: 50vh;
   }
 `
 
@@ -398,26 +394,29 @@ class Home extends Component {
                   infiniteLoop={true}
                   autoPlay={true}
                   showStatus={false}
-                  width={"450px"}
                   dynamicHeight={true}
+                  stopOnHover={false}
+                  interval={4500}
+                  emulateTouch={true}
+                  width={"99%"}
                 >
                   <div>
-                    <img src="../static/0-fotocapa.jpg" />
+                    <img src="../static/background.jpg" />
                   </div>
                   <div>
-                    <img src="../static/4-fotocapa.jpg" />
+                    <img src="../static/carousel.jpg" />
                   </div>
                   <div>
-                    <img src="../static/5-fotocapa.jpg" />
+                    <img src="../static/carousel1.jpg" />
                   </div>
                   <div>
-                    <img src="../static/3-fotocapa.jpg" />
+                    <img src="../static/carousel2.jpg" />
                   </div>
                 </Carousel>
-                <HeroInner>
+                {/*<HeroInner>
                     <h1>Você conectado ao mundo da Ortodontia!</h1>
                     <a href="#about">Saiba mais</a>
-                </HeroInner>
+                </HeroInner>*/}
               </div>
             </Hero>
 
