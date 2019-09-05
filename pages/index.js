@@ -285,6 +285,10 @@ const NewsletterWrapper = styled.div`
   background: ${primaryColor};
   padding: 5rem 0;
 
+  @media(max-width: 780px) {
+    text-align: center;
+  }
+
   h1 {
     font-size: 2.5rem;
     text-align: center;
@@ -499,8 +503,8 @@ Espero que curtam o espaço e que nos ajudem a fazer da OrtoConecta um site sem 
               </Contents>
             </ContentWrapper>
             <NewsletterWrapper data-aos="fade-left" data-aos-duration="1000">
-              <h1>Registre-se em nossa Newsletter!</h1>
-              <p>Receba nosso contéudo por email! Não é spam!</p>
+              <h1>Registre-se em nossa Newsletter e fique por dentro de TUDO!</h1>
+              <p>O seu email é muito importante para mantermos contato. Cadastre Agora!!!</p>
               <Newsletter onSubmit={(e) => this.handleSubmit(e)}>
                 <input type="email" placeholder="Digite seu melhor email..." onChange={(e) => this.setState({ email: e.target.value })} value={this.state.email} />
                 <button>Inscrever</button>
