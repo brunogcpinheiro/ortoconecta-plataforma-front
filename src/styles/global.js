@@ -37,7 +37,7 @@ const GlobalStyle = createGlobalStyle`
       height: 450px;
 
       @media(max-width: 780px) {
-          height: 100%;
+          height: 35vh;
       }
   }
 
@@ -45,7 +45,7 @@ const GlobalStyle = createGlobalStyle`
       height: 450px;
 
       @media(max-width: 780px) {
-          width: 100%;
+          height: 35vh;
       }
   }
 
@@ -54,7 +54,7 @@ const GlobalStyle = createGlobalStyle`
       height: 450px;
 
       @media(max-width: 780px) {
-          width: 100%;
+          height: 35vh;
       }
   }
 `
