@@ -14,7 +14,9 @@ import { Carousel } from 'react-responsive-carousel';
 const primaryColor = "#FFD32A"
 
 const Hero = styled.div`
-  height: 100vh;
+  height: 100%;
+  margin: 0 0 70px 0;
+  padding: 20px;
   background: #f5f5f5;
   border: none;
   display: flex;
@@ -24,7 +26,7 @@ const Hero = styled.div`
   flex-direction: column;
 
   @media(max-width: 780px) {
-    height: 50vh;
+    height: 100%;
   }
 `
 
@@ -398,19 +400,18 @@ class Home extends Component {
                   stopOnHover={false}
                   interval={4500}
                   emulateTouch={true}
-                  width={"99%"}
                 >
                   <div>
-                    <img src="../static/background.jpg" />
+                    <img src="/static/background-final.jpg" />
                   </div>
                   <div>
-                    <img src="../static/carousel.jpg" />
+                    <img src="/static/carousel-final.jpg" />
                   </div>
                   <div>
-                    <img src="../static/carousel1.jpg" />
+                    <img src="/static/carousel1-final.jpg" />
                   </div>
                   <div>
-                    <img src="../static/carousel2.jpg" />
+                    <img src="/static/carousel2-final.jpg" />
                   </div>
                 </Carousel>
                 {/*<HeroInner>

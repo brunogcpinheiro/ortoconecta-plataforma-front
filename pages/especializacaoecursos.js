@@ -92,6 +92,11 @@ const Course = styled.div`
 		}
 	}
 
+	.date {
+		color: #6ab04c;
+		font-size: 2.5rem;
+	}
+
 	@media (max-width: 980px) {
 		display: flex;
 		justify-content: space-around;
@@ -263,8 +268,8 @@ const SpecializationAndCourses = props => {
                                             <h3>
                                                 Local.: <span>{course.local}</span>
                                             </h3>
-                                            <h3>
-                                                Quando.: <span>{course.date_event}</span>
+                                            <h3 className="date">
+                                                Quando.: <span className="date">{course.date_event}</span>
                                             </h3>
                                             <h3>
                                                 Valor.: <span>{course.price}</span>
