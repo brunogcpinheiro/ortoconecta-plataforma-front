@@ -396,13 +396,13 @@ class Home extends Component {
             <Hero>
               <div>
                 <Carousel
-                  showThumbs={false}
+                  showThumbs={true}
                   infiniteLoop={true}
                   autoPlay={true}
                   showStatus={false}
                   dynamicHeight={true}
-                  stopOnHover={false}
-                  interval={4500}
+                  stopOnHover={true}
+                  interval={2500}
                   emulateTouch={true}
                 >
                   <div className="slides">
