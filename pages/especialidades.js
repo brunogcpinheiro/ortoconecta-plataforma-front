@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import styled from "styled-components";
 import Main from "../layouts/main";
 import Head from "next/head";
-import Link from "next/link";
+import {Link} from "../routes";
 import axios from "axios";
 import dayjs from "dayjs";
 import Iframe from "react-iframe";
@@ -209,7 +209,7 @@ const Especialidades = props => {
 						</p>
 					</InitialTitle>
 					<BtnWrapper>
-						<Link prefetch href={`/especialidades/portfolio`}>
+						<Link route={`/especialidades/portfolio`}>
 							<PortfolioBtn>
 								<FaUserGraduate
 									style={{
@@ -221,7 +221,7 @@ const Especialidades = props => {
 								Portfólio dos profissionais
 							</PortfolioBtn>
 						</Link>
-						<Link prefetch href={`/especialidades/entrevistas`}>
+						<Link route={`/especialidades/entrevistas`}>
 							<EntrevistasBtn>
 								<FaMicrophoneAlt
 									style={{
@@ -240,7 +240,7 @@ const Especialidades = props => {
 							data-aos="fade-right"
 							data-aos-duration="1000">
 							<li>
-								<Link prefetch href={`/especialidades/${speciality.id}`}>
+								<Link route={`/especialidades/${speciality.id}`}>
 									<Title>{speciality.title}</Title>
 								</Link>
 								<h4>
@@ -257,7 +257,7 @@ const Especialidades = props => {
 									}
 								</Date>
 								<Article>{`${speciality.article.substr(0, 500)}...`}</Article>
-								<Link prefetch href={`/especialidades/${speciality.id}`}>
+								<Link route={`/especialidades/${speciality.id}`}>
 									<ReadMore>Leia mais</ReadMore>
 								</Link>
 							</li>
