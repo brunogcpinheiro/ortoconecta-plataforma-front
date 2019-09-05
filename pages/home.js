@@ -405,16 +405,16 @@ class Home extends Component {
                   interval={4500}
                   emulateTouch={true}
                 >
-                  <div>
+                  <div className="slides">
                     <img src="/static/background-final.jpg" />
                   </div>
-                  <div>
+                  <div className="slides">
                     <img src="/static/carousel-final.jpg" />
                   </div>
-                  <div>
+                  <div className="slides">
                     <img src="/static/carousel1-final.jpg" />
                   </div>
-                  <div>
+                  <div className="slides">
                     <img src="/static/carousel2-final.jpg" />
                   </div>
                 </Carousel>

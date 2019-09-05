@@ -33,7 +33,29 @@ const GlobalStyle = createGlobalStyle`
       margin-left: auto;
       margin-right: auto;
       border: none;
-      max-width: 1366px;
+      max-width: 980px;
+      height: 450px;
+
+      @media(max-width: 780px) {
+          height: 100%;
+      }
+  }
+
+  .slides {
+      height: 450px;
+
+      @media(max-width: 780px) {
+          width: 100%;
+      }
+  }
+
+  .slides > img {
+      width: 100%;
+      height: 450px;
+
+      @media(max-width: 780px) {
+          width: 100%;
+      }
   }
 `
 
