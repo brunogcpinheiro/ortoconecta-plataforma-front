@@ -4,9 +4,9 @@ import Main from '../layouts/main'
 import Head from 'next/head'
 import Router from 'next/router'
 import swal from 'sweetalert2'
-import Link from 'next/link'
+import {Link} from '../routes'
 import axios from 'axios'
-import { FaChalkboard, FaBook, FaBriefcase, FaLightbulb, FaHeartbeat, FaRegNewspaper } from 'react-icons/fa'
+import { FaChalkboard, FaBook, FaCameraRetro, FaLightbulb, FaHeartbeat, FaUserGraduate } from 'react-icons/fa'
 
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
@@ -464,23 +464,23 @@ Espero que curtam o espaço e que nos ajudem a fazer da OrtoConecta um site sem 
                   <FaChalkboard style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>Painel OrtoConecta</h4>
                   <br />
                   <p>Um quadro sequenciado da ortodontia para você estar sempre ligado nas etapas do tratamento.</p>
-                  <Link prefetch href="/painel">
+                  <Link route="/painel">
                     <Acessar>Acessar</Acessar>
                   </Link>
                 </Content>
                 <Content>
-                  <FaBook style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>Cursos e Materiais</h4>
+                  <FaBook style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>Materiais</h4>
                   <br />
-                  <p>Produção de cursos e materiais didáticos para que você aprimore suas competências e habilidades.</p>
-                  <Link prefetch href="/cursos_e_materiais">
+                  <p>Produção de materiais didáticos para que você aprimore suas competências e habilidades.</p>
+                  <Link route="/materiais">
                     <Acessar>Acessar</Acessar>
                   </Link>
                 </Content>
                 <Content>
-                  <FaBriefcase style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>Compartilhando Experiências</h4>
+                  <FaCameraRetro style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>Galeria</h4>
                   <br />
-                  <p>O compartilhamento de experiências como ferramenta para ampliar o seu leque de conhecimento.</p>
-                  <Link prefetch href="/experiencias">
+                  <p>Registro fotográfico dos eventos da OrtoConecta!</p>
+                  <Link route="/galeria">
                     <Acessar>Acessar</Acessar>
                   </Link>
                 </Content>
@@ -488,7 +488,7 @@ Espero que curtam o espaço e que nos ajudem a fazer da OrtoConecta um site sem 
                   <FaLightbulb style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>Dicas OrtoConecta</h4>
                   <br />
                   <p>Um espaço para você obter dicas clínicas que poderão facilitar o dia a dia do seu consultório.</p>
-                  <Link prefetch href="/dicas">
+                  <Link route="/dicas">
                     <Acessar>Acessar</Acessar>
                   </Link>
                 </Content>
@@ -496,7 +496,15 @@ Espero que curtam o espaço e que nos ajudem a fazer da OrtoConecta um site sem 
                   <FaHeartbeat style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>OrtoConecta Especialidades</h4>
                   <br />
                   <p>Uma área destinada à multidisciplinaridade mostrando a importância da integração de especialidades na busca do melhor para o paciente.</p>
-                  <Link prefetch href="/especialidades">
+                  <Link route="/especialidades">
+                    <Acessar>Acessar</Acessar>
+                  </Link>
+                </Content>
+                <Content>
+                  <FaUserGraduate style={{ fontSize: '3rem', color: '#ffc32a' }}/> <h4>Especialização e Cursos</h4>
+                  <br />
+                  <p>Conheça nossos cursos e nossa Especialização em Ortodontia!</p>
+                  <Link route="/especializacao_e_cursos">
                     <Acessar>Acessar</Acessar>
                   </Link>
                 </Content>
