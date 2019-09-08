@@ -1,6 +1,8 @@
-import React, { Fragment } from 'react'
+import React, { Component, Fragment } from 'react'
 import styled from 'styled-components'
 import Head from 'next/head'
+import swal from 'sweetalert2'
+import Router from 'next/router'
 import axios from 'axios'
 import Main from '../layouts/main'
 import { FaWhatsapp } from "react-icons/fa";
@@ -222,80 +224,167 @@ const ImageWrapper = styled.div`
   }
 `
 
-const SpecializationAndCourses = props => {
-    return (
-        <Fragment>
-            <Head>
-                <title>OrtoConecta | Especialização e Cursos</title>
-            </Head>
-            <Main>
-                <CoursesAndMaterialsWrapper>
-                    <div>
-                        <h2>Especialização</h2>
-                        <h4>EM JANEIRO!!!</h4>
-                        <Specialization>
-                            <ImageWrapper>
-                                <img src="/static/especializacao.jpg" alt="Especialização" />
-                            </ImageWrapper>
-                        </Specialization>
-                    </div>
-                    <div>
-                        <h2>Cursos</h2>
-                        <CourseAndMaterialWrapper>
-                            {props.courses
-                                .sort((a, b) => a.createdAt < b.createdAt)
-                                .map(course => (
-                                    <Course key={course.id} className="animated zoomIn delay-1s">
-                                        <CourseImg>
-                                            {course.course_image.map(c => (
-                                                <img
-                                                    key={c._id}
-                                                    src={`http://api.ortoconecta.com.br${c.url}`}
-                                                    alt={c.name}
-                                                />
-                                            ))}
-                                        </CourseImg>
-                                        <CourseData>
-                                            {course.sold_out === true ? (
-                                                <Image src="/static/esgotado.png" alt="Esgotado" />
-                                            ) : (
-                                                <Purchase
-                                                  target="_blank"
-                                                  href="https://api.whatsapp.com/send?phone=5511948195388&text=Olá,%20gostaria%20de%20mais%20informações!"
-                                                >
-                                                    <FaWhatsapp
-                                                        style={{
-                                                            background: "transparent",
-                                                            fontSize: "1.5rem",
-                                                            marginRight: "10px",
-                                                        }}
-                                                    />{" "}
-                                                    Fale concoso
-                                                </Purchase>
-                                            )}
-                                            <Title>{course.title}</Title>
-                                            <h3>
-                                                Local.: <span>{course.local}</span>
-                                            </h3>
-                                            <h3 className="date">
-                                                Quando.: <span className="date">{course.date_event}</span>
-                                            </h3>
-                                            <h3>
-                                                Valor.: <span>{course.price}</span>
-                                            </h3>
-                                            <p>
-                                                No momento estamos fazendo inscrições somente por
-                                                WhatsApp. Entre em contato.
-                                            </p>
-                                        </CourseData>
-                                    </Course>
-                                ))}
-                        </CourseAndMaterialWrapper>
-                    </div>
-                </CoursesAndMaterialsWrapper>
-            </Main>
-        </Fragment>
-    )
+const NewsletterWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: ${primaryColor};
+  padding: 5rem 0;
+
+  @media(max-width: 780px) {
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  p {
+    font-size: 1.1rem;
+    margin: 20px 0;
+  }
+`
+
+const Newsletter = styled.form`
+  input {
+    border: none;
+    border: 1px solid #fff;
+    padding: 1.2rem;
+    width: 300px;
+  }
+
+  button {
+    border: none;
+    background: #181818;
+    color: ${primaryColor};
+    padding: 1.2rem;
+  }
+`
+
+class SpecializationAndCourses extends Component {
+	state = {
+    email: '',
+    maintance: true
+  }
+
+  handleSubmit = async e => {
+        e.preventDefault()
+
+        const newSubscriber = {
+            email: this.state.email,
+        }
+
+        if (this.state.email) {
+            await axios.post(`http://api.ortoconecta.com.br/subscribers`, newSubscriber)
+            .then(this.setState({
+                email: ''
+            })).then(
+                swal({
+                  type: 'success',
+                  title: 'Cadastro realizado com sucesso!'
+                })
+            )
+            .catch(() => {
+                swal({
+                  type: 'error',
+                  title: 'Algo errado com a requisição. Tente novamente!'
+                })
+            })
+            Router.replace(`http://www.ortoconecta.com.br`)
+        } else {
+            swal({
+              type: 'error',
+              title: 'Preencha o campo!'
+            })
+        }
+		}
+		render () {
+			return (
+					<Fragment>
+							<Head>
+									<title>OrtoConecta | Especialização e Cursos</title>
+							</Head>
+							<Main>
+									<CoursesAndMaterialsWrapper>
+										<NewsletterWrapper data-aos="fade-left" data-aos-duration="1000">
+											<h1>Registre-se em nossa Newsletter e fique por dentro de TUDO!</h1>
+											<p>O seu email é muito importante para mantermos contato. Cadastre Agora!!!</p>
+											<Newsletter onSubmit={(e) => this.handleSubmit(e)}>
+												<input type="email" placeholder="Digite seu melhor email..." onChange={(e) => this.setState({ email: e.target.value })} value={this.state.email} />
+												<button>Inscrever</button>
+											</Newsletter>
+										</NewsletterWrapper>
+											<div>
+													<h2>Especialização</h2>
+													<h4>EM JANEIRO!!!</h4>
+													<Specialization>
+															<ImageWrapper>
+																	<img src="/static/especializacao.jpg" alt="Especialização" />
+															</ImageWrapper>
+													</Specialization>
+											</div>
+											<div>
+													<h2>Cursos</h2>
+													<CourseAndMaterialWrapper>
+															{this.props.courses
+																	.sort((a, b) => a.createdAt < b.createdAt)
+																	.map(course => (
+																			<Course key={course.id} className="animated zoomIn delay-1s">
+																					<CourseImg>
+																							{course.course_image.map(c => (
+																									<img
+																											key={c._id}
+																											src={`http://api.ortoconecta.com.br${c.url}`}
+																											alt={c.name}
+																									/>
+																							))}
+																					</CourseImg>
+																					<CourseData>
+																							{course.sold_out === true ? (
+																									<Image src="/static/esgotado.png" alt="Esgotado" />
+																							) : (
+																									<Purchase
+																										target="_blank"
+																										href="https://api.whatsapp.com/send?phone=5511948195388&text=Olá,%20gostaria%20de%20mais%20informações!"
+																									>
+																											<FaWhatsapp
+																													style={{
+																															background: "transparent",
+																															fontSize: "1.5rem",
+																															marginRight: "10px",
+																													}}
+																											/>{" "}
+																											Fale concoso
+																									</Purchase>
+																							)}
+																							<Title>{course.title}</Title>
+																							<h3>
+																									Local.: <span>{course.local}</span>
+																							</h3>
+																							<h3 className="date">
+																									Quando.: <span className="date">{course.date_event}</span>
+																							</h3>
+																							<h3>
+																									Valor.: <span>{course.price}</span>
+																							</h3>
+																							<p>
+																									No momento estamos fazendo inscrições somente por
+																									WhatsApp. Entre em contato.
+																							</p>
+																					</CourseData>
+																			</Course>
+																	))}
+													</CourseAndMaterialWrapper>
+											</div>
+									</CoursesAndMaterialsWrapper>
+							</Main>
+					</Fragment>
+			)
+		}
 }
 
 SpecializationAndCourses.getInitialProps = async ({ query }) => {
