@@ -512,7 +512,7 @@ Espero que curtam o espaço e que nos ajudem a fazer da OrtoConecta um site sem 
             </ContentWrapper>
             <NewsletterWrapper data-aos="fade-left" data-aos-duration="1000">
               <h1>Registre-se em nossa Newsletter e fique por dentro de TUDO!</h1>
-              <p>O seu email é muito importante para mantermos contato. Cadastre Agora!!!</p>
+              <p>Cadastre-se para receber informações exclusivas!</p>
               <Newsletter onSubmit={(e) => this.handleSubmit(e)}>
                 <input type="email" placeholder="Digite seu melhor email..." onChange={(e) => this.setState({ email: e.target.value })} value={this.state.email} />
                 <button>Inscrever</button>

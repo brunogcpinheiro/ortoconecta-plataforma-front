@@ -1,7 +1,6 @@
 const routes = require('next-routes')
 
 module.exports = routes()
-    .add('/', 'home')
     .add('/especialidades', 'especialidades')
     .add('/especialidades/portfolio', 'portfolio')
     .add('/especialidades/entrevistas', 'entrevistas')
@@ -12,3 +11,4 @@ module.exports = routes()
     .add('/dicas', 'dicas')
     .add('/casos_clinicos', 'casosclinicos')
     .add('/especializacao_e_cursos', 'especializacaoecursos')
+    .add('/', 'home')
