@@ -157,8 +157,8 @@ const CourseImg = styled.div`
 	flex-wrap: wrap;
 
 	img {
-		width: 65%;
-		height: 65%;
+		width: 45%;
+		height: 45%;
 		padding: 20px;
 
 		@media (max-width: 980px) {
