@@ -9,12 +9,16 @@ const primaryColor = "#ffd32a";
 
 const CoursesAndMaterialsWrapper = styled.div`
 	padding: 16px;
-	background: transparent;
 	margin: 0 auto;
-	max-width: 1366px;
+	background-image: url('/static/Imagem3.png');
+	background-attachment: fixed;
+	background-position: top center;
+	background-size: 100px;
+	width: 97%;
+	height: 100%;
 
 	div {
-		margin: 20px 0 50px 0;
+		margin: 50px auto;
 		text-align: center;
 	}
 
@@ -46,7 +50,7 @@ const CourseAndMaterialWrapper = styled.div`
 	align-items: center;
 	flex-wrap: wrap;
 	margin: 0 auto;
-	width: 100%;
+	max-width: 1366px;
 
 	@media (max-width: 980px) {
 		display: flex;
@@ -151,8 +155,8 @@ const CourseImg = styled.div`
 	flex-wrap: wrap;
 
 	img {
-		width: 30%;
-		height: 30%;
+		width: 65%;
+		height: 65%;
 		padding: 20px;
 
 		@media (max-width: 980px) {
@@ -168,7 +172,7 @@ const Purchase = styled.a`
 	justify-content: center;
 	align-items: center;
 	padding: 1em;
-	margin: -70px 0 50px 0;
+	margin: 10px 0 50px 0;
 	font-weight: bold;
 	text-decoration: none;
 	font-size: 1.1em;
@@ -181,6 +185,10 @@ const Purchase = styled.a`
 	&:active,
 	&:link {
 		color: #181818;
+	}
+
+	@media(max-width: 980px) {
+		margin-top: -50px;
 	}
 `;
 
@@ -200,6 +208,7 @@ const ImageWrapper = styled.div`
   -webkit-box-shadow: 0px 3px 5px 0px rgba(184, 184, 184, 1);
 	-moz-box-shadow: 0px 3px 5px 0px rgba(184, 184, 184, 1);
 	box-shadow: 0px 3px 5px 0px rgba(184, 184, 184, 1);
+	background: #fff;
   padding: 20px;
   border-radius: 10px;
   width: 50%;
@@ -252,7 +261,7 @@ const SpecializationAndCourses = props => {
                                             ) : (
                                                 <Purchase
                                                   target="_blank"
-                                                  href="https://api.whatsapp.com/send?phone=5511948195388&text=Fale%20conosco"
+                                                  href="https://api.whatsapp.com/send?phone=5511948195388&text=Olá,%20gostaria%20de%20mais%20informações!"
                                                 >
                                                     <FaWhatsapp
                                                         style={{
@@ -291,7 +300,7 @@ const SpecializationAndCourses = props => {
 
 SpecializationAndCourses.getInitialProps = async ({ query }) => {
 	const coursesResponse = await axios.get(
-		`http://api.ortoconecta.com.br/courses`,
+		`http://api.ortoconecta.com.br/courses?_sort=createdAt:asc`,
 	);
 
 	return { courses: coursesResponse.data };

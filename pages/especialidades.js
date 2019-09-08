@@ -48,7 +48,11 @@ const Speciality = styled.div`
 	li {
 		background: #fff;
 	}
-`;
+
+	@media(max-width: 980px) {
+		width: 70%;
+	}
+ `;
 
 const Title = styled.a`
 	color: inherit;
@@ -139,6 +143,13 @@ const PortfolioBtn = styled.button`
 		background: transparent;
 		transition: background 0.5s ease;
 	}
+
+	@media(max-width: 980px) {
+		margin: 0 auto;
+		text-align: center;
+		display: flex;
+		flex-wrap: wrap;
+	}
 `;
 
 const EntrevistasBtn = styled.button`
@@ -165,6 +176,13 @@ const EntrevistasBtn = styled.button`
 		background: transparent;
 		transition: background 0.5s ease;
 	}
+
+	@media(max-width: 980px) {
+		margin: 20px auto;
+		text-align: center;
+		display: flex;
+		flex-wrap: wrap;
+	}
 `;
 
 const InitialTitle = styled.div`
@@ -182,6 +200,10 @@ const InitialTitle = styled.div`
 		color: royalblue;
 		background: #f5f5f5;
 		margin: 30px 0;
+	}
+
+	@media(max-width: 980px) {
+		width: 80%;
 	}
 `;
 

@@ -14,7 +14,7 @@ import Main from "../layouts/main";
 const primaryColor = "#FFD32A";
 
 const TipsWrapper = styled.div`
-	width: 100vw;
+	width: 99%;
 	height: 100%;
 	background-image: url('/static/Imagem3.png');
 	background-attachment: fixed;
@@ -25,7 +25,7 @@ const TipsWrapper = styled.div`
 	align-items: center;
 	justify-content: center;
 	flex-wrap: wrap;
-	margin-top: 7px;
+	margin: 7px auto;
 `;
 
 const Title = styled.div`
@@ -52,6 +52,12 @@ const Title = styled.div`
 		color: royalblue;
 		background: #f5f5f5;
 		margin-bottom: 15px;
+	}
+
+	@media(max-width: 980px) {
+		width: 90%;
+		margin: 0;
+		padding: 0;
 	}
 `;
 
@@ -91,6 +97,11 @@ const TipWrapper = styled.div`
 		text-align: center;
 		font-size: 1.5rem;
 	}
+
+	@media(max-width: 980px) {
+		width: 80%;
+		margin: 20px 0;
+	}
 `;
 
 const VideoWrapper = styled.div`
@@ -105,6 +116,11 @@ const CommentsWrapper = styled.div`
 	justify-content: center;
 	align-items: center;
 	background: #f5f5f5;
+
+	@media(max-width: 980px) {
+		width: 80%;
+		margin-top: 20px;
+	}
 `;
 
 const Comment = styled.div`
