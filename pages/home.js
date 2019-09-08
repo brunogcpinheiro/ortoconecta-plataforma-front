@@ -406,7 +406,7 @@ class Home extends Component {
                   emulateTouch={true}
                 >
                   <div className="slides">
-                    <img src="/static/background-final.jpg" />
+                    <img src="/static/background-final-final.jpg" />
                   </div>
                   <div className="slides">
                     <img src="/static/carousel-final.jpg" />
