@@ -174,7 +174,7 @@ const Purchase = styled.a`
 	justify-content: center;
 	align-items: center;
 	padding: 1em;
-	margin: 10px 0 50px 0;
+	margin: -70px 0 50px 0;
 	font-weight: bold;
 	text-decoration: none;
 	font-size: 1.1em;
