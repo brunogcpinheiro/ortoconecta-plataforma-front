@@ -359,7 +359,7 @@ class Dicas extends Component {
 Dicas.getInitialProps = async () => {
 	const tipsResponse = await axios.get(`http://api.ortoconecta.com.br/tips`);
 	const commentsResponse = await axios.get(
-		`http://api.ortoconecta.com.br/tipsComments`,
+		`http://api.ortoconecta.com.br/tipsComments?_sort=createdAt:DESC`,
 	);
 
 	return { tips: tipsResponse.data, comments: commentsResponse.data };

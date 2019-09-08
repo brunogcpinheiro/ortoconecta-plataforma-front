@@ -52,12 +52,13 @@ const CourseAndMaterialWrapper = styled.div`
 	align-items: center;
 	flex-wrap: wrap;
 	margin: 0 auto;
-	max-width: 1366px;
+	width: 50%;
 
 	@media (max-width: 980px) {
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
+		width: 95%;
 	}
 `;
 
@@ -157,8 +158,8 @@ const CourseImg = styled.div`
 	flex-wrap: wrap;
 
 	img {
-		width: 30%;
-		height: 30%;
+		width: 50%;
+		height: 50%;
 		padding: 20px;
 
 		@media (max-width: 980px) {
@@ -302,6 +303,7 @@ class SpecializationAndCourses extends Component {
             })
         }
 		}
+
 		render () {
 			return (
 					<Fragment>
@@ -389,7 +391,7 @@ class SpecializationAndCourses extends Component {
 
 SpecializationAndCourses.getInitialProps = async ({ query }) => {
 	const coursesResponse = await axios.get(
-		`http://api.ortoconecta.com.br/courses?_sort=createdAt:asc`,
+		`http://api.ortoconecta.com.br/courses?_sort=title:ASC`,
 	);
 
 	return { courses: coursesResponse.data };
