@@ -8,7 +8,6 @@ import {Link} from '../routes'
 import axios from 'axios'
 import { FaChalkboard, FaBook, FaCameraRetro, FaLightbulb, FaHeartbeat, FaUserGraduate } from 'react-icons/fa'
 
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 
 const primaryColor = "#FFD32A"
@@ -418,10 +417,6 @@ class Home extends Component {
                     <img src="/static/carousel2-final.jpg" />
                   </div>
                 </Carousel>
-                {/*<HeroInner>
-                    <h1>Você conectado ao mundo da Ortodontia!</h1>
-                    <a href="#about">Saiba mais</a>
-                </HeroInner>*/}
               </div>
             </Hero>
 

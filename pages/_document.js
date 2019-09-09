@@ -18,6 +18,7 @@ export default class MyDocument extends Document {
         <Head>
           {this.props.styleTags}
           <link rel="shortcut icon" href="/static/tooth.jpg" type="image/x-icon" />
+          <link rel="stylesheet" href="/static/carousel.min.css" />
         </Head>
         <body>
           <Main />
