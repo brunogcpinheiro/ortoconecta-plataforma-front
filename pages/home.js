@@ -4,9 +4,10 @@ import Main from '../layouts/main'
 import Head from 'next/head'
 import Router from 'next/router'
 import swal from 'sweetalert2'
+import Modal from 'react-modal'
 import {Link} from '../routes'
 import axios from 'axios'
-import { FaChalkboard, FaBook, FaCameraRetro, FaLightbulb, FaHeartbeat, FaUserGraduate } from 'react-icons/fa'
+import { FaChalkboard, FaBook, FaCameraRetro, FaLightbulb, FaHeartbeat, FaUserGraduate, FaWindowClose } from 'react-icons/fa'
 
 import { Carousel } from 'react-responsive-carousel';
 
@@ -26,56 +27,6 @@ const Hero = styled.div`
 
   @media(max-width: 780px) {
     height: 100%;
-  }
-`
-
-const HeroInner = styled.div`
-  background: transparent;
-  color: #d6d6d6;
-  margin-top: -50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  flex-direction: column;
-
-  h1 {
-    font-size: 3.5em;
-    margin-top: 0;
-    margin-bottom: 0.5em;
-    background: transparent;
-  }
-
-  h2 {
-    background: transparent;
-    font-size: 1.7em;
-  }
-
-  a {
-    display: block;
-    width: 150px;
-    padding: 1em;
-    margin-top: 10px;
-    margin-bottom: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    color: #000;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 1.1em;
-    text-transform: uppercase;
-    background: ${primaryColor};
-    border: 2px solid ${primaryColor};
-    transition: background 0.3s ease-in-out;
-    -webkit-box-shadow: 0px 3px 5px 0px rgba(94,94,94,1);
-    -moz-box-shadow: 0px 3px 5px 0px rgba(94,94,94,1);
-    box-shadow: 0px 3px 5px 0px rgba(94,94,94,1);
-
-    &:hover {
-      background: transparent;
-      color: #fff;
-      transition: background 0.3s ease-in-out;
-    }
   }
 `
 
@@ -339,10 +290,51 @@ const Newsletter = styled.form`
 //   }
 // `
 
+const ModalWrapper = styled.div`
+  > h1 {
+    font-size: 3rem;
+  }
+
+  > form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+`
+
+const modalStyles = {
+  overlay: {
+    background: 'rgba(0,0,0,0.65)'
+  },
+  content : {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    background: 'rgba(255, 234, 167,1)',
+    maxWidth: '500px',
+    width: '50%',
+    height: '50%',
+    border: '5px solid #FFD32A',
+    boxShadow: '0px 0px 8px 0px rgba(255,255,255,1)'
+  }
+};
+
 class Home extends Component {
   state = {
     email: '',
-    maintance: true
+    maintance: true,
+    modalIsOpen: false
+  }
+
+  componentDidMount() {
+    this.setState({ modalIsOpen: true });
+  }
+
+  closeModal() {
+    this.setState({modalIsOpen: false});
   }
 
   handleSubmit = async e => {
@@ -392,6 +384,44 @@ class Home extends Component {
             <title>OrtoConecta</title>
           </Head>
           <Main>
+            <Modal
+              isOpen={this.state.modalIsOpen}
+              onRequestClose={() => this.setState({ modalIsOpen: false })}
+              style={modalStyles}
+              contentLabel="Quizz"
+            >
+              <a onClick={() => this.setState({ modalIsOpen: false })}>
+                <FaWindowClose
+                  style={{
+                    fontSize: '2rem',
+                    float: 'right'
+                  }}
+                  color="black"
+                />
+              </a>
+              <ModalWrapper>
+                <h1>Quizz OrtoConecta</h1>
+                <p>Olá! Preencha os dados abaixo para responder ao Quizz e concorrer a brindes!</p>
+                <form>
+                  <label for="name">
+                    <strong>Nome.:</strong>
+                  </label>
+                  <input type="text" id="name" />
+
+                  <label for="contact">
+                    <strong>Telefone.:</strong>
+                  </label>
+                  <input type="text" id="contact" />
+
+                  <label for="email">
+                    <strong>Email.:</strong>
+                  </label>
+                  <input type="text" id="email" />
+
+                  <button type="submit">Avançar</button>
+                </form>
+              </ModalWrapper>
+            </Modal>
             <Hero>
               <div>
                 <Carousel
