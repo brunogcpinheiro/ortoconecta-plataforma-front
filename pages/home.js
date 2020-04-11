@@ -422,7 +422,13 @@ class Home extends Component {
                   <img src="/static/carousel1-final.jpg" />
                 </div>
                 <div className="slides">
+                  <img src="/static/banner1.png" />
+                </div>
+                <div className="slides">
                   <img src="/static/carousel2-final.jpg" />
+                </div>
+                <div className="slides">
+                  <img src="/static/banner2.png" />
                 </div>
               </Carousel>
             </div>
