@@ -342,7 +342,6 @@ class SpecializationAndCourses extends Component {
             </NewsletterWrapper>
             <div>
               <h2>Especialização</h2>
-              <h4>EM JANEIRO!!!</h4>
               <Specialization>
                 <ImageWrapper>
                   <img
